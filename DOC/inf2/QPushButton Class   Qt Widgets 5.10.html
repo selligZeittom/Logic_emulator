@@ -1,0 +1,527 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<!-- qpushbutton.cpp -->
+<title>QPushButton Class | Qt Widgets 5.10</title>
+<link href="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/online.css" rel="stylesheet" type="text/css">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip" rel="shortcut icon">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-32x32.png" rel="icon" type="image/png">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-16x16.png" rel="icon" type="image/png">
+<script async="" src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/async-ads.js"></script><script type="text/javascript" async="" src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/cse.js"></script><script async="" src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/analytics.js"></script><script type="text/javascript"> wpThemeFolder = 'http://qt.io/wp-content/themes/oneqt'; </script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jquery.js" type="text/javascript"></script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jquery-migrate.js" type="text/javascript"></script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/combo.js" type="text/javascript"></script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/main.js" type="text/javascript"></script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/extras.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54043535-2', 'qt.io');
+    ga('set', 'forceSSL', true);
+    ga('send', 'pageview');
+  </script>
+<script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/prettify.js" type="text/javascript"></script><script src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jsapi" type="text/javascript"></script><link type="text/css" href="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/defaulten.css" rel="stylesheet"><link type="text/css" href="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/default.css" rel="stylesheet"><script type="text/javascript" src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/defaulten.js"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#FFFFFF;background-color:#FFFFFF}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#5CAA15;background-color:#5CAA15;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive{border-color:#E9E9E9;background-color:#E9E9E9}.gsc-tabHeader.gsc-tabhActive{border-top-color:#5CAA15;border-left-color:#E9E9E9;border-right-color:#E9E9E9;border-bottom-color:#FFFFFF;background-color:#FFFFFF}.gsc-tabsArea{border-color:#E9E9E9;}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#5CAA15}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#5CAA15}.gsc-cursor-page{color:#5CAA15}a.gsc-trailing-more-results:link{color:#5CAA15}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#404244}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#E9E9E9;background-color:#FFFFFF;color:#5CAA15}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#5CAA15;background-color:#FFFFFF;color:#46A2DA}.gsc-webResult.gsc-result.gsc-promotion{border-color:#404244;background-color:#FFFFFF}.gsc-completion-title{color:#5CAA15}.gsc-completion-snippet{color:#404244}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:5.5px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+<body onload="prettyPrint()">
+<div class="header" id="header">
+<header class="" id="navbar"><div class="cookies_yum">
+<div>
+<img src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/cookie_small.png" align="left">
+<p class="close_button">
+                    We bake cookies in your browser for a better experience.  Using this site means that you consent. <a href="http://qt.io/terms-conditions/">Read More</a>
+</p>
+<a class="close"></a>
+</div>
+</div>
+<div class="container">
+    <div class="navbar-header cf">
+        <div id="mm-wrap">
+            <ul id="mm-helper" class="mm-menu" data-event="hover_intent" data-effect="fade" data-effect-speed="200" data-panel-width="#navbar" data-panel-inner-width="1280px" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="0">
+                <li class="mm-item"><a class="mm-link" href="http://blog.qt.io/" tabindex="0">Blog</a></li>
+                <li class="mm-item"><a class="mm-link" href="https://www.qt.io/contact-us/" tabindex="0">Contact Us</a></li>
+                <li class="mm-item"><a title="Qt Account" class="mm-link" href="https://account.qt.io/" tabindex="0"></a></li>
+            </ul>
+        </div>
+        <a class="navbar-oneQt retina" data-icon="" href="https://www.qt.io/"></a>
+    </div>
+</div>
+</header>
+</div>
+<div class="main">
+<div class="main-rounded">
+<div class="navigationbar">
+<ul class="sub-navigation">
+<li><a href="http://wiki.qt.io/">Wiki</a></li>
+<li><a class="active" href="http://doc.qt.io/">Documentation</a></li>
+<li><a href="http://forum.qt.io/">Forum</a></li>
+<li><a href="https://bugreports.qt.io/">Bug Reports</a></li>
+<li><a href="https://codereview.qt-project.org/">Code Review</a></li>
+</ul>
+<div id="main_title_bar">
+<h1>Qt Documentation</h1>
+<div class="search_bar">
+<script>
+            (function() {
+                var cx = '003672281345882769388:1y4pftuq8so';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+<div id="___gcse_0"><div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table class="gsc-search-box" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table style="width: 100%; padding: 0px;" id="gs_id50" class="gstl_50 " cellspacing="0" cellpadding="0"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" size="10" class="gsc-input" name="search" title="search" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; outline: medium none currentcolor; background: rgb(255, 255, 255) url(&quot;http://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px;" id="gsc-i-id1" dir="ltr" spellcheck="false" placeholder=" Search Documentation" type="text"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form></div></div>
+</div></div>
+<ul>
+<li><a href="http://doc.qt.io/qt-5/index.html">Qt 5.10</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtwidgets-index.html">Qt Widgets</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtwidgets-module.html">C++ Classes</a></li>
+<li>QPushButton</li>
+</ul>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar" style="transition: all 0.2s ease-out 0s; top: 0px;">
+<div class="toc"><div id="toc-toggle"></div>
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sectionlist normallist">
+<h2><strong>Resource Center</strong></h2>
+<p>Find webinars, use cases, tutorials, videos &amp; more at <a href="https://resources.qt.io/" target="_blank">resources.qt.io</a></p>
+</div><div class="sidebar-content" id="sidebar-content"><div id="sidebar-toggle"></div><h2 id="reference">Reference</h2><div class="sectionlist normallist">
+    <div class="heading">
+        <a name="reference"></a>
+        <h2 id="reference">Reference</h2>
+    </div>
+    <div class="indexboxcont indexboxbar">
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/classes.html">All Qt C++ Classes</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qmltypes.html">All QML Types</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qtmodules.html">All Qt Modules</a></li>
+            <li><a href="http://doc.qt.io/qtcreator/index.html">Qt Creator Manual</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/reference-overview.html">All Qt Reference Documentation</a></li>
+        </ul>
+    </div>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="getting-started"></a>
+        <h2 id="getting-started">Getting Started</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/gettingstarted.html">Getting Started with Qt</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qt5-intro.html">What's New in Qt 5</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples and Tutorials</a></li>
+        <li><a href="http://doc.qt.io/qt-5/supported-platforms.html">Supported Platforms</a></li>
+        <li><a href="http://doc.qt.io/qt-5/licensing.html">Qt Licensing</a></li>
+    </ul>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="overviews"></a>
+        <h2 id="overviews">Overviews</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-ui.html">User Interfaces</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-core.html">Core Internals</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-data-storage.html">Data Storage</a></li>
+        <li><a href="http://doc.qt.io/qt-5/multimediaoverview.html">Multimedia</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-network-connectivity.html">Networking and Connectivity</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-graphics.html">Graphics</a></li>
+        <li><a href="http://doc.qt.io/qt-5/mobiledevelopment.html">Mobile APIs</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qmlapplications.html">QML Applications</a></li>
+    </ul>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/overviews-main.html">All Qt Overviews</a></li>
+    </ul>
+</div>
+</div></div>
+<div class="context">
+<h1 class="title">QPushButton Class</h1>
+<!-- $$$QPushButton-brief -->
+<p>The <a href="http://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a> widget provides a command button. <a href="#details">More...</a></p>
+<!-- @@@QPushButton -->
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;QPushButton&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += widgets</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="http://doc.qt.io/qt-5/qabstractbutton.html">QAbstractButton</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="http://doc.qt.io/qt-5/qcommandlinkbutton.html">QCommandLinkButton</a></p>
+</td></tr></tbody></table></div><ul>
+<li><a href="http://doc.qt.io/qt-5/qpushbutton-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a></b> : bool</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#default-prop">default</a></b> : bool</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#flat-prop">flat</a></b> : bool</li>
+</ul>
+<ul>
+<li class="fn">11 properties inherited from <a href="http://doc.qt.io/qt-5/qabstractbutton.html#properties">QAbstractButton</a></li>
+<li class="fn">59 properties inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#properties">QWidget</a></li>
+<li class="fn">1 property inherited from <a href="http://doc.qt.io/qt-5/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#QPushButton">QPushButton</a></b>(QWidget *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#QPushButton-1">QPushButton</a></b>(const QString &amp;<i>text</i>, QWidget *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#QPushButton-2">QPushButton</a></b>(const QIcon &amp;<i>icon</i>, const QString &amp;<i>text</i>, QWidget *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#dtor.QPushButton">~QPushButton</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#default-prop">isDefault</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#flat-prop">isFlat</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMenu *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#menu">menu</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">setAutoDefault</a></b>(<i>bool</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#default-prop">setDefault</a></b>(<i>bool</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#flat-prop">setFlat</a></b>(<i>bool</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#setMenu">setMenu</a></b>(QMenu *<i>menu</i>)</td></tr>
+</tbody></table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual QSize </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#minimumSizeHint">minimumSizeHint</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QSize </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#sizeHint">sizeHint</a></b>() const</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">21 public functions inherited from <a href="http://doc.qt.io/qt-5/qabstractbutton.html#public-functions">QAbstractButton</a></li>
+<li class="fn">214 public functions inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#public-functions">QWidget</a></li>
+<li class="fn">32 public functions inherited from <a href="http://doc.qt.io/qt-5/qobject.html#public-functions">QObject</a></li>
+<li class="fn">14 public functions inherited from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#public-functions">QPaintDevice</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#showMenu">showMenu</a></b>()</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">5 public slots inherited from <a href="http://doc.qt.io/qt-5/qabstractbutton.html#public-slots">QAbstractButton</a></li>
+<li class="fn">19 public slots inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#public-slots">QWidget</a></li>
+<li class="fn">1 public slot inherited from <a href="http://doc.qt.io/qt-5/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#initStyleOption">initStyleOption</a></b>(QStyleOptionButton *<i>option</i>) const</td></tr>
+</tbody></table></div>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#event">event</a></b>(QEvent *<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#focusInEvent">focusInEvent</a></b>(QFocusEvent *<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#focusOutEvent">focusOutEvent</a></b>(QFocusEvent *<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#keyPressEvent">keyPressEvent</a></b>(QKeyEvent *<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qpushbutton.html#paintEvent">paintEvent</a></b>(<i>QPaintEvent *</i>)</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">14 protected functions inherited from <a href="http://doc.qt.io/qt-5/qabstractbutton.html#protected-functions">QAbstractButton</a></li>
+<li class="fn">35 protected functions inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#protected-functions">QWidget</a></li>
+<li class="fn">9 protected functions inherited from <a href="http://doc.qt.io/qt-5/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">1 protected function inherited from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#protected-functions">QPaintDevice</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">4 signals inherited from <a href="http://doc.qt.io/qt-5/qabstractbutton.html#signals">QAbstractButton</a></li>
+<li class="fn">3 signals inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#signals">QWidget</a></li>
+<li class="fn">2 signals inherited from <a href="http://doc.qt.io/qt-5/qobject.html#signals">QObject</a></li>
+<li class="fn">5 static public members inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#static-public-members">QWidget</a></li>
+<li class="fn">11 static public members inherited from <a href="http://doc.qt.io/qt-5/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">1 protected slot inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QPushButton-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="http://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a> widget provides a command button.</p>
+<p class="centerAlign"><img alt="" src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/windows-pushbutton.png"></p><p>The
+ push button, or command button, is perhaps the most commonly used 
+widget in any graphical user interface. Push (click) a button to command
+ the computer to perform some action, or to answer a question. Typical 
+buttons are OK, Apply, Cancel, Close, Yes, No and Help.</p>
+<p>A command button is rectangular and typically displays a text label 
+describing its action. A shortcut key can be specified by preceding the 
+preferred character with an ampersand in the text. For example:</p>
+<div class="pre"><pre class="cpp prettyprint prettyprinted" style=""><span class="wrap" title="Toggle line wrap" style="display: none;"></span><span class="type"><a href="http://doc.qt.io/qt-5/qpushbutton.html#QPushButton"><span class="typ">QPushButton</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">button </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qpushbutton.html#QPushButton"><span class="typ">QPushButton</span></a></span><span class="pun">(</span><span class="string"><span class="str">"&amp;Download"</span></span><span class="operator"><span class="pun">,</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span></pre></div>
+<p>In this example the shortcut is <i>Alt+D</i>. See the <a href="http://doc.qt.io/qt-5/qshortcut.html#mnemonic">QShortcut</a> documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>Push buttons display a textual label, and optionally a small icon. 
+These can be set using the constructors and changed later using <a href="http://doc.qt.io/qt-5/qabstractbutton.html#text-prop">setText</a>() and <a href="http://doc.qt.io/qt-5/qabstractbutton.html#icon-prop">setIcon</a>().
+ If the button is disabled, the appearance of the text and icon will be 
+manipulated with respect to the GUI style to make the button look 
+"disabled".</p>
+<p>A push button emits the signal <a href="http://doc.qt.io/qt-5/qabstractbutton.html#clicked">clicked</a>()
+ when it is activated by the mouse, the Spacebar or by a keyboard 
+shortcut. Connect to this signal to perform the button's action. Push 
+buttons also provide less commonly used signals, for example <a href="http://doc.qt.io/qt-5/qabstractbutton.html#pressed">pressed</a>() and <a href="http://doc.qt.io/qt-5/qabstractbutton.html#released">released</a>().</p>
+<p>Command buttons in dialogs are by default auto-default buttons, i.e.,
+ they become the default push button automatically when they receive the
+ keyboard input focus. A default button is a push button that is 
+activated when the user presses the Enter or Return key in a dialog. You
+ can change this with <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">setAutoDefault</a>().
+ Note that auto-default buttons reserve a little extra space which is 
+necessary to draw a default-button indicator. If you do not want this 
+space around your buttons, call <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">setAutoDefault</a>(false).</p>
+<p>Being so central, the button widget has grown to accommodate a great 
+many variations in the past decade. The Microsoft style guide now shows 
+about ten different states of Windows push buttons and the text implies 
+that there are dozens more when all the combinations of features are 
+taken into consideration.</p>
+<p>The most important modes or states are:</p>
+<ul>
+<li>Available or not (grayed out, disabled).</li>
+<li>Standard push button, toggling push button or menu button.</li>
+<li>On or off (only for toggling push buttons).</li>
+<li>Default or normal. The default button in a dialog can generally be "clicked" using the Enter or Return key.</li>
+<li>Auto-repeat or not.</li>
+<li>Pressed down or not.</li>
+</ul>
+<p>As a general rule, use a push button when the application or dialog 
+window performs an action when the user clicks on it (such as Apply, 
+Cancel, Close and Help) <i>and</i> when the widget is supposed to have a
+ wide, rectangular shape with a text label. Small, typically square 
+buttons that change the state of the window rather than performing an 
+action (such as the buttons in the top-right corner of the <a href="http://doc.qt.io/qt-5/qfiledialog.html">QFileDialog</a>) are not command buttons, but tool buttons. Qt provides a special class (<a href="http://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a>) for these buttons.</p>
+<p>If you need toggle behavior (see <a href="http://doc.qt.io/qt-5/qabstractbutton.html#checkable-prop">setCheckable</a>()) or a button that auto-repeats the activation signal when being pushed down like the arrows in a scroll bar (see <a href="http://doc.qt.io/qt-5/qabstractbutton.html#autoRepeat-prop">setAutoRepeat</a>()), a command button is probably not what you want. When in doubt, use a tool button.</p>
+<p><b>Note: </b>On macOS when a push button's width becomes smaller than
+ 50 or its height becomes smaller than 30, the button's corners are 
+changed from round to square. Use the <a href="http://doc.qt.io/qt-5/qwidget.html#minimumSize-prop">setMinimumSize</a>() function to prevent this behavior.</p><p>A
+ variation of a command button is a menu button. These provide not just 
+one command, but several, since when they are clicked they pop up a menu
+ of options. Use the method <a href="http://doc.qt.io/qt-5/qpushbutton.html#setMenu">setMenu</a>() to associate a popup menu with a push button.</p>
+<p>Other classes of buttons are option buttons (see <a href="http://doc.qt.io/qt-5/qradiobutton.html">QRadioButton</a>) and check boxes (see <a href="http://doc.qt.io/qt-5/qcheckbox.html">QCheckBox</a>).</p>
+<p>In Qt, the <a href="http://doc.qt.io/qt-5/qabstractbutton.html">QAbstractButton</a> base class provides most of the modes and other API, and <a href="http://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a> provides GUI logic. See <a href="http://doc.qt.io/qt-5/qabstractbutton.html">QAbstractButton</a> for more information about the API.</p>
+</div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a>, <a href="http://doc.qt.io/qt-5/qradiobutton.html">QRadioButton</a>, <a href="http://doc.qt.io/qt-5/qcheckbox.html">QCheckBox</a>, and <a href="http://doc.qt.io/qt-5/guibooks.html#fowler">GUI Design Handbook: Push Button</a>.</p>
+<!-- @@@QPushButton -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$autoDefault-prop$$$autoDefault$$$setAutoDefaultbool -->
+<h3 class="fn" id="autoDefault-prop"><a name="autoDefault-prop"></a><span class="name">autoDefault</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the push button is an auto default button</p>
+<p>If this property is set to true then the push button is an auto default button.</p>
+<p>In some GUI styles a default button is drawn with an extra frame 
+around it, up to 3 pixels or more. Qt automatically keeps this space 
+free around auto-default buttons, i.e., auto-default buttons may have a 
+slightly larger size hint.</p>
+<p>This property's default is true for buttons that have a <a href="http://doc.qt.io/qt-5/qdialog.html">QDialog</a> parent; otherwise it defaults to false.</p>
+<p>See the <a href="http://doc.qt.io/qt-5/qdialog.html#default">default</a> property for details of how <a href="http://doc.qt.io/qt-5/qdialog.html#default">default</a> and auto-default interact.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>autoDefault</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoDefault</b></span>(<i>bool</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@autoDefault -->
+<!-- $$$default-prop$$$isDefault$$$setDefaultbool -->
+<h3 class="fn" id="default-prop"><a name="default-prop"></a><span class="name">default</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the push button is the default button</p>
+<p>Default and autodefault buttons decide what happens when the user presses enter in a dialog.</p>
+<p>A button with this property set to true (i.e., the dialog's <i>default</i> button,) will automatically be pressed when the user presses enter, with one exception: if an <i>autoDefault</i> button currently has focus, the <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a> button is pressed. When the dialog has <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a> buttons but no default button, pressing enter will press either the <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a> button that currently has focus, or if no button has focus, the next <a href="http://doc.qt.io/qt-5/qpushbutton.html#autoDefault-prop">autoDefault</a> button in the focus chain.</p>
+<p>In a dialog, only one push button at a time can be the default 
+button. This button is then displayed with an additional frame 
+(depending on the GUI style).</p>
+<p>The default button behavior is provided only in dialogs. Buttons can 
+always be clicked from the keyboard by pressing Spacebar when the button
+ has focus.</p>
+<p>If the default property is set to false on the current default button
+ while the dialog is visible, a new default will automatically be 
+assigned the next time a push button in the dialog receives focus.</p>
+<p>This property's default is false.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isDefault</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setDefault</b></span>(<i>bool</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@default -->
+<!-- $$$flat-prop$$$isFlat$$$setFlatbool -->
+<h3 class="fn" id="flat-prop"><a name="flat-prop"></a><span class="name">flat</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the button border is raised</p>
+<p>This property's default is false. If this property is set, most 
+styles will not paint the button background unless the button is being 
+pressed. <a href="http://doc.qt.io/qt-5/qwidget.html#autoFillBackground-prop">setAutoFillBackground</a>() can be used to ensure that the background is filled using the <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">QPalette::Button</a> brush.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isFlat</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setFlat</b></span>(<i>bool</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@flat -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QPushButton[overload1]$$$QPushButtonQWidget* -->
+<h3 class="fn" id="QPushButton"><a name="QPushButton"></a>QPushButton::<span class="name">QPushButton</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a push button with no text and a <i>parent</i>.</p>
+<!-- @@@QPushButton -->
+<!-- $$$QPushButton$$$QPushButtonconstQString&QWidget* -->
+<h3 class="fn" id="QPushButton-1"><a name="QPushButton-1"></a>QPushButton::<span class="name">QPushButton</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>text</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a push button with the parent <i>parent</i> and the text <i>text</i>.</p>
+<!-- @@@QPushButton -->
+<!-- $$$QPushButton$$$QPushButtonconstQIcon&constQString&QWidget* -->
+<h3 class="fn" id="QPushButton-2"><a name="QPushButton-2"></a>QPushButton::<span class="name">QPushButton</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a></span> &amp;<i>icon</i>, const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>text</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a push button with an <i>icon</i> and a <i>text</i>, and a <i>parent</i>.</p>
+<p>Note that you can also pass a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> object as an icon (thanks to the implicit type conversion provided by C++).</p>
+<!-- @@@QPushButton -->
+<!-- $$$~QPushButton[overload1]$$$~QPushButton -->
+<h3 class="fn" id="dtor.QPushButton"><a name="dtor.QPushButton"></a>QPushButton::<span class="name">~QPushButton</span>()</h3>
+<p>Destroys the push button.</p>
+<!-- @@@~QPushButton -->
+<!-- $$$event[overload1]$$$eventQEvent* -->
+<h3 class="fn" id="event"><a name="event"></a><code>[virtual protected] </code><span class="type">bool</span> QPushButton::<span class="name">event</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a></span> *<i>e</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qobject.html#event">QObject::event</a>().</p>
+<!-- @@@event -->
+<!-- $$$focusInEvent[overload1]$$$focusInEventQFocusEvent* -->
+<h3 class="fn" id="focusInEvent"><a name="focusInEvent"></a><code>[virtual protected] </code><span class="type">void</span> QPushButton::<span class="name">focusInEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qfocusevent.html">QFocusEvent</a></span> *<i>e</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#focusInEvent">QWidget::focusInEvent</a>().</p>
+<!-- @@@focusInEvent -->
+<!-- $$$focusOutEvent[overload1]$$$focusOutEventQFocusEvent* -->
+<h3 class="fn" id="focusOutEvent"><a name="focusOutEvent"></a><code>[virtual protected] </code><span class="type">void</span> QPushButton::<span class="name">focusOutEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qfocusevent.html">QFocusEvent</a></span> *<i>e</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#focusOutEvent">QWidget::focusOutEvent</a>().</p>
+<!-- @@@focusOutEvent -->
+<!-- $$$initStyleOption[overload1]$$$initStyleOptionQStyleOptionButton* -->
+<h3 class="fn" id="initStyleOption"><a name="initStyleOption"></a><code>[protected] </code><span class="type">void</span> QPushButton::<span class="name">initStyleOption</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qstyleoptionbutton.html">QStyleOptionButton</a></span> *<i>option</i>) const</h3>
+<p>Initialize <i>option</i> with the values from this <a href="http://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a>. This method is useful for subclasses when they need a <a href="http://doc.qt.io/qt-5/qstyleoptionbutton.html">QStyleOptionButton</a>, but don't want to fill in all the information themselves.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<!-- @@@initStyleOption -->
+<!-- $$$keyPressEvent[overload1]$$$keyPressEventQKeyEvent* -->
+<h3 class="fn" id="keyPressEvent"><a name="keyPressEvent"></a><code>[virtual protected] </code><span class="type">void</span> QPushButton::<span class="name">keyPressEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qkeyevent.html">QKeyEvent</a></span> *<i>e</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#keyPressEvent">QWidget::keyPressEvent</a>().</p>
+<!-- @@@keyPressEvent -->
+<!-- $$$menu[overload1]$$$menu -->
+<h3 class="fn" id="menu"><a name="menu"></a><span class="type"><a href="http://doc.qt.io/qt-5/qmenu.html">QMenu</a></span> *QPushButton::<span class="name">menu</span>() const</h3>
+<p>Returns the button's associated popup menu or 0 if no popup menu has been set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpushbutton.html#setMenu">setMenu</a>().</p>
+<!-- @@@menu -->
+<!-- $$$minimumSizeHint[overload1]$$$minimumSizeHint -->
+<h3 class="fn" id="minimumSizeHint"><a name="minimumSizeHint"></a><code>[virtual] </code><span class="type"><a href="http://doc.qt.io/qt-5/qsize.html">QSize</a></span> QPushButton::<span class="name">minimumSizeHint</span>() const</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#minimumSizeHint-prop">QWidget::minimumSizeHint</a>().</p>
+<!-- @@@minimumSizeHint -->
+<!-- $$$paintEvent[overload1]$$$paintEventQPaintEvent* -->
+<h3 class="fn" id="paintEvent"><a name="paintEvent"></a><code>[virtual protected] </code><span class="type">void</span> QPushButton::<span class="name">paintEvent</span>(<i>QPaintEvent *</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#paintEvent">QWidget::paintEvent</a>().</p>
+<!-- @@@paintEvent -->
+<!-- $$$setMenu[overload1]$$$setMenuQMenu* -->
+<h3 class="fn" id="setMenu"><a name="setMenu"></a><span class="type">void</span> QPushButton::<span class="name">setMenu</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qmenu.html">QMenu</a></span> *<i>menu</i>)</h3>
+<p>Associates the popup menu <i>menu</i> with this push button. This 
+turns the button into a menu button, which in some styles will produce a
+ small triangle to the right of the button's text.</p>
+<p>Ownership of the menu is <i>not</i> transferred to the push button.</p>
+<p class="centerAlign"><img alt="Screenshot of a Fusion style push button with popup menu." src="QPushButton%20Class%20%20%20Qt%20Widgets%205.10_fichiers/fusion-pushbutton-menu.png"></p><p>A push button with popup menus shown in the <a href="http://doc.qt.io/qt-5/gallery.html">Fusion widget style</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpushbutton.html#menu">menu</a>().</p>
+<!-- @@@setMenu -->
+<!-- $$$showMenu[overload1]$$$showMenu -->
+<h3 class="fn" id="showMenu"><a name="showMenu"></a><code>[slot] </code><span class="type">void</span> QPushButton::<span class="name">showMenu</span>()</h3>
+<p>Shows (pops up) the associated popup menu. If there is no such menu, 
+this function does nothing. This function does not return until the 
+popup menu has been closed by the user.</p>
+<!-- @@@showMenu -->
+<!-- $$$sizeHint[overload1]$$$sizeHint -->
+<h3 class="fn" id="sizeHint"><a name="sizeHint"></a><code>[virtual] </code><span class="type"><a href="http://doc.qt.io/qt-5/qsize.html">QSize</a></span> QPushButton::<span class="name">sizeHint</span>() const</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#sizeHint-prop">QWidget::sizeHint</a>().</p>
+<!-- @@@sizeHint -->
+</div>
+</div>
+<p class="copy-notice">
+<acronym title="Copyright">©</acronym> 2018 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a>
+ as published by the Free Software Foundation.     Qt and respective 
+logos are trademarks of The Qt Company Ltd.     in Finland and/or other 
+countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer"><footer id="footerbar">
+<div class="footer-main">
+<div class="container clearfix">
+<nav class="footer-nav clearfix">
+<div class="menu-footer-menu-container"><ul class="menu" id="menu-footer-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1403" id="menu-item-1403"><a href="http://qt.io/download/">Download</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11677" id="menu-item-11677"><a href="http://qt.io/download/">Start for Free</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15840" id="menu-item-15840"><a href="http://qt.io/download-eval-for-applications-step-2/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15841" id="menu-item-15841"><a href="http://qt.io/request-eval-for-devices-step-2/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15838" id="menu-item-15838"><a href="http://qt.io/download-open-source/">Qt Open Source</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415" id="menu-item-1415"><a href="http://qt.io/terms-conditions/">Terms &amp; Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14184" id="menu-item-14184"><a href="http://qt.io/FAQ/">Licensing FAQ</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1355" id="menu-item-1355"><a href="http://qt.io/product/">Product</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12576" id="menu-item-12576"><a href="http://qt.io/product/">Qt in Use</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15848" id="menu-item-15848"><a href="http://qt.io/application-development/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1357" id="menu-item-1357"><a href="http://qt.io/qt-for-device-creation/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356" id="menu-item-1356"><a href="http://qt.io/qt-features/">Commercial Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15850" id="menu-item-15850"><a href="http://qt.io/ide/">Qt Creator IDE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1359" id="menu-item-1359"><a href="http://qt.io/qt-quick/">Qt Quick</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1347" id="menu-item-1347"><a href="http://qt.io/services/">Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4028" id="menu-item-4028"><a href="http://qt.io/services-technology-evaluation/">Technology Evaluation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4027" id="menu-item-4027"><a href="http://qt.io/services-proof-of-concept/">Proof of Concept</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4026" id="menu-item-4026"><a href="http://qt.io/services-design-implementation/">Design &amp; Implementation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4025" id="menu-item-4025"><a href="http://qt.io/services-productization/">Productization</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15863" id="menu-item-15863"><a href="http://qt.io/qt-training/">Qt Training</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4779" id="menu-item-4779"><a href="https://qt.io/partners/">Partner Network</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-33" id="menu-item-33"><a href="http://qt.io/developers/">Developers</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365" id="menu-item-1365"><a href="http://doc.qt.io/">Documentation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364" id="menu-item-1364"><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples &amp; Tutorials</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1363" id="menu-item-1363"><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1361" id="menu-item-1361"><a href="http://wiki.qt.io/">Wiki</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1360" id="menu-item-1360"><a href="http://forum.qt.io/">Forums</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15922" id="menu-item-15922"><a href="http://wiki.qt.io/contribute">Contribute to Qt</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1350" id="menu-item-1350"><a href="http://qt.io/about-us/">About us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1353" id="menu-item-1353"><a href="http://qt.io/events/">Training &amp; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354" id="menu-item-1354"><a href="http://qt.io/resource-center/">Resource Center</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12285" id="menu-item-12285"><a href="http://qt.io/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349" id="menu-item-1349"><a href="http://qt.io/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11676" id="menu-item-11676"><a href="http://qt.io/locations/">Locations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15911" id="menu-item-15911"><a href="http://qt.io/contact-us">Contact Us</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<a class="theqtcompany" href="http://qt.io/about-us/" target="_blank"></a>
+<div class="footer-social clearfix">
+<a href="https://facebook.com/qt" target="_blank" title="Qt on Facebook"><i class="icon-facebook"></i></a>
+<a href="https://twitter.com/qtproject" target="_blank" title="Qt on Twitter"><i class="icon-twitter"></i></a>
+<a href="https://www.youtube.com/user/QtStudios" target="_blank" title="Qt videos on YouTube"><i class="icon-youtube"></i></a>
+</div>
+</div>
+</div>
+<div class="disclaimer">
+<div class="container clearfix no_discs">
+<ul class="right clearfix" id="menu-footer-submenu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1795" id="menu-item-1795"><a href="https://account.qt.io/login" title="Sign into your account.">Sign In</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10375" id="menu-item-10375"><a href="mailto:feedback@theqtcompany.com?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom" id="footer-copyright"><a href="http://qt.io/about-us/">© 2018 The Qt Company</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+
+
+<table style="width: 623px; display: none; top: 151px; left: 651px; position: absolute;" class="gstl_50 gssb_c" cellspacing="0" cellpadding="0"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body></html>

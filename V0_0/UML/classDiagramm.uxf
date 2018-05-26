@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>64</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>XF::ISM
+transparency=0
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>136</y>
+      <w>224</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
++ initRelations() : void
+
++ processEvent(ev* : XFEvent) : bool
++ evButtonPressed()
++ evLoadingDone
++ evConvertingDone
++ evComputingDone
+--
+
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1256</x>
+      <y>80</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1984</x>
+      <y>528</y>
+      <w>224</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Data
+--
++ initRelations() : void
+
++ loadFile() : void
++ convertJSONtoGates() : void
++ computeLogic() : void
+--
+- jsonConverter : QJsonDocument
+- file : QFile
+- gates : QVector&lt;Gates&gt;
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>600</y>
+      <w>208</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>outputView:OutputView
+--
++ initRelations() : void
+
+--
+- drawWindows : QGraphicsView
+- result : QLabel
+- fileName : QLabel
+- code : QLabel
+- host : View*
+transparency=0
+layer=2
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>416</y>
+      <w>208</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>inputView:InputView
+--
++ initRelations() : void
+
+--
+- loadButton : QPushButton
+- browser : QFileDialog
+- host : View*
+layer=2
+
+transparency=0
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>640</y>
+      <w>760</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortUI : PortUI*</panel_attributes>
+    <additional_attributes>930.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2272</x>
+      <y>240</y>
+      <w>224</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>Gates
+--
++ initRelations() : void
+
++ computeOutput() : bool
+--
+- type : QString
+- id : int
+- level : int
+- nInput : int
+- pins : QVector&lt;Pin*&gt;
+
+- output : bool
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2088</x>
+      <y>320</y>
+      <w>200</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2= 0... n</panel_attributes>
+    <additional_attributes>10.0;260.0;10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2280</x>
+      <y>576</y>
+      <w>224</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Pin
+--
++ initRelations() : void
+
++ setState(state : bool) : void
++ getState() : bool
+--
+- label : QString
+- connectedPin : Pin*
+- state : bool
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2384</x>
+      <y>464</y>
+      <w>48</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2= 2... n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>136</x>
+      <y>248</y>
+      <w>848</w>
+      <h>592</h>
+    </coordinates>
+    <panel_attributes>UserInterface
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>968</x>
+      <y>1048</y>
+      <w>736</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>Interface
+layer=-1
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1664</x>
+      <y>200</y>
+      <w>888</w>
+      <h>584</h>
+    </coordinates>
+    <panel_attributes>Data
+layer=-1
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1152</x>
+      <y>0</y>
+      <w>456</w>
+      <h>608</h>
+    </coordinates>
+    <panel_attributes>Controller
+layer=-1
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1392</x>
+      <y>48</y>
+      <w>112</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>LE_STATE
+&lt;enum&gt;
+--
+ST_WAIT
+ST_LOAD
+ST_CONVERT
+ST_COMPUTE
+ST_DRAW
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1376</x>
+      <y>144</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>552</y>
+      <w>136</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PortUI
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>432</y>
+      <w>136</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PortController
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1696</x>
+      <y>544</y>
+      <w>136</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PortData
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>496</y>
+      <w>296</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortController : PortController*</panel_attributes>
+    <additional_attributes>10.0;150.0;60.0;150.0;60.0;10.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>496</y>
+      <w>352</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortData : PortData*</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0;230.0;150.0;420.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>432</y>
+      <w>328</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;&gt;&gt;
+thePortUI : PortUI*</panel_attributes>
+    <additional_attributes>280.0;150.0;280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>696</y>
+      <w>336</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;&gt;&gt;
+view : View*</panel_attributes>
+    <additional_attributes>10.0;90.0;400.0;90.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1824</x>
+      <y>576</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-data : Data*</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1824</x>
+      <y>632</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortData : PortData*</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1088</x>
+      <y>1240</y>
+      <w>192</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>IViewUpdate
+--
++ onButtonLoadPressed() : void = 0
++ onPathSelected() : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>680</y>
+      <w>248</w>
+      <h>584</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;</panel_attributes>
+    <additional_attributes>290.0;710.0;130.0;620.0;130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>560</y>
+      <w>80</w>
+      <h>704</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;860.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1216</x>
+      <y>1104</y>
+      <w>216</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>IDataUpdate
+--
++ draw(gates : QVector&lt;Gates) : void = 0
++ setText(result : QString) : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>664</y>
+      <w>392</w>
+      <h>464</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;560.0;100.0;450.0;100.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>664</y>
+      <w>440</w>
+      <h>464</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>460.0;560.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>296</y>
+      <w>208</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-controller : Controller*</panel_attributes>
+    <additional_attributes>10.0;230.0;100.0;230.0;100.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1248</x>
+      <y>320</y>
+      <w>192</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortController : PortController*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1488</x>
+      <y>1192</y>
+      <w>192</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>IController
+--
++ loadFile() : void = 0
++ convertJSONtoGates() : void = 0
++ computeLogic() : void = 0
++ drawGates() : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>544</y>
+      <w>232</w>
+      <h>680</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;</panel_attributes>
+    <additional_attributes>270.0;830.0;150.0;720.0;150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1576</x>
+      <y>672</y>
+      <w>136</w>
+      <h>544</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;660.0;10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1456</x>
+      <y>184</y>
+      <w>136</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>LE_EVENT
+&lt;enum&gt;
+--
+EV_END_LOADING
+EV_END_CONVERTING
+EV_END_COMPUTING
+EV_END_DRAWING
+EV_ERROR
+EV_INIT
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1376</x>
+      <y>224</y>
+      <w>96</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>272</y>
+      <w>392</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>View
+--
++ initRelations() : void
++ getWidth() : int
++ getHeight() : int
+--
+- width : int
+- height : int
+bg=yellow
+
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>360</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>QTWidget
+layer=3
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>360</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>376</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+layer=2</panel_attributes>
+    <additional_attributes>230.0;10.0;230.0;160.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>376</y>
+      <w>216</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+layer=2</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;410.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>520</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-host: View*
+layer=2</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>552</y>
+      <w>176</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-outputView : outputView*
+layer=2</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;140.0;200.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>640</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-host : View*
+layer=2</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>432</y>
+      <w>264</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;
+layer=3</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>32</x>
+      <y>456</y>
+      <w>216</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;
+layer=2
+</panel_attributes>
+    <additional_attributes>250.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>440</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>IViewUpdate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>688</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>IDataUpdate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>688</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;
+layer=3</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>32</x>
+      <y>704</y>
+      <w>304</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;
+layer=2
+</panel_attributes>
+    <additional_attributes>360.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

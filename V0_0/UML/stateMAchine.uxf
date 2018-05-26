@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>616</x>
+      <y>0</y>
+      <w>16</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>0</y>
+      <w>64</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_INIT</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>544</x>
+      <y>48</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>ST_WAIT
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>544</x>
+      <y>248</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ST_LOAD
+--
+/entry : loadFile()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>136</y>
+      <w>184</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_LOAD_BUTTON_PRESSED</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>528</x>
+      <y>408</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ST_CONVERT
+--
+/entry : convertJSONtoGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>296</y>
+      <w>120</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_LOADING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>456</y>
+      <w>144</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_CONVERTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>528</x>
+      <y>568</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ST_COMPUTE
+--
+/entry : computeLogic()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>536</x>
+      <y>728</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ST_DRAW
+--
+/entry : drawGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>616</y>
+      <w>144</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_COMPUTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>688</x>
+      <y>104</y>
+      <w>368</w>
+      <h>672</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_DRAWING</panel_attributes>
+    <additional_attributes>40.0;820.0;310.0;820.0;310.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>120</y>
+      <w>80</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>70.0;200.0;10.0;200.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>104</y>
+      <w>168</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>170.0;420.0;10.0;420.0;10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>88</y>
+      <w>240</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>260.0;640.0;10.0;640.0;10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>72</y>
+      <w>320</w>
+      <h>704</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>370.0;860.0;10.0;860.0;10.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,516 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- qjsondocument.cpp -->
+  <title>QJsonDocument Class | Qt Core 5.10</title>
+  <link rel="stylesheet" type="text/css" href="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/online.css">
+  <link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip" rel="shortcut icon">
+  <link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-32x32.png" rel="icon" type="image/png">
+  <link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-16x16.png" rel="icon" type="image/png">
+  <script async="" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/async-ads.js"></script><script type="text/javascript" async="" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/cse.js"></script><script async="" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/analytics.js"></script><script type="text/javascript"> wpThemeFolder = 'http://qt.io/wp-content/themes/oneqt'; </script>
+  <script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/jquery.js"></script>
+  <script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/jquery-migrate.js"></script>
+  <script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/combo.js"></script>
+  <script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/main.js"></script>
+  <script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/extras.js"></script>
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54043535-2', 'qt.io');
+    ga('set', 'forceSSL', true);
+    ga('send', 'pageview');
+  </script>
+<script src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/jsapi" type="text/javascript"></script><link type="text/css" href="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/defaulten.css" rel="stylesheet"><link type="text/css" href="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/default.css" rel="stylesheet"><script type="text/javascript" src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/defaulten.js"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#FFFFFF;background-color:#FFFFFF}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#5CAA15;background-color:#5CAA15;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive{border-color:#E9E9E9;background-color:#E9E9E9}.gsc-tabHeader.gsc-tabhActive{border-top-color:#5CAA15;border-left-color:#E9E9E9;border-right-color:#E9E9E9;border-bottom-color:#FFFFFF;background-color:#FFFFFF}.gsc-tabsArea{border-color:#E9E9E9;}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#5CAA15}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#5CAA15}.gsc-cursor-page{color:#5CAA15}a.gsc-trailing-more-results:link{color:#5CAA15}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#404244}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#E9E9E9;background-color:#FFFFFF;color:#5CAA15}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#5CAA15;background-color:#FFFFFF;color:#46A2DA}.gsc-webResult.gsc-result.gsc-promotion{border-color:#404244;background-color:#FFFFFF}.gsc-completion-title{color:#5CAA15}.gsc-completion-snippet{color:#404244}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:5.5px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+<body>
+<div class="header" id="header">
+<header id="navbar" class=""><div class="cookies_yum">
+<div>
+<img src="QJsonDocument%20Class%20%20%20Qt%20Core%205.10_fichiers/cookie_small.png" align="left">
+<p class="close_button">
+                    We bake cookies in your browser for a better experience.  Using this site means that you consent. <a href="http://qt.io/terms-conditions/">Read More</a>
+</p>
+<a class="close"></a>
+</div>
+</div>
+<div class="container">
+    <div class="navbar-header cf">
+        <div id="mm-wrap">
+            <ul id="mm-helper" class="mm-menu" data-event="hover_intent" data-effect="fade" data-effect-speed="200" data-panel-width="#navbar" data-panel-inner-width="1280px" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="0">
+                <li class="mm-item"><a class="mm-link" href="http://blog.qt.io/" tabindex="0">Blog</a></li>
+                <li class="mm-item"><a class="mm-link" href="https://www.qt.io/contact-us/" tabindex="0">Contact Us</a></li>
+                <li class="mm-item"><a title="Qt Account" class="mm-link" href="https://account.qt.io/" tabindex="0"></a></li>
+            </ul>
+        </div>
+        <a class="navbar-oneQt retina" data-icon="" href="https://www.qt.io/"></a>
+    </div>
+</div>
+</header>
+</div>
+<div class="main">
+<div class="main-rounded">
+<div class="navigationbar">
+    <ul class="sub-navigation">
+        <li><a href="http://wiki.qt.io/">Wiki</a></li>
+        <li><a href="http://doc.qt.io/" class="active">Documentation</a></li>
+        <li><a href="http://forum.qt.io/">Forum</a></li>
+        <li><a href="https://bugreports.qt.io/">Bug Reports</a></li>
+        <li><a href="https://codereview.qt-project.org/">Code Review</a></li>
+    </ul>
+    <div id="main_title_bar">
+        <h1>Qt Documentation</h1>
+        <div class="search_bar">
+        <script>
+            (function() {
+                var cx = '003672281345882769388:1y4pftuq8so';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+        <div id="___gcse_0"><div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table class="gsc-search-box" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table style="width: 100%; padding: 0px;" id="gs_id50" class="gstl_50 " cellspacing="0" cellpadding="0"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" size="10" class="gsc-input" name="search" title="search" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; outline: medium none currentcolor; background: rgb(255, 255, 255) url(&quot;http://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px;" id="gsc-i-id1" dir="ltr" spellcheck="false" placeholder=" Search Documentation" type="text"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form></div></div>
+    </div></div>
+    <ul>
+<li><a href="http://doc.qt.io/qt-5/index.html">Qt 5.10</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtcore-index.html">Qt Core</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtcore-module.html">C++ Classes</a></li>
+<li>QJsonDocument</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+<div class="sidebar" style="transition: all 0.2s ease-out 0s; top: 0px;">
+<div class="toc"><div id="toc-toggle"></div>
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sectionlist normallist">
+<h2><strong>Resource Center</strong></h2>
+<p>Find webinars, use cases, tutorials, videos &amp; more at <a href="https://resources.qt.io/" target="_blank">resources.qt.io</a></p>
+</div><div class="sidebar-content" id="sidebar-content"><div id="sidebar-toggle"></div><h2 id="reference">Reference</h2><div class="sectionlist normallist">
+    <div class="heading">
+        <a name="reference"></a>
+        <h2 id="reference">Reference</h2>
+    </div>
+    <div class="indexboxcont indexboxbar">
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/classes.html">All Qt C++ Classes</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qmltypes.html">All QML Types</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qtmodules.html">All Qt Modules</a></li>
+            <li><a href="http://doc.qt.io/qtcreator/index.html">Qt Creator Manual</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/reference-overview.html">All Qt Reference Documentation</a></li>
+        </ul>
+    </div>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="getting-started"></a>
+        <h2 id="getting-started">Getting Started</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/gettingstarted.html">Getting Started with Qt</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qt5-intro.html">What's New in Qt 5</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples and Tutorials</a></li>
+        <li><a href="http://doc.qt.io/qt-5/supported-platforms.html">Supported Platforms</a></li>
+        <li><a href="http://doc.qt.io/qt-5/licensing.html">Qt Licensing</a></li>
+    </ul>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="overviews"></a>
+        <h2 id="overviews">Overviews</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-ui.html">User Interfaces</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-core.html">Core Internals</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-data-storage.html">Data Storage</a></li>
+        <li><a href="http://doc.qt.io/qt-5/multimediaoverview.html">Multimedia</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-network-connectivity.html">Networking and Connectivity</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-graphics.html">Graphics</a></li>
+        <li><a href="http://doc.qt.io/qt-5/mobiledevelopment.html">Mobile APIs</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qmlapplications.html">QML Applications</a></li>
+    </ul>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/overviews-main.html">All Qt Overviews</a></li>
+    </ul>
+</div>
+</div></div>
+<div class="context">
+<h1 class="title">QJsonDocument Class</h1>
+<!-- $$$QJsonDocument-brief -->
+<p>The <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> class provides a way to read and write JSON documents. <a href="#details">More...</a></p>
+<!-- @@@QJsonDocument -->
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;QJsonDocument&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += core</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></tbody></table></div><ul>
+<li><a href="http://doc.qt.io/qt-5/qjsondocument-members.html">List of all members, including inherited members</a></li>
+</ul>
+<p><b>Note:</b> All functions in this class are <a href="http://doc.qt.io/qt-5/threads-reentrancy.html">reentrant</a>.</p>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum">DataValidation</a></b> { Validate, BypassValidation }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#JsonFormat-enum">JsonFormat</a></b> { Indented, Compact }</td></tr>
+</tbody></table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument-1">QJsonDocument</a></b>(const QJsonObject &amp;<i>object</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument-2">QJsonDocument</a></b>(const QJsonArray &amp;<i>array</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument-3">QJsonDocument</a></b>(const QJsonDocument &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument-4">QJsonDocument</a></b>(QJsonDocument &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#dtor.QJsonDocument">~QJsonDocument</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonArray </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isArray">isArray</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isEmpty">isEmpty</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isNull">isNull</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isObject">isObject</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonObject </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#rawData">rawData</a></b>(int *<i>size</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#setArray">setArray</a></b>(const QJsonArray &amp;<i>array</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#setObject">setObject</a></b>(const QJsonObject &amp;<i>object</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#swap">swap</a></b>(QJsonDocument &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toBinaryData">toBinaryData</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toJson">toJson</a></b>(JsonFormat <i>format</i> = Indented) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toVariant">toVariant</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-not-eq">operator!=</a></b>(const QJsonDocument &amp;<i>other</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument &amp;</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-eq">operator=</a></b>(const QJsonDocument &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument &amp;</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-eq-1">operator=</a></b>(QJsonDocument &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-eq-eq">operator==</a></b>(const QJsonDocument &amp;<i>other</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QJsonValue </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-5b-5d">operator[]</a></b>(const QString &amp;<i>key</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QJsonValue </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-5b-5d-1">operator[]</a></b>(QLatin1String <i>key</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QJsonValue </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#operator-5b-5d-2">operator[]</a></b>(int <i>i</i>) const</td></tr>
+</tbody></table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a></b>(const QByteArray &amp;<i>data</i>, DataValidation <i>validation</i> = Validate)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromJson">fromJson</a></b>(const QByteArray &amp;<i>json</i>, QJsonParseError *<i>error</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromRawData">fromRawData</a></b>(const char *<i>data</i>, int <i>size</i>, DataValidation <i>validation</i> = Validate)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromVariant">fromVariant</a></b>(const QVariant &amp;<i>variant</i>)</td></tr>
+</tbody></table></div>
+<a name="details"></a>
+<!-- $$$QJsonDocument-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> class provides a way to read and write JSON documents.</p>
+<p><a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> 
+is a class that wraps a complete JSON document and can read and write 
+this document both from a UTF-8 encoded text based representation as 
+well as Qt's own binary format.</p>
+<p>A JSON document can be converted from its text-based representation to a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> using <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromJson">QJsonDocument::fromJson</a>(). <a href="http://doc.qt.io/qt-5/qjsondocument.html#toJson">toJson</a>()
+ converts it back to text. The parser is very fast and efficient and 
+converts the JSON to the binary representation used by Qt.</p>
+<p>Validity of the parsed document can be queried with !<a href="http://doc.qt.io/qt-5/qjsondocument.html#isNull">isNull</a>()</p>
+<p>A document can be queried as to whether it contains an array or an object using <a href="http://doc.qt.io/qt-5/qjsondocument.html#isArray">isArray</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#isObject">isObject</a>(). The array or object contained in the document can be retrieved using <a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a>() or <a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a>() and then read or manipulated.</p>
+<p>A document can also be created from a stored binary representation using <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a>() or <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromRawData">fromRawData</a>().</p>
+</div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/json.html">JSON Support in Qt</a> and <a href="http://doc.qt.io/qt-5/qtcore-json-savegame-example.html">JSON Save Game Example</a>.</p>
+<!-- @@@QJsonDocument -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DataValidation$$$Validate$$$BypassValidation -->
+<h3 class="fn" id="DataValidation-enum"><a name="DataValidation-enum"></a>enum QJsonDocument::<span class="name">DataValidation</span></h3>
+<p>This value is used to tell <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> whether to validate the binary data when converting to a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> using <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a>() or <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromRawData">fromRawData</a>().</p>
+<div class="table"><table class="valuelist"><tbody><tr class="odd" valign="top"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QJsonDocument::Validate</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">Validate the data before using it. This is the default.</td></tr>
+<tr><td class="topAlign"><code>QJsonDocument::BypassValidation</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">Bypasses
+ data validation. Only use if you received the data from a trusted place
+ and know it's valid, as using of invalid data can crash the 
+application.</td></tr>
+</tbody></table></div>
+<!-- @@@DataValidation -->
+<!-- $$$JsonFormat$$$Indented$$$Compact -->
+<h3 class="fn" id="JsonFormat-enum"><a name="JsonFormat-enum"></a>enum QJsonDocument::<span class="name">JsonFormat</span></h3>
+<p>This value defines the format of the JSON byte array produced when converting to a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> using <a href="http://doc.qt.io/qt-5/qjsondocument.html#toJson">toJson</a>().</p>
+<div class="table"><table class="valuelist"><tbody><tr class="odd" valign="top"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QJsonDocument::Indented</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">Defines human readable output as follows:<pre class="cpp">{
+    <span class="string">"Array"</span>: <span class="operator">[</span>
+        <span class="keyword">true</span><span class="operator">,</span>
+        <span class="number">999</span><span class="operator">,</span>
+        <span class="string">"string"</span>
+    <span class="operator">]</span><span class="operator">,</span>
+    <span class="string">"Key"</span>: <span class="string">"Value"</span><span class="operator">,</span>
+    <span class="string">"null"</span>: null
+}</pre>
+</td></tr>
+<tr><td class="topAlign"><code>QJsonDocument::Compact</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">Defines a compact output as follows:<pre class="cpp">{<span class="string">"Array"</span>:<span class="operator">[</span><span class="keyword">true</span><span class="operator">,</span><span class="number">999</span><span class="operator">,</span><span class="string">"string"</span><span class="operator">]</span><span class="operator">,</span><span class="string">"Key"</span>:<span class="string">"Value"</span><span class="operator">,</span><span class="string">"null"</span>:null}</pre>
+</td></tr>
+</tbody></table></div>
+<!-- @@@JsonFormat -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QJsonDocument[overload1]$$$QJsonDocument -->
+<h3 class="fn" id="QJsonDocument"><a name="QJsonDocument"></a>QJsonDocument::<span class="name">QJsonDocument</span>()</h3>
+<p>Constructs an empty and invalid document.</p>
+<!-- @@@QJsonDocument -->
+<!-- $$$QJsonDocument$$$QJsonDocumentconstQJsonObject& -->
+<h3 class="fn" id="QJsonDocument-1"><a name="QJsonDocument-1"></a>QJsonDocument::<span class="name">QJsonDocument</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a></span> &amp;<i>object</i>)</h3>
+<p>Creates a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from <i>object</i>.</p>
+<!-- @@@QJsonDocument -->
+<!-- $$$QJsonDocument$$$QJsonDocumentconstQJsonArray& -->
+<h3 class="fn" id="QJsonDocument-2"><a name="QJsonDocument-2"></a>QJsonDocument::<span class="name">QJsonDocument</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a></span> &amp;<i>array</i>)</h3>
+<p>Constructs a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from <i>array</i>.</p>
+<!-- @@@QJsonDocument -->
+<!-- $$$QJsonDocument$$$QJsonDocumentconstQJsonDocument& -->
+<h3 class="fn" id="QJsonDocument-3"><a name="QJsonDocument-3"></a>QJsonDocument::<span class="name">QJsonDocument</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;<i>other</i>)</h3>
+<p>Creates a copy of the <i>other</i> document.</p>
+<!-- @@@QJsonDocument -->
+<!-- $$$QJsonDocument$$$QJsonDocumentQJsonDocument&& -->
+<h3 class="fn" id="QJsonDocument-4"><a name="QJsonDocument-4"></a>QJsonDocument::<span class="name">QJsonDocument</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-constructs a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from <i>other</i>.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<!-- @@@QJsonDocument -->
+<!-- $$$~QJsonDocument[overload1]$$$~QJsonDocument -->
+<h3 class="fn" id="dtor.QJsonDocument"><a name="dtor.QJsonDocument"></a>QJsonDocument::<span class="name">~QJsonDocument</span>()</h3>
+<p>Deletes the document.</p>
+<p>Binary data set with <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromRawData">fromRawData</a> is not freed.</p>
+<!-- @@@~QJsonDocument -->
+<!-- $$$array[overload1]$$$array -->
+<h3 class="fn" id="array"><a name="array"></a><span class="type"><a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a></span> QJsonDocument::<span class="name">array</span>() const</h3>
+<p>Returns the <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a> contained in the document.</p>
+<p>Returns an empty array if the document contains an object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isArray">isArray</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a>(), and <a href="http://doc.qt.io/qt-5/qjsondocument.html#setArray">setArray</a>().</p>
+<!-- @@@array -->
+<!-- $$$fromBinaryData[overload1]$$$fromBinaryDataconstQByteArray&DataValidation -->
+<h3 class="fn" id="fromBinaryData"><a name="fromBinaryData"></a><code>[static] </code><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromBinaryData</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> &amp;<i>data</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum">DataValidation</a></span> <i>validation</i> = Validate)</h3>
+<p>Creates a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from <i>data</i>.</p>
+<p><i>validation</i> decides whether the data is checked for validity before being used. By default the data is validated. If the <i>data</i> is not valid, the method returns a null document.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toBinaryData">toBinaryData</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromRawData">fromRawData</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#isNull">isNull</a>(), and <a href="http://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum">DataValidation</a>.</p>
+<!-- @@@fromBinaryData -->
+<!-- $$$fromJson[overload1]$$$fromJsonconstQByteArray&QJsonParseError* -->
+<h3 class="fn" id="fromJson"><a name="fromJson"></a><code>[static] </code><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromJson</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> &amp;<i>json</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qjsonparseerror.html">QJsonParseError</a></span> *<i>error</i> = Q_NULLPTR)</h3>
+<p>Parses <i>json</i> as a UTF-8 encoded JSON document, and creates a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from it.</p>
+<p>Returns a valid (non-null) <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> if the parsing succeeds. If it fails, the returned document will be null, and the optional <i>error</i> variable will contain further details about the error.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toJson">toJson</a>(), <a href="http://doc.qt.io/qt-5/qjsonparseerror.html">QJsonParseError</a>, and <a href="http://doc.qt.io/qt-5/qjsondocument.html#isNull">isNull</a>().</p>
+<!-- @@@fromJson -->
+<!-- $$$fromRawData[overload1]$$$fromRawDataconstchar*intDataValidation -->
+<h3 class="fn" id="fromRawData"><a name="fromRawData"></a><code>[static] </code><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromRawData</span>(const <span class="type">char</span> *<i>data</i>, <span class="type">int</span> <i>size</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum">DataValidation</a></span> <i>validation</i> = Validate)</h3>
+<p>Creates a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> that uses the first <i>size</i> bytes from <i>data</i>. It assumes <i>data</i> contains a binary encoded JSON document. The created document does not take ownership of <i>data</i> and the caller has to guarantee that <i>data</i> will not be deleted or modified as long as any <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a>, <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a> or <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a> still references the data.</p>
+<p><i>data</i> has to be aligned to a 4 byte boundary.</p>
+<p><i>validation</i> decides whether the data is checked for validity before being used. By default the data is validated. If the <i>data</i> is not valid, the method returns a null document.</p>
+<p>Returns a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> representing the data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#rawData">rawData</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#isNull">isNull</a>(), and <a href="http://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum">DataValidation</a>.</p>
+<!-- @@@fromRawData -->
+<!-- $$$fromVariant[overload1]$$$fromVariantconstQVariant& -->
+<h3 class="fn" id="fromVariant"><a name="fromVariant"></a><code>[static] </code><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromVariant</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> &amp;<i>variant</i>)</h3>
+<p>Creates a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> from the <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> <i>variant</i>.</p>
+<p>If the <i>variant</i> contains any other type than a <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantMap-typedef">QVariantMap</a>, <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a>, <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a> or <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a>, the returned document is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#toVariant">toVariant</a>().</p>
+<!-- @@@fromVariant -->
+<!-- $$$isArray[overload1]$$$isArray -->
+<h3 class="fn" id="isArray"><a name="isArray"></a><span class="type">bool</span> QJsonDocument::<span class="name">isArray</span>() const</h3>
+<p>Returns <code>true</code> if the document contains an array.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#isObject">isObject</a>().</p>
+<!-- @@@isArray -->
+<!-- $$$isEmpty[overload1]$$$isEmpty -->
+<h3 class="fn" id="isEmpty"><a name="isEmpty"></a><span class="type">bool</span> QJsonDocument::<span class="name">isEmpty</span>() const</h3>
+<p>Returns <code>true</code> if the document doesn't contain any data.</p>
+<!-- @@@isEmpty -->
+<!-- $$$isNull[overload1]$$$isNull -->
+<h3 class="fn" id="isNull"><a name="isNull"></a><span class="type">bool</span> QJsonDocument::<span class="name">isNull</span>() const</h3>
+<p>returns <code>true</code> if this document is null.</p>
+<p>Null documents are documents created through the default constructor.</p>
+<p>Documents created from UTF-8 encoded text or the binary format are 
+validated during parsing. If validation fails, the returned document 
+will also be null.</p>
+<!-- @@@isNull -->
+<!-- $$$isObject[overload1]$$$isObject -->
+<h3 class="fn" id="isObject"><a name="isObject"></a><span class="type">bool</span> QJsonDocument::<span class="name">isObject</span>() const</h3>
+<p>Returns <code>true</code> if the document contains an object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#isArray">isArray</a>().</p>
+<!-- @@@isObject -->
+<!-- $$$object[overload1]$$$object -->
+<h3 class="fn" id="object"><a name="object"></a><span class="type"><a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a></span> QJsonDocument::<span class="name">object</span>() const</h3>
+<p>Returns the <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a> contained in the document.</p>
+<p>Returns an empty object if the document contains an array.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#isObject">isObject</a>(), <a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a>(), and <a href="http://doc.qt.io/qt-5/qjsondocument.html#setObject">setObject</a>().</p>
+<!-- @@@object -->
+<!-- $$$rawData[overload1]$$$rawDataint* -->
+<h3 class="fn" id="rawData"><a name="rawData"></a>const <span class="type">char</span> *QJsonDocument::<span class="name">rawData</span>(<span class="type">int</span> *<i>size</i>) const</h3>
+<p>Returns the raw binary representation of the data <i>size</i> will contain the size of the returned data.</p>
+<p>This method is useful to e.g. stream the JSON document in it's binary form to a file.</p>
+<!-- @@@rawData -->
+<!-- $$$setArray[overload1]$$$setArrayconstQJsonArray& -->
+<h3 class="fn" id="setArray"><a name="setArray"></a><span class="type">void</span> QJsonDocument::<span class="name">setArray</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a></span> &amp;<i>array</i>)</h3>
+<p>Sets <i>array</i> as the main object of this document.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#setObject">setObject</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a>().</p>
+<!-- @@@setArray -->
+<!-- $$$setObject[overload1]$$$setObjectconstQJsonObject& -->
+<h3 class="fn" id="setObject"><a name="setObject"></a><span class="type">void</span> QJsonDocument::<span class="name">setObject</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a></span> &amp;<i>object</i>)</h3>
+<p>Sets <i>object</i> as the main object of this document.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#setArray">setArray</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a>().</p>
+<!-- @@@setObject -->
+<!-- $$$swap[overload1]$$$swapQJsonDocument& -->
+<h3 class="fn" id="swap"><a name="swap"></a><span class="type">void</span> QJsonDocument::<span class="name">swap</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;<i>other</i>)</h3>
+<p>Swaps the document <i>other</i> with this. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<!-- @@@swap -->
+<!-- $$$toBinaryData[overload1]$$$toBinaryData -->
+<h3 class="fn" id="toBinaryData"><a name="toBinaryData"></a><span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> QJsonDocument::<span class="name">toBinaryData</span>() const</h3>
+<p>Returns a binary representation of the document.</p>
+<p>The binary representation is also the native format used internally 
+in Qt, and is very efficient and fast to convert to and from.</p>
+<p>The binary format can be stored on disk and interchanged with other applications or computers. <a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a>() can be used to convert it back into a JSON document.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromBinaryData">fromBinaryData</a>().</p>
+<!-- @@@toBinaryData -->
+<!-- $$$toJson[overload1]$$$toJsonJsonFormat -->
+<h3 class="fn" id="toJson"><a name="toJson"></a><span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> QJsonDocument::<span class="name">toJson</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#JsonFormat-enum">JsonFormat</a></span> <i>format</i> = Indented) const</h3>
+<p>Converts the <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> to a UTF-8 encoded JSON document in the provided <i>format</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromJson">fromJson</a>() and <a href="http://doc.qt.io/qt-5/qjsondocument.html#JsonFormat-enum">JsonFormat</a>.</p>
+<!-- @@@toJson -->
+<!-- $$$toVariant[overload1]$$$toVariant -->
+<h3 class="fn" id="toVariant"><a name="toVariant"></a><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> QJsonDocument::<span class="name">toVariant</span>() const</h3>
+<p>Returns a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> representing the Json document.</p>
+<p>The returned variant will be a <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a> if the document is a <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a> and a <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantMap-typedef">QVariantMap</a> if the document is a <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsondocument.html#fromVariant">fromVariant</a>() and <a href="http://doc.qt.io/qt-5/qjsonvalue.html#toVariant">QJsonValue::toVariant</a>().</p>
+<!-- @@@toVariant -->
+<!-- $$$operator!=[overload1]$$$operator!=constQJsonDocument& -->
+<h3 class="fn" id="operator-not-eq"><a name="operator-not-eq"></a><span class="type">bool</span> QJsonDocument::<span class="name">operator!=</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;<i>other</i>) const</h3>
+<p>returns <code>true</code> if <i>other</i> is not equal to this document</p>
+<!-- @@@operator!= -->
+<!-- $$$operator=[overload1]$$$operator=constQJsonDocument& -->
+<h3 class="fn" id="operator-eq"><a name="operator-eq"></a><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;QJsonDocument::<span class="name">operator=</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;<i>other</i>)</h3>
+<p>Assigns the <i>other</i> document to this <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a>. Returns a reference to this object.</p>
+<!-- @@@operator= -->
+<!-- $$$operator=$$$operator=QJsonDocument&& -->
+<h3 class="fn" id="operator-eq-1"><a name="operator-eq-1"></a><span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;QJsonDocument::<span class="name">operator=</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-assigns <i>other</i> to this document.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<!-- @@@operator= -->
+<!-- $$$operator==[overload1]$$$operator==constQJsonDocument& -->
+<h3 class="fn" id="operator-eq-eq"><a name="operator-eq-eq"></a><span class="type">bool</span> QJsonDocument::<span class="name">operator==</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qjsondocument.html#QJsonDocument">QJsonDocument</a></span> &amp;<i>other</i>) const</h3>
+<p>Returns <code>true</code> if the <i>other</i> document is equal to this document.</p>
+<!-- @@@operator== -->
+<!-- $$$operator[][overload1]$$$operator[]constQString& -->
+<h3 class="fn" id="operator-5b-5d"><a name="operator-5b-5d"></a>const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a></span> QJsonDocument::<span class="name">operator[]</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>key</i>) const</h3>
+<p>Returns a <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a> representing the value for the key <i>key</i>.</p>
+<p>Equivalent to calling <a href="http://doc.qt.io/qt-5/qjsondocument.html#object">object</a>().value(key).</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a> is <a href="http://doc.qt.io/qt-5/qjsonvalue.html#Type-enum">QJsonValue::Undefined</a> if the key does not exist, or if <a href="http://doc.qt.io/qt-5/qjsondocument.html#isObject">isObject</a>() is false.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a>, <a href="http://doc.qt.io/qt-5/qjsonvalue.html#isUndefined">QJsonValue::isUndefined</a>(), and <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a>.</p>
+<!-- @@@operator[] -->
+<!-- $$$operator[]$$$operator[]QLatin1String -->
+<h3 class="fn" id="operator-5b-5d-1"><a name="operator-5b-5d-1"></a>const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a></span> QJsonDocument::<span class="name">operator[]</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a></span> <i>key</i>) const</h3>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<!-- @@@operator[] -->
+<!-- $$$operator[]$$$operator[]int -->
+<h3 class="fn" id="operator-5b-5d-2"><a name="operator-5b-5d-2"></a>const <span class="type"><a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a></span> QJsonDocument::<span class="name">operator[]</span>(<span class="type">int</span> <i>i</i>) const</h3>
+<p>Returns a <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a> representing the value for index <i>i</i>.</p>
+<p>Equivalent to calling <a href="http://doc.qt.io/qt-5/qjsondocument.html#array">array</a>().at(i).</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a> is <a href="http://doc.qt.io/qt-5/qjsonvalue.html#Type-enum">QJsonValue::Undefined</a>, if <i>i</i> is out of bounds, or if <a href="http://doc.qt.io/qt-5/qjsondocument.html#isArray">isArray</a>() is false.</p>
+<p>This function was introduced in  Qt 5.10.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a>, <a href="http://doc.qt.io/qt-5/qjsonvalue.html#isUndefined">QJsonValue::isUndefined</a>(), and <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a>.</p>
+<!-- @@@operator[] -->
+</div>
+   </div>
+   <p class="copy-notice">
+   <acronym title="Copyright">©</acronym> 2018 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a>
+ as published by the Free Software Foundation.     Qt and respective 
+logos are trademarks of The Qt Company Ltd.     in Finland and/or other 
+countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer"><footer id="footerbar">
+<div class="footer-main">
+<div class="container clearfix">
+<nav class="footer-nav clearfix">
+<div class="menu-footer-menu-container"><ul class="menu" id="menu-footer-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1403" id="menu-item-1403"><a href="http://qt.io/download/">Download</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11677" id="menu-item-11677"><a href="http://qt.io/download/">Start for Free</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15840" id="menu-item-15840"><a href="http://qt.io/download-eval-for-applications-step-2/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15841" id="menu-item-15841"><a href="http://qt.io/request-eval-for-devices-step-2/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15838" id="menu-item-15838"><a href="http://qt.io/download-open-source/">Qt Open Source</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415" id="menu-item-1415"><a href="http://qt.io/terms-conditions/">Terms &amp; Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14184" id="menu-item-14184"><a href="http://qt.io/FAQ/">Licensing FAQ</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1355" id="menu-item-1355"><a href="http://qt.io/product/">Product</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12576" id="menu-item-12576"><a href="http://qt.io/product/">Qt in Use</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15848" id="menu-item-15848"><a href="http://qt.io/application-development/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1357" id="menu-item-1357"><a href="http://qt.io/qt-for-device-creation/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356" id="menu-item-1356"><a href="http://qt.io/qt-features/">Commercial Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15850" id="menu-item-15850"><a href="http://qt.io/ide/">Qt Creator IDE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1359" id="menu-item-1359"><a href="http://qt.io/qt-quick/">Qt Quick</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1347" id="menu-item-1347"><a href="http://qt.io/services/">Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4028" id="menu-item-4028"><a href="http://qt.io/services-technology-evaluation/">Technology Evaluation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4027" id="menu-item-4027"><a href="http://qt.io/services-proof-of-concept/">Proof of Concept</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4026" id="menu-item-4026"><a href="http://qt.io/services-design-implementation/">Design &amp; Implementation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4025" id="menu-item-4025"><a href="http://qt.io/services-productization/">Productization</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15863" id="menu-item-15863"><a href="http://qt.io/qt-training/">Qt Training</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4779" id="menu-item-4779"><a href="https://qt.io/partners/">Partner Network</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-33" id="menu-item-33"><a href="http://qt.io/developers/">Developers</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365" id="menu-item-1365"><a href="http://doc.qt.io/">Documentation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364" id="menu-item-1364"><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples &amp; Tutorials</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1363" id="menu-item-1363"><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1361" id="menu-item-1361"><a href="http://wiki.qt.io/">Wiki</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1360" id="menu-item-1360"><a href="http://forum.qt.io/">Forums</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15922" id="menu-item-15922"><a href="http://wiki.qt.io/contribute">Contribute to Qt</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1350" id="menu-item-1350"><a href="http://qt.io/about-us/">About us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1353" id="menu-item-1353"><a href="http://qt.io/events/">Training &amp; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354" id="menu-item-1354"><a href="http://qt.io/resource-center/">Resource Center</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12285" id="menu-item-12285"><a href="http://qt.io/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349" id="menu-item-1349"><a href="http://qt.io/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11676" id="menu-item-11676"><a href="http://qt.io/locations/">Locations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15911" id="menu-item-15911"><a href="http://qt.io/contact-us">Contact Us</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<a class="theqtcompany" href="http://qt.io/about-us/" target="_blank"></a>
+<div class="footer-social clearfix">
+<a href="https://facebook.com/qt" target="_blank" title="Qt on Facebook"><i class="icon-facebook"></i></a>
+<a href="https://twitter.com/qtproject" target="_blank" title="Qt on Twitter"><i class="icon-twitter"></i></a>
+<a href="https://www.youtube.com/user/QtStudios" target="_blank" title="Qt videos on YouTube"><i class="icon-youtube"></i></a>
+</div>
+</div>
+</div>
+<div class="disclaimer">
+<div class="container clearfix no_discs">
+<ul class="right clearfix" id="menu-footer-submenu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1795" id="menu-item-1795"><a href="https://account.qt.io/login" title="Sign into your account.">Sign In</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10375" id="menu-item-10375"><a href="mailto:feedback@theqtcompany.com?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom" id="footer-copyright"><a href="http://qt.io/about-us/">© 2018 The Qt Company</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+
+
+<table style="width: 623px; display: none; top: 151px; left: 651px; position: absolute;" class="gstl_50 gssb_c" cellspacing="0" cellpadding="0"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body></html>

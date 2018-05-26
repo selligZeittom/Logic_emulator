@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\factory.o
+./release\data.o
+./release\view.o
+./release\logic.o
+./release\outputview.o
+./release\listview.o
+./release\inputview.o
+./release\moc_view.o
+./release\moc_outputview.o
+./release\moc_listview.o
+./release\moc_inputview.o
+);

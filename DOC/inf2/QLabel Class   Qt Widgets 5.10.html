@@ -1,0 +1,753 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<!-- qlabel.cpp -->
+<title>QLabel Class | Qt Widgets 5.10</title>
+<link href="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/online.css" rel="stylesheet" type="text/css">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip" rel="shortcut icon">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-32x32.png" rel="icon" type="image/png">
+<link href="http://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-16x16.png" rel="icon" type="image/png">
+<script async="" src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/async-ads.js"></script><script type="text/javascript" async="" src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/cse.js"></script><script async="" src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/analytics.js"></script><script type="text/javascript"> wpThemeFolder = 'http://qt.io/wp-content/themes/oneqt'; </script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jquery.js" type="text/javascript"></script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jquery-migrate.js" type="text/javascript"></script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/combo.js" type="text/javascript"></script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/main.js" type="text/javascript"></script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/extras.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54043535-2', 'qt.io');
+    ga('set', 'forceSSL', true);
+    ga('send', 'pageview');
+  </script>
+<script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/prettify.js" type="text/javascript"></script><script src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/jsapi" type="text/javascript"></script><link type="text/css" href="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/defaulten.css" rel="stylesheet"><link type="text/css" href="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/default.css" rel="stylesheet"><script type="text/javascript" src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/defaulten.js"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#FFFFFF;background-color:#FFFFFF}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#5CAA15;background-color:#5CAA15;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive{border-color:#E9E9E9;background-color:#E9E9E9}.gsc-tabHeader.gsc-tabhActive{border-top-color:#5CAA15;border-left-color:#E9E9E9;border-right-color:#E9E9E9;border-bottom-color:#FFFFFF;background-color:#FFFFFF}.gsc-tabsArea{border-color:#E9E9E9;}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#5CAA15}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#46A2DA}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#5CAA15}.gsc-cursor-page{color:#5CAA15}a.gsc-trailing-more-results:link{color:#5CAA15}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#404244}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{color:#5CAA15}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#E9E9E9;background-color:#FFFFFF;color:#5CAA15}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#5CAA15;background-color:#FFFFFF;color:#46A2DA}.gsc-webResult.gsc-result.gsc-promotion{border-color:#404244;background-color:#FFFFFF}.gsc-completion-title{color:#5CAA15}.gsc-completion-snippet{color:#404244}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:5.5px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+<body onload="prettyPrint()">
+<div class="header" id="header">
+<header class="" id="navbar"><div class="cookies_yum">
+<div>
+<img src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/cookie_small.png" align="left">
+<p class="close_button">
+                    We bake cookies in your browser for a better experience.  Using this site means that you consent. <a href="http://qt.io/terms-conditions/">Read More</a>
+</p>
+<a class="close"></a>
+</div>
+</div>
+<div class="container">
+    <div class="navbar-header cf">
+        <div id="mm-wrap">
+            <ul id="mm-helper" class="mm-menu" data-event="hover_intent" data-effect="fade" data-effect-speed="200" data-panel-width="#navbar" data-panel-inner-width="1280px" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="0">
+                <li class="mm-item"><a class="mm-link" href="http://blog.qt.io/" tabindex="0">Blog</a></li>
+                <li class="mm-item"><a class="mm-link" href="https://www.qt.io/contact-us/" tabindex="0">Contact Us</a></li>
+                <li class="mm-item"><a title="Qt Account" class="mm-link" href="https://account.qt.io/" tabindex="0"></a></li>
+            </ul>
+        </div>
+        <a class="navbar-oneQt retina" data-icon="" href="https://www.qt.io/"></a>
+    </div>
+</div>
+</header>
+</div>
+<div class="main">
+<div class="main-rounded">
+<div class="navigationbar">
+<ul class="sub-navigation">
+<li><a href="http://wiki.qt.io/">Wiki</a></li>
+<li><a class="active" href="http://doc.qt.io/">Documentation</a></li>
+<li><a href="http://forum.qt.io/">Forum</a></li>
+<li><a href="https://bugreports.qt.io/">Bug Reports</a></li>
+<li><a href="https://codereview.qt-project.org/">Code Review</a></li>
+</ul>
+<div id="main_title_bar">
+<h1>Qt Documentation</h1>
+<div class="search_bar">
+<script>
+            (function() {
+                var cx = '003672281345882769388:1y4pftuq8so';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+<div id="___gcse_0"><div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table class="gsc-search-box" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table style="width: 100%; padding: 0px;" id="gs_id50" class="gstl_50 " cellspacing="0" cellpadding="0"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" size="10" class="gsc-input" name="search" title="search" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; outline: medium none currentcolor; background: rgb(255, 255, 255) url(&quot;http://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px;" id="gsc-i-id1" dir="ltr" spellcheck="false" placeholder=" Search Documentation" type="text"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form></div></div>
+</div></div>
+<ul>
+<li><a href="http://doc.qt.io/qt-5/index.html">Qt 5.10</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtwidgets-index.html">Qt Widgets</a></li>
+<li><a href="http://doc.qt.io/qt-5/qtwidgets-module.html">C++ Classes</a></li>
+<li>QLabel</li>
+</ul>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar" style="transition: all 0.2s ease-out 0s; top: 0px;">
+<div class="toc"><div id="toc-toggle"></div>
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sectionlist normallist">
+<h2><strong>Resource Center</strong></h2>
+<p>Find webinars, use cases, tutorials, videos &amp; more at <a href="https://resources.qt.io/" target="_blank">resources.qt.io</a></p>
+</div><div class="sidebar-content" id="sidebar-content"><div id="sidebar-toggle"></div><h2 id="reference">Reference</h2><div class="sectionlist normallist">
+    <div class="heading">
+        <a name="reference"></a>
+        <h2 id="reference">Reference</h2>
+    </div>
+    <div class="indexboxcont indexboxbar">
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/classes.html">All Qt C++ Classes</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qmltypes.html">All QML Types</a></li>
+            <li><a href="http://doc.qt.io/qt-5/qtmodules.html">All Qt Modules</a></li>
+            <li><a href="http://doc.qt.io/qtcreator/index.html">Qt Creator Manual</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://doc.qt.io/qt-5/reference-overview.html">All Qt Reference Documentation</a></li>
+        </ul>
+    </div>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="getting-started"></a>
+        <h2 id="getting-started">Getting Started</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/gettingstarted.html">Getting Started with Qt</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qt5-intro.html">What's New in Qt 5</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples and Tutorials</a></li>
+        <li><a href="http://doc.qt.io/qt-5/supported-platforms.html">Supported Platforms</a></li>
+        <li><a href="http://doc.qt.io/qt-5/licensing.html">Qt Licensing</a></li>
+    </ul>
+</div>
+<div class="sectionlist normallist">
+    <div class="heading">
+        <a name="overviews"></a>
+        <h2 id="overviews">Overviews</h2>
+    </div>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-ui.html">User Interfaces</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-core.html">Core Internals</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-data-storage.html">Data Storage</a></li>
+        <li><a href="http://doc.qt.io/qt-5/multimediaoverview.html">Multimedia</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-network-connectivity.html">Networking and Connectivity</a></li>
+        <li><a href="http://doc.qt.io/qt-5/topics-graphics.html">Graphics</a></li>
+        <li><a href="http://doc.qt.io/qt-5/mobiledevelopment.html">Mobile APIs</a></li>
+        <li><a href="http://doc.qt.io/qt-5/qmlapplications.html">QML Applications</a></li>
+    </ul>
+    <ul>
+        <li><a href="http://doc.qt.io/qt-5/overviews-main.html">All Qt Overviews</a></li>
+    </ul>
+</div>
+</div></div>
+<div class="context">
+<h1 class="title">QLabel Class</h1>
+<!-- $$$QLabel-brief -->
+<p>The <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> widget provides a text or image display. <a href="#details">More...</a></p>
+<!-- @@@QLabel -->
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;QLabel&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += widgets</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></td></tr></tbody></table></div><ul>
+<li><a href="http://doc.qt.io/qt-5/qlabel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary">
+<tbody><tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a></b> : Qt::Alignment</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#hasSelectedText-prop">hasSelectedText</a></b> : const bool</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">indent</a></b> : int</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#margin-prop">margin</a></b> : int</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#openExternalLinks-prop">openExternalLinks</a></b> : bool</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#pixmap-prop">pixmap</a></b> : QPixmap</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#scaledContents-prop">scaledContents</a></b> : bool</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#selectedText-prop">selectedText</a></b> : const QString</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">text</a></b> : QString</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">textFormat</a></b> : Qt::TextFormat</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a></b> : Qt::TextInteractionFlags</li>
+<li class="fn"><b><a href="http://doc.qt.io/qt-5/qlabel.html#wordWrap-prop">wordWrap</a></b> : bool</li>
+</ul>
+</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">6 properties inherited from <a href="http://doc.qt.io/qt-5/qframe.html#properties">QFrame</a></li>
+<li class="fn">59 properties inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#properties">QWidget</a></li>
+<li class="fn">1 property inherited from <a href="http://doc.qt.io/qt-5/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel">QLabel</a></b>(QWidget *<i>parent</i> = Q_NULLPTR, Qt::WindowFlags <i>f</i> = Qt::WindowFlags())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel-1">QLabel</a></b>(const QString &amp;<i>text</i>, QWidget *<i>parent</i> = Q_NULLPTR, Qt::WindowFlags <i>f</i> = Qt::WindowFlags())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#dtor.QLabel">~QLabel</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::Alignment </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#buddy">buddy</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#scaledContents-prop">hasScaledContents</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#hasSelectedText-prop">hasSelectedText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">indent</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#margin-prop">margin</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMovie *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#movie">movie</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#openExternalLinks-prop">openExternalLinks</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QPicture *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#picture">picture</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QPixmap *</td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#pixmap-prop">pixmap</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#selectedText-prop">selectedText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#selectionStart">selectionStart</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">setAlignment</a></b>(<i>Qt::Alignment</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a></b>(QWidget *<i>buddy</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">setIndent</a></b>(<i>int</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#margin-prop">setMargin</a></b>(<i>int</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#openExternalLinks-prop">setOpenExternalLinks</a></b>(bool <i>open</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#scaledContents-prop">setScaledContents</a></b>(<i>bool</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setSelection">setSelection</a></b>(int <i>start</i>, int <i>length</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">setTextFormat</a></b>(<i>Qt::TextFormat</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">setTextInteractionFlags</a></b>(Qt::TextInteractionFlags <i>flags</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#wordWrap-prop">setWordWrap</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">text</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::TextFormat </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">textFormat</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::TextInteractionFlags </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#wordWrap-prop">wordWrap</a></b>() const</td></tr>
+</tbody></table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#heightForWidth">heightForWidth</a></b>(int <i>w</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QSize </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#minimumSizeHint">minimumSizeHint</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QSize </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#sizeHint">sizeHint</a></b>() const</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="http://doc.qt.io/qt-5/qframe.html#public-functions">QFrame</a></li>
+<li class="fn">214 public functions inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#public-functions">QWidget</a></li>
+<li class="fn">32 public functions inherited from <a href="http://doc.qt.io/qt-5/qobject.html#public-functions">QObject</a></li>
+<li class="fn">14 public functions inherited from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#public-functions">QPaintDevice</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#clear">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setMovie">setMovie</a></b>(QMovie *<i>movie</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setNum">setNum</a></b>(int <i>num</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setNum-1">setNum</a></b>(double <i>num</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#setPicture">setPicture</a></b>(const QPicture &amp;<i>picture</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#pixmap-prop">setPixmap</a></b>(<i>const QPixmap &amp;</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a></b>(<i>const QString &amp;</i>)</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">19 public slots inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#public-slots">QWidget</a></li>
+<li class="fn">1 public slot inherited from <a href="http://doc.qt.io/qt-5/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#linkActivated">linkActivated</a></b>(const QString &amp;<i>link</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#linkHovered">linkHovered</a></b>(const QString &amp;<i>link</i>)</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">3 signals inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#signals">QWidget</a></li>
+<li class="fn">2 signals inherited from <a href="http://doc.qt.io/qt-5/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#changeEvent">changeEvent</a></b>(QEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#contextMenuEvent">contextMenuEvent</a></b>(QContextMenuEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#event">event</a></b>(QEvent *<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#focusInEvent">focusInEvent</a></b>(QFocusEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#focusNextPrevChild">focusNextPrevChild</a></b>(bool <i>next</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#focusOutEvent">focusOutEvent</a></b>(QFocusEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#keyPressEvent">keyPressEvent</a></b>(QKeyEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#mouseMoveEvent">mouseMoveEvent</a></b>(QMouseEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#mousePressEvent">mousePressEvent</a></b>(QMouseEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#mouseReleaseEvent">mouseReleaseEvent</a></b>(QMouseEvent *<i>ev</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="http://doc.qt.io/qt-5/qlabel.html#paintEvent">paintEvent</a></b>(<i>QPaintEvent *</i>)</td></tr>
+</tbody></table></div>
+<ul>
+<li class="fn">4 protected functions inherited from <a href="http://doc.qt.io/qt-5/qframe.html#protected-functions">QFrame</a></li>
+<li class="fn">35 protected functions inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#protected-functions">QWidget</a></li>
+<li class="fn">9 protected functions inherited from <a href="http://doc.qt.io/qt-5/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">1 protected function inherited from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#protected-functions">QPaintDevice</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">5 static public members inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#static-public-members">QWidget</a></li>
+<li class="fn">11 static public members inherited from <a href="http://doc.qt.io/qt-5/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">4 protected functions inherited from <a href="http://doc.qt.io/qt-5/qframe.html#protected-functions">QFrame</a></li>
+<li class="fn">35 protected functions inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#protected-functions">QWidget</a></li>
+<li class="fn">9 protected functions inherited from <a href="http://doc.qt.io/qt-5/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">1 protected function inherited from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#protected-functions">QPaintDevice</a></li>
+<li class="fn">1 protected slot inherited from <a href="http://doc.qt.io/qt-5/qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QLabel-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> widget provides a text or image display.</p>
+<p class="centerAlign"><img alt="" src="QLabel%20Class%20%20%20Qt%20Widgets%205.10_fichiers/windows-label.png"></p><p><a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a>
+ is used for displaying text or an image. No user interaction 
+functionality is provided. The visual appearance of the label can be 
+configured in various ways, and it can be used for specifying a focus 
+mnemonic key for another widget.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> can contain any of the following content types:</p>
+<div class="table"><table class="generic">
+<thead><tr class="qt-style"><th>Content</th><th>Setting</th></tr></thead>
+<tbody><tr class="odd" valign="top"><td>Plain text</td><td>Pass a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> to <a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>().</td></tr>
+<tr class="even" valign="top"><td>Rich text</td><td>Pass a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> that contains rich text to <a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>().</td></tr>
+<tr class="odd" valign="top"><td>A pixmap</td><td>Pass a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> to <a href="http://doc.qt.io/qt-5/qlabel.html#pixmap-prop">setPixmap</a>().</td></tr>
+<tr class="even" valign="top"><td>A movie</td><td>Pass a <a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a> to <a href="http://doc.qt.io/qt-5/qlabel.html#setMovie">setMovie</a>().</td></tr>
+<tr class="odd" valign="top"><td>A number</td><td>Pass an <i>int</i> or a <i>double</i> to <a href="http://doc.qt.io/qt-5/qlabel.html#setNum">setNum</a>(), which converts the number to plain text.</td></tr>
+<tr class="even" valign="top"><td>Nothing</td><td>The same as an empty plain text. This is the default. Set by <a href="http://doc.qt.io/qt-5/qlabel.html#clear">clear</a>().</td></tr>
+</tbody></table></div>
+<p><b>Warning:</b> When passing a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> to the constructor or calling <a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>(), make sure to sanitize your input, as <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> tries to guess whether it displays the text as plain text or as rich text, a subset of HTML 4 markup. You may want to call <a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">setTextFormat</a>()
+ explicitly, e.g. in case you expect the text to be in plain format but 
+cannot control the text source (for instance when displaying data loaded
+ from the Web).</p>
+<p>When the content is changed using any of these functions, any previous content is cleared.</p>
+<p>By default, labels display <a href="http://doc.qt.io/qt-5/stylesheet-reference.html#alignment">left-aligned, vertically-centered</a> text and images, where any tabs in the text to be displayed are <a href="http://doc.qt.io/qt-5/qt.html#TextFlag-enum">automatically expanded</a>. However, the look of a <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> can be adjusted and fine-tuned in several ways.</p>
+<p>The positioning of the content within the <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> widget area can be tuned with <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">setAlignment</a>() and <a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">setIndent</a>(). Text content can also wrap lines along word boundaries with <a href="http://doc.qt.io/qt-5/qlabel.html#wordWrap-prop">setWordWrap</a>().
+ For example, this code sets up a sunken panel with a two-line text in 
+the bottom right corner (both lines being flush with the right side of 
+the label):</p>
+<div class="pre"><pre class="cpp prettyprint prettyprinted" style=""><span class="wrap" title="Toggle line wrap" style="display: none;"></span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">label </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pun">(</span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+label</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setFrameStyle</span><span class="pun">(</span><span class="type"><a href="http://doc.qt.io/qt-5/qframe.html#QFrame"><span class="typ">QFrame</span></a></span><span class="operator"><span class="pun">::</span></span><span class="typ">Panel</span><span class="pln"> </span><span class="operator"><span class="pun">|</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qframe.html#QFrame"><span class="typ">QFrame</span></a></span><span class="operator"><span class="pun">::</span></span><span class="typ">Sunken</span><span class="pun">);</span><span class="pln">
+label</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setText</span><span class="pun">(</span><span class="string"><span class="str">"first line\nsecond line"</span></span><span class="pun">);</span><span class="pln">
+label</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setAlignment</span><span class="pun">(</span><span class="type"><a href="http://doc.qt.io/qt-5/qt.html"><span class="typ">Qt</span></a></span><span class="operator"><span class="pun">::</span></span><span class="typ">AlignBottom</span><span class="pln"> </span><span class="operator"><span class="pun">|</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qt.html"><span class="typ">Qt</span></a></span><span class="operator"><span class="pun">::</span></span><span class="typ">AlignRight</span><span class="pun">);</span></pre></div>
+<p>The properties and functions <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> inherits from <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a> can also be used to specify the widget frame to be used for any given label.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> is often used as a label for an interactive widget. For this use <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> provides a useful mechanism for adding an mnemonic (see <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a>) that will set the keyboard focus to the other widget (called the <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a>'s "buddy"). For example:</p>
+<div class="pre"><pre class="cpp prettyprint prettyprinted" style=""><span class="wrap" title="Toggle line wrap" style="display: none;"></span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">phoneEdit </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pun">(</span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+</span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">phoneLabel </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pun">(</span><span class="string"><span class="str">"&amp;Phone:"</span></span><span class="operator"><span class="pun">,</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+phoneLabel</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setBuddy</span><span class="pun">(</span><span class="pln">phoneEdit</span><span class="pun">);</span></pre></div>
+<p>In this example, keyboard focus is transferred to the label's buddy (the <a href="http://doc.qt.io/qt-5/qlineedit.html">QLineEdit</a>) when the user presses Alt+P. If the buddy was a button (inheriting from <a href="http://doc.qt.io/qt-5/qabstractbutton.html">QAbstractButton</a>), triggering the mnemonic would emulate a button click.</p>
+</div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlineedit.html">QLineEdit</a>, <a href="http://doc.qt.io/qt-5/qtextedit.html">QTextEdit</a>, <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>, <a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a>, and <a href="http://doc.qt.io/qt-5/guibooks.html#fowler">GUI Design Handbook: Label</a>.</p>
+<!-- @@@QLabel -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$alignment-prop$$$alignment$$$setAlignmentQt::Alignment -->
+<h3 class="fn" id="alignment-prop"><a name="alignment-prop"></a><span class="name">alignment</span> : <span class="type"><a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::Alignment</a></span></h3>
+<p>This property holds the alignment of the label's contents</p>
+<p>By default, the contents of the label are left-aligned and vertically-centered.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> Qt::Alignment </td><td class="memItemRight bottomAlign"><span class="name"><b>alignment</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAlignment</b></span>(<i>Qt::Alignment</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">text</a>.</p>
+<!-- @@@alignment -->
+<!-- $$$hasSelectedText-prop$$$hasSelectedText -->
+<h3 class="fn" id="hasSelectedText-prop"><a name="hasSelectedText-prop"></a><span class="name">hasSelectedText</span> : const <span class="type">bool</span></h3>
+<p>This property holds whether there is any text selected</p>
+<p>hasSelectedText() returns <code>true</code> if some or all of the text has been selected by the user; otherwise returns <code>false</code>.</p>
+<p>By default, this property is <code>false</code>.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a> set on the label need to include either TextSelectableByMouse or TextSelectableByKeyboard.</p>
+<p>This property was introduced in  Qt 4.7.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>hasSelectedText</b></span>() const</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#selectedText-prop">selectedText</a>().</p>
+<!-- @@@hasSelectedText -->
+<!-- $$$indent-prop$$$indent$$$setIndentint -->
+<h3 class="fn" id="indent-prop"><a name="indent-prop"></a><span class="name">indent</span> : <span class="type">int</span></h3>
+<p>This property holds the label's text indent in pixels</p>
+<p>If a label displays text, the indent applies to the left edge if <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a>() is <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::AlignLeft</a>, to the right edge if <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a>() is <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::AlignRight</a>, to the top edge if <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a>() is <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::AlignTop</a>, and to the bottom edge if <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">alignment</a>() is <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::AlignBottom</a>.</p>
+<p>If indent is negative, or if no indent has been set, the label computes the effective indent as follows: If <a href="http://doc.qt.io/qt-5/qframe.html#frameWidth-prop">frameWidth</a>() is 0, the effective indent becomes 0. If <a href="http://doc.qt.io/qt-5/qframe.html#frameWidth-prop">frameWidth</a>() is greater than 0, the effective indent becomes half the width of the "x" character of the widget's current <a href="http://doc.qt.io/qt-5/qwidget.html#font-prop">font</a>().</p>
+<p>By default, the indent is -1, meaning that an effective indent is calculating in the manner described above.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>indent</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setIndent</b></span>(<i>int</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/stylesheet-reference.html#alignment">alignment</a>, <a href="http://doc.qt.io/qt-5/qlabel.html#margin-prop">margin</a>, <a href="http://doc.qt.io/qt-5/qframe.html#frameWidth-prop">frameWidth</a>(), and <a href="http://doc.qt.io/qt-5/qwidget.html#font-prop">font</a>().</p>
+<!-- @@@indent -->
+<!-- $$$margin-prop$$$margin$$$setMarginint -->
+<h3 class="fn" id="margin-prop"><a name="margin-prop"></a><span class="name">margin</span> : <span class="type">int</span></h3>
+<p>This property holds the width of the margin</p>
+<p>The margin is the distance between the innermost pixel of the frame and the outermost pixel of contents.</p>
+<p>The default margin is 0.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>margin</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setMargin</b></span>(<i>int</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">indent</a>.</p>
+<!-- @@@margin -->
+<!-- $$$openExternalLinks-prop$$$openExternalLinks$$$setOpenExternalLinksbool -->
+<h3 class="fn" id="openExternalLinks-prop"><a name="openExternalLinks-prop"></a><span class="name">openExternalLinks</span> : <span class="type">bool</span></h3>
+<p>Specifies whether <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> should automatically open links using <a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">QDesktopServices::openUrl</a>() instead of emitting the <a href="http://doc.qt.io/qt-5/qlabel.html#linkActivated">linkActivated</a>() signal.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a> set on the label need to include either LinksAccessibleByMouse or LinksAccessibleByKeyboard.</p>
+<p>The default value is false.</p>
+<p>This property was introduced in  Qt 4.2.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>openExternalLinks</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setOpenExternalLinks</b></span>(bool <i>open</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a>().</p>
+<!-- @@@openExternalLinks -->
+<!-- $$$pixmap-prop$$$pixmap$$$setPixmapconstQPixmap& -->
+<h3 class="fn" id="pixmap-prop"><a name="pixmap-prop"></a><span class="name">pixmap</span> : <span class="type"><a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a></span></h3>
+<p>This property holds the label's pixmap</p>
+<p>If no pixmap has been set this will return 0.</p>
+<p>Setting the pixmap clears any previous content. The buddy shortcut, if any, is disabled.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> const QPixmap *</td><td class="memItemRight bottomAlign"><span class="name"><b>pixmap</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setPixmap</b></span>(<i>const QPixmap &amp;</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@pixmap -->
+<!-- $$$scaledContents-prop$$$hasScaledContents$$$setScaledContentsbool -->
+<h3 class="fn" id="scaledContents-prop"><a name="scaledContents-prop"></a><span class="name">scaledContents</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the label will scale its contents to fill all available space.</p>
+<p>When enabled and the label shows a pixmap, it will scale the pixmap to fill the available space.</p>
+<p>This property's default is false.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>hasScaledContents</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setScaledContents</b></span>(<i>bool</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@scaledContents -->
+<!-- $$$selectedText-prop$$$selectedText -->
+<h3 class="fn" id="selectedText-prop"><a name="selectedText-prop"></a><span class="name">selectedText</span> : const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span></h3>
+<p>This property holds the selected text</p>
+<p>If there is no selected text this property's value is an empty string.</p>
+<p>By default, this property contains an empty string.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a> set on the label need to include either TextSelectableByMouse or TextSelectableByKeyboard.</p>
+<p>This property was introduced in  Qt 4.7.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>selectedText</b></span>() const</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#hasSelectedText-prop">hasSelectedText</a>().</p>
+<!-- @@@selectedText -->
+<!-- $$$text-prop$$$text$$$setTextconstQString& -->
+<h3 class="fn" id="text-prop"><a name="text-prop"></a><span class="name">text</span> : <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span></h3>
+<p>This property holds the label's text</p>
+<p>If no text has been set this will return an empty string. Setting the text clears any previous content.</p>
+<p>The text will be interpreted either as plain text or as rich text, depending on the text format setting; see <a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">setTextFormat</a>(). The default setting is <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::AutoText</a>; i.e. <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> will try to auto-detect the format of the text set. See <a href="http://doc.qt.io/qt-5/richtext-html-subset.html">Supported HTML Subset</a> for the definition of rich text.</p>
+<p>If a buddy has been set, the buddy mnemonic key is updated from the new text.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> is 
+well-suited to display small rich text documents, such as small 
+documents that get their document specific settings (font, text color, 
+link color) from the label's palette and font properties. For large 
+documents, use <a href="http://doc.qt.io/qt-5/qtextedit.html">QTextEdit</a> in read-only mode instead. <a href="http://doc.qt.io/qt-5/qtextedit.html">QTextEdit</a> can also provide a scroll bar when necessary.</p>
+<p><b>Note: </b>This function enables mouse tracking if <i>text</i> contains rich text.</p><p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>text</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setText</b></span>(<i>const QString &amp;</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#textFormat-prop">setTextFormat</a>(), <a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>(), and <a href="http://doc.qt.io/qt-5/stylesheet-reference.html#alignment">alignment</a>.</p>
+<!-- @@@text -->
+<!-- $$$textFormat-prop$$$textFormat$$$setTextFormatQt::TextFormat -->
+<h3 class="fn" id="textFormat-prop"><a name="textFormat-prop"></a><span class="name">textFormat</span> : <span class="type"><a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::TextFormat</a></span></h3>
+<p>This property holds the label's text format</p>
+<p>See the <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::TextFormat</a> enum for an explanation of the possible options.</p>
+<p>The default format is <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::AutoText</a>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> Qt::TextFormat </td><td class="memItemRight bottomAlign"><span class="name"><b>textFormat</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setTextFormat</b></span>(<i>Qt::TextFormat</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">text</a>().</p>
+<!-- @@@textFormat -->
+<!-- $$$textInteractionFlags-prop$$$textInteractionFlags$$$setTextInteractionFlagsQt::TextInteractionFlags -->
+<h3 class="fn" id="textInteractionFlags-prop"><a name="textInteractionFlags-prop"></a><span class="name">textInteractionFlags</span> : <span class="type"><a href="http://doc.qt.io/qt-5/qt.html#TextInteractionFlag-enum">Qt::TextInteractionFlags</a></span></h3>
+<p>Specifies how the label should interact with user input if it displays text.</p>
+<p>If the flags contain <a href="http://doc.qt.io/qt-5/qt.html#TextInteractionFlag-enum">Qt::LinksAccessibleByKeyboard</a> the focus policy is also automatically set to <a href="http://doc.qt.io/qt-5/qt.html#FocusPolicy-enum">Qt::StrongFocus</a>. If <a href="http://doc.qt.io/qt-5/qt.html#TextInteractionFlag-enum">Qt::TextSelectableByKeyboard</a> is set then the focus policy is set to <a href="http://doc.qt.io/qt-5/qt.html#FocusPolicy-enum">Qt::ClickFocus</a>.</p>
+<p>The default value is <a href="http://doc.qt.io/qt-5/qt.html#TextInteractionFlag-enum">Qt::LinksAccessibleByMouse</a>.</p>
+<p>This property was introduced in  Qt 4.2.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> Qt::TextInteractionFlags </td><td class="memItemRight bottomAlign"><span class="name"><b>textInteractionFlags</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setTextInteractionFlags</b></span>(Qt::TextInteractionFlags <i>flags</i>)</td></tr>
+</tbody></table></div>
+<!-- @@@textInteractionFlags -->
+<!-- $$$wordWrap-prop$$$wordWrap$$$setWordWrapbool -->
+<h3 class="fn" id="wordWrap-prop"><a name="wordWrap-prop"></a><span class="name">wordWrap</span> : <span class="type">bool</span></h3>
+<p>This property holds the label's word-wrapping policy</p>
+<p>If this property is <code>true</code> then label text is wrapped where necessary at word-breaks; otherwise it is not wrapped at all.</p>
+<p>By default, word wrap is disabled.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>wordWrap</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setWordWrap</b></span>(bool <i>on</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">text</a>.</p>
+<!-- @@@wordWrap -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QLabel[overload1]$$$QLabelQWidget*Qt::WindowFlags -->
+<h3 class="fn" id="QLabel"><a name="QLabel"></a>QLabel::<span class="name">QLabel</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = Q_NULLPTR, <span class="type"><a href="http://doc.qt.io/qt-5/qt.html#WindowType-enum">Qt::WindowFlags</a></span> <i>f</i> = Qt::WindowFlags())</h3>
+<p>Constructs an empty label.</p>
+<p>The <i>parent</i> and widget flag <i>f</i>, arguments are passed to the <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a> constructor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">setAlignment</a>(), <a href="http://doc.qt.io/qt-5/qframe.html#setFrameStyle">setFrameStyle</a>(), and <a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">setIndent</a>().</p>
+<!-- @@@QLabel -->
+<!-- $$$QLabel$$$QLabelconstQString&QWidget*Qt::WindowFlags -->
+<h3 class="fn" id="QLabel-1"><a name="QLabel-1"></a>QLabel::<span class="name">QLabel</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>text</i>, <span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = Q_NULLPTR, <span class="type"><a href="http://doc.qt.io/qt-5/qt.html#WindowType-enum">Qt::WindowFlags</a></span> <i>f</i> = Qt::WindowFlags())</h3>
+<p>Constructs a label that displays the text, <i>text</i>.</p>
+<p>The <i>parent</i> and widget flag <i>f</i>, arguments are passed to the <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a> constructor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>(), <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">setAlignment</a>(), <a href="http://doc.qt.io/qt-5/qframe.html#setFrameStyle">setFrameStyle</a>(), and <a href="http://doc.qt.io/qt-5/qlabel.html#indent-prop">setIndent</a>().</p>
+<!-- @@@QLabel -->
+<!-- $$$~QLabel[overload1]$$$~QLabel -->
+<h3 class="fn" id="dtor.QLabel"><a name="dtor.QLabel"></a>QLabel::<span class="name">~QLabel</span>()</h3>
+<p>Destroys the label.</p>
+<!-- @@@~QLabel -->
+<!-- $$$buddy[overload1]$$$buddy -->
+<h3 class="fn" id="buddy"><a name="buddy"></a><span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *QLabel::<span class="name">buddy</span>() const</h3>
+<p>Returns this label's buddy, or 0 if no buddy is currently set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>().</p>
+<!-- @@@buddy -->
+<!-- $$$changeEvent[overload1]$$$changeEventQEvent* -->
+<h3 class="fn" id="changeEvent"><a name="changeEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">changeEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#changeEvent">QWidget::changeEvent</a>().</p>
+<!-- @@@changeEvent -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn" id="clear"><a name="clear"></a><code>[slot] </code><span class="type">void</span> QLabel::<span class="name">clear</span>()</h3>
+<p>Clears any label contents.</p>
+<!-- @@@clear -->
+<!-- $$$contextMenuEvent[overload1]$$$contextMenuEventQContextMenuEvent* -->
+<h3 class="fn" id="contextMenuEvent"><a name="contextMenuEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">contextMenuEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qcontextmenuevent.html">QContextMenuEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#contextMenuEvent">QWidget::contextMenuEvent</a>().</p>
+<!-- @@@contextMenuEvent -->
+<!-- $$$event[overload1]$$$eventQEvent* -->
+<h3 class="fn" id="event"><a name="event"></a><code>[virtual protected] </code><span class="type">bool</span> QLabel::<span class="name">event</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a></span> *<i>e</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qobject.html#event">QObject::event</a>().</p>
+<!-- @@@event -->
+<!-- $$$focusInEvent[overload1]$$$focusInEventQFocusEvent* -->
+<h3 class="fn" id="focusInEvent"><a name="focusInEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">focusInEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qfocusevent.html">QFocusEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#focusInEvent">QWidget::focusInEvent</a>().</p>
+<!-- @@@focusInEvent -->
+<!-- $$$focusNextPrevChild[overload1]$$$focusNextPrevChildbool -->
+<h3 class="fn" id="focusNextPrevChild"><a name="focusNextPrevChild"></a><code>[virtual protected] </code><span class="type">bool</span> QLabel::<span class="name">focusNextPrevChild</span>(<span class="type">bool</span> <i>next</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#focusNextPrevChild">QWidget::focusNextPrevChild</a>().</p>
+<!-- @@@focusNextPrevChild -->
+<!-- $$$focusOutEvent[overload1]$$$focusOutEventQFocusEvent* -->
+<h3 class="fn" id="focusOutEvent"><a name="focusOutEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">focusOutEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qfocusevent.html">QFocusEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#focusOutEvent">QWidget::focusOutEvent</a>().</p>
+<!-- @@@focusOutEvent -->
+<!-- $$$heightForWidth[overload1]$$$heightForWidthint -->
+<h3 class="fn" id="heightForWidth"><a name="heightForWidth"></a><code>[virtual] </code><span class="type">int</span> QLabel::<span class="name">heightForWidth</span>(<span class="type">int</span> <i>w</i>) const</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#heightForWidth">QWidget::heightForWidth</a>().</p>
+<!-- @@@heightForWidth -->
+<!-- $$$keyPressEvent[overload1]$$$keyPressEventQKeyEvent* -->
+<h3 class="fn" id="keyPressEvent"><a name="keyPressEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">keyPressEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qkeyevent.html">QKeyEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#keyPressEvent">QWidget::keyPressEvent</a>().</p>
+<!-- @@@keyPressEvent -->
+<!-- $$$linkActivated[overload1]$$$linkActivatedconstQString& -->
+<h3 class="fn" id="linkActivated"><a name="linkActivated"></a><code>[signal] </code><span class="type">void</span> QLabel::<span class="name">linkActivated</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>link</i>)</h3>
+<p>This signal is emitted when the user clicks a link. The URL referred to by the anchor is passed in <i>link</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#linkHovered">linkHovered</a>().</p>
+<!-- @@@linkActivated -->
+<!-- $$$linkHovered[overload1]$$$linkHoveredconstQString& -->
+<h3 class="fn" id="linkHovered"><a name="linkHovered"></a><code>[signal] </code><span class="type">void</span> QLabel::<span class="name">linkHovered</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> &amp;<i>link</i>)</h3>
+<p>This signal is emitted when the user hovers over a link. The URL referred to by the anchor is passed in <i>link</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#linkActivated">linkActivated</a>().</p>
+<!-- @@@linkHovered -->
+<!-- $$$minimumSizeHint[overload1]$$$minimumSizeHint -->
+<h3 class="fn" id="minimumSizeHint"><a name="minimumSizeHint"></a><code>[virtual] </code><span class="type"><a href="http://doc.qt.io/qt-5/qsize.html">QSize</a></span> QLabel::<span class="name">minimumSizeHint</span>() const</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#minimumSizeHint-prop">QWidget::minimumSizeHint</a>().</p>
+<!-- @@@minimumSizeHint -->
+<!-- $$$mouseMoveEvent[overload1]$$$mouseMoveEventQMouseEvent* -->
+<h3 class="fn" id="mouseMoveEvent"><a name="mouseMoveEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">mouseMoveEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qmouseevent.html">QMouseEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#mouseMoveEvent">QWidget::mouseMoveEvent</a>().</p>
+<!-- @@@mouseMoveEvent -->
+<!-- $$$mousePressEvent[overload1]$$$mousePressEventQMouseEvent* -->
+<h3 class="fn" id="mousePressEvent"><a name="mousePressEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">mousePressEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qmouseevent.html">QMouseEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#mousePressEvent">QWidget::mousePressEvent</a>().</p>
+<!-- @@@mousePressEvent -->
+<!-- $$$mouseReleaseEvent[overload1]$$$mouseReleaseEventQMouseEvent* -->
+<h3 class="fn" id="mouseReleaseEvent"><a name="mouseReleaseEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">mouseReleaseEvent</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qmouseevent.html">QMouseEvent</a></span> *<i>ev</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#mouseReleaseEvent">QWidget::mouseReleaseEvent</a>().</p>
+<!-- @@@mouseReleaseEvent -->
+<!-- $$$movie[overload1]$$$movie -->
+<h3 class="fn" id="movie"><a name="movie"></a><span class="type"><a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a></span> *QLabel::<span class="name">movie</span>() const</h3>
+<p>Returns a pointer to the label's movie, or 0 if no movie has been set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#setMovie">setMovie</a>().</p>
+<!-- @@@movie -->
+<!-- $$$paintEvent[overload1]$$$paintEventQPaintEvent* -->
+<h3 class="fn" id="paintEvent"><a name="paintEvent"></a><code>[virtual protected] </code><span class="type">void</span> QLabel::<span class="name">paintEvent</span>(<i>QPaintEvent *</i>)</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#paintEvent">QWidget::paintEvent</a>().</p>
+<!-- @@@paintEvent -->
+<!-- $$$picture[overload1]$$$picture -->
+<h3 class="fn" id="picture"><a name="picture"></a>const <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a></span> *QLabel::<span class="name">picture</span>() const</h3>
+<p>Returns the label's picture or 0 if the label doesn't have a picture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#setPicture">setPicture</a>().</p>
+<!-- @@@picture -->
+<!-- $$$selectionStart[overload1]$$$selectionStart -->
+<h3 class="fn" id="selectionStart"><a name="selectionStart"></a><span class="type">int</span> QLabel::<span class="name">selectionStart</span>() const</h3>
+<p>selectionStart() returns the index of the first selected character in the label or -1 if no text is selected.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a> set on the label need to include either TextSelectableByMouse or TextSelectableByKeyboard.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#selectedText-prop">selectedText</a>().</p>
+<!-- @@@selectionStart -->
+<!-- $$$setBuddy[overload1]$$$setBuddyQWidget* -->
+<h3 class="fn" id="setBuddy"><a name="setBuddy"></a><span class="type">void</span> QLabel::<span class="name">setBuddy</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html#QWidget">QWidget</a></span> *<i>buddy</i>)</h3>
+<p>Sets this label's buddy to <i>buddy</i>.</p>
+<p>When the user presses the shortcut key indicated by this label, the keyboard focus is transferred to the label's buddy widget.</p>
+<p>The buddy mechanism is only available for QLabels that contain text 
+in which one character is prefixed with an ampersand, '&amp;'. This 
+character is set as the shortcut key. See the <a href="http://doc.qt.io/qt-5/qkeysequence.html#mnemonic">QKeySequence::mnemonic</a>() documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>In a dialog, you might create two data entry widgets and a label for 
+each, and set up the geometry layout so each label is just to the left 
+of its data entry widget (its "buddy"), for example:</p>
+<div class="pre"><pre class="cpp prettyprint prettyprinted" style=""><span class="wrap" title="Toggle line wrap" style="display: none;"></span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">nameEdit  </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pun">(</span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+</span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pln">    </span><span class="operator"><span class="pun">*</span></span><span class="pln">nameLabel </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pun">(</span><span class="string"><span class="str">"&amp;Name:"</span></span><span class="operator"><span class="pun">,</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+nameLabel</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setBuddy</span><span class="pun">(</span><span class="pln">nameEdit</span><span class="pun">);</span><span class="pln">
+</span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pln"> </span><span class="operator"><span class="pun">*</span></span><span class="pln">phoneEdit  </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlineedit.html"><span class="typ">QLineEdit</span></a></span><span class="pun">(</span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+</span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pln">    </span><span class="operator"><span class="pun">*</span></span><span class="pln">phoneLabel </span><span class="operator"><span class="pun">=</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">new</span></span><span class="pln"> </span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html#QLabel"><span class="typ">QLabel</span></a></span><span class="pun">(</span><span class="string"><span class="str">"&amp;Phone:"</span></span><span class="operator"><span class="pun">,</span></span><span class="pln"> </span><span class="keyword"><span class="kwd">this</span></span><span class="pun">);</span><span class="pln">
+phoneLabel</span><span class="operator"><span class="pun">-</span></span><span class="operator"><span class="pun">&gt;</span></span><span class="pln">setBuddy</span><span class="pun">(</span><span class="pln">phoneEdit</span><span class="pun">);</span><span class="pln">
+</span><span class="comment"><span class="com">// (layout setup not shown)</span></span></pre></div>
+<p>With the code above, the focus jumps to the Name field when the user 
+presses Alt+N, and to the Phone field when the user presses Alt+P.</p>
+<p>To unset a previously set buddy, call this function with <i>buddy</i> set to 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#buddy">buddy</a>(), <a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>(), <a href="http://doc.qt.io/qt-5/qshortcut.html">QShortcut</a>, and <a href="http://doc.qt.io/qt-5/qlabel.html#alignment-prop">setAlignment</a>().</p>
+<!-- @@@setBuddy -->
+<!-- $$$setMovie[overload1]$$$setMovieQMovie* -->
+<h3 class="fn" id="setMovie"><a name="setMovie"></a><code>[slot] </code><span class="type">void</span> QLabel::<span class="name">setMovie</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a></span> *<i>movie</i>)</h3>
+<p>Sets the label contents to <i>movie</i>. Any previous content is cleared. The label does NOT take ownership of the movie.</p>
+<p>The buddy shortcut, if any, is disabled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#movie">movie</a>() and <a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>().</p>
+<!-- @@@setMovie -->
+<!-- $$$setNum[overload1]$$$setNumint -->
+<h3 class="fn" id="setNum"><a name="setNum"></a><code>[slot] </code><span class="type">void</span> QLabel::<span class="name">setNum</span>(<span class="type">int</span> <i>num</i>)</h3>
+<p>Sets the label contents to plain text containing the textual representation of integer <i>num</i>.
+ Any previous content is cleared. Does nothing if the integer's string 
+representation is the same as the current contents of the label.</p>
+<p>The buddy shortcut, if any, is disabled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#setNum">QString::setNum</a>(), and <a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>().</p>
+<!-- @@@setNum -->
+<!-- $$$setNum$$$setNumdouble -->
+<h3 class="fn" id="setNum-1"><a name="setNum-1"></a><code>[slot] </code><span class="type">void</span> QLabel::<span class="name">setNum</span>(<span class="type">double</span> <i>num</i>)</h3>
+<p>This is an overloaded function.</p>
+<p>Sets the label contents to plain text containing the textual representation of double <i>num</i>.
+ Any previous content is cleared. Does nothing if the double's string 
+representation is the same as the current contents of the label.</p>
+<p>The buddy shortcut, if any, is disabled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">setText</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#setNum">QString::setNum</a>(), and <a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>().</p>
+<!-- @@@setNum -->
+<!-- $$$setPicture[overload1]$$$setPictureconstQPicture& -->
+<h3 class="fn" id="setPicture"><a name="setPicture"></a><code>[slot] </code><span class="type">void</span> QLabel::<span class="name">setPicture</span>(const <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a></span> &amp;<i>picture</i>)</h3>
+<p>Sets the label contents to <i>picture</i>. Any previous content is cleared.</p>
+<p>The buddy shortcut, if any, is disabled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#picture">picture</a>() and <a href="http://doc.qt.io/qt-5/qlabel.html#setBuddy">setBuddy</a>().</p>
+<!-- @@@setPicture -->
+<!-- $$$setSelection[overload1]$$$setSelectionintint -->
+<h3 class="fn" id="setSelection"><a name="setSelection"></a><span class="type">void</span> QLabel::<span class="name">setSelection</span>(<span class="type">int</span> <i>start</i>, <span class="type">int</span> <i>length</i>)</h3>
+<p>Selects text from position <i>start</i> and for <i>length</i> characters.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qlabel.html#textInteractionFlags-prop">textInteractionFlags</a> set on the label need to include either TextSelectableByMouse or TextSelectableByKeyboard.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlabel.html#selectedText-prop">selectedText</a>().</p>
+<!-- @@@setSelection -->
+<!-- $$$sizeHint[overload1]$$$sizeHint -->
+<h3 class="fn" id="sizeHint"><a name="sizeHint"></a><code>[virtual] </code><span class="type"><a href="http://doc.qt.io/qt-5/qsize.html">QSize</a></span> QLabel::<span class="name">sizeHint</span>() const</h3>
+<p>Reimplemented from <a href="http://doc.qt.io/qt-5/qwidget.html#sizeHint-prop">QWidget::sizeHint</a>().</p>
+<!-- @@@sizeHint -->
+</div>
+</div>
+<p class="copy-notice">
+<acronym title="Copyright">©</acronym> 2018 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a>
+ as published by the Free Software Foundation.     Qt and respective 
+logos are trademarks of The Qt Company Ltd.     in Finland and/or other 
+countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer"><footer id="footerbar">
+<div class="footer-main">
+<div class="container clearfix">
+<nav class="footer-nav clearfix">
+<div class="menu-footer-menu-container"><ul class="menu" id="menu-footer-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1403" id="menu-item-1403"><a href="http://qt.io/download/">Download</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11677" id="menu-item-11677"><a href="http://qt.io/download/">Start for Free</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15840" id="menu-item-15840"><a href="http://qt.io/download-eval-for-applications-step-2/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15841" id="menu-item-15841"><a href="http://qt.io/request-eval-for-devices-step-2/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15838" id="menu-item-15838"><a href="http://qt.io/download-open-source/">Qt Open Source</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415" id="menu-item-1415"><a href="http://qt.io/terms-conditions/">Terms &amp; Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14184" id="menu-item-14184"><a href="http://qt.io/FAQ/">Licensing FAQ</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1355" id="menu-item-1355"><a href="http://qt.io/product/">Product</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12576" id="menu-item-12576"><a href="http://qt.io/product/">Qt in Use</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15848" id="menu-item-15848"><a href="http://qt.io/application-development/">Qt for Application Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1357" id="menu-item-1357"><a href="http://qt.io/qt-for-device-creation/">Qt for Device Creation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356" id="menu-item-1356"><a href="http://qt.io/qt-features/">Commercial Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15850" id="menu-item-15850"><a href="http://qt.io/ide/">Qt Creator IDE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1359" id="menu-item-1359"><a href="http://qt.io/qt-quick/">Qt Quick</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1347" id="menu-item-1347"><a href="http://qt.io/services/">Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4028" id="menu-item-4028"><a href="http://qt.io/services-technology-evaluation/">Technology Evaluation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4027" id="menu-item-4027"><a href="http://qt.io/services-proof-of-concept/">Proof of Concept</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4026" id="menu-item-4026"><a href="http://qt.io/services-design-implementation/">Design &amp; Implementation</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4025" id="menu-item-4025"><a href="http://qt.io/services-productization/">Productization</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15863" id="menu-item-15863"><a href="http://qt.io/qt-training/">Qt Training</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4779" id="menu-item-4779"><a href="https://qt.io/partners/">Partner Network</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-33" id="menu-item-33"><a href="http://qt.io/developers/">Developers</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365" id="menu-item-1365"><a href="http://doc.qt.io/">Documentation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364" id="menu-item-1364"><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples &amp; Tutorials</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1363" id="menu-item-1363"><a href="http://doc.qt.io/qt-5/topics-app-development.html">Development Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1361" id="menu-item-1361"><a href="http://wiki.qt.io/">Wiki</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1360" id="menu-item-1360"><a href="http://forum.qt.io/">Forums</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15922" id="menu-item-15922"><a href="http://wiki.qt.io/contribute">Contribute to Qt</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1350" id="menu-item-1350"><a href="http://qt.io/about-us/">About us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1353" id="menu-item-1353"><a href="http://qt.io/events/">Training &amp; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354" id="menu-item-1354"><a href="http://qt.io/resource-center/">Resource Center</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12285" id="menu-item-12285"><a href="http://qt.io/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349" id="menu-item-1349"><a href="http://qt.io/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11676" id="menu-item-11676"><a href="http://qt.io/locations/">Locations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15911" id="menu-item-15911"><a href="http://qt.io/contact-us">Contact Us</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<a class="theqtcompany" href="http://qt.io/about-us/" target="_blank"></a>
+<div class="footer-social clearfix">
+<a href="https://facebook.com/qt" target="_blank" title="Qt on Facebook"><i class="icon-facebook"></i></a>
+<a href="https://twitter.com/qtproject" target="_blank" title="Qt on Twitter"><i class="icon-twitter"></i></a>
+<a href="https://www.youtube.com/user/QtStudios" target="_blank" title="Qt videos on YouTube"><i class="icon-youtube"></i></a>
+</div>
+</div>
+</div>
+<div class="disclaimer">
+<div class="container clearfix no_discs">
+<ul class="right clearfix" id="menu-footer-submenu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1795" id="menu-item-1795"><a href="https://account.qt.io/login" title="Sign into your account.">Sign In</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10375" id="menu-item-10375"><a href="mailto:feedback@theqtcompany.com?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom" id="footer-copyright"><a href="http://qt.io/about-us/">© 2018 The Qt Company</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+
+
+<table style="width: 623px; display: none; top: 151px; left: 651px; position: absolute;" class="gstl_50 gssb_c" cellspacing="0" cellpadding="0"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body></html>

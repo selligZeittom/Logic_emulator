@@ -1,0 +1,20 @@
+{
+	"type":"AND",
+	"ID":"A1",
+	"level":"0",
+	"nInput":2,
+	"pins":[
+	    {
+			"label":"A1_I1",
+			"connected":"LOG_LOW"
+	    },
+	    {
+			"label":"A1_I2",
+			"connected":"LOG_LOW" 
+	    },
+	    {
+			"label":"A1_U",
+			"connected":"A2_I1" 
+	    }
+	    ]
+	}

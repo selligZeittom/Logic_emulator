@@ -1,0 +1,119 @@
+I-Logix-RPY-Archive version 8.8.0 * 6107223
+{ CGEMdiWorkspace 
+	- stubList = { IRPYRawContainer 
+		- size = 0;
+	}
+	- isLoadOnDemand = 0;
+	- myViewsWithID = { IRPYRawContainer 
+		- size = 3;
+		- value = 
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 44;
+				- m_nTop = 44;
+				- m_nRight = 672;
+				- m_nBottom = 405;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "MVCSample.sbs";
+				- _subsystem = "MVCSample";
+				- _class = "";
+				- _name = "CD_MVC1";
+				- _id = GUID 63c5ca90-e5af-44f0-82ab-0a0df5dd1329;
+			}
+			- _UpLeft = 29 10 ;
+			- _DownRight = 657 331 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 2;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 66;
+				- m_nTop = 66;
+				- m_nRight = 1152;
+				- m_nBottom = 547;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IMSC";
+				- _filename = "MVCSample.sbs";
+				- _subsystem = "MVCSample";
+				- _class = "";
+				- _name = "SD_MVC1";
+				- _id = GUID 7021567c-69f0-497c-8e38-e0a7018c3232;
+			}
+			- _UpLeft = 0 80 ;
+			- _DownRight = 1197 539 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 1;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 88;
+				- m_nTop = 88;
+				- m_nRight = 1174;
+				- m_nBottom = 569;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IMSC";
+				- _filename = "MVCSample.sbs";
+				- _subsystem = "MVCSample";
+				- _class = "";
+				- _name = "SD_MVC2";
+				- _id = GUID 5ddb0da0-fbbf-4004-98ab-ec3922f989ed;
+			}
+			- _UpLeft = 62 0 ;
+			- _DownRight = 850 433 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 0;
+		}
+	}
+	- _fullName = "S:\\Rieder\\public\\MVC\\MVCModel\\Project";
+	- m_SearchScopeList = { IRPYRawContainer 
+		- size = 0;
+	}
+	- bUsingCustomBrowserView = 0;
+	- bUsingQueries = 0;
+	- bApplyOnDiagrams = 0;
+	- liQueryIDs = { IRPYRawContainer 
+		- size = 0;
+	}
+	- liElementTypes = { IRPYRawContainer 
+		- size = 0;
+	}
+
+	- m_favoritesTree = {
+		count=1;
+		{ - favoritesItem
+			generation = 0;
+			name = Favorites;
+			idOrFolder = folder;
+		}
+	}
+
+}
+

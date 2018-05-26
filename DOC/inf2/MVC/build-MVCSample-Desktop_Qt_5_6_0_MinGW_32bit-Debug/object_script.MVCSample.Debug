@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\factory.o
+./debug\data.o
+./debug\view.o
+./debug\logic.o
+./debug\outputview.o
+./debug\listview.o
+./debug\inputview.o
+./debug\moc_view.o
+./debug\moc_outputview.o
+./debug\moc_listview.o
+./debug\moc_inputview.o
+);
