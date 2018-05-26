@@ -39,6 +39,11 @@ void PortController::drawGates()
 
 }
 
+void PortController::setPath(QString path)
+{
+    thePortData->setPath(path);
+}
+
 void PortController::onButtonLoadPressed(QString path)
 {
     controller->evLoadButtonPressed(path);

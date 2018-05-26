@@ -18,6 +18,7 @@ INPUT(
 ./release\inputview.o
 ./release\factory.o
 ./release\view.o
+./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_xf.o
 ./release\moc_xftimer.o

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/gates">
+        <file>AND.json</file>
+        <file>object.json</file>
+        <file>OR.json</file>
+        <file>TEST1.json</file>
+    </qresource>
+</RCC>

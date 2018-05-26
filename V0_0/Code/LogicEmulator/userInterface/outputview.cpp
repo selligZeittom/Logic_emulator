@@ -68,6 +68,9 @@ void OutputView::initGraphicalObject()
     this->drawWindow = new QGraphicsView(this);
     drawWindow->setGeometry(680, 40, GATES_QLABEL_W, GATES_QLABEL_H);
     drawWindow->setStyleSheet("QGraphicsView { background-color : white; border: 1px solid gray; border-radius: 5px; color : black; }");
+    QGraphicsScene *scn = new QGraphicsScene(drawWindow);
+    scn->addPixmap(QPixmap(":/gates/images/and_gate_original.png"));
+    drawWindow->setScene(scn);
 
     this->result = new QLabel(this);
     result->setGeometry(680, 680, RESULT_QLABEL_W, RESULT_QLABEL_H);

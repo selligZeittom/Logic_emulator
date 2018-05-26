@@ -51,3 +51,6 @@ HEADERS  += mainwindow.h \
     userInterface/inputview.h \
     factory.h \
     userInterface/view.h
+
+RESOURCES += \
+    images.qrc

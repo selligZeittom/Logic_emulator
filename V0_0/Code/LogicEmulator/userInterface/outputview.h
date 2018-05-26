@@ -10,6 +10,7 @@
 #include <QRect>
 #include <QScreen>
 #include <QGuiApplication>
+#include <QGraphicsScene>
 
 
 #include "data/gate.h"
