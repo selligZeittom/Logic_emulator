@@ -1,6 +1,11 @@
 #include "gate.h"
 
-Gate::Gate(QString id = "NO_ID", int type = -1, int level = -1, int nInputs = -1, QVector<Pin> pins = NULL)
+Gate::Gate()
+{
+
+}
+
+Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> pins)
 {
     this->id = id;
     this->type = type;

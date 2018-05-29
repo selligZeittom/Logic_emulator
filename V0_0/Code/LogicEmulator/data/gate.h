@@ -11,6 +11,7 @@
 class Gate
 {
 public:
+    Gate();
     Gate(QString id, int type, int level, int nInputs, QVector<Pin> IOpins);
     virtual ~Gate();
 

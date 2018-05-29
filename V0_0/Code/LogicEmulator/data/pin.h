@@ -7,6 +7,7 @@
 class Pin
 {
 public:
+    Pin();
     Pin(QString lab, QString con);
     virtual ~Pin();
     void initRelations(Pin* connected);
