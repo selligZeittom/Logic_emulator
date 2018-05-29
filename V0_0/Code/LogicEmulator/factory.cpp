@@ -28,6 +28,7 @@ Factory::~Factory()
 
 void Factory::create()
 {
+    this->view = new View();
     this->inputView = new InputView();
     this->thePortUI = new PortUI();
     this->thePortController = new PortController();
@@ -35,7 +36,6 @@ void Factory::create()
     this->data = new Data();
     this->controller = new Controller();
     this->outputView = new OutputView();
-    this->view = new View();
 }
 
 void Factory::build()
@@ -94,3 +94,9 @@ void Factory::destroy()
         outputView = NULL;
     }
 }
+
+QWidget *Factory::getView() const
+{
+    return (QWidget*) view;
+}
+

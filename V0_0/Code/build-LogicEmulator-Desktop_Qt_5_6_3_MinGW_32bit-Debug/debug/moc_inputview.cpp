@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_InputView_t {
-    QByteArrayData data[3];
-    char stringdata0[25];
+    QByteArrayData data[4];
+    char stringdata0[27];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,11 @@ static const qt_meta_stringdata_InputView_t qt_meta_stringdata_InputView = {
     {
 QT_MOC_LITERAL(0, 0, 9), // "InputView"
 QT_MOC_LITERAL(1, 10, 13), // "buttonClicked"
-QT_MOC_LITERAL(2, 24, 0) // ""
+QT_MOC_LITERAL(2, 24, 0), // ""
+QT_MOC_LITERAL(3, 25, 1) // "g"
 
     },
-    "InputView\0buttonClicked\0"
+    "InputView\0buttonClicked\0\0g"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,10 +53,10 @@ static const uint qt_meta_data_InputView[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    1,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    3,
 
        0        // eod
 };
@@ -66,11 +67,10 @@ void InputView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         InputView *_t = static_cast<InputView *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->buttonClicked(); break;
+        case 0: _t->buttonClicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject InputView::staticMetaObject = {

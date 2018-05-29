@@ -10,5 +10,6 @@ int main(int argc, char *argv[])
     Factory f;
     f.create();
     f.build();
+    //a.setActiveWindow(f.getView());
     return a.exec();
 }

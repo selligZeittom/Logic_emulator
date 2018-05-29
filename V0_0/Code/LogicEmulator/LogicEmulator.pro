@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     data/data.cpp \
     data/gate.cpp \
     data/pin.cpp \
@@ -32,7 +31,7 @@ SOURCES += main.cpp\
     factory.cpp \
     userInterface/view.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     data/data.h \
     data/gate.h \
     data/pin.h \

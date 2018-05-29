@@ -2,6 +2,7 @@
 #define FACTORY_H
 
 #include <iostream>
+#include <QWidget>
 
 
 class InputView;
@@ -22,6 +23,8 @@ public:
     void create();
     void build();
     void destroy();
+
+    QWidget* getView() const;
 
 private:
     InputView* inputView;

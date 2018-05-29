@@ -34,7 +34,7 @@ private:
     void initGraphicalObject();
 
 public slots:
-    void buttonClicked();
+    void buttonClicked(bool g);
 
     // IViewUpdate interface
 public:

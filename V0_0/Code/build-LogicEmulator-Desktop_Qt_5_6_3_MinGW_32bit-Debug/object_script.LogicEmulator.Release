@@ -1,6 +1,5 @@
 INPUT(
 ./release\main.o
-./release\mainwindow.o
 ./release\data.o
 ./release\gate.o
 ./release\pin.o
@@ -19,7 +18,6 @@ INPUT(
 ./release\factory.o
 ./release\view.o
 ./release\qrc_images.o
-./release\moc_mainwindow.o
 ./release\moc_xf.o
 ./release\moc_xftimer.o
 ./release\moc_outputview.o

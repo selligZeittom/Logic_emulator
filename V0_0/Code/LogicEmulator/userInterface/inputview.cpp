@@ -29,15 +29,15 @@ QString InputView::getPath()
 void InputView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
+    new QPushButton("test", this);
     load->setGeometry(170, host->getHeight() - 200, 340, 80);
-    load->setStyleSheet("QPushButton { background-color : rgb(47, 230, 228); border: 1px solid gray; border-radius: 5px; color : black; }");
+    load->setStyleSheet("QPushButton { background-color : rgb(50, 150, 150); border: 1px solid gray; border-radius: 5px; color : black; }");
     load->setText("Browse a Json file");
-    load->show();
-    connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked()));
 
+    connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
 }
 
-void InputView::buttonClicked()
+void InputView::buttonClicked(bool g)
 {
     QString path = getPath();
     qDebug() << "file browsed : " << path ;
