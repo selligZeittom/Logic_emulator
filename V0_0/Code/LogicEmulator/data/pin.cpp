@@ -1,8 +1,10 @@
 #include "pin.h"
 
-Pin::Pin()
+Pin::Pin(QString lab  = "NO_LABEL", QString con = "NO_CONNECTED")
 {
     this->connectedPin = NULL;
+    this->label = lab;
+    this->connected = con;
 }
 
 Pin::~Pin()

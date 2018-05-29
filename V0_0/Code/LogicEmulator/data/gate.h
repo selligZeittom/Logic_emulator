@@ -11,18 +11,18 @@
 class Gate
 {
 public:
-    Gate(QString label, uint8_t id, uint8_t level, uint8_t nInputs, QVector<Pin>* inputPins);
+    Gate(QString id, int type, int level, int nInputs, QVector<Pin> IOpins);
     virtual ~Gate();
 
     void initRelations();
 
 private:
     void computeLogic();
-    QString label;
-    uint8_t id; //0 : AND, 1 : OR, 2 : NOT
-    uint8_t level;
-    uint8_t nInputs;
-    QVector<Pin>* inputPins;
+    int type; //0 : AND, 1 : OR, 2 : NOT
+    QString id;
+    int level;
+    int nInputs;
+    QVector<Pin> IOpins;
     Pin* outputPin;
     bool output;
 

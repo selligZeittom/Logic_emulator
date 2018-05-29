@@ -4,8 +4,13 @@
 #include <iostream>
 #include <QFile>
 #include <QFileDialog>
+#include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QString>
+#include <QDebug>
+#include <QTextStream>
+#include <QByteArray>
 
 #include "gate.h"
 
@@ -28,7 +33,8 @@ private:
     PortData* thePortData;
     QJsonDocument* jsonConverter ;
     QFile* file ;
-    QVector<Gate> gates;
+    QVector<Gate> vGates;
+    QVector<Pin> vPins;
     QString path;
 
 };

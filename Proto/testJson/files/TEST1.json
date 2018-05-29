@@ -3,7 +3,7 @@
 "nGates":3,
 "gates":[
 	{
-		"type":"OR",
+		"type":1,
 		"ID":"O1",
         "level":0,
 		"nInput":2,
@@ -23,7 +23,7 @@
 	    ]	
 	},
 	{
-		"type":"AND",
+		"type":0,
 		"ID":"A1",
 		"level":"0",
 		"nInput":2,
@@ -43,7 +43,7 @@
 	    ]
 	},
 	{
-		"type":"AND",
+		"type":0,
 		"ID":"A2",
 		"level":"1",
 		"nInput":2,
