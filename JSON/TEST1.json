@@ -1,6 +1,6 @@
 {
 "name":"test1",
-"nGates":"3",
+"nGates":3,
 "gates":[
 	{
 		"type":"OR",
