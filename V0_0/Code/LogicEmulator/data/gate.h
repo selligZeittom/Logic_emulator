@@ -12,22 +12,25 @@ class Gate
 {
 public:
     Gate();
-    Gate(QString id, int type, int level, int nInputs, QVector<Pin> IOpins);
+    Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins);
     virtual ~Gate();
 
     void initRelations();
 
-private:
+    bool getOutput() const;
+    int getLevel() const;
     void computeLogic();
+    QVector<Pin> getInputPins() const;
+
+private:
     int type; //0 : AND, 1 : OR, 2 : NOT
     QString id;
     int level;
     int nInputs;
-    QVector<Pin> IOpins;
+    QVector<Pin> inputPins;
     Pin* outputPin;
     bool output;
 
-    bool getOutput() const;
 
 };
 

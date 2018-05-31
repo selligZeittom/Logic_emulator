@@ -8,12 +8,14 @@ class Pin
 {
 public:
     Pin();
+    Pin(bool state);
     Pin(QString lab, QString con);
     virtual ~Pin();
     void initRelations(Pin* connected);
 
     void setState(bool state);
     bool getState() const;
+    QString getLabel() const;
 
 private:
     QString label;

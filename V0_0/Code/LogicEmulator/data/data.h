@@ -28,8 +28,10 @@ public:
     void convertJsonToGates();
     void computeLogic();
     void setPath(QString path);
+    Pin* getCorrespondingPin(QString label);
 
 private:
+    void setGatesAndPins();
     PortData* thePortData;
     QJsonDocument* jsonConverter ;
     QFile* file ;

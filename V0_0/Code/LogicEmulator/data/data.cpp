@@ -105,6 +105,8 @@ void Data::convertJsonToGates()
 
         qDebug() << "--------------------";
     }
+
+    setGatesAndPins();
 }
 
 void Data::computeLogic()
@@ -116,3 +118,53 @@ void Data::setPath(QString path)
 {
     this->path = path;
 }
+
+Pin *Data::getCorrespondingPin(QString label)
+{
+    Pin* toReturn = NULL;
+    for (int i = 0; i < vPins.count(); ++i) {
+        if(vPins[i].getLabel() == label){
+            toReturn = &vPins[i];
+        }
+    }
+    return toReturn;
+}
+
+void Data::setGatesAndPins()
+{
+    //first get the max level of gates
+    int levelMax = 0;
+    for (int i = 0; i < vGates.count(); ++i)
+    {
+        if(vGates[i].getLevel() > levelMax)
+        {
+            levelMax = vGates[i].getLevel();
+        }
+    }
+
+    //then compute the states of the pin and gates level by level
+    for (int _level = 0; _level < levelMax; ++_level) {
+
+        //for each level find the gates
+        for (int _gate = 0; _gate < vGates.count(); ++_gate) {
+
+            //do sth only if the level is corresponding to the loop level
+            if(vGates[_gate].getLevel() == _level)
+            {
+                Gate &gate = vGates[_gate];
+
+                //if the level == 0, the input pins have already been initialized
+                if(gate.getLevel() != 0)
+                {
+                    //first connect the input pins
+                    for (int _pin = 0; _pin < gate.getInputPins().count(); ++_pin) {
+                        Pin &pin = gate.getInputPins()[_pin];
+                        pin.initRelations(getCorrespondingPin(pin.getLabel()));
+                    }
+                }
+
+                //then compute the state of the output
+                gate.computeLogic();
+            }
+        }
+    }
