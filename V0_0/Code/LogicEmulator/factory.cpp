@@ -11,6 +11,8 @@
 
 Factory::Factory()
 {
+    XF::getInstance();
+
     this->inputView = NULL;
     this->thePortUI = NULL;
     this->thePortController = NULL;
@@ -40,7 +42,6 @@ void Factory::create()
 
 void Factory::build()
 {
-    this->inputView->initRelations(view);
     this->thePortUI->initRelations(thePortController, outputView);
     this->thePortController->initRelations(controller, thePortData);
     this->thePortData->initRelations(data, thePortUI);
@@ -48,6 +49,7 @@ void Factory::build()
     this->controller->initRelations(thePortController);
     this->outputView->initRelations(view);
     this->view->initRelations(outputView, thePortUI);
+    this->inputView->initRelations(view);
 }
 
 void Factory::destroy()

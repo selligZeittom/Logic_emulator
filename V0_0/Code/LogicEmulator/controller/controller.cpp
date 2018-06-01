@@ -68,14 +68,14 @@ bool Controller::processEvent(XFEvent *p1)
         if(p1->getID() == EV_LOAD_CLICKED)
         {
             state = ST_LOAD;
-            std::cout << "init done -> ST_OFF" << std::endl;
+            qDebug() << "-> ST_LOAD";
         }
         break;
     case ST_LOAD :
         if(p1->getID() == EV_END_LOADING)
         {
             state = ST_CONVERT;
-            std::cout << "ST_ON" << std::endl;
+            qDebug() << "-> ST_CONVERT";
         }
         break;
 
@@ -83,21 +83,21 @@ bool Controller::processEvent(XFEvent *p1)
         if(p1->getID() == EV_END_CONVERTING)
         {
             state = ST_COMPUTE;
-            std::cout << "ST_OFF" << std::endl;
+            qDebug() << "-> ST_COMPUTE";
         }
         break;
     case ST_COMPUTE :
         if(p1->getID() == EV_END_COMPUTING)
         {
             state = ST_DRAW;
-            std::cout << "ST_OFF" << std::endl;
+            qDebug() << "-> ST_DRAW";
         }
         break;
     case ST_DRAW :
         if(p1->getID() == EV_END_DRAWING)
         {
             state = ST_WAIT;
-            std::cout << "ST_OFF" << std::endl;
+            qDebug() << "-> ST_WAIT";
         }
         break;
     default:
@@ -127,11 +127,12 @@ bool Controller::processEvent(XFEvent *p1)
         //do action on entry
         switch (state) {
         case ST_WAIT :
-            thePortController->loadFile();
             break;
         case ST_LOAD :
+            thePortController->loadFile();
             break;
         case ST_CONVERT :
+            thePortController->convertJsonToGates();
             break;
         case ST_COMPUTE :
             break;

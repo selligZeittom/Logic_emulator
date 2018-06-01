@@ -52,4 +52,5 @@ HEADERS  += \
     userInterface/view.h
 
 RESOURCES += \
-    images.qrc
+    images.qrc \
+    files.qrc

@@ -22,6 +22,7 @@ void Data::initRelations(PortData *p1)
 void Data::loadFile()
 {
     file = new QFile(path);
+
 }
 
 void Data::convertJsonToGates()
@@ -168,3 +169,4 @@ void Data::setGatesAndPins()
             }
         }
     }
+}

@@ -26,7 +26,7 @@ void PortController::loadFile()
 
 void PortController::convertJsonToGates()
 {
-
+    thePortData->convertJsonToGates();
 }
 
 void PortController::computeLogic()

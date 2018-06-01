@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/files">
+        <file>json_files/AND.json</file>
+        <file>json_files/OR.json</file>
+        <file>json_files/TEST1.json</file>
+    </qresource>
+</RCC>

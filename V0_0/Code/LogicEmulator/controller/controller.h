@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <QString>
+#include <QDebug>
 #include "XF/ism.h"
 
 class PortController;

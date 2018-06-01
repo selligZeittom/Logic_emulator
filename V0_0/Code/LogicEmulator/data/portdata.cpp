@@ -20,17 +20,17 @@ void PortData::initRelations(Data *p1, PortUI *p2)
 
 void PortData::loadFile()
 {
-
+    data->loadFile();
 }
 
 void PortData::convertJsonToGates()
 {
-
+    data->convertJsonToGates();
 }
 
 void PortData::computeLogic()
 {
-
+    data->computeLogic();
 }
 
 void PortData::drawGates()

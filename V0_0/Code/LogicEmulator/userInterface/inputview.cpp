@@ -17,19 +17,21 @@ void InputView::paintEvent(QPaintEvent *event)
 
 QString InputView::getPath()
 {
+    //set the filter for only json files
+    QString filter = "File Description (*.json)";
+
+    //get the opened file
     QString filename =  QFileDialog::getOpenFileName(
-                this,
-                "Open Document",
-                QDir::currentPath(),
-                "All files (*.*) ;; Document files (*.doc *.rtf);; PNG files (*.png)");
-    qDebug() << "selected file path : " << filename.toUtf8();
+                host,
+                "Open Json file§",
+                QDir::homePath(), filter);
+
     return filename;
 }
 
 void InputView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
-    new QPushButton("test", this);
     load->setGeometry(170, host->getHeight() - 200, 340, 80);
     load->setStyleSheet("QPushButton { background-color : rgb(50, 150, 150); border: 1px solid gray; border-radius: 5px; color : black; }");
     load->setText("Browse a Json file");
