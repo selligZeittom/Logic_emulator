@@ -12,6 +12,7 @@ Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
     this->level = level;
     this->nInputs = nInputs;
     this->inputPins = ioPins;
+    this->outputPin = new Pin();
 
     //remove the last pin from the array, because it's the output pin
     if(!inputPins.isEmpty())

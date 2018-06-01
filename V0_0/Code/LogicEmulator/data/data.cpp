@@ -95,14 +95,14 @@ void Data::convertJsonToGates()
             qDebug() << "......................";
 
             //create a Pin object an add it to the end of the vector
-            Pin p(label, connected);
-            vPins.push_back(p); //add to the global vector
-            vPinsIO.push_back(p);//add to the gate's vector
+            Pin* p = new Pin(label, connected);
+            vPins.push_back(*p); //add to the global vector
+            vPinsIO.push_back(*p);//add to the gate's vector
         }
 
         //create a logic gate
-        Gate g(id, type, level, nInput, vPinsIO);
-        vGates.push_back(g); //add to the global vector
+        Gate* newGate = new Gate(id, type, level, nInput, vPinsIO);
+        vGates.push_back(*newGate); //add to the global vector
 
         qDebug() << "--------------------";
     }
@@ -112,6 +112,7 @@ void Data::convertJsonToGates()
 
 void Data::computeLogic()
 {
+    qDebug() << "computing logic";
 
 }
 
@@ -169,4 +170,6 @@ void Data::setGatesAndPins()
             }
         }
     }
+
+    thePortData->onConvertingDone();
 }

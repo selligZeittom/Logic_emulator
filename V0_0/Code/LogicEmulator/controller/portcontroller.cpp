@@ -31,12 +31,12 @@ void PortController::convertJsonToGates()
 
 void PortController::computeLogic()
 {
-
+thePortData->computeLogic();
 }
 
 void PortController::drawGates()
 {
-
+thePortData->drawGates();
 }
 
 void PortController::setPath(QString path)

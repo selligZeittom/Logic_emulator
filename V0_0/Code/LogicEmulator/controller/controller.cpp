@@ -139,6 +139,7 @@ bool Controller::processEvent(XFEvent *p1)
             break;
         case ST_COMPUTE :
             qDebug() << "ST_COMPUTE : onEntry";
+            thePortController->computeLogic();
             break;
         case ST_DRAW :
             qDebug() << "ST_DRAW : onEntry";
