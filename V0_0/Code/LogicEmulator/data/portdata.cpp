@@ -38,17 +38,12 @@ void PortData::computeLogic()
 
 void PortData::drawGates()
 {
-
+    data->drawResults();
 }
 
 void PortData::setPath(QString path)
 {
     data->setPath(path);
-}
-
-void PortData::onDataChanged()
-{
-
 }
 
 void PortData::onLoadingDone()
@@ -63,5 +58,35 @@ void PortData::onConvertingDone()
 
 void PortData::onComputingDone()
 {
-thePortController->onComputingDone();
+    thePortController->onComputingDone();
+}
+
+void PortData::onError(int error)
+{
+    thePortController->onError(error);
+}
+
+void PortData::onDrawingDone()
+{
+    thePortController->onDrawingDone();
+}
+
+void PortData::onNewCode(QString code)
+{
+    thePortUI->onNewCode(code);
+}
+
+void PortData::onNewFileNAme(QString filename)
+{
+    thePortUI->onNewFileNAme(filename);
+}
+
+void PortData::onNewGates(QVector<Gate> gates)
+{
+    thePortUI->onNewGates(gates);
+}
+
+void PortData::onNewResults(QString results)
+{
+    thePortUI->onNewResults(results);
 }

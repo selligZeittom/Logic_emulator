@@ -11,6 +11,8 @@
 #include <QScreen>
 #include <QGuiApplication>
 #include <QGraphicsScene>
+#include <QDebug>
+#include <QGraphicsPixmapItem>
 
 
 #include "data/gate.h"
@@ -41,13 +43,16 @@ public:
 
     virtual void paintEvent(QPaintEvent *event);
     void draw(QVector<Gate> gates);
-    void setText(QString result);
+    void onNewCode(QString labelCode);
+    void onNewFileName(QString filename);
+    void onNewResults(QString results);
 
 private:
     QGraphicsView* drawWindow;
-    QLabel* result;
-    QLabel* fileName;
-    QLabel* code;
+    QGraphicsScene *scn;
+    QLabel* labelResult;
+    QLabel* labelFileName;
+    QLabel* labelCode;
     View* host;
     QString styleSheet;
 

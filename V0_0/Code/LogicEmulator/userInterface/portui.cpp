@@ -16,17 +16,27 @@ void PortUI::initRelations(PortController *p1, OutputView *p2)
     this->outputView = p2;
 }
 
-void PortUI::onDataChanged()
-{
-
-}
-
 void PortUI::onButtonLoadPressed(QString path)
 {
     thePortController->onButtonLoadPressed(path);
 }
 
-void PortUI::onPathSelected()
+void PortUI::onNewCode(QString code)
 {
+        outputView->onNewCode(code);
+}
 
+void PortUI::onNewFileNAme(QString filename)
+{
+    outputView->onNewFileName(filename);
+}
+
+void PortUI::onNewGates(QVector<Gate> gates)
+{
+    outputView->draw(gates);
+}
+
+void PortUI::onNewResults(QString results)
+{
+    outputView->onNewResults(results);
 }

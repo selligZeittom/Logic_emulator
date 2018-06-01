@@ -1,6 +1,6 @@
 #include "inputview.h"
 
-#define DEBUG_not
+#define RELEASEw
 
 InputView::InputView(QWidget *parent) : QWidget(parent)
 {
@@ -19,7 +19,7 @@ void InputView::paintEvent(QPaintEvent *event)
 
 QString InputView::getPath()
 {
-#ifdef DEBUG
+#ifdef RELEASE
 
     //set the filter for only json files
     QString filter = "File Description (*.json)";
@@ -56,11 +56,6 @@ void InputView::buttonClicked(bool g)
 void InputView::onButtonLoadPressed(QString path)
 {
     host->onButtonLoadPressed(path);
-}
-
-void InputView::onPathSelected()
-{
-    onPathSelected();
 }
 
 void InputView::initRelations(View *p1)

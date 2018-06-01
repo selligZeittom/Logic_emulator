@@ -28,6 +28,7 @@ public:
     void convertJsonToGates();
     void computeLogic();
     void setPath(QString path);
+    void drawResults();
     Pin* getCorrespondingPin(QString label);
 
 private:
@@ -35,6 +36,9 @@ private:
     PortData* thePortData;
     QJsonDocument* jsonConverter ;
     QFile* file ;
+    QString fileName;
+    QString result;
+    QString code;
     QVector<Gate> vGates;
     QVector<Pin> vPins;
     QString path;

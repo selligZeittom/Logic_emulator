@@ -25,7 +25,7 @@
 	{
 		"type":0,
 		"ID":"A1",
-		"level":"0",
+		"level":0,
 		"nInput":2,
 			  "pins":[
 	    {
@@ -45,7 +45,7 @@
 	{
 		"type":0,
 		"ID":"A2",
-		"level":"1",
+		"level":1,
 		"nInput":2,
 		"pins":[
 	    {

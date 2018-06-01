@@ -5,6 +5,7 @@
 #include <QString>
 #include <QVector>
 #include <iterator>
+#include <QPixmap>
 
 #include "pin.h"
 
@@ -21,6 +22,7 @@ public:
     int getLevel() const;
     void computeLogic();
     QVector<Pin> getInputPins() const;
+    QPixmap getQPixMap() const;
 
 private:
     int type; //0 : AND, 1 : OR, 2 : NOT
@@ -30,6 +32,8 @@ private:
     QVector<Pin> inputPins;
     Pin* outputPin;
     bool output;
+    QPixmap* qpixMap;
+
 
 
 };

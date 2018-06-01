@@ -13,6 +13,7 @@ Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
     this->nInputs = nInputs;
     this->inputPins = ioPins;
     this->outputPin = new Pin();
+    this->qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
 
     //remove the last pin from the array, because it's the output pin
     if(!inputPins.isEmpty())
@@ -41,6 +42,7 @@ void Gate::computeLogic()
     switch (type) {
     case 0:
         //means it's and AND gate
+        qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
         result = true;
         for (int i = 0; i < inputPins.count(); ++i) {
             if(inputPins[i].getState() == false)
@@ -51,6 +53,7 @@ void Gate::computeLogic()
         break;
         //means it's an OR gate
     case 1:
+        qpixMap = new QPixmap(":/gates/images/or_gate_original.png");
         for (int i = 0; i < inputPins.count(); ++i) {
             if(inputPins[i].getState() == true)
             {
@@ -60,6 +63,7 @@ void Gate::computeLogic()
         break;
         //means it's a NOT gate
     case 2:
+        qpixMap = new QPixmap(":/gates/images/or_gate_original.png");
         result = !(inputPins[0].getState());
         break;
     default:
@@ -73,6 +77,11 @@ void Gate::computeLogic()
 QVector<Pin> Gate::getInputPins() const
 {
     return this->inputPins;
+}
+
+QPixmap Gate::getQPixMap() const
+{
+    return (*qpixMap);
 }
 
 bool Gate::getOutput() const

@@ -2,7 +2,7 @@
 #define PORTCONTROLLER_H
 
 #include <iostream>
-#include "interfaces/icontroller.h"
+#include "interfaces/icontrollerdata.h"
 #include "interfaces/iviewupdate.h"
 #include "XF/xf.h"
 #include "XF/xfevent.h"
@@ -10,7 +10,7 @@
 class Controller;
 class PortData;
 
-class PortController : public IController, public IViewUpdate
+class PortController : public IControllerData, public IViewUpdate
 {
 public:
     PortController();
@@ -30,16 +30,16 @@ public:
     virtual void onLoadingDone();
     virtual void onConvertingDone();
     virtual void onComputingDone();
+    virtual void onError(int error);
+    virtual void onDrawingDone();
 
     // IViewUpdate interface, provided
 public:
     virtual void onButtonLoadPressed(QString path);
-    virtual void onPathSelected();
 
 private:
     Controller* controller;
     PortData* thePortData;
-
 
 };
 

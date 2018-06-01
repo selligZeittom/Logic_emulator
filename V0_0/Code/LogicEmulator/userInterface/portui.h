@@ -15,18 +15,21 @@ public:
     virtual ~PortUI();
     void initRelations(PortController* p1, OutputView* p2);
 
-    // IDataUpdate interface, provided
-public:
-    virtual void onDataChanged();
-
     // IViewUpdate interface, required
 public:
     virtual void onButtonLoadPressed(QString path);
-    virtual void onPathSelected();
+
+    // IDataUpdate interface, provided
+public:
+    virtual void onNewCode(QString code);
+    virtual void onNewFileNAme(QString filename);
+    virtual void onNewGates(QVector<Gate> gates);
+    virtual void onNewResults(QString results);
 
 private:
     OutputView* outputView;
     PortController* thePortController;
+
 
 };
 

@@ -49,11 +49,6 @@ void PortController::onButtonLoadPressed(QString path)
     controller->evLoadButtonPressed(path);
 }
 
-void PortController::onPathSelected()
-{
-
-}
-
 void PortController::onLoadingDone()
 {
     controller->evLoadingDone();
@@ -67,4 +62,14 @@ void PortController::onConvertingDone()
 void PortController::onComputingDone()
 {
     controller->evComputingDone();
+}
+
+void PortController::onError(int error)
+{
+    controller->evError(error);
+}
+
+void PortController::onDrawingDone()
+{
+    controller->evDrawingDone();
 }

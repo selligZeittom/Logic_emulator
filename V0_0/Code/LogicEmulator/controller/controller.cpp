@@ -49,6 +49,22 @@ void Controller::evComputingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+void Controller::evError(int error)
+{
+    XFEvent* ev = new XFEvent();
+    ev->setID((int) EV_ERROR);
+    ev->setTarget(this);
+    XF::getInstance().pushEvent(ev);
+}
+
+void Controller::evDrawingDone()
+{
+    XFEvent* ev = new XFEvent();
+    ev->setID((int) EV_END_DRAWING);
+    ev->setTarget(this);
+    XF::getInstance().pushEvent(ev);
+}
+
 //state machine : double switch pattern
 bool Controller::processEvent(XFEvent *p1)
 {
@@ -70,12 +86,22 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_LOAD;
             qDebug() << "-> ST_LOAD";
         }
+        else if(p1->getID() == EV_ERROR)
+        {
+            state = ST_WAIT;
+            qDebug() << "error -> ST_WAIT";
+        }
         break;
     case ST_LOAD :
         if(p1->getID() == EV_END_LOADING)
         {
             state = ST_CONVERT;
             qDebug() << "-> ST_CONVERT";
+        }
+        else if(p1->getID() == EV_ERROR)
+        {
+            state = ST_WAIT;
+            qDebug() << "error -> ST_WAIT";
         }
         break;
 
@@ -85,6 +111,11 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_COMPUTE;
             qDebug() << "-> ST_COMPUTE";
         }
+        else if(p1->getID() == EV_ERROR)
+        {
+            state = ST_WAIT;
+            qDebug() << "error -> ST_WAIT";
+        }
         break;
     case ST_COMPUTE :
         if(p1->getID() == EV_END_COMPUTING)
@@ -92,12 +123,22 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_DRAW;
             qDebug() << "-> ST_DRAW";
         }
+        else if(p1->getID() == EV_ERROR)
+        {
+            state = ST_WAIT;
+            qDebug() << "error -> ST_WAIT";
+        }
         break;
     case ST_DRAW :
         if(p1->getID() == EV_END_DRAWING)
         {
             state = ST_WAIT;
             qDebug() << "-> ST_WAIT";
+        }
+        else if(p1->getID() == EV_ERROR)
+        {
+            state = ST_WAIT;
+            qDebug() << "error -> ST_WAIT";
         }
         break;
     default:
@@ -143,6 +184,7 @@ bool Controller::processEvent(XFEvent *p1)
             break;
         case ST_DRAW :
             qDebug() << "ST_DRAW : onEntry";
+            thePortController->drawGates();
             break;
         default:
             break;

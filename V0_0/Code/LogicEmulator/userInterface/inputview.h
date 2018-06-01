@@ -39,7 +39,6 @@ public slots:
     // IViewUpdate interface
 public:
     virtual void onButtonLoadPressed(QString path);
-    virtual void onPathSelected();
 };
 
 #endif // INPUTVIEW_H

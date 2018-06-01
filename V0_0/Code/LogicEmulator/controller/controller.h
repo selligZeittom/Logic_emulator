@@ -19,6 +19,8 @@ public:
     void evLoadingDone();
     void evConvertingDone();
     void evComputingDone();
+    void evError(int error);
+    void evDrawingDone();
 
     // ISM interface, provided
 public:
@@ -33,7 +35,7 @@ private:
 
     //possibles events
     enum LE_EVENT{
-        EV_LOAD_CLICKED, EV_END_LOADING, EV_END_CONVERTING, EV_END_COMPUTING, EV_END_DRAWING, EV_END_ERROR
+        EV_LOAD_CLICKED, EV_END_LOADING, EV_END_CONVERTING, EV_END_COMPUTING, EV_END_DRAWING, EV_ERROR
     };
 
     PortController* thePortController;

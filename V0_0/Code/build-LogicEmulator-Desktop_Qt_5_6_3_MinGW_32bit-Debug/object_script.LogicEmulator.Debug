@@ -5,7 +5,6 @@ INPUT(
 ./debug\pin.o
 ./debug\portdata.o
 ./debug\portui.o
-./debug\icontroller.o
 ./debug\controller.o
 ./debug\xf.o
 ./debug\xfevent.o
@@ -17,6 +16,7 @@ INPUT(
 ./debug\inputview.o
 ./debug\factory.o
 ./debug\view.o
+./debug\icontrollerdata.o
 ./debug\qrc_images.o
 ./debug\moc_xf.o
 ./debug\moc_xftimer.o

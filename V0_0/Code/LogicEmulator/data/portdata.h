@@ -2,13 +2,13 @@
 #define PORTDATA_H
 
 #include "userInterface/portui.h"
-#include "interfaces/icontroller.h"
+#include "interfaces/icontrollerdata.h"
 #include "interfaces/idataupdate.h"
 
 class Data;
 class PortController;
 
-class PortData : public IController, public IDataUpdate
+class PortData : public IControllerData, public IDataUpdate
 {
 public:
     PortData();
@@ -33,12 +33,15 @@ public:
     virtual void onLoadingDone();
     virtual void onConvertingDone();
     virtual void onComputingDone();
+    virtual void onError(int error);
+    virtual void onDrawingDone();
 
-    // IUpdate interface, required
+    // IDataUpdate interface, required
 public:
-    virtual void onDataChanged();
-
-
+    virtual void onNewCode(QString code);
+    virtual void onNewFileNAme(QString filename);
+    virtual void onNewGates(QVector<Gate> gates);
+    virtual void onNewResults(QString results);
 };
 
 #endif // PORTDATA_H
