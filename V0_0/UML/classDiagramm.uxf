@@ -347,13 +347,13 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1360</x>
-      <y>496</y>
+      <y>520</y>
       <w>352</w>
-      <h>136</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 -thePortData : PortData*</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;10.0;230.0;150.0;420.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0;230.0;120.0;420.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -509,14 +509,17 @@ view : View*</panel_attributes>
       <x>1488</x>
       <y>1192</y>
       <w>192</w>
-      <h>112</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>IController
 --
 + loadFile() : void = 0
 + convertJSONtoGates() : void = 0
 + computeLogic() : void = 0
-+ drawGates() : void = 0</panel_attributes>
++ drawGates() : void = 0
++ onLoadingDone() : void  = 0
++ onConvertingDone() : void = 0;
++ onComputingDone() : void = 0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -528,7 +531,7 @@ view : View*</panel_attributes>
       <h>680</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-&lt;&lt;required&gt;&gt;</panel_attributes>
+</panel_attributes>
     <additional_attributes>270.0;830.0;150.0;720.0;150.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -540,7 +543,7 @@ view : View*</panel_attributes>
       <h>544</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-&lt;&lt;provided&gt;&gt;</panel_attributes>
+</panel_attributes>
     <additional_attributes>10.0;660.0;10.0;10.0;150.0;10.0</additional_attributes>
   </element>
   <element>
@@ -761,5 +764,17 @@ layer=3</panel_attributes>
 layer=2
 </panel_attributes>
     <additional_attributes>360.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>488</y>
+      <w>408</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-thePortController : PortController*</panel_attributes>
+    <additional_attributes>420.0;130.0;280.0;130.0;280.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
