@@ -1,5 +1,7 @@
 #include "inputview.h"
 
+#define DEBUG_not
+
 InputView::InputView(QWidget *parent) : QWidget(parent)
 {
     this->host = NULL;
@@ -17,6 +19,8 @@ void InputView::paintEvent(QPaintEvent *event)
 
 QString InputView::getPath()
 {
+#ifdef DEBUG
+
     //set the filter for only json files
     QString filter = "File Description (*.json)";
 
@@ -25,8 +29,11 @@ QString InputView::getPath()
                 host,
                 "Open Json file§",
                 QDir::homePath(), filter);
-
     return filename;
+
+#else
+    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST1.json";
+#endif
 }
 
 void InputView::initGraphicalObject()

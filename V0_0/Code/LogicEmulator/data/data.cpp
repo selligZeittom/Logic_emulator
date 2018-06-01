@@ -22,7 +22,7 @@ void Data::initRelations(PortData *p1)
 void Data::loadFile()
 {
     file = new QFile(path);
-
+    thePortData->onLoadingDone();
 }
 
 void Data::convertJsonToGates()

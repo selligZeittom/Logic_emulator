@@ -13,6 +13,11 @@ public:
     virtual void drawGates() = 0;
     virtual void setPath(QString path) = 0;
 
+
+    virtual void onLoadingDone() = 0;
+    virtual void onConvertingDone() = 0;
+    virtual void onComputingDone() = 0;
+
 };
 
 #endif // ICONTROLLER_H

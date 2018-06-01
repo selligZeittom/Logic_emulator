@@ -127,16 +127,21 @@ bool Controller::processEvent(XFEvent *p1)
         //do action on entry
         switch (state) {
         case ST_WAIT :
+            qDebug() << "ST_WAIT : onEntry";
             break;
         case ST_LOAD :
+            qDebug() << "ST_LOAD : onEntry";
             thePortController->loadFile();
             break;
         case ST_CONVERT :
+            qDebug() << "ST_CONVERT : onEntry";
             thePortController->convertJsonToGates();
             break;
         case ST_COMPUTE :
+            qDebug() << "ST_COMPUTE : onEntry";
             break;
         case ST_DRAW :
+            qDebug() << "ST_DRAW : onEntry";
             break;
         default:
             break;

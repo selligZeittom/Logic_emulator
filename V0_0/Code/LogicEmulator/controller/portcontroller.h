@@ -19,11 +19,17 @@ public:
 
     // IController interface, required
 public:
+    //implemented as required
     virtual void loadFile();
     virtual void convertJsonToGates();
     virtual void computeLogic();
     virtual void drawGates();
     virtual void setPath(QString path);
+
+    //implemented as provided
+    virtual void onLoadingDone();
+    virtual void onConvertingDone();
+    virtual void onComputingDone();
 
     // IViewUpdate interface, provided
 public:

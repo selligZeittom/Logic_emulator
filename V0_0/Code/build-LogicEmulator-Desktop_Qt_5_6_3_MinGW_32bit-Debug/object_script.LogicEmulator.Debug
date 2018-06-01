@@ -18,7 +18,6 @@ INPUT(
 ./debug\factory.o
 ./debug\view.o
 ./debug\qrc_images.o
-./debug\qrc_files.o
 ./debug\moc_xf.o
 ./debug\moc_xftimer.o
 ./debug\moc_outputview.o

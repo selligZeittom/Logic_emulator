@@ -44,7 +44,7 @@ void Factory::build()
 {
     this->thePortUI->initRelations(thePortController, outputView);
     this->thePortController->initRelations(controller, thePortData);
-    this->thePortData->initRelations(data, thePortUI);
+    this->thePortData->initRelations(data, thePortUI, thePortController);
     this->data->initRelations(thePortData);
     this->controller->initRelations(thePortController);
     this->outputView->initRelations(view);

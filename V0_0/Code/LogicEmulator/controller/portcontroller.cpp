@@ -53,3 +53,18 @@ void PortController::onPathSelected()
 {
 
 }
+
+void PortController::onLoadingDone()
+{
+    controller->evLoadingDone();
+}
+
+void PortController::onConvertingDone()
+{
+    controller->evConvertingDone();
+}
+
+void PortController::onComputingDone()
+{
+    controller->evComputingDone();
+}
