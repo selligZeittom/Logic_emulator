@@ -17,6 +17,7 @@ IOView::IOView(QWidget *parent)
     this->setWindowTitle("Logic Emulator");
     this->setGeometry(0, 35, width, height-35);
     this->setVisible(true);
+    this->styleSheet = "QLabel { background-color : white; border: 1px solid gray; border-radius: 5px; color : black; }";
 }
 
 IOView::~IOView()
@@ -62,7 +63,7 @@ QString IOView::getPath()
 
 void IOView::draw(QVector<Gate> gates)
 {
-    scn->clear();
+    scnGates->clear();
     int maxLevel = 0;
     for (int i = 0; i < gates.count(); ++i)
     {
@@ -79,9 +80,9 @@ void IOView::draw(QVector<Gate> gates)
             if(gates[i].getLevel() == _level)
             {
                 QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
-                item->setPos(100*_level, 100*j);
+                item->setPos(150*_level, (150*j+_level*75));
                 item->setPixmap(gates[i].getQPixMap().scaled(80, 80));
-                scn->addItem(item);
+                scnGates->addItem(item);
 
                 qDebug() << "draw first gate" << gates[i].getLevel();
                 j++;
@@ -92,8 +93,10 @@ void IOView::draw(QVector<Gate> gates)
 
 void IOView::onNewCode(QString labelCode)
 {
-    this->listCode->clear();
-    this->listCode->addItem(labelCode);
+    this->scnCode->clear();
+    QGraphicsTextItem* item = new QGraphicsTextItem();
+    item->setPlainText(labelCode);
+    this->scnCode->addItem(item);
 }
 
 void IOView::onNewFileName(QString filename)
@@ -116,8 +119,8 @@ void IOView::initGraphicalObject()
     this->drawWindow = new QGraphicsView(this);
     drawWindow->setGeometry(680, 40, GATES_QLABEL_W, GATES_QLABEL_H);
     drawWindow->setStyleSheet("QGraphicsView { background-color : white; border: 1px solid gray; border-radius: 5px; color : black; }");
-    scn = new QGraphicsScene(drawWindow);
-    drawWindow->setScene(scn);
+    scnGates = new QGraphicsScene(drawWindow);
+    drawWindow->setScene(scnGates);
 
     this->labelResult = new QLabel(this);
     labelResult->setGeometry(680, 680, RESULT_QLABEL_W, RESULT_QLABEL_H);
@@ -129,16 +132,24 @@ void IOView::initGraphicalObject()
     labelFileName->setStyleSheet(styleSheet);
     labelFileName->setText("no file loaded ...");
 
+    /*
     this->listCode = new QListWidget(this);
     listCode->setGeometry(40, 140,CODE_QLABEL_W, CODE_QLABEL_H);
     listCode->setStyleSheet(styleSheet);
     listCode->setAutoScroll(true);
+*/
+    this->codeWindow = new QGraphicsView(this);
+    codeWindow->setGeometry(40, 140,CODE_QLABEL_W, CODE_QLABEL_H);
+    codeWindow->setStyleSheet("QGraphicsView { background-color : white; border: 1px solid gray; border-radius: 3px; color : black; }");
+    scnCode = new QGraphicsScene(codeWindow);
+    codeWindow->setScene(scnCode);
 
     load->show();
     drawWindow->show();
     labelResult->show();
     labelFileName->show();
-    listCode->show();
+    //listCode->show();
+    codeWindow->show();
 
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked()));
 }

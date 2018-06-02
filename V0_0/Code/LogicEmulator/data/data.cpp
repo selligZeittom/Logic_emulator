@@ -36,6 +36,13 @@ void Data::loadFile()
 
 void Data::convertJsonToGates()
 {
+    //first clear the variables
+    vGates.clear();
+    vPins.clear();
+    levelMax = 0;
+    fileName = "";
+    result = "";
+    code = "";
 
     QTextStream reader(file);
     code = reader.readAll();

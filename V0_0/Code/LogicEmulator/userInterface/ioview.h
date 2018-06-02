@@ -18,6 +18,7 @@
 #include <QGuiApplication>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsTextItem>
 #include <QListWidget>
 
 #include "interfaces/iviewupdate.h"
@@ -69,10 +70,12 @@ private:
 
     //outputView privates variables and functions
     QGraphicsView* drawWindow;
-    QGraphicsScene *scn;
+    QGraphicsScene *scnGates;
     QLabel* labelResult;
     QLabel* labelFileName;
-    QListWidget* listCode;
+    //QListWidget* listCode;
+    QGraphicsView* codeWindow;
+    QGraphicsScene* scnCode;
     QString styleSheet;
 
 public slots:
