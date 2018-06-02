@@ -17,10 +17,12 @@ INPUT(
 ./release\factory.o
 ./release\view.o
 ./release\icontrollerdata.o
+./release\ioview.o
 ./release\qrc_images.o
 ./release\moc_xf.o
 ./release\moc_xftimer.o
 ./release\moc_outputview.o
 ./release\moc_inputview.o
 ./release\moc_view.o
+./release\moc_ioview.o
 );

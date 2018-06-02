@@ -3,17 +3,18 @@
 
 #include <iostream>
 
-#include "outputview.h"
 #include "controller/portcontroller.h"
 #include "interfaces/iviewupdate.h"
 #include "interfaces/idataupdate.h"
+
+class IOView;
 
 class PortUI : public IViewUpdate, public IDataUpdate
 {
 public:
     PortUI();
     virtual ~PortUI();
-    void initRelations(PortController* p1, OutputView* p2);
+    void initRelations(PortController* p1, IOView* p2);
 
     // IViewUpdate interface, required
 public:
@@ -27,7 +28,7 @@ public:
     virtual void onNewResults(QString results);
 
 private:
-    OutputView* outputView;
+    IOView* ioView;
     PortController* thePortController;
 
 

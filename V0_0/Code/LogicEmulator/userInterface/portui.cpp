@@ -1,19 +1,20 @@
 #include "portui.h"
+#include "ioview.h"
 
 PortUI::PortUI()
 {
     this->thePortController = NULL;
-    this->outputView = NULL;
+    this->ioView = NULL;
 }
 
 PortUI::~PortUI()
 {
 }
 
-void PortUI::initRelations(PortController *p1, OutputView *p2)
+void PortUI::initRelations(PortController *p1, IOView *p2)
 {
     this->thePortController = p1;
-    this->outputView = p2;
+    this->ioView = p2;
 }
 
 void PortUI::onButtonLoadPressed(QString path)
@@ -23,20 +24,20 @@ void PortUI::onButtonLoadPressed(QString path)
 
 void PortUI::onNewCode(QString code)
 {
-        outputView->onNewCode(code);
+    ioView->onNewCode(code);
 }
 
 void PortUI::onNewFileNAme(QString filename)
 {
-    outputView->onNewFileName(filename);
+    ioView->onNewFileName(filename);
 }
 
 void PortUI::onNewGates(QVector<Gate> gates)
 {
-    outputView->draw(gates);
+    ioView->draw(gates);
 }
 
 void PortUI::onNewResults(QString results)
 {
-    outputView->onNewResults(results);
+    ioView->onNewResults(results);
 }
