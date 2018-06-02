@@ -8,6 +8,7 @@ Data::Data()
     this->thePortData = NULL;
     this->jsonConverter = NULL;
     this->file = NULL;
+    levelMax = 0;
 }
 
 Data::~Data()
@@ -126,6 +127,14 @@ void Data::convertJsonToGates()
 void Data::computeLogic()
 {
     qDebug() << "computing logic";
+    for (int i = 0; i < vGates.count(); ++i)
+    {
+          if(vGates[i].getLevel() == levelMax)
+          {
+              this->result += vGates[i].outputToString();
+          }
+    }
+
     thePortData->onComputingDone();
 
 }
@@ -158,7 +167,7 @@ Pin *Data::getCorrespondingPin(QString label)
 void Data::setGatesAndPins()
 {
     //first get the max level of gates
-    int levelMax = 0;
+    levelMax = 0;
     for (int i = 0; i < vGates.count(); ++i)
     {
         if(vGates[i].getLevel() > levelMax)
@@ -173,23 +182,23 @@ void Data::setGatesAndPins()
         //for each level find the gates
         for (int _gate = 0; _gate < vGates.count(); ++_gate) {
 
-            //do sth only if the level is corresponding to the loop level
+            //do sth only if the level is corresponding to the var _level
             if(vGates[_gate].getLevel() == _level)
             {
                 Gate &gate = vGates[_gate];
 
-                //if the level == 0, the input pins have already been initialized
+                //if the level == 0, the input pins have already been initialized in the constructor
                 if(gate.getLevel() != 0)
                 {
                     //first connect the input pins
                     for (int _pin = 0; _pin < gate.getInputPins().count(); ++_pin) {
-                        Pin &pin = gate.getInputPins()[_pin];
-                        pin.initRelations(getCorrespondingPin(pin.getLabel()));
+                        Pin &pinToConnect = gate.getInputPins()[_pin];
+                        pinToConnect.initRelations(getCorrespondingPin(pinToConnect.getLabel())); //connect and set the state of the pins
                     }
                 }
 
                 //then compute the state of the output
-                gate.computeLogic();
+                gate.computeLogicAndSetPixmap();
             }
         }
     }

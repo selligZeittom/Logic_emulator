@@ -42,6 +42,7 @@ private:
     QVector<Gate> vGates;
     QVector<Pin> vPins;
     QString path;
+    int levelMax;
 
 };
 

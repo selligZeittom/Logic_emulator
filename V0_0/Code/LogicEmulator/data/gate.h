@@ -20,9 +20,10 @@ public:
 
     bool getOutput() const;
     int getLevel() const;
-    void computeLogic();
+    void computeLogicAndSetPixmap();
     QVector<Pin> getInputPins() const;
     QPixmap getQPixMap() const;
+    QString outputToString();
 
 private:
     int type; //0 : AND, 1 : OR, 2 : NOT

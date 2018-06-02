@@ -36,7 +36,7 @@ void Gate::initRelations()
 
 }
 
-void Gate::computeLogic()
+void Gate::computeLogicAndSetPixmap()
 {
     bool result = false;
     switch (type) {
@@ -82,6 +82,29 @@ QVector<Pin> Gate::getInputPins() const
 QPixmap Gate::getQPixMap() const
 {
     return (*qpixMap);
+}
+
+QString Gate::outputToString()
+{
+    QString retVal = "the gate [";
+    retVal += (this->id);
+
+    retVal += "] has the output : NULL";
+    if(outputPin!=NULL)
+    {
+        retVal = "the gate [";
+        retVal += this->id;
+        retVal += "] has the output : ";
+
+        if(outputPin->getState())
+        {
+            retVal += "1";
+        } else if(!outputPin->getState())
+        {
+            retVal += "0";
+        }
+    }
+    return retVal;
 }
 
 bool Gate::getOutput() const
