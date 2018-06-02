@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     userInterface/inputview.cpp \
     factory.cpp \
     userInterface/view.cpp \
-    interfaces/icontrollerdata.cpp
+    interfaces/icontrollerdata.cpp \
+    userInterface/ioview.cpp
 
 HEADERS  += \
     data/data.h \
@@ -50,7 +51,8 @@ HEADERS  += \
     factory.h \
     userInterface/view.h \
     interfaces/icontrollerdata.h \
-    globalvariables.h
+    globalvariables.h \
+    userInterface/ioview.h
 
 RESOURCES += \
     images.qrc
