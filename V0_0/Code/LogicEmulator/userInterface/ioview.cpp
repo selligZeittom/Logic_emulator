@@ -62,6 +62,7 @@ QString IOView::getPath()
 
 void IOView::draw(QVector<Gate> gates)
 {
+    scn->clear();
     int maxLevel = 0;
     for (int i = 0; i < gates.count(); ++i)
     {

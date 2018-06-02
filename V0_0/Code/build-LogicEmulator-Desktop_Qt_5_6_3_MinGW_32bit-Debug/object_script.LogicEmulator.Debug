@@ -12,17 +12,11 @@ INPUT(
 ./debug\portcontroller.o
 ./debug\iviewupdate.o
 ./debug\idataupdate.o
-./debug\outputview.o
-./debug\inputview.o
 ./debug\factory.o
-./debug\view.o
 ./debug\icontrollerdata.o
 ./debug\ioview.o
 ./debug\qrc_images.o
 ./debug\moc_xf.o
 ./debug\moc_xftimer.o
-./debug\moc_outputview.o
-./debug\moc_inputview.o
-./debug\moc_view.o
 ./debug\moc_ioview.o
 );

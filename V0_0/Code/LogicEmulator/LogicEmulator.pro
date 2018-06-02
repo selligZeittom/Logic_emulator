@@ -25,10 +25,7 @@ SOURCES += main.cpp\
     controller/portcontroller.cpp \
     interfaces/iviewupdate.cpp \
     interfaces/idataupdate.cpp \
-    userInterface/outputview.cpp \
-    userInterface/inputview.cpp \
     factory.cpp \
-    userInterface/view.cpp \
     interfaces/icontrollerdata.cpp \
     userInterface/ioview.cpp
 
@@ -46,10 +43,7 @@ HEADERS  += \
     controller/portcontroller.h \
     interfaces/iviewupdate.h \
     interfaces/idataupdate.h \
-    userInterface/outputview.h \
-    userInterface/inputview.h \
     factory.h \
-    userInterface/view.h \
     interfaces/icontrollerdata.h \
     globalvariables.h \
     userInterface/ioview.h

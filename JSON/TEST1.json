@@ -10,7 +10,7 @@
 	  "pins":[
 	    {
 	      "label":"O1_I1",
-	      "connected":"LOG_LOW"
+	      "connected":"LOG_HIGH"
 	    },
 	    {
 	      "label":"O1_I2",
@@ -30,11 +30,11 @@
 			  "pins":[
 	    {
 	      "label":"A1_I1",
-	      "connected":"LOG_LOW"
+	      "connected":"LOG_HIGH"
 	    },
 	    {
 	      "label":"A1_I2",
-	      "connected":"LOG_LOW" 
+	      "connected":"LOG_HIGH" 
 	    },
 	     {
 	      "label":"A1_U",
