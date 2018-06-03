@@ -18,10 +18,10 @@ public:
 
     void initRelations();
 
-    bool getOutput() const;
     int getLevel() const;
     void computeLogicAndSetPixmap();
-    QVector<Pin> getInputPins() const;
+    QVector<Pin> &getInputPins();
+    Pin* getOutputPin() const;
     QPixmap getQPixMap() const;
     QString outputToString();
 
@@ -32,7 +32,6 @@ private:
     int nInputs;
     QVector<Pin> inputPins;
     Pin* outputPin;
-    bool output;
     QPixmap* qpixMap;
 
 

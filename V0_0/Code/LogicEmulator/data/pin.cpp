@@ -8,27 +8,27 @@ Pin::Pin()
 Pin::Pin(bool state)
 {
     this->state = state;
-    this->connected = "LOGICAL_SIGNAL";
-    this->label = "CREATED_PIN";
+    this->labelConnectedPin = "LOGICAL_SIGNAL";
+    this->labelPin = "CREATED_PIN";
 }
 
 Pin::Pin(QString lab, QString con)
 {
     this->connectedPin = NULL;
-    this->label = lab;
-    this->connected = con;
+    this->labelPin = lab;
+    this->labelConnectedPin = con;
     this->setState(false);
 
     /*
      * set the state if the pin is an input pin connected to a constant and
      * not to the output of another gate
     */
-    if(connected.contains("LOW"))
+    if(labelConnectedPin.contains("LOW"))
     {
         this->connectedPin = new Pin(false);
         this->setState(connectedPin->getState());
     }
-    else if(connected.contains("HIGH"))
+    else if(labelConnectedPin.contains("HIGH"))
     {
         this->connectedPin = new Pin(true);
         this->setState(connectedPin->getState());
@@ -59,5 +59,5 @@ bool Pin::getState() const
 
 QString Pin::getLabel() const
 {
-    return this->label;
+    return this->labelPin;
 }

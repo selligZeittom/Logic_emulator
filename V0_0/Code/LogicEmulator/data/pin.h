@@ -11,15 +11,15 @@ public:
     Pin(bool state);
     Pin(QString lab, QString con);
     virtual ~Pin();
-    void initRelations(Pin* connected);
+    void initRelations(Pin* labelConnectedPin);
 
     void setState(bool state);
     bool getState() const;
     QString getLabel() const;
 
 private:
-    QString label;
-    QString connected;
+    QString labelPin; //identifies this pin
+    QString labelConnectedPin; //identifies the others pin
     Pin* connectedPin;
     bool state;
 };

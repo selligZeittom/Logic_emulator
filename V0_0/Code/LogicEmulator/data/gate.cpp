@@ -74,9 +74,14 @@ void Gate::computeLogicAndSetPixmap()
     this->outputPin->setState(result);
 }
 
-QVector<Pin> Gate::getInputPins() const
+QVector<Pin> &Gate::getInputPins()
 {
     return this->inputPins;
+}
+
+Pin *Gate::getOutputPin() const
+{
+    return this->outputPin;
 }
 
 QPixmap Gate::getQPixMap() const
@@ -105,11 +110,6 @@ QString Gate::outputToString()
         }
     }
     return retVal;
-}
-
-bool Gate::getOutput() const
-{
-    return output;
 }
 
 int Gate::getLevel() const

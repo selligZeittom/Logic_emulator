@@ -184,7 +184,7 @@ void Data::setGatesAndPins()
     }
 
     //then compute the states of the pin and gates level by level
-    for (int _level = 0; _level < levelMax; ++_level) {
+    for (int _level = 0; _level <= levelMax; ++_level) {
 
         //for each level find the gates
         for (int _gate = 0; _gate < vGates.count(); ++_gate) {
@@ -202,6 +202,15 @@ void Data::setGatesAndPins()
                         Pin &pinToConnect = gate.getInputPins()[_pin];
                         pinToConnect.initRelations(getCorrespondingPin(pinToConnect.getLabel())); //connect and set the state of the pins
                     }
+                }
+
+                //if the level is maximum, no need to connect it
+                else if(gate.getLevel() < levelMax)
+                {
+                    Pin* oPin = gate.getOutputPin();
+                    Pin* refPin = getCorrespondingPin(oPin->getLabel());
+                    oPin->initRelations(refPin);
+                    qDebug()<<"sdacascdsacdsacd";
                 }
 
                 //then compute the state of the output
