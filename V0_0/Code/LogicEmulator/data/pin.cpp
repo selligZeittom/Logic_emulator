@@ -22,7 +22,6 @@ Pin::Pin(QString lab, QString con)
     /*
      * set the state if the pin is an input pin connected to a constant and
      * not to the output of another gate
-    */
     if(labelConnectedPin.contains("LOW"))
     {
         this->connectedPin = new Pin(false);
@@ -33,6 +32,7 @@ Pin::Pin(QString lab, QString con)
         this->connectedPin = new Pin(true);
         this->setState(connectedPin->getState());
     }
+    */
 }
 
 Pin::~Pin()

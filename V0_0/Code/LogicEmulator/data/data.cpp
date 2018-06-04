@@ -136,10 +136,10 @@ void Data::computeLogic()
     qDebug() << "computing logic";
     for (int i = 0; i < vGates.count(); ++i)
     {
-          if(vGates[i].getLevel() == levelMax)
-          {
-              this->result += vGates[i].outputToString();
-          }
+        if(vGates[i].getLevel() == levelMax)
+        {
+            this->result += vGates[i].outputToString();
+        }
     }
 
     thePortData->onComputingDone();
@@ -183,6 +183,7 @@ void Data::setGatesAndPins()
         }
     }
 
+    /*
     //then compute the states of the pin and gates level by level
     for (int _level = 0; _level <= levelMax; ++_level) {
 
@@ -218,6 +219,25 @@ void Data::setGatesAndPins()
             }
         }
     }
+*/
 
+    for(int i = 0; i < vPins.count(); i++)
+    {
+        Pin& pin = vPins[i];
+        QString labelIdentifier = pin.getLabel();
+        if(labelIdentifier.contains("LOW"))
+        {
+            pin.initRelations(new Pin(false));
+        }
+        else if(labelIdentifier.contains("HIGH"))
+        {
+            pin.initRelations(new Pin(true));
+        }
+        else
+        {
+            Pin* correspondingPin = getCorrespondingPin(labelIdentifier);
+            pin.initRelations(correspondingPin);
+        }
+    }
     thePortData->onConvertingDone();
 }

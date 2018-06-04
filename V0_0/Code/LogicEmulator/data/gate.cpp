@@ -5,6 +5,15 @@ Gate::Gate()
 
 }
 
+Gate::Gate(QString id, int type, int level, int nInputs)
+{
+    this->id = id;
+    this->type = type;
+    this->level = level;
+    this->nInputs = nInputs;
+    this->inputPins = ioPins;
+}
+
 Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
 {
     this->id = id;
@@ -110,6 +119,17 @@ QString Gate::outputToString()
         }
     }
     return retVal;
+}
+
+void Gate::setOutputPin(Pin *oPin)
+{
+    //this->outputPin = new Pin();
+    this->outputPin = oPin;
+}
+
+void Gate::setInputPins(QVector<Pin> iPins)
+{
+    this->inputPins = iPins;
 }
 
 int Gate::getLevel() const
