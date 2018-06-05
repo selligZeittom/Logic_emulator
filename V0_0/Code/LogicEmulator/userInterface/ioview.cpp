@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE_
+#define RELEASE
 
 IOView::IOView(QWidget *parent)
 {
@@ -51,8 +51,8 @@ QString IOView::getPath()
 
     //get the opened file
     QString filename =  QFileDialog::getOpenFileName(
-                host,
-                "Open Json file§",
+                this,
+                "Open Json file",
                 QDir::homePath(), filter);
     return filename;
 
