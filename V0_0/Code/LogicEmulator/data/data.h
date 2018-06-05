@@ -30,6 +30,7 @@ public:
     void setPath(QString path);
     void drawResults();
     Pin &getCorrespondingPin(QString label);
+    Pin* getConnectedPin(QString labelCOnnectedPin);
 
 private:
     void setGatesAndPins();

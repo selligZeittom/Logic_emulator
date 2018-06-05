@@ -160,6 +160,18 @@ void Data::drawResults()
     thePortData->onDrawingDone();
 }
 
+Pin *Data::getConnectedPin(QString labelCOnnectedPin)
+{
+    Pin* retVal;
+    for (int i = 0; i < vGates.count(); ++i)
+    {
+        for(int j = 0; j < vGates[i].getInputPins().count(); j++)
+        {
+
+        }
+    }
+}
+
 /*
 Pin &Data::getCorrespondingPin(QString label)
 {
@@ -212,18 +224,24 @@ void Data::setGatesAndPins()
                             gate.getInputPins()[i].setState(false);
                         }
                     }
+                    //gate.getOutputPin()->initRelations();
+                    gate.computeLogicAndSetPixmap();
                 }
 
-                //for the intermediates level
-                else if(levelGate < levelMax)
-                {
-
-                }
-
-                //for the final level
+                //for the others level
                 else
                 {
+                    //set the input pins
+                    for(int i = 0; i < gate.getInputPins().count(); i++)
+                    {
 
+                    }
+                    gate.computeLogicAndSetPixmap();
+                    //for the not final level
+                    else if(levelGate < levelMax)
+                    {
+
+                    }
                 }
             }
         }
