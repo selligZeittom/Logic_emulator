@@ -5,20 +5,10 @@ Gate::Gate()
 
 }
 
-Gate::Gate(QString id, int type, int level, int nInputs)
+Gate::Gate(QString id, int level, QVector<Pin> ioPins)
 {
     this->id = id;
-    this->type = type;
     this->level = level;
-    this->nInputs = nInputs;
-}
-
-Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
-{
-    this->id = id;
-    this->type = type;
-    this->level = level;
-    this->nInputs = nInputs;
 
     this->inputPins = ioPins;
 
@@ -34,6 +24,7 @@ Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
     {
         this->outputPin = NULL;
     }
+    this->nInputs = ioPins.count();
 }
 
 Gate::~Gate()
@@ -49,6 +40,18 @@ void Gate::initRelations()
 void Gate::computeLogicAndSetPixmap()
 {
     bool result = false;
+
+    int type = 0;
+    if(id.contains("A"))
+    {
+        type = 0;
+    }else if(id.contains("O"))
+    {
+        type = 1;
+    }else if(id.contains("N"))
+    {
+        type = 2;
+    }
     switch (type) {
     case 0:
         //means it's and AND gate

@@ -1,12 +1,9 @@
 {
    "name": "test4",
-   "nGates": 8,
    "gates": [
       {
-         "type": 1,
          "ID": "O1",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "O1_I1",
@@ -23,10 +20,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A1",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "A1_I1",
@@ -43,10 +38,8 @@
          ]
       },
       {
-         "type": 1,
          "ID": "O2",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "O2_I1",
@@ -63,10 +56,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A2",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "A2_I1",
@@ -83,10 +74,8 @@
          ]
       },
       {
-         "type": 1,
          "ID": "O3",
          "level": 1,
-         "nInput": 2,
          "pins": [
             {
                "label": "O3_I1",
@@ -103,10 +92,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A3",
          "level": 1,
-         "nInput": 2,
          "pins": [
             {
                "label": "A3_I1",
@@ -123,10 +110,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A4",
          "level": 2,
-         "nInput": 2,
          "pins": [
             {
                "label": "A4_I1",
@@ -143,10 +128,8 @@
          ]
       },
 	  {
-         "type": 2,
          "ID": "N1",
          "level": 3,
-         "nInput": 1,
          "pins": [
             {
                "label": "N1_I1",

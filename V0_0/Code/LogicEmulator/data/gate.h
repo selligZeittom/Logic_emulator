@@ -13,8 +13,7 @@ class Gate
 {
 public:
     Gate();
-    Gate(QString id, int type, int level, int nInputs);
-    Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins);
+    Gate(QString id, int level, QVector<Pin> ioPins);
     virtual ~Gate();
 
     void initRelations();
@@ -30,7 +29,7 @@ public:
     void setInputPins(QVector<Pin> iPins);
 
 private:
-    int type; //0 : AND, 1 : OR, 2 : NOT
+    //int type; //0 : AND, 1 : OR, 2 : NOT
     QString id;
     int level;
     int nInputs;

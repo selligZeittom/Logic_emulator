@@ -1,12 +1,9 @@
 {
    "name": "test2",
-   "nGates": 3,
    "gates": [
       {
-         "type": 1,
          "ID": "O1",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "O1_I1",
@@ -23,10 +20,8 @@
          ]
       },
       {
-         "type": 1,
          "ID": "O2",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "O2_I1",
@@ -43,10 +38,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A1",
          "level": 0,
-         "nInput": 2,
          "pins": [
             {
                "label": "A1_I1",
@@ -63,10 +56,8 @@
          ]
       },
       {
-         "type": 0,
          "ID": "A2",
          "level": 1,
-         "nInput": 3,
          "pins": [
             {
                "label": "A2_I1",

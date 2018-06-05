@@ -64,8 +64,6 @@ void Data::convertJsonToGates()
         //get the name of the file
         fileName = design["name"].toString();
         qDebug()<< fileName<< " : fileName";
-        int nGates = design["nGates"].toInt();
-        qDebug()<< nGates << " : nGates";
 
         //get the array of all the gates
         QJsonArray gates = design["gates"].toArray();
@@ -80,17 +78,11 @@ void Data::convertJsonToGates()
             //get the characteristics of the gate
             QJsonObject gate = gates.at(i).toObject();
 
-            int type = gate["type"].toInt();
-            qDebug()<< type<< " : type";
-
             QString id = gate["ID"].toString();
             qDebug()<< id<< " : id";
 
             int level = gate["level"].toInt();
             qDebug()<< level<< " : level";
-
-            int nInput = gate["nInput"].toInt();
-            qDebug()<< nInput<< " : nInput";
 
             //get the array of the pins
             QJsonArray pins = gate["pins"].toArray();
@@ -114,7 +106,7 @@ void Data::convertJsonToGates()
             }
 
             //create a logic gate
-            Gate* newGate = new Gate(id, type, level, nInput, vPinsIO);
+            Gate* newGate = new Gate(id, level, vPinsIO);
             vGates.push_back(*newGate); //add to the global vector
 
             qDebug() << "--------------------";
