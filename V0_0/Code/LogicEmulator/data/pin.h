@@ -15,7 +15,8 @@ public:
 
     void setState(bool state);
     bool getState() const;
-    QString getLabel() const;
+    QString getLabelConnectedPin() const;
+    QString getLabelPin() const;
 
 private:
     QString labelPin; //identifies this pin

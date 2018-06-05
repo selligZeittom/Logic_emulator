@@ -160,12 +160,12 @@ void Data::drawResults()
     thePortData->onDrawingDone();
 }
 
-Pin *Data::getCorrespondingPin(QString label)
+Pin &Data::getCorrespondingPin(QString label)
 {
-    Pin* toReturn = NULL;
+    Pin toReturn;
     for (int i = 0; i < vPins.count(); ++i) {
-        if(vPins[i].getLabel() == label){
-            toReturn = &vPins[i];
+        if(vPins[i].getLabelPin() == label){
+            toReturn = vPins[i];
         }
     }
     return toReturn;
@@ -173,6 +173,24 @@ Pin *Data::getCorrespondingPin(QString label)
 
 void Data::setGatesAndPins()
 {
+
+    //init the state of the input logical pins
+    for(int i = 0; i < vPins.count(); i++)
+    {
+        Pin& pin = vPins[i];
+        QString labelIdentifier = pin.getLabelConnectedPin();
+        if(labelIdentifier.contains("LOW"))
+        {
+            pin.initRelations(new Pin(false));
+            pin.setState(false);
+        }
+        else if(labelIdentifier.contains("HIGH"))
+        {
+            pin.initRelations(new Pin(true));
+            pin.setState(true);
+        }
+    }
+
     //first get the max level of gates
     levelMax = 0;
     for (int i = 0; i < vGates.count(); ++i)
@@ -183,60 +201,42 @@ void Data::setGatesAndPins()
         }
     }
 
-    /*
-    //then compute the states of the pin and gates level by level
+
+    //then compute the states of the gates level by level
     for (int _level = 0; _level <= levelMax; ++_level) {
 
         //for each level find the gates
         for (int _gate = 0; _gate < vGates.count(); ++_gate) {
+            Gate &gate = vGates[_gate];
 
             //do sth only if the level is corresponding to the var _level
             if(vGates[_gate].getLevel() == _level)
             {
-                Gate &gate = vGates[_gate];
-
-                //if the level == 0, the input pins have already been initialized in the constructor
-                if(gate.getLevel() != 0)
+                //if the level is 0, there isn't a pin to connect at
+                if(_level != 0)
                 {
                     //first connect the input pins
-                    for (int _pin = 0; _pin < gate.getInputPins().count(); ++_pin) {
-                        Pin &pinToConnect = gate.getInputPins()[_pin];
-                        pinToConnect.initRelations(getCorrespondingPin(pinToConnect.getLabel())); //connect and set the state of the pins
+                    for (int _pin = 0; _pin < gate.getInputPins().count(); ++_pin)
+                    {
+                        Pin &pin = gate.getInputPins()[_pin];
+                        Pin &pinToConnectAt = getCorrespondingPin(pin.getLabelConnectedPin());
+                        //connect and set the state of the pins
+                        pin.initRelations(&pinToConnectAt);
+                        pin.setState(pinToConnectAt.getState());
                     }
                 }
 
-                //if the level is maximum, no need to connect it
-                else if(gate.getLevel() < levelMax)
+                //if the level is maximum, the output pin isn't connected to sth
+                if(gate.getLevel() < levelMax)
                 {
-                    Pin* oPin = gate.getOutputPin();
-                    Pin* refPin = getCorrespondingPin(oPin->getLabel());
-                    oPin->initRelations(refPin);
-                    qDebug()<<"sdacascdsacdsacd";
+                    Pin& oPin = *(gate.getOutputPin());
+                    Pin& refPin = getCorrespondingPin(oPin.getLabelConnectedPin());
+                    oPin.initRelations(&refPin);
+                    qDebug()<<"output pin set";
                 }
-
                 //then compute the state of the output
                 gate.computeLogicAndSetPixmap();
             }
-        }
-    }
-*/
-
-    for(int i = 0; i < vPins.count(); i++)
-    {
-        Pin& pin = vPins[i];
-        QString labelIdentifier = pin.getLabel();
-        if(labelIdentifier.contains("LOW"))
-        {
-            pin.initRelations(new Pin(false));
-        }
-        else if(labelIdentifier.contains("HIGH"))
-        {
-            pin.initRelations(new Pin(true));
-        }
-        else
-        {
-            Pin* correspondingPin = getCorrespondingPin(labelIdentifier);
-            pin.initRelations(correspondingPin);
         }
     }
     thePortData->onConvertingDone();

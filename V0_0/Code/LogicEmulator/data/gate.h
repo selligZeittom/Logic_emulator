@@ -22,7 +22,7 @@ public:
     int getLevel() const;
     void computeLogicAndSetPixmap();
     QVector<Pin> &getInputPins();
-    Pin* getOutputPin() const;
+    Pin *getOutputPin();
     QPixmap getQPixMap() const;
     QString outputToString();
     void setOutputPin(Pin* oPin);

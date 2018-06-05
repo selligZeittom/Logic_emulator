@@ -11,7 +11,6 @@ Gate::Gate(QString id, int type, int level, int nInputs)
     this->type = type;
     this->level = level;
     this->nInputs = nInputs;
-    this->inputPins = ioPins;
 }
 
 Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
@@ -20,7 +19,9 @@ Gate::Gate(QString id, int type, int level, int nInputs, QVector<Pin> ioPins)
     this->type = type;
     this->level = level;
     this->nInputs = nInputs;
+
     this->inputPins = ioPins;
+
     this->outputPin = new Pin();
     this->qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
 
@@ -88,7 +89,7 @@ QVector<Pin> &Gate::getInputPins()
     return this->inputPins;
 }
 
-Pin *Gate::getOutputPin() const
+Pin *Gate::getOutputPin()
 {
     return this->outputPin;
 }

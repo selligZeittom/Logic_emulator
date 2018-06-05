@@ -29,7 +29,7 @@ public:
     void computeLogic();
     void setPath(QString path);
     void drawResults();
-    Pin* getCorrespondingPin(QString label);
+    Pin &getCorrespondingPin(QString label);
 
 private:
     void setGatesAndPins();
