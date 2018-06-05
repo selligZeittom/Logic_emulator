@@ -38,7 +38,7 @@ void Data::convertJsonToGates()
 {
     //first clear the variables
     vGates.clear();
-    vPins.clear();
+    //vPins.clear();
     levelMax = 0;
     fileName = "";
     result = "";
@@ -111,7 +111,7 @@ void Data::convertJsonToGates()
 
                 //create a Pin object an add it to the end of the vector
                 Pin* p = new Pin(label, connected);
-                vPins.push_back(*p); //add to the global vector
+                //vPins.push_back(*p); //add to the global vector
                 vPinsIO.push_back(*p);//add to the gate's vector
             }
 
@@ -160,6 +160,7 @@ void Data::drawResults()
     thePortData->onDrawingDone();
 }
 
+/*
 Pin &Data::getCorrespondingPin(QString label)
 {
     Pin toReturn;
@@ -170,74 +171,64 @@ Pin &Data::getCorrespondingPin(QString label)
     }
     return toReturn;
 }
+*/
 
 void Data::setGatesAndPins()
 {
-
-    //init the state of the input logical pins
-    for(int i = 0; i < vPins.count(); i++)
-    {
-        Pin& pin = vPins[i];
-        QString labelIdentifier = pin.getLabelConnectedPin();
-        if(labelIdentifier.contains("LOW"))
-        {
-            pin.initRelations(new Pin(false));
-            pin.setState(false);
-        }
-        else if(labelIdentifier.contains("HIGH"))
-        {
-            pin.initRelations(new Pin(true));
-            pin.setState(true);
-        }
-    }
-
-    //first get the max level of gates
+    //get the max level of the design
     levelMax = 0;
-    for (int i = 0; i < vGates.count(); ++i)
+    for(int i = 0; i < vGates.count(); i++)
     {
-        if(vGates[i].getLevel() > levelMax)
+        int levelGate = vGates[i].getLevel();
+        if(levelGate > levelMax)
         {
-            levelMax = vGates[i].getLevel();
+            levelMax = levelGate;
         }
     }
 
+    //then compute level by level
+    for(int currentLevel = 0; currentLevel < levelMax; currentLevel++)
+    {
 
-    //then compute the states of the gates level by level
-    for (int _level = 0; _level <= levelMax; ++_level) {
-
-        //for each level find the gates
-        for (int _gate = 0; _gate < vGates.count(); ++_gate) {
-            Gate &gate = vGates[_gate];
-
-            //do sth only if the level is corresponding to the var _level
-            if(vGates[_gate].getLevel() == _level)
+        //look for all the gates in the vector if the level correspond to the currentLEvel
+        for(int currentGate = 0; currentGate < vGates.count(); currentGate++)
+        {
+            int levelGate = vGates[currentGate].getLevel();
+            if(levelGate == currentLevel)
             {
-                //if the level is 0, there isn't a pin to connect at
-                if(_level != 0)
+                Gate& gate = vGates[currentGate];
+
+                //for the first level there isn't a real connected pin
+                if(levelGate == 0)
                 {
-                    //first connect the input pins
-                    for (int _pin = 0; _pin < gate.getInputPins().count(); ++_pin)
+                    for(int i = 0; i < gate.getInputPins().count(); i++)
                     {
-                        Pin &pin = gate.getInputPins()[_pin];
-                        Pin &pinToConnectAt = getCorrespondingPin(pin.getLabelConnectedPin());
-                        //connect and set the state of the pins
-                        pin.initRelations(&pinToConnectAt);
-                        pin.setState(pinToConnectAt.getState());
+                        if(gate.getInputPins()[i].getLabelConnectedPin().contains("HIGH"))
+                        {
+                            gate.getInputPins()[i].setState(true);
+                        }
+                        else if(gate.getInputPins()[i].getLabelConnectedPin().contains("LOW"))
+                        {
+                            gate.getInputPins()[i].setState(false);
+                        }
                     }
                 }
 
-                //if the level is maximum, the output pin isn't connected to sth
-                if(gate.getLevel() < levelMax)
+                //for the intermediates level
+                else if(levelGate < levelMax)
                 {
-                    Pin& oPin = *(gate.getOutputPin());
-                    Pin& refPin = getCorrespondingPin(oPin.getLabelConnectedPin());
-                    oPin.initRelations(&refPin);
-                    qDebug()<<"output pin set";
+
                 }
-                //then compute the state of the output
-                gate.computeLogicAndSetPixmap();
+
+                //for the final level
+                else
+                {
+
+                }
             }
         }
     }
+
+
     thePortData->onConvertingDone();
 }

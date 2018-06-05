@@ -40,7 +40,7 @@ private:
     QString result;
     QString code;
     QVector<Gate> vGates;
-    QVector<Pin> vPins;
+    //QVector<Pin> vPins;
     QString path;
     int levelMax;
 
