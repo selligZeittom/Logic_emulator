@@ -38,7 +38,6 @@ void Data::convertJsonToGates()
 {
     //first clear the variables
     vGates.clear();
-    //vPins.clear();
     levelMax = 0;
     fileName = "";
     result = "";
@@ -111,7 +110,6 @@ void Data::convertJsonToGates()
 
                 //create a Pin object an add it to the end of the vector
                 Pin* p = new Pin(label, connected);
-                //vPins.push_back(*p); //add to the global vector
                 vPinsIO.push_back(*p);//add to the gate's vector
             }
 
@@ -138,8 +136,10 @@ void Data::computeLogic()
     {
         if(vGates[i].getLevel() == levelMax)
         {
-            this->result += vGates[i].outputToString();
+            this->result += "\r\n";
         }
+        this->result += vGates[i].outputToString();
+        this->result += "\r\n";
     }
 
     thePortData->onComputingDone();
@@ -156,7 +156,7 @@ void Data::drawResults()
     thePortData->onNewFileNAme(fileName);
     thePortData->onNewCode(code);
     thePortData->onNewResults(result);
-    thePortData->onNewGates(vGates);
+    thePortData->onNewGates(vGates, levelMax);
     thePortData->onDrawingDone();
 }
 
@@ -175,19 +175,6 @@ Pin &Data::getConnectedPin(QString labelCOnnectedPin)
     }
     return retVal;
 }
-
-/*
-Pin &Data::getCorrespondingPin(QString label)
-{
-    Pin toReturn;
-    for (int i = 0; i < vPins.count(); ++i) {
-        if(vPins[i].getLabelPin() == label){
-            toReturn = vPins[i];
-        }
-    }
-    return toReturn;
-}
-*/
 
 void Data::setGatesAndPins()
 {
@@ -256,7 +243,6 @@ void Data::setGatesAndPins()
             }
         }
     }
-
     thePortData->onConvertingDone();
 }
 

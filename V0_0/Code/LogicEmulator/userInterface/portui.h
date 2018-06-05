@@ -24,7 +24,7 @@ public:
 public:
     virtual void onNewCode(QString code);
     virtual void onNewFileNAme(QString filename);
-    virtual void onNewGates(QVector<Gate> gates);
+    virtual void onNewGates(QVector<Gate> gates, int maxLevel);
     virtual void onNewResults(QString results);
 
 private:

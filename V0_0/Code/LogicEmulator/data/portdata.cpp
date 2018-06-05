@@ -81,9 +81,9 @@ void PortData::onNewFileNAme(QString filename)
     thePortUI->onNewFileNAme(filename);
 }
 
-void PortData::onNewGates(QVector<Gate> gates)
+void PortData::onNewGates(QVector<Gate> gates, int maxLevel)
 {
-    thePortUI->onNewGates(gates);
+    thePortUI->onNewGates(gates, maxLevel);
 }
 
 void PortData::onNewResults(QString results)

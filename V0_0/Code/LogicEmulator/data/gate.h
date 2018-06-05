@@ -25,6 +25,7 @@ public:
     Pin *getOutputPin();
     QPixmap getQPixMap() const;
     QString outputToString();
+    QString getID() const;
     void setOutputPin(Pin* oPin);
     void setInputPins(QVector<Pin> iPins);
 

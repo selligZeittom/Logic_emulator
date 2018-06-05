@@ -53,7 +53,7 @@ public:
     QString getPath();
 
     //outputView public functions and variables
-    void draw(QVector<Gate> gates);
+    void draw(QVector<Gate> gates, int maxLevel);
     void onNewCode(QString listCode);
     void onNewFileName(QString filename);
     void onNewResults(QString results);

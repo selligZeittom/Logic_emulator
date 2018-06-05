@@ -483,6 +483,7 @@ release/moc_ioview.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushBu
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsTextItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QListWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistview.h \
@@ -1230,6 +1231,7 @@ release/portui.o: ../LogicEmulator/userInterface/portui.cpp ../LogicEmulator/use
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsTextItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QListWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistview.h \
@@ -2111,6 +2113,7 @@ release/factory.o: ../LogicEmulator/factory.cpp ../LogicEmulator/factory.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsTextItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QListWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistview.h \
@@ -2314,6 +2317,7 @@ release/ioview.o: ../LogicEmulator/userInterface/ioview.cpp ../LogicEmulator/use
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QGraphicsTextItem \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QListWidget \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qlistview.h \

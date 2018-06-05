@@ -29,7 +29,6 @@ public:
     void computeLogic();
     void setPath(QString path);
     void drawResults();
-    Pin &getCorrespondingPin(QString label);
     Pin &getConnectedPin(QString labelCOnnectedPin);
 
 private:
@@ -41,7 +40,6 @@ private:
     QString result;
     QString code;
     QVector<Gate> vGates;
-    //QVector<Pin> vPins;
     QString path;
     int levelMax;
 

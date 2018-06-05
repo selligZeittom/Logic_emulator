@@ -73,7 +73,7 @@ void Gate::computeLogicAndSetPixmap()
         break;
         //means it's a NOT gate
     case 2:
-        qpixMap = new QPixmap(":/gates/images/or_gate_original.png");
+        qpixMap = new QPixmap(":/gates/images/not_gate_original.png");
         result = !(inputPins[0].getState());
         break;
     default:
@@ -120,6 +120,11 @@ QString Gate::outputToString()
         }
     }
     return retVal;
+}
+
+QString Gate::getID() const
+{
+    return id;
 }
 
 void Gate::setOutputPin(Pin *oPin)

@@ -32,9 +32,9 @@ void PortUI::onNewFileNAme(QString filename)
     ioView->onNewFileName(filename);
 }
 
-void PortUI::onNewGates(QVector<Gate> gates)
+void PortUI::onNewGates(QVector<Gate> gates, int maxLevel)
 {
-    ioView->draw(gates);
+    ioView->draw(gates, maxLevel);
 }
 
 void PortUI::onNewResults(QString results)

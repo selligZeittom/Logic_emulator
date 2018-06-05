@@ -1,6 +1,6 @@
 {
-   "name": "test3",
-   "nGates": 7,
+   "name": "test4",
+   "nGates": 8,
    "gates": [
       {
          "type": 1,
@@ -138,6 +138,22 @@
             },
             {
                "label": "A4_U",
+               "connected": "N1_I1"
+            }
+         ]
+      },
+	  {
+         "type": 2,
+         "ID": "N1",
+         "level": 3,
+         "nInput": 1,
+         "pins": [
+            {
+               "label": "N1_I1",
+               "connected": "A4_U"
+            },
+            {
+               "label": "N1_U",
                "connected": "SCOPE1"
             }
          ]
