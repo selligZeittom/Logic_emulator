@@ -17,9 +17,9 @@ bg=gray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>490</x>
+      <x>483</x>
       <y>7</y>
-      <w>721</w>
+      <w>728</w>
       <h>546</h>
     </coordinates>
     <panel_attributes>drawWindow : QGraphicsView
@@ -126,7 +126,6 @@ layer=1</panel_attributes>
 "ID" : "A1",
 "level" : "0"
 "nInput" : 2
-"inputLabel" : ["LOG_LOW, LOG_HIGH"],
 "outputLabel" : "A1_U"
 
 
@@ -136,26 +135,30 @@ layer=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>483</x>
       <y>147</y>
-      <w>84</w>
+      <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-m2=0</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+m2=LOG_HIGH
+m1=A1_I1
+layer=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>483</x>
       <y>182</y>
-      <w>84</w>
+      <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-m2=0</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+m2=LOG_HIGH
+m1=A1_I2
+layer=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLDeployment</id>
@@ -169,7 +172,6 @@ m2=0</panel_attributes>
 "ID" : "O1",
 "level" : "0"
 "nInput" : 2
-"inputLabel" : ["LOG_LOW, LOG_HIGH"],
 "outputLabel" : "O1_U"
 
 
@@ -179,26 +181,30 @@ layer=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>483</x>
       <y>287</y>
-      <w>84</w>
+      <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-m2=0</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+m2=LOG_HIGH
+m1=O1_I1
+layer=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>483</x>
       <y>322</y>
-      <w>84</w>
+      <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+m2=LOG_HIGH
+m1=O1_I2
+layer=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLDeployment</id>
@@ -212,7 +218,6 @@ m2=1</panel_attributes>
 "ID" : "A2",
 "level" : "1"
 "nInput" : 2
-"inputLabel" : ["A1_U, O1_U],
 "outputLabel" : "A2_U"
 
 
@@ -230,7 +235,8 @@ layer=2</panel_attributes>
     <panel_attributes>lt=&lt;&lt;&lt;-
 m1=A1_U
 m2=A1_U
-</panel_attributes>
+
+layer=2</panel_attributes>
     <additional_attributes>170.0;80.0;80.0;80.0;80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -243,7 +249,8 @@ m2=A1_U
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 m1=O1_U
-m2=O1_U</panel_attributes>
+m2=O1_U
+layer=2</panel_attributes>
     <additional_attributes>170.0;10.0;80.0;10.0;80.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
@@ -256,7 +263,8 @@ m2=O1_U</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 m1=A2_U
-</panel_attributes>
+
+layer=2</panel_attributes>
     <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
