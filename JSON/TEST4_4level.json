@@ -7,7 +7,7 @@
          "pins": [
             {
                "label": "O1_I1",
-               "connected": "LOG_HIGH"
+               "connected": "LOG_LOW"
             },
             {
                "label": "O1_I2",
@@ -61,7 +61,7 @@
          "pins": [
             {
                "label": "A2_I1",
-               "connected": "LOG_HIGH"
+               "connected": "LOG_LOW"
             },
             {
                "label": "A2_I2",

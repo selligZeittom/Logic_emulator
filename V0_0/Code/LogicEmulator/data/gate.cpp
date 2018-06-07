@@ -1,5 +1,6 @@
 #include "gate.h"
 
+
 Gate::Gate()
 {
 
@@ -25,6 +26,8 @@ Gate::Gate(QString id, int level, QVector<Pin> ioPins)
         this->outputPin = NULL;
     }
     this->nInputs = ioPins.count();
+    this->x = 0;
+    this->y = 0;
 }
 
 Gate::~Gate()
@@ -132,7 +135,6 @@ QString Gate::getID() const
 
 void Gate::setOutputPin(Pin *oPin)
 {
-    //this->outputPin = new Pin();
     this->outputPin = oPin;
 }
 
@@ -140,6 +142,25 @@ void Gate::setInputPins(QVector<Pin> iPins)
 {
     this->inputPins = iPins;
 }
+
+void Gate::setXY(int x, int y)
+{
+    this->x = x;
+    this->y = y;
+    setXYpins();
+}
+
+void Gate::setXYpins()
+{
+    for (int i = 0; i < inputPins.count(); ++i)
+    {
+        inputPins[i].setXY(this->x, this->y + i * 39 + 20);
+    }
+
+    this->outputPin->setXY(this->x+80, this->y+40);
+
+}
+
 
 int Gate::getLevel() const
 {

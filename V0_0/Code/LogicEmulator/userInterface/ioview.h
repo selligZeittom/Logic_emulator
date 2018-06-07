@@ -20,6 +20,8 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsTextItem>
 #include <QListWidget>
+#include <QPen>
+#include <QColor>
 
 #include "interfaces/iviewupdate.h"
 #include "data/gate.h"
@@ -77,6 +79,8 @@ private:
     QGraphicsView* codeWindow;
     QGraphicsScene* scnCode;
     QString styleSheet;
+
+    void drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene &scn, QPen &pen);
 
 public slots:
     void buttonClicked();

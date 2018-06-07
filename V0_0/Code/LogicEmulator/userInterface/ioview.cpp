@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE
+#define RELEASE_n
 
 IOView::IOView(QWidget *parent)
 {
@@ -77,13 +77,14 @@ void IOView::draw(QVector<Gate> gates, int maxLevel)
     {
         itemPerLevel[gates[i].getLevel()]++;
     }
-    int xOffset = 200;
+    int xOffset = 250;
     int yOffset = 150;
 
 
-    qDebug() << maxLevel << " : maxLevel";
-    for (int _level = 0; _level <= maxLevel; ++_level) {
-        int j = 0;
+    //draw the pixmap of the gates, and the connections and set the coordinates
+    for (int _level = 0; _level <= maxLevel; ++_level)
+    {
+        int _usedGates = 0;
         for (int i = 0; i < gates.count(); ++i)
         {
             if(gates[i].getLevel() == _level)
@@ -94,17 +95,18 @@ void IOView::draw(QVector<Gate> gates, int maxLevel)
                     ratio = itemPerLevel[_level-1] / itemPerLevel[_level];
                 }
                 int x = xOffset * _level;
-                 int y = 0;
+                int y = 0;
                 if(itemPerLevel[_level] != 1)
                 {
-                    y = yOffset * j * ratio + (_level) * 75;
+                    y = yOffset * _usedGates * ratio + (_level) * yOffset/2;
                 }
                 else
                 {
-                   y =  yOffset * itemPerLevel[0] / 2;
+                    y =  yOffset * (itemPerLevel[0]/2) - yOffset/2;
                 }
                 QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
                 item->setPos(x, y);
+                gates[i].setXY(x, y);
                 item->setPixmap(gates[i].getQPixMap().scaled(80, 80));
                 scnGates->addItem(item);
 
@@ -112,10 +114,90 @@ void IOView::draw(QVector<Gate> gates, int maxLevel)
                 item2->setPos(x + 20, y + 30);
                 item2->setPlainText(gates[i].getID());
                 this->scnGates->addItem(item2);
+                _usedGates++;
 
-                qDebug() << "draw first gate" << gates[i].getLevel();
-                j++;
             }
+        }
+    }
+
+    //draw the wires between the gates
+    for (int i = 0; i < gates.count(); ++i)
+    {
+        int x1 = 0;
+        int y1 = 0;
+
+        int x2 = 0;
+        int y2 = 0;
+
+        QPen* pen;
+
+        //logical inputs
+        if(gates[i].getLevel() == 0)
+        {
+            for(int j = 0; j < gates[i].getInputPins().count(); j++)
+            {
+                x1 = gates[i].getInputPins()[j].getX();
+                y1 = gates[i].getInputPins()[j].getY();
+
+                x2 = x1 - 50;
+                y2 = y1;
+
+                if(gates[i].getInputPins()[j].getState())
+                {
+                    pen = new QPen(QColor(Qt::green))  ;
+                }
+                else
+                {
+                    pen = new QPen(QColor(Qt::red))  ;
+                }
+
+                pen->setWidth(3);
+                scnGates->addLine(x1, y1, x2, y2, *pen);
+            }
+        }
+
+        //between the gates
+        if(gates[i].getLevel() != maxLevel)
+        {
+            x1 = gates[i].getOutputPin()->getX();
+            y1 = gates[i].getOutputPin()->getY();
+
+            x2 = ((gates[i].getOutputPin())->getConnectedPin())->getX();
+            y2 = ((gates[i].getOutputPin())->getConnectedPin())->getY();
+
+
+            if(gates[i].getOutputPin()->getState())
+            {
+                pen = new QPen(QColor(Qt::green))  ;
+            }
+            else
+            {
+                pen = new QPen(QColor(Qt::red))  ;
+            }
+
+            pen->setWidth(3);
+            scnGates->addLine(x1, y1, x2, y2, *pen);
+            //drawLineBetweenP1P2(x1, y1, x2, y2, *scnGates, *pen);
+        }
+        else
+        {
+            x1 = gates[i].getOutputPin()->getX();
+            y1 = gates[i].getOutputPin()->getY();
+
+            x2 = x1 + 50;
+            y2 = y1;
+
+            if(gates[i].getOutputPin()->getState())
+            {
+                pen = new QPen(QColor(Qt::green))  ;
+            }
+            else
+            {
+                pen = new QPen(QColor(Qt::red))  ;
+            }
+
+            pen->setWidth(3);
+            scnGates->addLine(x1, y1, x2, y2, *pen);
         }
     }
 }
@@ -174,6 +256,15 @@ void IOView::initGraphicalObject()
     codeWindow->show();
 
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked()));
+}
+
+void IOView::drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene& scn, QPen& pen)
+{
+    int x3 = (x2-x1)/2;
+    scn.addLine(x1, y1, x3, y1, pen);
+    scn.addLine(x3, y1, x3, y2, pen);
+    scn.addLine(x3, y2, x2, y2, pen);
+
 }
 
 void IOView::buttonClicked()

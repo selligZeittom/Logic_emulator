@@ -27,6 +27,7 @@ public:
     QString getID() const;
     void setOutputPin(Pin* oPin);
     void setInputPins(QVector<Pin> iPins);
+    void setXY(int x, int y);
 
 private:
     //int type; //0 : AND, 1 : OR, 2 : NOT
@@ -36,7 +37,8 @@ private:
     QVector<Pin> inputPins;
     Pin* outputPin;
     QPixmap* qpixMap;
-
+    int x, y; //represent the point of drawing pixmap
+    void setXYpins();
 
 
 };

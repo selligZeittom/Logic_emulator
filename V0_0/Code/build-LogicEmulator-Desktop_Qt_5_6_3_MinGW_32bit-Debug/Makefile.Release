@@ -505,7 +505,6 @@ release/moc_ioview.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushBu
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/userInterface/ioview.h
 	C:\Qt\Qt5.6.3\5.6.3\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/mkspecs/win32-g++ -I"C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/V0_0/Code/LogicEmulator" -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtANGLE -IC:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore -I. ..\LogicEmulator\userInterface\ioview.h -o release\moc_ioview.cpp
 
@@ -773,7 +772,6 @@ release/data.o: ../LogicEmulator/data/data.cpp ../LogicEmulator/data/data.h \
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/data/portdata.h \
 		../LogicEmulator/userInterface/portui.h \
 		../LogicEmulator/controller/portcontroller.h \
@@ -920,7 +918,54 @@ release/pin.o: ../LogicEmulator/data/pin.cpp ../LogicEmulator/data/pin.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qrefcount.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qstringbuilder.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qstringbuilder.h \
+		../LogicEmulator/data/gate.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qvector.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qalgorithms.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qiterator.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qlist.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qhashfunctions.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qpair.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qbytearraylist.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qstringlist.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregexp.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qstringmatcher.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qpoint.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpixmap.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpaintdevice.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qrect.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmargins.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qsize.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qcolor.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qrgb.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qrgba64.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qshareddata.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qhash.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcoreevent.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qscopedpointer.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qmetatype.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qvarlengtharray.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qcontainerfwd.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qobject_impl.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qimage.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpixelformat.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtransform.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qmatrix.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpolygon.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qregion.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qdatastream.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qiodevice.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qline.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpainterpath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pin.o ..\LogicEmulator\data\pin.cpp
 
 release/portdata.o: ../LogicEmulator/data/portdata.cpp ../LogicEmulator/data/portdata.h \
@@ -1049,7 +1094,6 @@ release/portdata.o: ../LogicEmulator/data/portdata.cpp ../LogicEmulator/data/por
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/data/data.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QFile \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QFileDialog \
@@ -1194,7 +1238,6 @@ release/portui.o: ../LogicEmulator/userInterface/portui.cpp ../LogicEmulator/use
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/userInterface/ioview.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qpushbutton.h \
@@ -1804,8 +1847,7 @@ release/portcontroller.o: ../LogicEmulator/controller/portcontroller.cpp ../Logi
 		../LogicEmulator/interfaces/idataupdate.h \
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\portcontroller.o ..\LogicEmulator\controller\portcontroller.cpp
 
 release/iviewupdate.o: ../LogicEmulator/interfaces/iviewupdate.cpp ../LogicEmulator/interfaces/iviewupdate.h \
@@ -1932,8 +1974,7 @@ release/idataupdate.o: ../LogicEmulator/interfaces/idataupdate.cpp ../LogicEmula
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qdatastream.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qline.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpainterpath.h \
-		../LogicEmulator/data/pin.h
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qpainterpath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\idataupdate.o ..\LogicEmulator\interfaces\idataupdate.cpp
 
 release/factory.o: ../LogicEmulator/factory.cpp ../LogicEmulator/factory.h \
@@ -2063,7 +2104,6 @@ release/factory.o: ../LogicEmulator/factory.cpp ../LogicEmulator/factory.h \
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/controller/controller.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QDebug \
 		../LogicEmulator/XF/ism.h \
@@ -2339,7 +2379,6 @@ release/ioview.o: ../LogicEmulator/userInterface/ioview.cpp ../LogicEmulator/use
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		../LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../LogicEmulator/data/pin.h \
 		../LogicEmulator/userInterface/portui.h \
 		../LogicEmulator/controller/portcontroller.h \
 		../LogicEmulator/interfaces/icontrollerdata.h \

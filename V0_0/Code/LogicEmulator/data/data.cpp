@@ -63,7 +63,6 @@ void Data::convertJsonToGates()
     try {
         //get the name of the file
         fileName = design["name"].toString();
-        qDebug()<< fileName<< " : fileName";
 
         //get the array of all the gates
         QJsonArray gates = design["gates"].toArray();
@@ -79,10 +78,8 @@ void Data::convertJsonToGates()
             QJsonObject gate = gates.at(i).toObject();
 
             QString id = gate["ID"].toString();
-            qDebug()<< id<< " : id";
 
             int level = gate["level"].toInt();
-            qDebug()<< level<< " : level";
 
             //get the array of the pins
             QJsonArray pins = gate["pins"].toArray();
@@ -95,10 +92,7 @@ void Data::convertJsonToGates()
             {
                 QJsonObject pin = pins.at(j).toObject();
                 QString label = pin["label"].toString();
-                qDebug()<< label<< " : label";
                 QString connected = pin["connected"].toString();
-                qDebug()<< connected<< " : connected";
-                qDebug() << "......................";
 
                 //create a Pin object an add it to the end of the vector
                 Pin* p = new Pin(label, connected);
@@ -109,7 +103,6 @@ void Data::convertJsonToGates()
             Gate* newGate = new Gate(id, level, vPinsIO);
             vGates.push_back(*newGate); //add to the global vector
 
-            qDebug() << "--------------------";
         }
     }
     catch (...)
@@ -228,7 +221,6 @@ void Data::setGatesAndPins()
                     {
                         Pin& outputPin = *gate.getOutputPin();
                         outputPin.initRelations(&getConnectedPin(outputPin.getLabelConnectedPin()));
-                        qDebug() << "highest level";
                     }
                     gate.computeLogicAndSetPixmap();
                 }

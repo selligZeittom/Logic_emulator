@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <QString>
+#include <QDebug>
+
 
 class Pin
 {
@@ -12,17 +14,23 @@ public:
     Pin(QString lab, QString con);
     virtual ~Pin();
     void initRelations(Pin* labelConnectedPin);
+    void operator=(const Pin &p1);
 
     void setState(bool state);
     bool getState() const;
     QString getLabelConnectedPin() const;
     QString getLabelPin() const;
+    Pin* getConnectedPin() const;
+    void setXY(int x, int y);
+    int getX() const;
+    int getY() const;
 
 private:
     QString labelPin; //identifies this pin
     QString labelConnectedPin; //identifies the others pin
     Pin* connectedPin;
     bool state;
+    int x, y;
 };
 
 #endif // PIN_H
