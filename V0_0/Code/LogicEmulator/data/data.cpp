@@ -110,11 +110,10 @@ void Data::convertJsonToGates()
         qDebug() << "error while converting...";
         thePortData->onError(1);
     }
-
-    setGatesAndPins();
+    thePortData->onConvertingDone();
 }
 
-void Data::computeLogic()
+void Data::outputResultsToString()
 {
     qDebug() << "computing logic";
     for (int i = 0; i < vGates.count(); ++i)
@@ -150,13 +149,22 @@ Pin &Data::getConnectedPin(QString labelCOnnectedPin)
     Pin retVal = NULL;
     for (int i = 0; i < vGates.count(); ++i)
     {
-
+        //search for an output pin
         QString labelPin = vGates[i].getOutputPin()->getLabelPin();
         if(labelPin == labelCOnnectedPin)
         {
             return *(vGates[i].getOutputPin());
         }
 
+        //search for an input pin
+        for(int j = 0; j < vGates[i].getInputPins().count(); j++)
+        {
+            labelPin = vGates[i].getInputPins()[j].getLabelPin();
+            if(labelPin == labelCOnnectedPin)
+            {
+                return (vGates[i].getInputPins()[j]);
+            }
+        }
     }
     return retVal;
 }
@@ -227,6 +235,6 @@ void Data::setGatesAndPins()
             }
         }
     }
-    thePortData->onConvertingDone();
+    outputResultsToString();
 }
 

@@ -26,13 +26,13 @@ public:
 
     void loadFile();
     void convertJsonToGates();
-    void computeLogic();
     void setPath(QString path);
     void drawResults();
     Pin &getConnectedPin(QString labelCOnnectedPin);
+    void setGatesAndPins();
 
 private:
-    void setGatesAndPins();
+    void outputResultsToString();
     PortData* thePortData;
     QJsonDocument* jsonConverter ;
     QFile* file ;

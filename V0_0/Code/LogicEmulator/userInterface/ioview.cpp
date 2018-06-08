@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE_n
+#define RELEASE
 
 IOView::IOView(QWidget *parent)
 {
@@ -9,14 +9,14 @@ IOView::IOView(QWidget *parent)
 
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect  screenGeometry = screen->geometry();
-    this->height = screenGeometry.height();
+    this->height = screenGeometry.height()-35;
     this->width = screenGeometry.width();
 
     std::cout << "width : " << width << ", height : " << height << std::endl;
 
-    this->setWindowTitle("Logic Emulator");
-    this->setGeometry(0, 35, width, height-35);
+    this->setWindowTitle("Logic Emulator V0.0");
     this->setVisible(true);
+    this->showMaximized();
     this->styleSheet = "QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }";
 }
 
@@ -61,7 +61,7 @@ QString IOView::getPath()
 #endif
 }
 
-void IOView::draw(QVector<Gate> gates, int maxLevel)
+void IOView::draw(QVector<Gate> &gates, int maxLevel)
 {
     scnGates->clear();
 
@@ -176,8 +176,8 @@ void IOView::draw(QVector<Gate> gates, int maxLevel)
             }
 
             pen->setWidth(3);
-            scnGates->addLine(x1, y1, x2, y2, *pen);
-            //drawLineBetweenP1P2(x1, y1, x2, y2, *scnGates, *pen);
+            //scnGates->addLine(x1, y1, x2, y2, *pen);
+            drawLineBetweenP1P2(x1, y1, x2, y2, *scnGates, *pen);
         }
         else
         {
@@ -260,11 +260,13 @@ void IOView::initGraphicalObject()
 
 void IOView::drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene& scn, QPen& pen)
 {
-    int x3 = (x2-x1)/2;
+    int x3 = (x2-x1)/2 + x1;
     scn.addLine(x1, y1, x3, y1, pen);
+    qDebug() << "drawed line from " << x1 <<";" <<y1 << " to " <<x3 <<";"<<y1;
     scn.addLine(x3, y1, x3, y2, pen);
+    qDebug() << "drawed line from " << x3 <<";" <<y1 << " to " <<x3 <<";"<<y2;
     scn.addLine(x3, y2, x2, y2, pen);
-
+    qDebug() << "drawed line from " << x3 <<";" <<y2 << " to " <<x2 <<";"<<y2;
 }
 
 void IOView::buttonClicked()

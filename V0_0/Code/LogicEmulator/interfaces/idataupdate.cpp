@@ -10,7 +10,7 @@ void IDataUpdate::onNewResults(QString results)
 
 }
 
-void IDataUpdate::onNewGates(QVector<Gate> gates, int maxLevel)
+void IDataUpdate::onNewGates(QVector<Gate> &gates, int maxLevel)
 {
 
 }

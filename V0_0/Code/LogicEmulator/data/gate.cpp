@@ -152,9 +152,16 @@ void Gate::setXY(int x, int y)
 
 void Gate::setXYpins()
 {
-    for (int i = 0; i < inputPins.count(); ++i)
+    if(this->id.contains("N"))
     {
-        inputPins[i].setXY(this->x, this->y + i * 39 + 20);
+        inputPins[0].setXY(this->x, this->y + 40);
+    }
+    else
+    {
+        for (int i = 0; i < inputPins.count(); ++i)
+        {
+            inputPins[i].setXY(this->x, this->y + i * 39 + 20);
+        }
     }
 
     this->outputPin->setXY(this->x+80, this->y+40);

@@ -30,7 +30,7 @@ Pin::~Pin()
 
 void Pin::initRelations(Pin *connected)
 {
-    this->connectedPin = new Pin();
+    //this->connectedPin = new Pin();
     this->connectedPin = connected;
 }
 
@@ -42,7 +42,6 @@ void Pin::operator=(const Pin &p1)
     this->state = p1.state;
     this->x = p1.x;
     this->y = p1.y;
-    qDebug() << "operator=";
 }
 
 void Pin::setState(bool state)

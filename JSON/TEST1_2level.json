@@ -15,7 +15,7 @@
 	    },
 	     {
 	      "label":"O1_U",
-	      "connected":"A2_I2" 
+	      "connected":"A2_I1" 
 	    }
 	    ]	
 	},
@@ -33,7 +33,7 @@
 	    },
 	     {
 	      "label":"A1_U",
-	      "connected":"A2_I1" 
+	      "connected":"A2_I2" 
 	    }
 	    ]
 	},
