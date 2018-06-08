@@ -100,3 +100,8 @@ void PortData::onNewResults(QString results)
 {
     thePortUI->onNewResults(results);
 }
+
+void PortData::onDeleteOldGatesAndCode()
+{
+    thePortUI->onDeleteOldGatesAndCode();
+}

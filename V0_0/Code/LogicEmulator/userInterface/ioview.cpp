@@ -231,6 +231,12 @@ void IOView::onNewResults(QString results)
     this->labelResult->setText(results);
 }
 
+void IOView::onDeleteOldGatesAndCode()
+{
+    this->scnGates->clear();
+    this->scnCode->clear();
+}
+
 void IOView::initGraphicalObject()
 {
     this->load = new QPushButton(this);

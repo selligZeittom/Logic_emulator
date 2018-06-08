@@ -26,6 +26,7 @@ public:
     virtual void onNewFileNAme(QString filename);
     virtual void onNewGates(QVector<Gate> &gates, int maxLevel);
     virtual void onNewResults(QString results);
+    virtual void onDeleteOldGatesAndCode();
 
 private:
     IOView* ioView;

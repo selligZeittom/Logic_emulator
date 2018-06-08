@@ -29,6 +29,7 @@ void Data::loadFile()
     if(!file->isOpen())
     {
         qDebug() << "failed to open file...";
+        code="no code...";
         thePortData->onError(ERROR_LOADING_FILE);
     }
     thePortData->onLoadingDone();
@@ -273,9 +274,8 @@ void Data::setGatesAndPins()
 void Data::processError(QString labelError)
 {
     thePortData->onNewFileNAme(fileName);
+    thePortData->onDeleteOldGatesAndCode();
     thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
-
-
     thePortData->onNewResults(labelError);
     thePortData->onProcessErrorDone();
 }

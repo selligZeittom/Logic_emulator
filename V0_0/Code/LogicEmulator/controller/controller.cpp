@@ -215,28 +215,28 @@ bool Controller::processEvent(XFEvent *p1)
                 errorLabel = "error : failed to convert the global .json file...";
                 break;
             case ERROR_JSON_CONVERSION:
-                errorLabel = "error : failed to convert .json file...";
+                errorLabel = "error : failed to convert into an object the .json file...";
                 break;
             case ERROR_JSON_CONVERSION_ARRAY:
-                errorLabel = "error : failed to create array from .json file";
+                errorLabel = "error : failed to create an array in the .json file";
                 break;
             case ERROR_JSON_CONVERSION_GATE:
-                errorLabel = "error : failed to create gate...";
+                errorLabel = "error : failed to create a gate...";
                 break;
             case ERROR_JSON_CONVERSION_PIN:
-                errorLabel = "error : failed to create pin...";
+                errorLabel = "error : failed to create a pin...";
                 break;
             case ERROR_JSON_CONVERSION_ID:
-                errorLabel = "error : a gate's ID is missing or wrong written";
+                errorLabel = "error : a gate's ID is missing or wrong declared";
                 break;
             case ERROR_JSON_CONVERSION_LEVEL:
                 errorLabel = "error : a gate's level is missing...";
                 break;
             case ERROR_JSON_CONVERSION_LABEL:
-                errorLabel = "error : a pin's label is wrong or wrong written...";
+                errorLabel = "error : a pin's label is missing or wrong declared...";
                 break;
             case ERROR_JSON_CONVERSION_CONNECTED:
-                errorLabel = "error : a pin's connectedLabel is wrong or wrong written...";
+                errorLabel = "error : a pin's connectedLabel is missing or wrong declared...";
                 break;
             case ERROR_READING_FILE:
                 errorLabel = "error : can't read the file...";

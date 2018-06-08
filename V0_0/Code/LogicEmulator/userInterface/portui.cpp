@@ -41,3 +41,8 @@ void PortUI::onNewResults(QString results)
 {
     ioView->onNewResults(results);
 }
+
+void PortUI::onDeleteOldGatesAndCode()
+{
+    ioView->onDeleteOldGatesAndCode();
+}

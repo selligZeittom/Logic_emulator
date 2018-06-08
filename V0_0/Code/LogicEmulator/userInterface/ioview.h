@@ -61,6 +61,7 @@ public:
     void onNewCode(QString listCode);
     void onNewFileName(QString filename);
     void onNewResults(QString results);
+    void onDeleteOldGatesAndCode();
 
 private:
     PortUI* thePortUI;
