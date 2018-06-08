@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE
+#define RELEASEh
 
 IOView::IOView(QWidget *parent)
 {
@@ -11,8 +11,6 @@ IOView::IOView(QWidget *parent)
     QRect  screenGeometry = screen->geometry();
     this->height = screenGeometry.height()-35;
     this->width = screenGeometry.width();
-
-    std::cout << "width : " << width << ", height : " << height << std::endl;
 
     this->setWindowTitle("Logic Emulator V0.0");
     this->setVisible(true);
@@ -61,7 +59,7 @@ QString IOView::getPath()
 #endif
 }
 
-void IOView::draw(QVector<Gate> &gates, int maxLevel)
+void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
 {
     scnGates->clear();
 
@@ -119,7 +117,11 @@ void IOView::draw(QVector<Gate> &gates, int maxLevel)
             }
         }
     }
+    drawWires(gates, maxLevel);
+}
 
+void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
+{
     //draw the wires between the gates
     for (int i = 0; i < gates.count(); ++i)
     {
@@ -200,6 +202,15 @@ void IOView::draw(QVector<Gate> &gates, int maxLevel)
             scnGates->addLine(x1, y1, x2, y2, *pen);
         }
     }
+    drawLabel(gates, maxLevel);
+}
+
+void IOView::drawLabel(QVector<Gate> &gates, int maxLevel)
+{
+    for(int i = 0; i < gates.count(); i++)
+    {
+
+    }
 }
 
 void IOView::onNewCode(QString labelCode)
@@ -223,7 +234,7 @@ void IOView::onNewResults(QString results)
 void IOView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
-    load->setGeometry(170, height - 200, 340, 80);
+    load->setGeometry(170, height - 150, 340, 80);
     load->setStyleSheet("QPushButton { background-color : rgb(50, 150, 150); border: 1px solid gray; border-radius: 10px; color : black; }");
     load->setText("Browse a Json file");
 

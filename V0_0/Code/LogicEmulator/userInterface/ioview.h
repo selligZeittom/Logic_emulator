@@ -55,7 +55,9 @@ public:
     QString getPath();
 
     //outputView public functions and variables
-    void draw(QVector<Gate> &gates, int maxLevel);
+    void drawGates(QVector<Gate> &gates, int maxLevel);
+    void drawWires(QVector<Gate> &gates, int maxLevel);
+    void drawLabel(QVector<Gate> &gates, int maxLevel);
     void onNewCode(QString listCode);
     void onNewFileName(QString filename);
     void onNewResults(QString results);
