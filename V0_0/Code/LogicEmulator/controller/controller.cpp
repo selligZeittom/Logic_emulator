@@ -227,7 +227,7 @@ bool Controller::processEvent(XFEvent *p1)
                 errorLabel = "error : failed to create pin...";
                 break;
             case ERROR_JSON_CONVERSION_ID:
-                errorLabel = "error : an id is missing or wrong written";
+                errorLabel = "error : a gate's ID is missing or wrong written";
                 break;
             case ERROR_JSON_CONVERSION_LEVEL:
                 errorLabel = "error : a gate's level is missing...";
