@@ -51,9 +51,10 @@ void Controller::evComputingDone()
 
 void Controller::evError(int error)
 {
-    XFEvent* ev = new XFEvent();
+    XFEventError* ev = new XFEventError();
     ev->setID((int) EV_ERROR);
     ev->setTarget(this);
+    ev->setErrorCode(error);
     XF::getInstance().pushEvent(ev);
 }
 
@@ -69,8 +70,9 @@ void Controller::evDrawingDone()
 bool Controller::processEvent(XFEvent *p1)
 {
     /*
-         * double switch pattern for state machine
-         */
+     * double switch pattern for state machine
+     */
+    XFEventError* p2 = (XFEventError*) p1;
 
     bool processed = false;
 
@@ -81,24 +83,24 @@ bool Controller::processEvent(XFEvent *p1)
     switch (state) {
 
     case ST_WAIT :
-        if(p1->getID() == EV_LOAD_CLICKED)
+        if(p2->getID() == EV_LOAD_CLICKED)
         {
             state = ST_LOAD;
             qDebug() << "-> ST_LOAD";
         }
-        else if(p1->getID() == EV_ERROR)
+        else if(p2->getID() == EV_ERROR)
         {
             state = ST_WAIT;
             qDebug() << "error -> ST_WAIT";
         }
         break;
     case ST_LOAD :
-        if(p1->getID() == EV_END_LOADING)
+        if(p2->getID() == EV_END_LOADING)
         {
             state = ST_CONVERT;
             qDebug() << "-> ST_CONVERT";
         }
-        else if(p1->getID() == EV_ERROR)
+        else if(p2->getID() == EV_ERROR)
         {
             state = ST_WAIT;
             qDebug() << "error -> ST_WAIT";
@@ -106,36 +108,36 @@ bool Controller::processEvent(XFEvent *p1)
         break;
 
     case ST_CONVERT :
-        if(p1->getID() == EV_END_CONVERTING)
+        if(p2->getID() == EV_END_CONVERTING)
         {
             state = ST_COMPUTE;
             qDebug() << "-> ST_COMPUTE";
         }
-        else if(p1->getID() == EV_ERROR)
+        else if(p2->getID() == EV_ERROR)
         {
             state = ST_WAIT;
             qDebug() << "error -> ST_WAIT";
         }
         break;
     case ST_COMPUTE :
-        if(p1->getID() == EV_END_COMPUTING)
+        if(p2->getID() == EV_END_COMPUTING)
         {
             state = ST_DRAW;
             qDebug() << "-> ST_DRAW";
         }
-        else if(p1->getID() == EV_ERROR)
+        else if(p2->getID() == EV_ERROR)
         {
             state = ST_WAIT;
             qDebug() << "error -> ST_WAIT";
         }
         break;
     case ST_DRAW :
-        if(p1->getID() == EV_END_DRAWING)
+        if(p2->getID() == EV_END_DRAWING)
         {
             state = ST_WAIT;
             qDebug() << "-> ST_WAIT";
         }
-        else if(p1->getID() == EV_ERROR)
+        else if(p2->getID() == EV_ERROR)
         {
             state = ST_WAIT;
             qDebug() << "error -> ST_WAIT";

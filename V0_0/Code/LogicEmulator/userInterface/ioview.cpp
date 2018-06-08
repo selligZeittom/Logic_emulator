@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE
+#define RELEASEe
 
 IOView::IOView(QWidget *parent)
 {

@@ -124,15 +124,15 @@ void Data::convertJsonToGates()
                 qDebug()<<"failed to get pin's label...";
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
             }
-            QString connected = pin["connectedLabel"].toString();
-            if(connected.isEmpty())
+            QString connectedLabel = pin["connectedLabel"].toString();
+            if(connectedLabel.isEmpty())
             {
                 qDebug()<<"failed to get pin's connectedLabel...";
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
             }
 
             //create a Pin object an add it to the end of the vector
-            Pin* p = new Pin(label, connected);
+            Pin* p = new Pin(label, connectedLabel);
             vPinsIO.push_back(*p);//add to the gate's vector
         }
 

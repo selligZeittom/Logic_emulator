@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     interfaces/idataupdate.cpp \
     factory.cpp \
     interfaces/icontrollerdata.cpp \
-    userInterface/ioview.cpp
+    userInterface/ioview.cpp \
+    controller/xfeventerror.cpp
 
 HEADERS  += \
     data/data.h \
@@ -46,7 +47,8 @@ HEADERS  += \
     factory.h \
     interfaces/icontrollerdata.h \
     globalvariables.h \
-    userInterface/ioview.h
+    userInterface/ioview.h \
+    controller/xfeventerror.h
 
 RESOURCES += \
     images.qrc

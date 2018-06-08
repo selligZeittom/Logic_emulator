@@ -15,6 +15,7 @@ INPUT(
 ./debug\factory.o
 ./debug\icontrollerdata.o
 ./debug\ioview.o
+./debug\xfeventerror.o
 ./debug\qrc_images.o
 ./debug\moc_xf.o
 ./debug\moc_xftimer.o

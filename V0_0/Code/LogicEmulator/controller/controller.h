@@ -5,6 +5,7 @@
 #include <QString>
 #include <QDebug>
 #include "XF/ism.h"
+#include "xfeventerror.h"
 
 class PortController;
 
