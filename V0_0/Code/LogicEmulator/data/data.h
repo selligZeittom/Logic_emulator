@@ -30,6 +30,7 @@ public:
     void drawResults();
     Pin &getConnectedPin(QString labelCOnnectedPin);
     void setGatesAndPins();
+    void processError(QString labelError);
 
 private:
     void outputResultsToString();

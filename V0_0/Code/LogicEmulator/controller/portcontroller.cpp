@@ -44,6 +44,11 @@ void PortController::setPath(QString path)
     thePortData->setPath(path);
 }
 
+void PortController::manageError(QString labelError)
+{
+    thePortData->manageError(labelError);
+}
+
 void PortController::onButtonLoadPressed(QString path)
 {
     controller->evLoadButtonPressed(path);
@@ -72,4 +77,9 @@ void PortController::onError(int error)
 void PortController::onDrawingDone()
 {
     controller->evDrawingDone();
+}
+
+void PortController::onProcessErrorDone()
+{
+    controller->evErrorProcessed();
 }

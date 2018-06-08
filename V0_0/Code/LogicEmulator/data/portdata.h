@@ -28,6 +28,7 @@ public:
     virtual void computeLogic();
     virtual void drawGates();
     virtual void setPath(QString path);
+    virtual void manageError(QString labelError);
 
     //implemented as required
     virtual void onLoadingDone();
@@ -35,6 +36,7 @@ public:
     virtual void onComputingDone();
     virtual void onError(int error);
     virtual void onDrawingDone();
+    virtual void onProcessErrorDone();
 
     // IDataUpdate interface, required
 public:

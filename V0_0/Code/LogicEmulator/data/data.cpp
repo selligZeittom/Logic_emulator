@@ -270,3 +270,13 @@ void Data::setGatesAndPins()
     outputResultsToString();
 }
 
+void Data::processError(QString labelError)
+{
+    thePortData->onNewFileNAme(fileName);
+    thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
+
+
+    thePortData->onNewResults(labelError);
+    thePortData->onProcessErrorDone();
+}
+

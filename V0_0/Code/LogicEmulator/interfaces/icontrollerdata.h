@@ -14,6 +14,7 @@ public:
     virtual void computeLogic() = 0;
     virtual void drawGates() = 0;
     virtual void setPath(QString path) = 0;
+    virtual void manageError(QString labelError) = 0;
 
     //implemented as required by thePortData, and provided by thePortController
     virtual void onLoadingDone() = 0;
@@ -21,6 +22,7 @@ public:
     virtual void onComputingDone() = 0;
     virtual void onError(int error) = 0;
     virtual void onDrawingDone() = 0;
+    virtual void onProcessErrorDone() = 0;
 
 };
 

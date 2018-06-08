@@ -66,6 +66,14 @@ void Controller::evDrawingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+void Controller::evErrorProcessed()
+{
+    XFEvent* ev = new XFEvent();
+    ev->setID((int) EV_END_ERROR_PROCESSING);
+    ev->setTarget(this);
+    XF::getInstance().pushEvent(ev);
+}
+
 //state machine : double switch pattern
 bool Controller::processEvent(XFEvent *p1)
 {
@@ -88,11 +96,6 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_LOAD;
             qDebug() << "-> ST_LOAD";
         }
-        else if(p2->getID() == EV_ERROR)
-        {
-            state = ST_WAIT;
-            qDebug() << "error -> ST_WAIT";
-        }
         break;
     case ST_LOAD :
         if(p2->getID() == EV_END_LOADING)
@@ -102,8 +105,8 @@ bool Controller::processEvent(XFEvent *p1)
         }
         else if(p2->getID() == EV_ERROR)
         {
-            state = ST_WAIT;
-            qDebug() << "error -> ST_WAIT";
+            state = ST_ERROR;
+            qDebug() << "error -> ST_ERROR";
         }
         break;
 
@@ -115,8 +118,8 @@ bool Controller::processEvent(XFEvent *p1)
         }
         else if(p2->getID() == EV_ERROR)
         {
-            state = ST_WAIT;
-            qDebug() << "error -> ST_WAIT";
+            state = ST_ERROR;
+            qDebug() << "error -> ST_ERROR";
         }
         break;
     case ST_COMPUTE :
@@ -127,8 +130,8 @@ bool Controller::processEvent(XFEvent *p1)
         }
         else if(p2->getID() == EV_ERROR)
         {
-            state = ST_WAIT;
-            qDebug() << "error -> ST_WAIT";
+            state = ST_ERROR;
+            qDebug() << "error -> ST_ERROR";
         }
         break;
     case ST_DRAW :
@@ -139,8 +142,15 @@ bool Controller::processEvent(XFEvent *p1)
         }
         else if(p2->getID() == EV_ERROR)
         {
+            state = ST_ERROR;
+            qDebug() << "error -> ST_ERROR";
+        }
+        break;
+    case ST_ERROR :
+        if(p2->getID() == EV_END_ERROR_PROCESSING)
+        {
             state = ST_WAIT;
-            qDebug() << "error -> ST_WAIT";
+            qDebug() << "end of error processing-> ST_WAIT";
         }
         break;
     default:
@@ -163,9 +173,14 @@ bool Controller::processEvent(XFEvent *p1)
             break;
         case ST_DRAW :
             break;
+        case ST_ERROR :
+            break;
         default:
             break;
         }
+
+        //probably not used, but must be declared here...
+        QString errorLabel;
 
         //do action on entry
         switch (state) {
@@ -187,6 +202,50 @@ bool Controller::processEvent(XFEvent *p1)
         case ST_DRAW :
             qDebug() << "ST_DRAW : onEntry";
             thePortController->drawGates();
+            break;
+        case ST_ERROR :
+            qDebug() << "ST_ERROR : onEntry";
+
+            //get the string to represent the error
+            switch (p2->getErrorCode()) {
+            case ERROR_LOADING_FILE:
+                errorLabel = "error : failed to load file...";
+                break;
+            case ERROR_JSON_LOADING:
+                errorLabel = "error : failed to convert the global .json file...";
+                break;
+            case ERROR_JSON_CONVERSION:
+                errorLabel = "error : failed to convert .json file...";
+                break;
+            case ERROR_JSON_CONVERSION_ARRAY:
+                errorLabel = "error : failed to create array from .json file";
+                break;
+            case ERROR_JSON_CONVERSION_GATE:
+                errorLabel = "error : failed to create gate...";
+                break;
+            case ERROR_JSON_CONVERSION_PIN:
+                errorLabel = "error : failed to create pin...";
+                break;
+            case ERROR_JSON_CONVERSION_ID:
+                errorLabel = "error : an id is missing or wrong written";
+                break;
+            case ERROR_JSON_CONVERSION_LEVEL:
+                errorLabel = "error : a gate's level is missing...";
+                break;
+            case ERROR_JSON_CONVERSION_LABEL:
+                errorLabel = "error : a pin's label is wrong or wrong written...";
+                break;
+            case ERROR_JSON_CONVERSION_CONNECTED:
+                errorLabel = "error : a pin's connectedLabel is wrong or wrong written...";
+                break;
+            case ERROR_READING_FILE:
+                errorLabel = "error : can't read the file...";
+                break;
+            default:
+                errorLabel="error : error in the error...^^'";
+                break;
+            }
+            thePortController->manageError(errorLabel);
             break;
         default:
             break;

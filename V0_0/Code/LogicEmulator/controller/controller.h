@@ -4,8 +4,10 @@
 #include <iostream>
 #include <QString>
 #include <QDebug>
+
 #include "XF/ism.h"
 #include "xfeventerror.h"
+#include "globalvariables.h"
 
 class PortController;
 
@@ -22,6 +24,7 @@ public:
     void evComputingDone();
     void evError(int error);
     void evDrawingDone();
+    void evErrorProcessed();
 
     // ISM interface, provided
 public:
@@ -31,12 +34,12 @@ private:
 
     //states of the state machine
     enum LE_STATE{
-        ST_WAIT, ST_LOAD, ST_CONVERT, ST_COMPUTE, ST_DRAW
+        ST_WAIT, ST_LOAD, ST_CONVERT, ST_COMPUTE, ST_DRAW, ST_ERROR
     };
 
     //possibles events
     enum LE_EVENT{
-        EV_LOAD_CLICKED, EV_END_LOADING, EV_END_CONVERTING, EV_END_COMPUTING, EV_END_DRAWING, EV_ERROR
+        EV_LOAD_CLICKED, EV_END_LOADING, EV_END_CONVERTING, EV_END_COMPUTING, EV_END_DRAWING, EV_ERROR, EV_END_ERROR_PROCESSING
     };
 
     PortController* thePortController;

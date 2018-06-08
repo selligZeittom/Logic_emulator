@@ -46,6 +46,11 @@ void PortData::setPath(QString path)
     data->setPath(path);
 }
 
+void PortData::manageError(QString labelError)
+{
+    data->processError(labelError);
+}
+
 void PortData::onLoadingDone()
 {
     thePortController->onLoadingDone();
@@ -69,6 +74,11 @@ void PortData::onError(int error)
 void PortData::onDrawingDone()
 {
     thePortController->onDrawingDone();
+}
+
+void PortData::onProcessErrorDone()
+{
+    thePortController->onProcessErrorDone();
 }
 
 void PortData::onNewCode(QString code)
