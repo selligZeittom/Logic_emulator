@@ -45,6 +45,11 @@ void Data::convertJsonToGates()
 
     QTextStream reader(file);
     code = reader.readAll();
+    if(code.isEmpty())
+    {
+        qDebug() << "failed to read file...";
+        thePortData->onError(ERROR_READING_FILE);
+    }
     file->close();
 
     //translate the string into a byte array
@@ -55,61 +60,88 @@ void Data::convertJsonToGates()
     if(doc.isEmpty())
     {
         qDebug() << "empty file...";
-        thePortData->onError(ERROR_JSON_CONVERSION);
+        thePortData->onError(ERROR_JSON_LOADING);
     }
 
     //convert it to a global object
     QJsonObject design = doc.object();
-    try {
-        //get the name of the file
-        fileName = design["name"].toString();
-
-        //get the array of all the gates
-        QJsonArray gates = design["gates"].toArray();
-        if(gates.isEmpty())
-        {
-            qDebug()<<"failed to create gates array...";
-        }
-
-        //get all the gates of the design
-        for(int i=0; i< gates.count(); ++i)
-        {
-            //get the characteristics of the gate
-            QJsonObject gate = gates.at(i).toObject();
-
-            QString id = gate["ID"].toString();
-
-            int level = gate["level"].toInt();
-
-            //get the array of the pins
-            QJsonArray pins = gate["pins"].toArray();
-            if(pins.isEmpty())
-            {
-                qDebug()<<"failed to create pins array...";
-            }
-            QVector<Pin> vPinsIO;
-            for(int j=0; j< pins.count(); ++j)
-            {
-                QJsonObject pin = pins.at(j).toObject();
-                QString label = pin["label"].toString();
-                QString connected = pin["connected"].toString();
-
-                //create a Pin object an add it to the end of the vector
-                Pin* p = new Pin(label, connected);
-                vPinsIO.push_back(*p);//add to the gate's vector
-            }
-
-            //create a logic gate
-            Gate* newGate = new Gate(id, level, vPinsIO);
-            vGates.push_back(*newGate); //add to the global vector
-
-        }
-    }
-    catch (...)
+    if(design.isEmpty())
     {
-        qDebug() << "error while converting...";
-        thePortData->onError(1);
+        qDebug() << "error of the main design...";
+        thePortData->onError(ERROR_JSON_CONVERSION);
     }
+
+    //get the name of the file
+    fileName = design["name"].toString();
+
+    //get the array of all the gates
+    QJsonArray gates = design["gates"].toArray();
+    if(gates.isEmpty())
+    {
+        qDebug()<<"failed to create gates array...";
+        thePortData->onError(ERROR_JSON_CONVERSION_ARRAY);
+    }
+
+    //get all the gates of the design
+    for(int i=0; i< gates.count(); ++i)
+    {
+        //get the characteristics of the gate
+        QJsonObject gate = gates.at(i).toObject();
+        if(gate.isEmpty())
+        {
+            qDebug()<<"failed to create gate...";
+            thePortData->onError(ERROR_JSON_CONVERSION_GATE);
+        }
+
+        QString id = gate["ID"].toString();
+        if(id.isEmpty())
+        {
+            qDebug()<<"failed to get id...";
+            thePortData->onError(ERROR_JSON_CONVERSION_ID);
+        }
+
+        int level = gate["level"].toInt();
+
+        //get the array of the pins
+        QJsonArray pins = gate["pins"].toArray();
+        if(pins.isEmpty())
+        {
+            qDebug()<<"failed to create pins array...";
+            thePortData->onError(ERROR_JSON_CONVERSION_ARRAY);
+        }
+        QVector<Pin> vPinsIO;
+        for(int j=0; j< pins.count(); ++j)
+        {
+            QJsonObject pin = pins.at(j).toObject();
+            if(pin.isEmpty())
+            {
+                qDebug()<<"failed to create pin...";
+                thePortData->onError(ERROR_JSON_CONVERSION_PIN);
+            }
+            QString label = pin["label"].toString();
+            if(label.isEmpty())
+            {
+                qDebug()<<"failed to get pin's label...";
+                thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
+            }
+            QString connected = pin["connectedLabel"].toString();
+            if(connected.isEmpty())
+            {
+                qDebug()<<"failed to get pin's connectedLabel...";
+                thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
+            }
+
+            //create a Pin object an add it to the end of the vector
+            Pin* p = new Pin(label, connected);
+            vPinsIO.push_back(*p);//add to the gate's vector
+        }
+
+        //create a logic gate
+        Gate* newGate = new Gate(id, level, vPinsIO);
+        vGates.push_back(*newGate); //add to the global vector
+
+    }
+
     thePortData->onConvertingDone();
 }
 
