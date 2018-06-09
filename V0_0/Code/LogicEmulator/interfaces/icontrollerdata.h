@@ -9,11 +9,10 @@ public:
     IControllerData();
 
     //implemented as required by thePortController, and provided by thePortData
-    virtual void loadFile() = 0;
+    virtual void loadFile(QString path) = 0;
     virtual void convertJsonToGates() = 0;
     virtual void computeLogic() = 0;
     virtual void drawGates() = 0;
-    virtual void setPath(QString path) = 0;
     virtual void manageError(QString labelError) = 0;
 
     //implemented as required by thePortData, and provided by thePortController

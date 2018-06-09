@@ -21,8 +21,9 @@ void Data::initRelations(PortData *p1)
     this->thePortData = p1;
 }
 
-void Data::loadFile()
+void Data::loadFile(QString path)
 {
+    this->path = path;
     file = new QFile(path);
 
     file->open(QIODevice::ReadOnly);
@@ -161,11 +162,6 @@ void Data::outputResultsToString()
 
     thePortData->onComputingDone();
 
-}
-
-void Data::setPath(QString path)
-{
-    this->path = path;
 }
 
 void Data::drawResults()

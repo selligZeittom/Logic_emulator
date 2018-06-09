@@ -1,6 +1,7 @@
 #ifndef PORTDATA_H
 #define PORTDATA_H
 
+#include <QString>
 #include "userInterface/portui.h"
 #include "interfaces/icontrollerdata.h"
 #include "interfaces/idataupdate.h"
@@ -23,11 +24,10 @@ private:
     // IController interface, provided
 public:
     //implemented as provided
-    virtual void loadFile();
+    virtual void loadFile(QString path);
     virtual void convertJsonToGates();
     virtual void computeLogic();
     virtual void drawGates();
-    virtual void setPath(QString path);
     virtual void manageError(QString labelError);
 
     //implemented as required

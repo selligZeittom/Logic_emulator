@@ -19,9 +19,9 @@ void PortController::initRelations(Controller *p1, PortData *p2)
     this->thePortData = p2;
 }
 
-void PortController::loadFile()
+void PortController::loadFile(QString path)
 {
-    thePortData->loadFile();
+    thePortData->loadFile(path);
 }
 
 void PortController::convertJsonToGates()
@@ -37,11 +37,6 @@ thePortData->computeLogic();
 void PortController::drawGates()
 {
 thePortData->drawGates();
-}
-
-void PortController::setPath(QString path)
-{
-    thePortData->setPath(path);
 }
 
 void PortController::manageError(QString labelError)

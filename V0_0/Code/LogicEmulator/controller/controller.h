@@ -6,7 +6,7 @@
 #include <QDebug>
 
 #include "XF/ism.h"
-#include "xfeventerror.h"
+#include "xfeventdata.h"
 #include "globalvariables.h"
 
 class PortController;

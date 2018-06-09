@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>9</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>135</x>
-      <y>135</y>
-      <w>54</w>
-      <h>99</h>
+      <x>64</x>
+      <y>96</y>
+      <w>48</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>user</panel_attributes>
     <additional_attributes/>
@@ -15,21 +15,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>153</x>
-      <y>225</y>
-      <w>27</w>
-      <h>1458</h>
+      <x>80</x>
+      <y>168</y>
+      <w>24</w>
+      <h>1304</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;1600.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;1610.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>756</x>
-      <y>5535</y>
-      <w>999</w>
-      <h>882</h>
+      <x>672</x>
+      <y>4896</y>
+      <w>888</w>
+      <h>784</h>
     </coordinates>
     <panel_attributes>LogicEmulator
 lt=.
@@ -39,10 +39,10 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>342</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1530</h>
+      <x>248</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1360</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1680.0</additional_attributes>
@@ -50,33 +50,33 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>288</x>
-      <y>144</y>
-      <w>126</w>
-      <h>27</h>
+      <x>208</x>
+      <y>104</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
-    <panel_attributes>_inputView:InputView_</panel_attributes>
+    <panel_attributes>_ioView:IOView_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>153</x>
-      <y>225</y>
-      <w>216</w>
-      <h>36</h>
+      <x>80</x>
+      <y>168</y>
+      <w>192</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-loadPress()</panel_attributes>
+click on "Browse a json file"</panel_attributes>
     <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>441</x>
-      <y>144</y>
-      <w>171</w>
-      <h>27</h>
+      <x>392</x>
+      <y>104</y>
+      <w>152</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_controller:Controller_</panel_attributes>
     <additional_attributes/>
@@ -84,21 +84,22 @@ loadPress()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>456</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
+    <panel_attributes>lt=.
+layer=0</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1690.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>630</x>
-      <y>144</y>
-      <w>108</w>
-      <h>27</h>
+      <x>560</x>
+      <y>104</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_XF:XF_</panel_attributes>
     <additional_attributes/>
@@ -106,10 +107,10 @@ loadPress()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>600</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1690.0</additional_attributes>
@@ -117,10 +118,10 @@ loadPress()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>243</y>
-      <w>189</w>
-      <h>36</h>
+      <x>456</x>
+      <y>192</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 pushXFEvent(ev)</panel_attributes>
@@ -129,10 +130,10 @@ pushXFEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>279</y>
-      <w>189</w>
-      <h>45</h>
+      <x>456</x>
+      <y>224</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev)</panel_attributes>
@@ -141,23 +142,25 @@ processEvent(ev)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>180</y>
-      <w>81</w>
-      <h>36</h>
+      <x>424</x>
+      <y>136</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT
 fg=black
-bg=green</panel_attributes>
+bg=green
+layer=1
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1413</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>1256</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -166,22 +169,23 @@ layer=0</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>468</x>
-      <y>315</y>
-      <w>90</w>
-      <h>36</h>
+      <x>416</x>
+      <y>256</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_LOAD
-bg=green</panel_attributes>
+bg=green
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1332</x>
-      <y>135</y>
-      <w>189</w>
-      <h>36</h>
+      <x>1184</x>
+      <y>96</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>jsonConverter
 _data:Data_</panel_attributes>
@@ -190,10 +194,10 @@ _data:Data_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1233</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>1096</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1690.0</additional_attributes>
@@ -201,10 +205,10 @@ _data:Data_</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1170</x>
-      <y>135</y>
-      <w>153</w>
-      <h>36</h>
+      <x>1040</x>
+      <y>96</y>
+      <w>136</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>fileManager
 _data:Data_</panel_attributes>
@@ -213,22 +217,22 @@ _data:Data_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>342</y>
-      <w>747</w>
-      <h>36</h>
+      <x>456</x>
+      <y>280</y>
+      <w>400</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 loadFile()</panel_attributes>
-    <additional_attributes>810.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>480.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>684</y>
-      <w>927</w>
-      <h>36</h>
+      <x>456</x>
+      <y>584</y>
+      <w>824</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 convertJSONtoGates()</panel_attributes>
@@ -237,22 +241,23 @@ convertJSONtoGates()</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>657</y>
-      <w>90</w>
-      <h>36</h>
+      <x>424</x>
+      <y>560</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_CONVERT
-bg=green</panel_attributes>
+bg=green
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>594</y>
-      <w>189</w>
-      <h>36</h>
+      <x>456</x>
+      <y>504</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 pushXFEvent(ev)</panel_attributes>
@@ -261,10 +266,10 @@ pushXFEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>621</y>
-      <w>189</w>
-      <h>45</h>
+      <x>456</x>
+      <y>528</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev)</panel_attributes>
@@ -273,10 +278,10 @@ processEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>891</y>
-      <w>189</w>
-      <h>36</h>
+      <x>456</x>
+      <y>768</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 pushXFEvent(ev)</panel_attributes>
@@ -285,10 +290,10 @@ pushXFEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>918</y>
-      <w>189</w>
-      <h>45</h>
+      <x>456</x>
+      <y>792</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev)</panel_attributes>
@@ -297,22 +302,23 @@ processEvent(ev)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>1629</y>
-      <w>90</w>
-      <h>36</h>
+      <x>424</x>
+      <y>1424</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT
-bg=green</panel_attributes>
+bg=green
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1791</x>
-      <y>144</y>
-      <w>243</w>
-      <h>27</h>
+      <x>1592</x>
+      <y>104</y>
+      <w>216</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_outputView:OutputView_</panel_attributes>
     <additional_attributes/>
@@ -320,10 +326,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1899</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>1688</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1690.0</additional_attributes>
@@ -331,10 +337,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1323</y>
-      <w>1413</w>
-      <h>36</h>
+      <x>456</x>
+      <y>1152</y>
+      <w>1256</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 drawGates()</panel_attributes>
@@ -343,10 +349,10 @@ drawGates()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1404</x>
-      <y>711</y>
-      <w>36</w>
-      <h>180</h>
+      <x>1248</x>
+      <y>608</y>
+      <w>32</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -354,10 +360,10 @@ drawGates()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1224</x>
-      <y>369</y>
-      <w>36</w>
-      <h>216</h>
+      <x>1088</x>
+      <y>304</y>
+      <w>32</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>
 layer=0</panel_attributes>
@@ -366,10 +372,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1548</y>
-      <w>189</w>
-      <h>36</h>
+      <x>456</x>
+      <y>1352</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 pushXFEvent(ev)</panel_attributes>
@@ -378,10 +384,10 @@ pushXFEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1575</y>
-      <w>189</w>
-      <h>45</h>
+      <x>456</x>
+      <y>1376</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev)</panel_attributes>
@@ -390,10 +396,10 @@ processEvent(ev)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1557</x>
-      <y>135</y>
-      <w>189</w>
-      <h>36</h>
+      <x>1384</x>
+      <y>96</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>logicComputer
 _data:Data_</panel_attributes>
@@ -402,10 +408,10 @@ _data:Data_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>999</y>
-      <w>1152</w>
-      <h>36</h>
+      <x>456</x>
+      <y>864</y>
+      <w>1024</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 computeLogic()</panel_attributes>
@@ -414,10 +420,10 @@ computeLogic()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1638</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1530</h>
+      <x>1456</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1360</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1680.0</additional_attributes>
@@ -425,22 +431,23 @@ computeLogic()</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>972</y>
-      <w>90</w>
-      <h>36</h>
+      <x>424</x>
+      <y>840</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_COMPUTE
-bg=green</panel_attributes>
+bg=green
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1638</x>
-      <y>1107</y>
-      <w>18</w>
-      <h>72</h>
+      <x>1456</x>
+      <y>960</y>
+      <w>16</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -449,10 +456,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1224</y>
-      <w>189</w>
-      <h>36</h>
+      <x>456</x>
+      <y>1064</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 pushXFEvent(ev)</panel_attributes>
@@ -461,10 +468,10 @@ pushXFEvent(ev)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1251</y>
-      <w>189</w>
-      <h>45</h>
+      <x>456</x>
+      <y>1088</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev)</panel_attributes>
@@ -473,22 +480,23 @@ processEvent(ev)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>1287</y>
-      <w>90</w>
-      <h>36</h>
+      <x>424</x>
+      <y>1120</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_DRAW
-bg=green</panel_attributes>
+bg=green
+transparency=0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>675</x>
-      <y>5607</y>
-      <w>63</w>
-      <h>99</h>
+      <x>600</x>
+      <y>4960</y>
+      <w>56</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>user</panel_attributes>
     <additional_attributes/>
@@ -496,10 +504,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>711</x>
-      <y>5697</y>
-      <w>27</w>
-      <h>684</h>
+      <x>632</x>
+      <y>5040</y>
+      <w>24</w>
+      <h>608</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;740.0</additional_attributes>
@@ -507,10 +515,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>5607</y>
-      <w>27</w>
-      <h>783</h>
+      <x>800</x>
+      <y>4960</y>
+      <w>24</w>
+      <h>696</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;850.0</additional_attributes>
@@ -518,10 +526,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>846</x>
-      <y>5589</y>
-      <w>126</w>
-      <h>27</h>
+      <x>752</x>
+      <y>4944</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_LOAD:QPushButton_</panel_attributes>
     <additional_attributes/>
@@ -529,10 +537,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>711</x>
-      <y>5715</y>
-      <w>216</w>
-      <h>36</h>
+      <x>632</x>
+      <y>5056</y>
+      <w>192</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 press()</panel_attributes>
@@ -541,10 +549,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>999</x>
-      <y>5589</y>
-      <w>171</w>
-      <h>27</h>
+      <x>888</x>
+      <y>4944</y>
+      <w>152</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_mainManager:MainManager_</panel_attributes>
     <additional_attributes/>
@@ -552,10 +560,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>5607</y>
-      <w>27</w>
-      <h>783</h>
+      <x>952</x>
+      <y>4960</y>
+      <w>24</w>
+      <h>696</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;850.0</additional_attributes>
@@ -563,10 +571,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1188</x>
-      <y>5589</y>
-      <w>108</w>
-      <h>27</h>
+      <x>1056</x>
+      <y>4944</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_XF:XF_</panel_attributes>
     <additional_attributes/>
@@ -574,10 +582,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1233</x>
-      <y>5607</y>
-      <w>27</w>
-      <h>774</h>
+      <x>1096</x>
+      <y>4960</y>
+      <w>24</w>
+      <h>688</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;840.0</additional_attributes>
@@ -585,10 +593,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>5733</y>
-      <w>360</w>
-      <h>36</h>
+      <x>800</x>
+      <y>5072</y>
+      <w>320</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -597,10 +605,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>5769</y>
-      <w>189</w>
-      <h>45</h>
+      <x>952</x>
+      <y>5104</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -609,10 +617,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1035</x>
-      <y>5661</y>
-      <w>81</w>
-      <h>36</h>
+      <x>920</x>
+      <y>5008</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -620,10 +628,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1575</x>
-      <y>5607</y>
-      <w>27</w>
-      <h>792</h>
+      <x>1400</x>
+      <y>4960</y>
+      <w>24</w>
+      <h>704</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -632,10 +640,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1026</x>
-      <y>5832</y>
-      <w>90</w>
-      <h>36</h>
+      <x>912</x>
+      <y>5160</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_BROWSE</panel_attributes>
     <additional_attributes/>
@@ -643,10 +651,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1494</x>
-      <y>5589</y>
-      <w>189</w>
-      <h>27</h>
+      <x>1328</x>
+      <y>4944</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_errorManager:ErrorManager_</panel_attributes>
     <additional_attributes/>
@@ -654,10 +662,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1395</x>
-      <y>5607</y>
-      <w>27</w>
-      <h>774</h>
+      <x>1240</x>
+      <y>4960</y>
+      <w>24</w>
+      <h>688</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;840.0</additional_attributes>
@@ -665,10 +673,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1332</x>
-      <y>5589</y>
-      <w>153</w>
-      <h>27</h>
+      <x>1184</x>
+      <y>4944</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_fileManager:FileManager_</panel_attributes>
     <additional_attributes/>
@@ -676,10 +684,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>5877</y>
-      <w>351</w>
-      <h>36</h>
+      <x>952</x>
+      <y>5200</y>
+      <w>312</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 getFile()</panel_attributes>
@@ -688,10 +696,10 @@ getFile()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1233</x>
-      <y>5931</y>
-      <w>189</w>
-      <h>36</h>
+      <x>1096</x>
+      <y>5248</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -700,10 +708,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>5967</y>
-      <w>189</w>
-      <h>45</h>
+      <x>952</x>
+      <y>5280</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -712,10 +720,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1395</x>
-      <y>5904</y>
-      <w>18</w>
-      <h>36</h>
+      <x>1240</x>
+      <y>5224</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -724,10 +732,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>27</y>
-      <w>1512</w>
-      <h>36</h>
+      <x>208</x>
+      <y>0</y>
+      <w>1344</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=Sunny case
@@ -737,10 +745,10 @@ bg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>5490</y>
-      <w>1089</w>
-      <h>36</h>
+      <x>624</x>
+      <y>4856</y>
+      <w>968</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=-
 worst case
@@ -750,10 +758,10 @@ bg=red</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1026</x>
-      <y>6021</y>
-      <w>90</w>
-      <h>36</h>
+      <x>912</x>
+      <y>5328</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_ERROR</panel_attributes>
     <additional_attributes/>
@@ -761,10 +769,10 @@ bg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>6075</y>
-      <w>531</w>
-      <h>36</h>
+      <x>952</x>
+      <y>5376</y>
+      <w>472</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 sendErrorEV(ev*)</panel_attributes>
@@ -773,10 +781,10 @@ sendErrorEV(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1233</x>
-      <y>6111</y>
-      <w>369</w>
-      <h>36</h>
+      <x>1096</x>
+      <y>5408</y>
+      <w>328</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -785,10 +793,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>6147</y>
-      <w>189</w>
-      <h>45</h>
+      <x>952</x>
+      <y>5440</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -797,10 +805,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1035</x>
-      <y>6210</y>
-      <w>90</w>
-      <h>36</h>
+      <x>920</x>
+      <y>5496</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -809,9 +817,9 @@ processEvent(ev*)</panel_attributes>
     <id>UMLActor</id>
     <coordinates>
       <x>0</x>
-      <y>6714</y>
-      <w>54</w>
-      <h>99</h>
+      <y>5944</y>
+      <w>48</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>user</panel_attributes>
     <additional_attributes/>
@@ -819,10 +827,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>27</x>
-      <y>6804</y>
-      <w>27</w>
-      <h>1071</h>
+      <x>24</x>
+      <y>6024</y>
+      <w>24</w>
+      <h>952</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1170.0</additional_attributes>
@@ -830,10 +838,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>192</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -841,10 +849,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>162</x>
-      <y>6696</y>
-      <w>126</w>
-      <h>27</h>
+      <x>144</x>
+      <y>5928</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_LOAD:QPushButton_</panel_attributes>
     <additional_attributes/>
@@ -852,10 +860,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>27</x>
-      <y>6822</y>
-      <w>216</w>
-      <h>36</h>
+      <x>24</x>
+      <y>6040</y>
+      <w>192</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 press()</panel_attributes>
@@ -864,10 +872,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>315</x>
-      <y>6696</y>
-      <w>171</w>
-      <h>27</h>
+      <x>280</x>
+      <y>5928</y>
+      <w>152</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_mainManager:MainManager_</panel_attributes>
     <additional_attributes/>
@@ -875,10 +883,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1287</h>
+      <x>344</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1144</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1410.0</additional_attributes>
@@ -886,10 +894,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>504</x>
-      <y>6696</y>
-      <w>108</w>
-      <h>27</h>
+      <x>448</x>
+      <y>5928</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_XF:XF_</panel_attributes>
     <additional_attributes/>
@@ -897,10 +905,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>488</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -908,10 +916,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>6840</y>
-      <w>360</w>
-      <h>36</h>
+      <x>192</x>
+      <y>6056</y>
+      <w>320</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -920,10 +928,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>6876</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6088</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -932,10 +940,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>6768</y>
-      <w>81</w>
-      <h>36</h>
+      <x>312</x>
+      <y>5992</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -943,10 +951,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>891</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>792</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -955,10 +963,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>342</x>
-      <y>6939</y>
-      <w>90</w>
-      <h>36</h>
+      <x>304</x>
+      <y>6144</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_BROWSE</panel_attributes>
     <additional_attributes/>
@@ -966,10 +974,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>810</x>
-      <y>6696</y>
-      <w>189</w>
-      <h>27</h>
+      <x>720</x>
+      <y>5928</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_jsonManager:JSONManager_</panel_attributes>
     <additional_attributes/>
@@ -977,10 +985,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>711</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>632</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -988,10 +996,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>648</x>
-      <y>6696</y>
-      <w>153</w>
-      <h>27</h>
+      <x>576</x>
+      <y>5928</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_fileManager:FileManager_</panel_attributes>
     <additional_attributes/>
@@ -999,10 +1007,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>6984</y>
-      <w>351</w>
-      <h>36</h>
+      <x>344</x>
+      <y>6184</y>
+      <w>312</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 getFile()</panel_attributes>
@@ -1011,10 +1019,10 @@ getFile()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7164</y>
-      <w>531</w>
-      <h>36</h>
+      <x>344</x>
+      <y>6344</y>
+      <w>472</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 convertToJSON(qfile* : QFile)</panel_attributes>
@@ -1023,10 +1031,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>7128</y>
-      <w>90</w>
-      <h>36</h>
+      <x>312</x>
+      <y>6312</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_CONVERT</panel_attributes>
     <additional_attributes/>
@@ -1034,10 +1042,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>7038</y>
-      <w>189</w>
-      <h>36</h>
+      <x>488</x>
+      <y>6232</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1046,10 +1054,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7074</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6264</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1058,10 +1066,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>7218</y>
-      <w>369</w>
-      <h>36</h>
+      <x>488</x>
+      <y>6392</y>
+      <w>328</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1070,10 +1078,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7236</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6408</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1082,10 +1090,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>7713</y>
-      <w>90</w>
-      <h>36</h>
+      <x>312</x>
+      <y>6832</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_ERROR</panel_attributes>
     <additional_attributes/>
@@ -1093,10 +1101,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1341</x>
-      <y>6696</y>
-      <w>243</w>
-      <h>27</h>
+      <x>1192</x>
+      <y>5928</y>
+      <w>216</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_graphicsManager:GraphicsManager_</panel_attributes>
     <additional_attributes/>
@@ -1104,10 +1112,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1449</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1288</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1115,10 +1123,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7560</y>
-      <w>1089</w>
-      <h>36</h>
+      <x>344</x>
+      <y>6696</y>
+      <w>968</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 drawGates(vGates : QVector)</panel_attributes>
@@ -1127,10 +1135,10 @@ drawGates(vGates : QVector)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>891</x>
-      <y>7191</y>
-      <w>18</w>
-      <h>36</h>
+      <x>792</x>
+      <y>6368</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1139,10 +1147,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>711</x>
-      <y>7011</y>
-      <w>18</w>
-      <h>36</h>
+      <x>632</x>
+      <y>6208</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1151,10 +1159,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1449</x>
-      <y>7587</y>
-      <w>18</w>
-      <h>36</h>
+      <x>1288</x>
+      <y>6720</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1163,10 +1171,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>7632</y>
-      <w>927</w>
-      <h>36</h>
+      <x>488</x>
+      <y>6760</y>
+      <w>824</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1175,10 +1183,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7659</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6784</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1187,10 +1195,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1071</x>
-      <y>6696</y>
-      <w>189</w>
-      <h>27</h>
+      <x>952</x>
+      <y>5928</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_logicManager:LogicManager_</panel_attributes>
     <additional_attributes/>
@@ -1198,10 +1206,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7344</y>
-      <w>792</w>
-      <h>36</h>
+      <x>344</x>
+      <y>6504</y>
+      <w>704</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 computeLogic(vGates : QVector)</panel_attributes>
@@ -1210,10 +1218,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1152</x>
-      <y>6714</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1024</x>
+      <y>5944</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1221,10 +1229,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>7281</y>
-      <w>90</w>
-      <h>36</h>
+      <x>312</x>
+      <y>6448</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_COMPUTE</panel_attributes>
     <additional_attributes/>
@@ -1232,10 +1240,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1152</x>
-      <y>7371</y>
-      <w>18</w>
-      <h>36</h>
+      <x>1024</x>
+      <y>6528</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1244,10 +1252,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>7407</y>
-      <w>630</w>
-      <h>36</h>
+      <x>488</x>
+      <y>6560</y>
+      <w>560</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1256,10 +1264,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7434</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6584</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1268,10 +1276,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>7524</y>
-      <w>90</w>
-      <h>36</h>
+      <x>312</x>
+      <y>6664</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_DRAW</panel_attributes>
     <additional_attributes/>
@@ -1279,10 +1287,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1629</x>
-      <y>6705</y>
-      <w>189</w>
-      <h>27</h>
+      <x>1448</x>
+      <y>5936</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_errorManager:ErrorManager_</panel_attributes>
     <additional_attributes/>
@@ -1290,10 +1298,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1710</x>
-      <y>6723</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1520</x>
+      <y>5952</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -1302,10 +1310,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7758</y>
-      <w>1350</w>
-      <h>36</h>
+      <x>344</x>
+      <y>6872</y>
+      <w>1200</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 sendErrorEV(ev*)</panel_attributes>
@@ -1314,10 +1322,10 @@ sendErrorEV(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>7803</y>
-      <w>1188</w>
-      <h>36</h>
+      <x>488</x>
+      <y>6912</y>
+      <w>1056</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1326,10 +1334,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>7830</y>
-      <w>189</w>
-      <h>45</h>
+      <x>344</x>
+      <y>6936</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1338,10 +1346,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>351</x>
-      <y>7902</y>
-      <w>90</w>
-      <h>36</h>
+      <x>312</x>
+      <y>7000</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -1349,10 +1357,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>9</x>
-      <y>8343</y>
-      <w>63</w>
-      <h>99</h>
+      <x>8</x>
+      <y>7392</y>
+      <w>56</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>user</panel_attributes>
     <additional_attributes/>
@@ -1360,10 +1368,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>8433</y>
-      <w>27</w>
-      <h>1071</h>
+      <x>48</x>
+      <y>7472</y>
+      <w>24</w>
+      <h>952</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1170.0</additional_attributes>
@@ -1371,10 +1379,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>216</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1382,10 +1390,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>189</x>
-      <y>8325</y>
-      <w>126</w>
-      <h>27</h>
+      <x>168</x>
+      <y>7376</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_LOAD:QPushButton_</panel_attributes>
     <additional_attributes/>
@@ -1393,10 +1401,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>8451</y>
-      <w>216</w>
-      <h>36</h>
+      <x>48</x>
+      <y>7488</y>
+      <w>192</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 press()</panel_attributes>
@@ -1405,10 +1413,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>342</x>
-      <y>8325</y>
-      <w>171</w>
-      <h>27</h>
+      <x>304</x>
+      <y>7376</y>
+      <w>152</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_mainManager:MainManager_</panel_attributes>
     <additional_attributes/>
@@ -1416,10 +1424,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8343</y>
-      <w>36</w>
-      <h>1152</h>
+      <x>368</x>
+      <y>7392</y>
+      <w>32</w>
+      <h>1024</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;20.0;1260.0</additional_attributes>
@@ -1427,10 +1435,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>531</x>
-      <y>8325</y>
-      <w>108</w>
-      <h>27</h>
+      <x>472</x>
+      <y>7376</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_XF:XF_</panel_attributes>
     <additional_attributes/>
@@ -1438,10 +1446,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>512</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1449,10 +1457,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>8469</y>
-      <w>360</w>
-      <h>36</h>
+      <x>216</x>
+      <y>7504</y>
+      <w>320</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1461,10 +1469,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8505</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>7536</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1473,10 +1481,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>8397</y>
-      <w>81</w>
-      <h>36</h>
+      <x>336</x>
+      <y>7440</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -1484,10 +1492,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>918</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>816</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -1496,10 +1504,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>369</x>
-      <y>8568</y>
-      <w>90</w>
-      <h>36</h>
+      <x>328</x>
+      <y>7592</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_BROWSE</panel_attributes>
     <additional_attributes/>
@@ -1507,10 +1515,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>837</x>
-      <y>8325</y>
-      <w>189</w>
-      <h>27</h>
+      <x>744</x>
+      <y>7376</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_jsonManager:JSONManager_</panel_attributes>
     <additional_attributes/>
@@ -1518,10 +1526,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>656</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1529,10 +1537,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
-      <y>8325</y>
-      <w>153</w>
-      <h>27</h>
+      <x>600</x>
+      <y>7376</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_fileManager:FileManager_</panel_attributes>
     <additional_attributes/>
@@ -1540,10 +1548,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8613</y>
-      <w>351</w>
-      <h>36</h>
+      <x>368</x>
+      <y>7632</y>
+      <w>312</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 getFile()</panel_attributes>
@@ -1552,10 +1560,10 @@ getFile()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8793</y>
-      <w>531</w>
-      <h>36</h>
+      <x>368</x>
+      <y>7792</y>
+      <w>472</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 convertToJSON(qfile* : QFile)</panel_attributes>
@@ -1564,10 +1572,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>8757</y>
-      <w>90</w>
-      <h>36</h>
+      <x>336</x>
+      <y>7760</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_CONVERT</panel_attributes>
     <additional_attributes/>
@@ -1575,10 +1583,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>8667</y>
-      <w>189</w>
-      <h>36</h>
+      <x>512</x>
+      <y>7680</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1587,10 +1595,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8703</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>7712</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1599,10 +1607,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>8847</y>
-      <w>369</w>
-      <h>36</h>
+      <x>512</x>
+      <y>7840</y>
+      <w>328</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1611,10 +1619,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8865</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>7856</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1623,10 +1631,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>9144</y>
-      <w>90</w>
-      <h>36</h>
+      <x>336</x>
+      <y>8104</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_ERROR</panel_attributes>
     <additional_attributes/>
@@ -1634,10 +1642,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>918</x>
-      <y>8820</y>
-      <w>18</w>
-      <h>36</h>
+      <x>816</x>
+      <y>7816</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1646,10 +1654,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>738</x>
-      <y>8640</y>
-      <w>18</w>
-      <h>36</h>
+      <x>656</x>
+      <y>7656</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1658,10 +1666,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1098</x>
-      <y>8325</y>
-      <w>189</w>
-      <h>27</h>
+      <x>976</x>
+      <y>7376</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_logicManager:LogicManager_</panel_attributes>
     <additional_attributes/>
@@ -1669,10 +1677,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>8973</y>
-      <w>792</w>
-      <h>36</h>
+      <x>368</x>
+      <y>7952</y>
+      <w>704</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 computeLogic(vGates : QVector)</panel_attributes>
@@ -1681,10 +1689,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1179</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1048</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1692,10 +1700,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>8910</y>
-      <w>90</w>
-      <h>36</h>
+      <x>336</x>
+      <y>7896</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_COMPUTE</panel_attributes>
     <additional_attributes/>
@@ -1703,10 +1711,10 @@ computeLogic(vGates : QVector)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1179</x>
-      <y>9000</y>
-      <w>18</w>
-      <h>36</h>
+      <x>1048</x>
+      <y>7976</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -1715,10 +1723,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>9036</y>
-      <w>630</w>
-      <h>36</h>
+      <x>512</x>
+      <y>8008</y>
+      <w>560</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1727,10 +1735,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>9063</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>8032</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1739,10 +1747,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1386</x>
-      <y>8325</y>
-      <w>189</w>
-      <h>27</h>
+      <x>1232</x>
+      <y>7376</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_errorManager:ErrorManager_</panel_attributes>
     <additional_attributes/>
@@ -1750,10 +1758,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1467</x>
-      <y>8343</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1304</x>
+      <y>7392</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -1762,10 +1770,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>9189</y>
-      <w>1080</w>
-      <h>36</h>
+      <x>368</x>
+      <y>8144</y>
+      <w>960</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 sendErrorEV(ev*)</panel_attributes>
@@ -1774,10 +1782,10 @@ sendErrorEV(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>9234</y>
-      <w>918</w>
-      <h>36</h>
+      <x>512</x>
+      <y>8184</y>
+      <w>816</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1786,10 +1794,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>9261</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>8208</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1798,10 +1806,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>9333</y>
-      <w>90</w>
-      <h>36</h>
+      <x>336</x>
+      <y>8272</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -1810,9 +1818,9 @@ processEvent(ev*)</panel_attributes>
     <id>UMLActor</id>
     <coordinates>
       <x>0</x>
-      <y>9837</y>
-      <w>63</w>
-      <h>99</h>
+      <y>8720</y>
+      <w>56</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>user</panel_attributes>
     <additional_attributes/>
@@ -1820,10 +1828,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>9927</y>
-      <w>27</w>
-      <h>1071</h>
+      <x>48</x>
+      <y>8800</y>
+      <w>24</w>
+      <h>952</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1170.0</additional_attributes>
@@ -1831,10 +1839,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>9837</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>216</x>
+      <y>8720</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1842,10 +1850,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>189</x>
-      <y>9819</y>
-      <w>126</w>
-      <h>27</h>
+      <x>168</x>
+      <y>8704</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_LOAD:QPushButton_</panel_attributes>
     <additional_attributes/>
@@ -1853,10 +1861,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>9945</y>
-      <w>216</w>
-      <h>36</h>
+      <x>48</x>
+      <y>8816</y>
+      <w>192</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 press()</panel_attributes>
@@ -1865,10 +1873,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>342</x>
-      <y>9819</y>
-      <w>171</w>
-      <h>27</h>
+      <x>304</x>
+      <y>8704</y>
+      <w>152</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_mainManager:MainManager_</panel_attributes>
     <additional_attributes/>
@@ -1876,10 +1884,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>9837</y>
-      <w>27</w>
-      <h>1152</h>
+      <x>368</x>
+      <y>8720</y>
+      <w>24</w>
+      <h>1024</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1260.0</additional_attributes>
@@ -1887,10 +1895,10 @@ press()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>531</x>
-      <y>9819</y>
-      <w>108</w>
-      <h>27</h>
+      <x>472</x>
+      <y>8704</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_XF:XF_</panel_attributes>
     <additional_attributes/>
@@ -1898,10 +1906,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>9837</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>512</x>
+      <y>8720</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1909,10 +1917,10 @@ press()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>9963</y>
-      <w>360</w>
-      <h>36</h>
+      <x>216</x>
+      <y>8832</y>
+      <w>320</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -1921,10 +1929,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>9999</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>8864</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -1933,10 +1941,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>9891</y>
-      <w>81</w>
-      <h>36</h>
+      <x>336</x>
+      <y>8768</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -1944,10 +1952,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>918</x>
-      <y>9837</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>816</x>
+      <y>8720</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -1956,10 +1964,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>369</x>
-      <y>10062</y>
-      <w>90</w>
-      <h>36</h>
+      <x>328</x>
+      <y>8920</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_BROWSE</panel_attributes>
     <additional_attributes/>
@@ -1967,10 +1975,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>837</x>
-      <y>9819</y>
-      <w>189</w>
-      <h>27</h>
+      <x>744</x>
+      <y>8704</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_jsonManager:JSONManager_</panel_attributes>
     <additional_attributes/>
@@ -1978,10 +1986,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>9837</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>656</x>
+      <y>8720</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
@@ -1989,10 +1997,10 @@ layer=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
-      <y>9819</y>
-      <w>153</w>
-      <h>27</h>
+      <x>600</x>
+      <y>8704</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_fileManager:FileManager_</panel_attributes>
     <additional_attributes/>
@@ -2000,10 +2008,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10107</y>
-      <w>351</w>
-      <h>36</h>
+      <x>368</x>
+      <y>8960</y>
+      <w>312</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 getFile()</panel_attributes>
@@ -2012,10 +2020,10 @@ getFile()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10287</y>
-      <w>531</w>
-      <h>36</h>
+      <x>368</x>
+      <y>9120</y>
+      <w>472</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 convertToJSON(qfile* : QFile)</panel_attributes>
@@ -2024,10 +2032,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>378</x>
-      <y>10251</y>
-      <w>90</w>
-      <h>36</h>
+      <x>336</x>
+      <y>9088</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_CONVERT</panel_attributes>
     <additional_attributes/>
@@ -2035,10 +2043,10 @@ convertToJSON(qfile* : QFile)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>10161</y>
-      <w>189</w>
-      <h>36</h>
+      <x>512</x>
+      <y>9008</y>
+      <w>168</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -2047,10 +2055,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10197</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>9040</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -2059,10 +2067,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>10341</y>
-      <w>369</w>
-      <h>36</h>
+      <x>512</x>
+      <y>9168</y>
+      <w>328</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -2071,10 +2079,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10359</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>9184</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -2083,10 +2091,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>387</x>
-      <y>10458</y>
-      <w>90</w>
-      <h>36</h>
+      <x>344</x>
+      <y>9272</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_ERROR</panel_attributes>
     <additional_attributes/>
@@ -2094,10 +2102,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>918</x>
-      <y>10314</y>
-      <w>18</w>
-      <h>36</h>
+      <x>816</x>
+      <y>9144</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2106,10 +2114,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>738</x>
-      <y>10134</y>
-      <w>18</w>
-      <h>36</h>
+      <x>656</x>
+      <y>8984</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2118,10 +2126,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1089</x>
-      <y>9828</y>
-      <w>189</w>
-      <h>27</h>
+      <x>968</x>
+      <y>8712</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_errorManager:ErrorManager_</panel_attributes>
     <additional_attributes/>
@@ -2129,10 +2137,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1170</x>
-      <y>9846</y>
-      <w>27</w>
-      <h>1161</h>
+      <x>1040</x>
+      <y>8728</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes>lt=.
 layer=0</panel_attributes>
@@ -2141,10 +2149,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10503</y>
-      <w>783</w>
-      <h>36</h>
+      <x>368</x>
+      <y>9312</y>
+      <w>696</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 sendErrorEV(ev*)</panel_attributes>
@@ -2153,10 +2161,10 @@ sendErrorEV(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>10548</y>
-      <w>621</w>
-      <h>36</h>
+      <x>512</x>
+      <y>9352</y>
+      <w>552</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 pushXFEvent(ev*)</panel_attributes>
@@ -2165,10 +2173,10 @@ pushXFEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>10575</y>
-      <w>189</w>
-      <h>45</h>
+      <x>368</x>
+      <y>9376</y>
+      <w>168</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 processEvent(ev*)</panel_attributes>
@@ -2177,10 +2185,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>387</x>
-      <y>10647</y>
-      <w>90</w>
-      <h>36</h>
+      <x>344</x>
+      <y>9440</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ST_WAIT</panel_attributes>
     <additional_attributes/>
@@ -2188,10 +2196,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>864</x>
-      <y>144</y>
-      <w>162</w>
-      <h>27</h>
+      <x>768</x>
+      <y>104</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_data:Data_</panel_attributes>
     <additional_attributes/>
@@ -2199,10 +2207,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>162</y>
-      <w>27</w>
-      <h>1539</h>
+      <x>832</x>
+      <y>120</y>
+      <w>24</w>
+      <h>1368</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1690.0</additional_attributes>
@@ -2210,10 +2218,10 @@ processEvent(ev*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>513</y>
-      <w>324</w>
-      <h>36</h>
+      <x>832</x>
+      <y>432</y>
+      <w>288</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 setFile(file : QFile*)</panel_attributes>
@@ -2222,10 +2230,10 @@ setFile(file : QFile*)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>540</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>456</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2234,10 +2242,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>819</y>
-      <w>504</w>
-      <h>36</h>
+      <x>832</x>
+      <y>704</y>
+      <w>448</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 setGates(gates : QVector)</panel_attributes>
@@ -2246,10 +2254,10 @@ setGates(gates : QVector)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>360</y>
-      <w>324</w>
-      <h>36</h>
+      <x>832</x>
+      <y>296</y>
+      <w>288</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 getPath(path : QString)</panel_attributes>
@@ -2258,10 +2266,10 @@ getPath(path : QString)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>387</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>320</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2270,10 +2278,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1233</x>
-      <y>441</y>
-      <w>180</w>
-      <h>99</h>
+      <x>1096</x>
+      <y>368</y>
+      <w>160</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 getFile(path : QString)</panel_attributes>
@@ -2282,10 +2290,10 @@ getFile(path : QString)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1233</x>
-      <y>459</y>
-      <w>18</w>
-      <h>54</h>
+      <x>1096</x>
+      <y>384</y>
+      <w>16</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2294,10 +2302,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>702</y>
-      <w>504</w>
-      <h>36</h>
+      <x>832</x>
+      <y>600</y>
+      <w>448</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 getFile()</panel_attributes>
@@ -2306,10 +2314,10 @@ getFile()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>729</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>624</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2318,22 +2326,22 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>234</y>
-      <w>234</w>
-      <h>36</h>
+      <x>248</x>
+      <y>184</y>
+      <w>232</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 evLoadButtonPressed(path : QString)</panel_attributes>
-    <additional_attributes>220.0;20.0;30.0;20.0</additional_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>558</y>
-      <w>747</w>
-      <h>36</h>
+      <x>456</x>
+      <y>472</y>
+      <w>664</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 evLoadingFileDone()</panel_attributes>
@@ -2342,10 +2350,10 @@ evLoadingFileDone()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>396</y>
-      <w>324</w>
-      <h>36</h>
+      <x>832</x>
+      <y>328</y>
+      <w>288</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 path</panel_attributes>
@@ -2354,10 +2362,10 @@ path</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>738</y>
-      <w>504</w>
-      <h>36</h>
+      <x>832</x>
+      <y>632</y>
+      <w>448</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 file</panel_attributes>
@@ -2366,10 +2374,10 @@ file</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1413</x>
-      <y>765</y>
-      <w>171</w>
-      <h>81</h>
+      <x>1256</x>
+      <y>656</y>
+      <w>152</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 createLogicGates</panel_attributes>
@@ -2378,10 +2386,10 @@ createLogicGates</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1413</x>
-      <y>783</y>
-      <w>18</w>
-      <h>36</h>
+      <x>1256</x>
+      <y>672</y>
+      <w>16</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2390,10 +2398,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>864</y>
-      <w>927</w>
-      <h>36</h>
+      <x>456</x>
+      <y>744</y>
+      <w>824</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 evConvertingDone()</panel_attributes>
@@ -2402,10 +2410,10 @@ evConvertingDone()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>846</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>728</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2414,10 +2422,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1629</x>
-      <y>1026</y>
-      <w>36</w>
-      <h>198</h>
+      <x>1448</x>
+      <y>888</y>
+      <w>32</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>
 layer=0</panel_attributes>
@@ -2426,10 +2434,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1197</y>
-      <w>1152</w>
-      <h>36</h>
+      <x>456</x>
+      <y>1040</y>
+      <w>1024</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 evComputingDone()</panel_attributes>
@@ -2438,10 +2446,10 @@ evComputingDone()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1017</y>
-      <w>729</w>
-      <h>36</h>
+      <x>832</x>
+      <y>880</y>
+      <w>648</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 getGates()</panel_attributes>
@@ -2450,10 +2458,10 @@ getGates()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>1044</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>904</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2462,10 +2470,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1053</y>
-      <w>729</w>
-      <h>36</h>
+      <x>832</x>
+      <y>912</y>
+      <w>648</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 gates : QVector</panel_attributes>
@@ -2474,10 +2482,10 @@ gates : QVector</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1638</x>
-      <y>1089</y>
-      <w>153</w>
-      <h>117</h>
+      <x>1456</x>
+      <y>944</y>
+      <w>136</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 computeLogic()</panel_attributes>
@@ -2486,10 +2494,10 @@ computeLogic()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1890</x>
-      <y>1350</y>
-      <w>36</w>
-      <h>207</h>
+      <x>1680</x>
+      <y>1176</y>
+      <w>32</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>
 layer=0</panel_attributes>
@@ -2498,10 +2506,10 @@ layer=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1341</y>
-      <w>990</w>
-      <h>36</h>
+      <x>832</x>
+      <y>1168</y>
+      <w>880</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 getGates()</panel_attributes>
@@ -2510,10 +2518,10 @@ getGates()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1377</y>
-      <w>990</w>
-      <h>36</h>
+      <x>832</x>
+      <y>1200</y>
+      <w>880</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 gates : QVector</panel_attributes>
@@ -2522,10 +2530,10 @@ gates : QVector</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>936</x>
-      <y>1368</y>
-      <w>18</w>
-      <h>18</h>
+      <x>832</x>
+      <y>1192</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2534,10 +2542,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1899</x>
-      <y>1413</y>
-      <w>99</w>
-      <h>117</h>
+      <x>1688</x>
+      <y>1232</y>
+      <w>88</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 draw</panel_attributes>
@@ -2546,10 +2554,10 @@ draw</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1899</x>
-      <y>1431</y>
-      <w>18</w>
-      <h>72</h>
+      <x>1688</x>
+      <y>1248</y>
+      <w>16</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>
 layer=1</panel_attributes>
@@ -2558,13 +2566,24 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>1530</y>
-      <w>1413</w>
-      <h>36</h>
+      <x>456</x>
+      <y>1336</y>
+      <w>1256</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 evDrawingDone()</panel_attributes>
     <additional_attributes>10.0;20.0;1550.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>8</y>
+      <w>656</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>the 3 ports (PortData, PortUI, PortController) are not represented in this sequence diagram</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

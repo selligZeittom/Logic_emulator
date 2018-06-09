@@ -15,7 +15,7 @@ INPUT(
 ./release\factory.o
 ./release\icontrollerdata.o
 ./release\ioview.o
-./release\xfeventerror.o
+./release\xfeventdata.o
 ./release\qrc_images.o
 ./release\moc_xf.o
 ./release\moc_xftimer.o

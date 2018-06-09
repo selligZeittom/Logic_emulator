@@ -2,6 +2,7 @@
 #define PORTCONTROLLER_H
 
 #include <iostream>
+#include <QString>
 #include "interfaces/icontrollerdata.h"
 #include "interfaces/iviewupdate.h"
 #include "XF/xf.h"
@@ -20,11 +21,10 @@ public:
     // IController interface, required
 public:
     //implemented as required
-    virtual void loadFile();
+    virtual void loadFile(QString path);
     virtual void convertJsonToGates();
     virtual void computeLogic();
     virtual void drawGates();
-    virtual void setPath(QString path);
     virtual void manageError(QString labelError);
 
     //implemented as provided

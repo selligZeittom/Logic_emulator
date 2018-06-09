@@ -24,9 +24,8 @@ public:
     virtual ~Data();
     void initRelations(PortData* p1);
 
-    void loadFile();
+    void loadFile(QString path);
     void convertJsonToGates();
-    void setPath(QString path);
     void drawResults();
     Pin &getConnectedPin(QString labelCOnnectedPin);
     void setGatesAndPins();

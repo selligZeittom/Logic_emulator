@@ -18,10 +18,10 @@ void Controller::initRelations(PortController *p1)
 
 void Controller::evLoadButtonPressed(QString path)
 {
-    thePortController->setPath(path);
-    XFEvent* ev = new XFEvent();
+    XFEventData* ev = new XFEventData();
     ev->setID((int) EV_LOAD_CLICKED);
     ev->setTarget(this);
+    ev->setPath(path);
     XF::getInstance().pushEvent(ev);
 }
 
@@ -51,7 +51,7 @@ void Controller::evComputingDone()
 
 void Controller::evError(int error)
 {
-    XFEventError* ev = new XFEventError();
+    XFEventData* ev = new XFEventData();
     ev->setID((int) EV_ERROR);
     ev->setTarget(this);
     ev->setErrorCode(error);
@@ -80,7 +80,7 @@ bool Controller::processEvent(XFEvent *p1)
     /*
      * double switch pattern for state machine
      */
-    XFEventError* p2 = (XFEventError*) p1;
+    XFEventData* p2 = (XFEventData*) p1;
 
     bool processed = false;
 
@@ -189,7 +189,7 @@ bool Controller::processEvent(XFEvent *p1)
             break;
         case ST_LOAD :
             qDebug() << "ST_LOAD : onEntry";
-            thePortController->loadFile();
+            thePortController->loadFile(p2->getPath());
             break;
         case ST_CONVERT :
             qDebug() << "ST_CONVERT : onEntry";
