@@ -2,7 +2,6 @@
 
 Pin::Pin()
 {
-
 }
 
 Pin::Pin(bool state)
@@ -21,7 +20,6 @@ Pin::Pin(QString lab, QString con)
     this->labelConnectedPin = con;
     this->setState(false);
     this->x = this->y = 0;
-
 }
 
 Pin::~Pin()

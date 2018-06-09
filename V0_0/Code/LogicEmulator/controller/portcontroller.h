@@ -18,8 +18,8 @@ public:
     virtual ~PortController();
     void initRelations(Controller* p1, PortData* p2);
 
-    // IController interface, required
 public:
+    // IController interface
     //implemented as required
     virtual void loadFile(QString path);
     virtual void convertJsonToGates();

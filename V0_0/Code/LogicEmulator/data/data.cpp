@@ -6,14 +6,18 @@
 Data::Data()
 {
     this->thePortData = NULL;
-    this->jsonConverter = NULL;
     this->file = NULL;
     levelMax = 0;
 }
 
 Data::~Data()
 {
-
+    //delete the pointer
+    if(file)
+    {
+        delete file;
+        file = NULL;
+    }
 }
 
 void Data::initRelations(PortData *p1)
@@ -23,16 +27,23 @@ void Data::initRelations(PortData *p1)
 
 void Data::loadFile(QString path)
 {
+    //set the path
     this->path = path;
+
+    //create the file
     file = new QFile(path);
 
+    //open the file
     file->open(QIODevice::ReadOnly);
+
+    //check that the file is valid : if not, send error
     if(!file->isOpen())
     {
-        qDebug() << "failed to open file...";
-        code="no code...";
+        code="no code...";//no valid code to display
         thePortData->onError(ERROR_LOADING_FILE);
     }
+
+    //if the file is valids
     thePortData->onLoadingDone();
 }
 
@@ -45,13 +56,18 @@ void Data::convertJsonToGates()
     result = "";
     code = "";
 
+    //get the string corresponding to the .json file
     QTextStream reader(file);
     code = reader.readAll();
+
+    //check that the read operation was well done
     if(code.isEmpty())
     {
-        qDebug() << "failed to read file...";
+        //if not, send an error
         thePortData->onError(ERROR_READING_FILE);
     }
+
+    //close file, don't need it anymore
     file->close();
 
     //translate the string into a byte array
@@ -59,9 +75,11 @@ void Data::convertJsonToGates()
 
     //the main document from the json file
     QJsonDocument doc = QJsonDocument::fromJson(byteData);
+
+    //check that the conversion has been well done
     if(doc.isEmpty())
     {
-        qDebug() << "empty file...";
+        //if not, send an error
         thePortData->onError(ERROR_JSON_LOADING);
     }
 
@@ -69,7 +87,7 @@ void Data::convertJsonToGates()
     QJsonObject design = doc.object();
     if(design.isEmpty())
     {
-        qDebug() << "error of the main design...";
+        //if not, send an error
         thePortData->onError(ERROR_JSON_CONVERSION);
     }
 
@@ -78,9 +96,11 @@ void Data::convertJsonToGates()
 
     //get the array of all the gates
     QJsonArray gates = design["gates"].toArray();
+
+    //check that the array has sth inside
     if(gates.isEmpty())
     {
-        qDebug()<<"failed to create gates array...";
+        //if not, send an error
         thePortData->onError(ERROR_JSON_CONVERSION_ARRAY);
     }
 
@@ -91,14 +111,12 @@ void Data::convertJsonToGates()
         QJsonObject gate = gates.at(i).toObject();
         if(gate.isEmpty())
         {
-            qDebug()<<"failed to create gate...";
             thePortData->onError(ERROR_JSON_CONVERSION_GATE);
         }
 
         QString id = gate["ID"].toString();
         if(id.isEmpty())
         {
-            qDebug()<<"failed to get id...";
             thePortData->onError(ERROR_JSON_CONVERSION_ID);
         }
 
@@ -108,48 +126,47 @@ void Data::convertJsonToGates()
         QJsonArray pins = gate["pins"].toArray();
         if(pins.isEmpty())
         {
-            qDebug()<<"failed to create pins array...";
             thePortData->onError(ERROR_JSON_CONVERSION_ARRAY);
         }
+
+        //get all the input pins
         QVector<Pin> vPinsIO;
         for(int j=0; j< pins.count(); ++j)
         {
+            //create an object for each array element
             QJsonObject pin = pins.at(j).toObject();
             if(pin.isEmpty())
             {
-                qDebug()<<"failed to create pin...";
                 thePortData->onError(ERROR_JSON_CONVERSION_PIN);
             }
             QString label = pin["label"].toString();
             if(label.isEmpty())
             {
-                qDebug()<<"failed to get pin's label...";
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
             }
             QString connectedLabel = pin["connectedLabel"].toString();
             if(connectedLabel.isEmpty())
             {
-                qDebug()<<"failed to get pin's connectedLabel...";
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
             }
 
             //create a Pin object an add it to the end of the vector
-            Pin* p = new Pin(label, connectedLabel);
-            vPinsIO.push_back(*p);//add to the gate's vector
+            Pin p(label, connectedLabel);
+            vPinsIO.push_back(p);//add to the gate's vector
         }
 
         //create a logic gate
-        Gate* newGate = new Gate(id, level, vPinsIO);
-        vGates.push_back(*newGate); //add to the global vector
-
+        Gate newGate(id, level, vPinsIO);
+        vGates.push_back(newGate); //add to the global vector
     }
 
+    //if the conversion has been well done
     thePortData->onConvertingDone();
 }
 
+//get a string representing the output of all the gates
 void Data::outputResultsToString()
 {
-    qDebug() << "computing logic";
     for (int i = 0; i < vGates.count(); ++i)
     {
         if(vGates[i].getLevel() == levelMax)
@@ -161,9 +178,9 @@ void Data::outputResultsToString()
     }
 
     thePortData->onComputingDone();
-
 }
 
+//send the informations to the ioview to display on the screen
 void Data::drawResults()
 {
     thePortData->onNewFileNAme(fileName);
@@ -173,14 +190,15 @@ void Data::drawResults()
     thePortData->onDrawingDone();
 }
 
-Pin &Data::getConnectedPin(QString labelCOnnectedPin)
+//return the pin with the label
+Pin &Data::getPinFromLabel(QString labelPinToFind)
 {
     Pin retVal = NULL;
     for (int i = 0; i < vGates.count(); ++i)
     {
         //search for an output pin
         QString labelPin = vGates[i].getOutputPin()->getLabelPin();
-        if(labelPin == labelCOnnectedPin)
+        if(labelPin == labelPinToFind)
         {
             return *(vGates[i].getOutputPin());
         }
@@ -189,7 +207,7 @@ Pin &Data::getConnectedPin(QString labelCOnnectedPin)
         for(int j = 0; j < vGates[i].getInputPins().count(); j++)
         {
             labelPin = vGates[i].getInputPins()[j].getLabelPin();
-            if(labelPin == labelCOnnectedPin)
+            if(labelPin == labelPinToFind)
             {
                 return (vGates[i].getInputPins()[j]);
             }
@@ -198,6 +216,7 @@ Pin &Data::getConnectedPin(QString labelCOnnectedPin)
     return retVal;
 }
 
+//set all the pins and gates, and therefor comput the logic
 void Data::setGatesAndPins()
 {
     //get the max level of the design
@@ -207,7 +226,7 @@ void Data::setGatesAndPins()
         int levelGate = vGates[i].getLevel();
         if(levelGate > levelMax)
         {
-            levelMax = levelGate;
+            this->levelMax = levelGate;
         }
     }
 
@@ -238,7 +257,7 @@ void Data::setGatesAndPins()
                         }
                     }
                     Pin& outputPin = *gate.getOutputPin();
-                    outputPin.initRelations(&getConnectedPin(outputPin.getLabelConnectedPin()));
+                    outputPin.initRelations(&getPinFromLabel(outputPin.getLabelConnectedPin()));
                     gate.computeLogicAndSetPixmap();
                 }
 
@@ -249,7 +268,7 @@ void Data::setGatesAndPins()
                     for(int i = 0; i < gate.getInputPins().count(); i++)
                     {
                         Pin& inputPin = gate.getInputPins()[i];
-                        Pin* pinToConnect = &getConnectedPin(inputPin.getLabelConnectedPin());
+                        Pin* pinToConnect = &getPinFromLabel(inputPin.getLabelConnectedPin());
                         inputPin.initRelations(pinToConnect);
                         inputPin.setState(pinToConnect->getState());
                     }
@@ -257,7 +276,7 @@ void Data::setGatesAndPins()
                     if(levelGate < levelMax)
                     {
                         Pin& outputPin = *gate.getOutputPin();
-                        outputPin.initRelations(&getConnectedPin(outputPin.getLabelConnectedPin()));
+                        outputPin.initRelations(&getPinFromLabel(outputPin.getLabelConnectedPin()));
                     }
                     gate.computeLogicAndSetPixmap();
                 }
@@ -267,6 +286,7 @@ void Data::setGatesAndPins()
     outputResultsToString();
 }
 
+//send the error data to the ioview to display on the screen
 void Data::processError(QString labelError)
 {
     thePortData->onNewFileNAme(fileName);
@@ -275,4 +295,3 @@ void Data::processError(QString labelError)
     thePortData->onNewResults(labelError);
     thePortData->onProcessErrorDone();
 }
-

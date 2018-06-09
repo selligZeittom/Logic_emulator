@@ -4,7 +4,7 @@
 Controller::Controller()
 {
     this->thePortController = NULL;
-    this->state = ST_WAIT;
+    this->state = ST_WAIT; //first state
 }
 
 Controller::~Controller()
@@ -16,15 +16,18 @@ void Controller::initRelations(PortController *p1)
     this->thePortController = p1;
 }
 
+//is called when the user clicked on the browse button
 void Controller::evLoadButtonPressed(QString path)
 {
+    //special XFEvent : need to store and give data forward
     XFEventData* ev = new XFEventData();
     ev->setID((int) EV_LOAD_CLICKED);
     ev->setTarget(this);
-    ev->setPath(path);
+    ev->setPath(path); //store the path
     XF::getInstance().pushEvent(ev);
 }
 
+//is called when the file has been loaded
 void Controller::evLoadingDone()
 {
     XFEvent* ev = new XFEvent();
@@ -33,6 +36,7 @@ void Controller::evLoadingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+//is called when the conversion from .json file to gates is done
 void Controller::evConvertingDone()
 {
     XFEvent* ev = new XFEvent();
@@ -41,6 +45,7 @@ void Controller::evConvertingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+//is called when all the gates and pins are connected, and the results computed
 void Controller::evComputingDone()
 {
     XFEvent* ev = new XFEvent();
@@ -49,6 +54,7 @@ void Controller::evComputingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+//is called if an error has occured during the conversion process
 void Controller::evError(int error)
 {
     XFEventData* ev = new XFEventData();
@@ -58,6 +64,7 @@ void Controller::evError(int error)
     XF::getInstance().pushEvent(ev);
 }
 
+//is called when the drawing on the ioview is done
 void Controller::evDrawingDone()
 {
     XFEvent* ev = new XFEvent();
@@ -66,6 +73,7 @@ void Controller::evDrawingDone()
     XF::getInstance().pushEvent(ev);
 }
 
+//is calle after an error has been treated and displayed on the ioview
 void Controller::evErrorProcessed()
 {
     XFEvent* ev = new XFEvent();
@@ -77,36 +85,33 @@ void Controller::evErrorProcessed()
 //state machine : double switch pattern
 bool Controller::processEvent(XFEvent *p1)
 {
-    /*
-     * double switch pattern for state machine
-     */
+
+    //downcast the event to get the potential stored data
     XFEventData* p2 = (XFEventData*) p1;
 
+    //if the event isn't processed in this state machine
     bool processed = false;
 
     //Store the old state
     LE_STATE oldState = state;
 
-    //switch the state : on transition
+    //switch state : on transition
     switch (state) {
 
     case ST_WAIT :
         if(p2->getID() == EV_LOAD_CLICKED)
         {
             state = ST_LOAD;
-            qDebug() << "-> ST_LOAD";
         }
         break;
     case ST_LOAD :
         if(p2->getID() == EV_END_LOADING)
         {
             state = ST_CONVERT;
-            qDebug() << "-> ST_CONVERT";
         }
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
-            qDebug() << "error -> ST_ERROR";
         }
         break;
 
@@ -114,24 +119,20 @@ bool Controller::processEvent(XFEvent *p1)
         if(p2->getID() == EV_END_CONVERTING)
         {
             state = ST_COMPUTE;
-            qDebug() << "-> ST_COMPUTE";
         }
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
-            qDebug() << "error -> ST_ERROR";
         }
         break;
     case ST_COMPUTE :
         if(p2->getID() == EV_END_COMPUTING)
         {
             state = ST_DRAW;
-            qDebug() << "-> ST_DRAW";
         }
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
-            qDebug() << "error -> ST_ERROR";
         }
         break;
     case ST_DRAW :
@@ -143,14 +144,12 @@ bool Controller::processEvent(XFEvent *p1)
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
-            qDebug() << "error -> ST_ERROR";
         }
         break;
     case ST_ERROR :
         if(p2->getID() == EV_END_ERROR_PROCESSING)
         {
             state = ST_WAIT;
-            qDebug() << "end of error processing-> ST_WAIT";
         }
         break;
     default:
@@ -161,51 +160,35 @@ bool Controller::processEvent(XFEvent *p1)
     {
         processed = true;
 
-        //do action on exit
-        switch (oldState) {
-        case ST_WAIT :
-            break;
-        case ST_LOAD :
-            break;
-        case ST_CONVERT :
-            break;
-        case ST_COMPUTE :
-            break;
-        case ST_DRAW :
-            break;
-        case ST_ERROR :
-            break;
-        default:
-            break;
-        }
-
         //probably not used, but must be declared here...
         QString errorLabel;
 
         //do action on entry
         switch (state) {
         case ST_WAIT :
-            qDebug() << "ST_WAIT : onEntry";
             break;
+
         case ST_LOAD :
-            qDebug() << "ST_LOAD : onEntry";
+            //start the loading of the selected file
             thePortController->loadFile(p2->getPath());
             break;
+
         case ST_CONVERT :
-            qDebug() << "ST_CONVERT : onEntry";
+            //start the conversion of the file
             thePortController->convertJsonToGates();
             break;
+
         case ST_COMPUTE :
-            qDebug() << "ST_COMPUTE : onEntry";
+            //set all the gates and pins
             thePortController->computeLogic();
             break;
+
         case ST_DRAW :
-            qDebug() << "ST_DRAW : onEntry";
+            //Draw the result on the screen
             thePortController->drawGates();
             break;
-        case ST_ERROR :
-            qDebug() << "ST_ERROR : onEntry";
 
+        case ST_ERROR :
             //get the string to represent the error
             switch (p2->getErrorCode()) {
             case ERROR_LOADING_FILE:
@@ -245,6 +228,7 @@ bool Controller::processEvent(XFEvent *p1)
                 errorLabel="error : error in the error...^^'";
                 break;
             }
+            //forward the error and display it on the screen
             thePortController->manageError(errorLabel);
             break;
         default:

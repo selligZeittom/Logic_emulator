@@ -31,9 +31,9 @@ Gate::Gate(QString id, int level, QVector<Pin> ioPins)
 
 Gate::~Gate()
 {
-
 }
 
+//get the output depending on the inputs pins and the type of the gate
 void Gate::computeLogicAndSetPixmap()
 {
     bool result = false;
@@ -99,6 +99,7 @@ QPixmap Gate::getQPixMap() const
     return (*qpixMap);
 }
 
+//set a string from the output
 QString Gate::outputToString()
 {
     QString retVal = "the gate [";
@@ -144,6 +145,7 @@ void Gate::setXY(int x, int y)
     setXYpins();
 }
 
+//best way to get a nice look on the screen
 void Gate::setXYpins()
 {
     if(this->id.contains("N"))

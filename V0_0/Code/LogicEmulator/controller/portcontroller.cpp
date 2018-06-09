@@ -15,6 +15,7 @@ PortController::~PortController()
 
 void PortController::initRelations(Controller *p1, PortData *p2)
 {
+    //make the global connections between packages
     this->controller = p1;
     this->thePortData = p2;
 }
