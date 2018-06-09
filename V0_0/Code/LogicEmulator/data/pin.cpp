@@ -28,10 +28,9 @@ Pin::~Pin()
 {
 }
 
-void Pin::initRelations(Pin *connected)
+void Pin::initRelations(Pin *cPin)
 {
-    //this->connectedPin = new Pin();
-    this->connectedPin = connected;
+    this->connectedPin = cPin;
 }
 
 void Pin::operator=(const Pin &p1)

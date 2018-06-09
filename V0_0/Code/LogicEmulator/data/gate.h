@@ -16,8 +16,6 @@ public:
     Gate(QString id, int level, QVector<Pin> ioPins);
     virtual ~Gate();
 
-    void initRelations();
-
     int getLevel() const;
     void computeLogicAndSetPixmap();
     QVector<Pin> &getInputPins();
@@ -33,7 +31,6 @@ private:
     //int type; //0 : AND, 1 : OR, 2 : NOT
     QString id;
     int level;
-    int nInputs;
     QVector<Pin> inputPins;
     Pin* outputPin;
     QPixmap* qpixMap;

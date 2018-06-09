@@ -42,12 +42,12 @@
     <coordinates>
       <x>504</x>
       <y>280</y>
-      <w>133</w>
+      <w>154</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>ST_LOAD
 --
-/entry : loadFile()
+/entry : loadFile(path : QString)
 
 </panel_attributes>
     <additional_attributes/>

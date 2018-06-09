@@ -25,17 +25,11 @@ Gate::Gate(QString id, int level, QVector<Pin> ioPins)
     {
         this->outputPin = NULL;
     }
-    this->nInputs = ioPins.count();
     this->x = 0;
     this->y = 0;
 }
 
 Gate::~Gate()
-{
-
-}
-
-void Gate::initRelations()
 {
 
 }

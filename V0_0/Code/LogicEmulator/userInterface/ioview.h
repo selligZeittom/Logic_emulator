@@ -57,7 +57,6 @@ public:
     //outputView public functions and variables
     void drawGates(QVector<Gate> &gates, int maxLevel);
     void drawWires(QVector<Gate> &gates, int maxLevel);
-    void drawLabel(QVector<Gate> &gates, int maxLevel);
     void onNewCode(QString listCode);
     void onNewFileName(QString filename);
     void onNewResults(QString results);
@@ -70,7 +69,6 @@ private:
 
     //inputView privates variables and functions
     QPushButton* load;
-    QFileDialog* browser;
     void initGraphicalObject();
 
     //outputView privates variables and functions

@@ -13,7 +13,7 @@ public:
     Pin(bool state);
     Pin(QString lab, QString con);
     virtual ~Pin();
-    void initRelations(Pin* labelConnectedPin);
+    void initRelations(Pin* cPin);
     void operator=(const Pin &p1);
 
     void setState(bool state);

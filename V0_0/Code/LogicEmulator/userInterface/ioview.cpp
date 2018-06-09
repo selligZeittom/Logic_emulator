@@ -202,15 +202,6 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
             scnGates->addLine(x1, y1, x2, y2, *pen);
         }
     }
-    drawLabel(gates, maxLevel);
-}
-
-void IOView::drawLabel(QVector<Gate> &gates, int maxLevel)
-{
-    for(int i = 0; i < gates.count(); i++)
-    {
-
-    }
 }
 
 void IOView::onNewCode(QString labelCode)
