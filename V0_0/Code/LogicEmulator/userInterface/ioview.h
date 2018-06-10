@@ -76,16 +76,14 @@ private:
     QGraphicsScene *scnGates;
     QLabel* labelResult;
     QLabel* labelFileName;
-    //QListWidget* listCode;
     QGraphicsView* codeWindow;
     QGraphicsScene* scnCode;
-    QString styleSheet;
+    QString styleSheetQLabel;
 
     void drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene &scn, QPen &pen);
 
 public slots:
     void buttonClicked();
-
 
     // IViewUpdate interface, required
 public:

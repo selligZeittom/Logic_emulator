@@ -7,6 +7,7 @@ IOView::IOView(QWidget *parent)
 {
     this->thePortUI = NULL;
 
+    //get the dimension of the screen
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect  screenGeometry = screen->geometry();
     this->height = screenGeometry.height()-35;
@@ -14,19 +15,64 @@ IOView::IOView(QWidget *parent)
 
     this->setWindowTitle("Logic Emulator V0.0");
     this->setVisible(true);
-    this->showMaximized();
-    this->styleSheet = "QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }";
+    this->showMaximized(); //full screen
+
+    //used to set the appearance of qlabel
+    this->styleSheetQLabel = "QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }";
 }
 
+//destroy the pointer at the end
 IOView::~IOView()
 {
+    if(load)
+    {
+        delete load;
+        load = NULL;
+    }
+    if(drawWindow)
+    {
+        delete drawWindow;
+        drawWindow = NULL;
+    }
+    if(scnGates)
+    {
+        delete scnGates;
+        scnGates = NULL;
+    }
+    if(labelResult)
+    {
+        delete labelResult;
+        labelResult = NULL;
+    }
+    if(labelFileName)
+    {
+        delete labelFileName;
+        labelFileName = NULL;
+    }
+    if(load)
+    {
+        delete load;
+        load = NULL;
+    }
+    if(codeWindow)
+    {
+        delete codeWindow;
+        codeWindow = NULL;
+    }
+    if(scnCode)
+    {
+        delete scnCode;
+        scnCode = NULL;
+    }
 }
 
+//make the global connections
 void IOView::initRelations(PortUI *p1)
 {
     this->thePortUI = p1;
-    initGraphicalObject();
 
+    //initialize the objects on the screen
+    initGraphicalObject();
     this->show();
 }
 
@@ -44,15 +90,15 @@ QString IOView::getPath()
 {
 #ifdef RELEASE
 
-    //set the filter for only json files
+    //set the filter for only getting .json files
     QString filter = "File Description (*.json)";
 
-    //get the opened file
-    QString filename =  QFileDialog::getOpenFileName(
+    //get the opened file's path
+    QString filePath =  QFileDialog::getOpenFileName(
                 this,
                 "Open Json file",
                 QDir::homePath(), filter);
-    return filename;
+    return filePath;
 
 #else
     return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST4_4level.json";
@@ -61,9 +107,10 @@ QString IOView::getPath()
 
 void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
 {
+    //clear the scene
     scnGates->clear();
 
-    //store how many gates per level there are
+    //store the number of item per level
     int itemPerLevel[maxLevel+1];
     for (int i = 0; i < maxLevel+1; ++i)
     {
@@ -73,7 +120,7 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
     //get the number of thoses items per level
     for(int i = 0; i < gates.count(); i++)
     {
-        itemPerLevel[gates[i].getLevel()]++;
+        itemPerLevel[gates[i].getLevel()]++; //incr the index corresponding to the level
     }
     int xOffset = 250;
     int yOffset = 150;
@@ -82,47 +129,55 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
     //draw the pixmap of the gates, and the connections and set the coordinates
     for (int _level = 0; _level <= maxLevel; ++_level)
     {
-        int _usedGates = 0;
+        int _usedGates = 0; //needed because gates aren't stored by level
         for (int i = 0; i < gates.count(); ++i)
         {
+            //do sth only when the level is corresponding
             if(gates[i].getLevel() == _level)
             {
+                //used to adapt the vertical gap between gates
                 double ratio = 1;
                 if(_level != 0)
                 {
                     ratio = itemPerLevel[_level-1] / itemPerLevel[_level];
                 }
-                int x = xOffset * _level;
+                int x = xOffset * _level; //horizontal gap
                 int y = 0;
-                if(itemPerLevel[_level] != 1)
+                if(itemPerLevel[_level] != 1) //if there is more than one gate on this level
                 {
                     y = yOffset * _usedGates * ratio + (_level) * yOffset/2;
                 }
-                else
+                else //for one gate per level
                 {
                     y =  yOffset * (itemPerLevel[0]/2) - yOffset/2;
                 }
+
+                //create an item to draw the qpixmap of the gate
                 QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
                 item->setPos(x, y);
-                gates[i].setXY(x, y);
+                gates[i].setXY(x, y); //used to store the coordinates for the next pins
                 item->setPixmap(gates[i].getQPixMap().scaled(80, 80));
                 scnGates->addItem(item);
 
+                //write the id of the gate
                 QGraphicsTextItem* item2 = new QGraphicsTextItem();
                 item2->setPos(x + 20, y + 30);
                 item2->setPlainText(gates[i].getID());
                 this->scnGates->addItem(item2);
-                _usedGates++;
 
+                //incr it because one gate has been used
+                _usedGates++;
             }
         }
     }
+
+    //next  : make the graphical connections between gates
     drawWires(gates, maxLevel);
 }
 
+//draw lines between gates
 void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
 {
-    //draw the wires between the gates
     for (int i = 0; i < gates.count(); ++i)
     {
         int x1 = 0;
@@ -133,7 +188,7 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
 
         QPen* pen;
 
-        //logical inputs
+        //logical inputs like 0 or 1
         if(gates[i].getLevel() == 0)
         {
             for(int j = 0; j < gates[i].getInputPins().count(); j++)
@@ -144,6 +199,7 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
                 x2 = x1 - 50;
                 y2 = y1;
 
+                //if it's a 1 : green
                 if(gates[i].getInputPins()[j].getState())
                 {
                     pen = new QPen(QColor(Qt::green))  ;
@@ -178,10 +234,11 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
             }
 
             pen->setWidth(3);
-            //scnGates->addLine(x1, y1, x2, y2, *pen);
+
+            //use this fonction instead of scnGates->addLine(...) to get a better look
             drawLineBetweenP1P2(x1, y1, x2, y2, *scnGates, *pen);
         }
-        else
+        else //at the end of the design
         {
             x1 = gates[i].getOutputPin()->getX();
             y1 = gates[i].getOutputPin()->getY();
@@ -204,6 +261,7 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
     }
 }
 
+//used to display the text of the .json file
 void IOView::onNewCode(QString labelCode)
 {
     this->scnCode->clear();
@@ -212,22 +270,26 @@ void IOView::onNewCode(QString labelCode)
     this->scnCode->addItem(item);
 }
 
+//used to display the .json file's name
 void IOView::onNewFileName(QString filename)
 {
     this->labelFileName->setText(filename);
 }
 
+//used to write the results
 void IOView::onNewResults(QString results)
 {
     this->labelResult->setText(results);
 }
 
+//clear the scenes
 void IOView::onDeleteOldGatesAndCode()
 {
     this->scnGates->clear();
     this->scnCode->clear();
 }
 
+//create and init the qpushbutton, qlabel, ...
 void IOView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
@@ -243,12 +305,12 @@ void IOView::initGraphicalObject()
 
     this->labelResult = new QLabel(this);
     labelResult->setGeometry(680, 680, RESULT_QLABEL_W, RESULT_QLABEL_H);
-    labelResult->setStyleSheet(styleSheet);
+    labelResult->setStyleSheet(styleSheetQLabel);
     labelResult->setText("no results ...");
 
     this->labelFileName = new QLabel(this);
     labelFileName->setGeometry(40, 40, FILENAME_QLABEL_W, FILENAME_QLABEL_H);
-    labelFileName->setStyleSheet(styleSheet);
+    labelFileName->setStyleSheet(styleSheetQLabel);
     labelFileName->setText("no file loaded ...");
 
     this->codeWindow = new QGraphicsView(this);
@@ -263,20 +325,20 @@ void IOView::initGraphicalObject()
     labelFileName->show();
     codeWindow->show();
 
+    //connect the button to the slot
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked()));
 }
 
+//used to get some nice lines between gates
 void IOView::drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene& scn, QPen& pen)
 {
     int x3 = (x2-x1)/2 + x1;
     scn.addLine(x1, y1, x3, y1, pen);
-    qDebug() << "drawed line from " << x1 <<";" <<y1 << " to " <<x3 <<";"<<y1;
     scn.addLine(x3, y1, x3, y2, pen);
-    qDebug() << "drawed line from " << x3 <<";" <<y1 << " to " <<x3 <<";"<<y2;
     scn.addLine(x3, y2, x2, y2, pen);
-    qDebug() << "drawed line from " << x3 <<";" <<y2 << " to " <<x2 <<";"<<y2;
 }
 
+//called when the button is clicked, forwards the path to the controller
 void IOView::buttonClicked()
 {
     QString path = getPath();
