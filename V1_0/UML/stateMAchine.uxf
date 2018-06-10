@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>710</x>
+      <y>0</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>0</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>620</x>
+      <y>60</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ST_WAIT
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>620</x>
+      <y>310</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_LOAD
+--
+/entry : loadFile(path : QString)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>170</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_LOAD_BUTTON_PRESSED</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>510</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_CONVERT
+--
+/entry : convertJsonToGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>370</y>
+      <w>150</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_LOADING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>570</y>
+      <w>180</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_CONVERTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>710</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_COMPUTE
+--
+/entry : computeLogic()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>610</x>
+      <y>910</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_DRAW
+--
+/entry : drawGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>770</y>
+      <w>180</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_COMPUTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>80</y>
+      <w>640</w>
+      <h>890</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_DRAWING</panel_attributes>
+    <additional_attributes>610.0;870.0;10.0;870.0;10.0;10.0;620.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>330</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>400</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>180.0;150.0;10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>400</y>
+      <w>290</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>270.0;350.0;10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>170</x>
+      <y>310</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>ST_ERROR
+--
+/entry : manageError(errorLabel : QString) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>130</y>
+      <w>310</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_ERROR_PROCESSING</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1020</x>
+      <y>310</y>
+      <w>290</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_CHECK_MODIF
+--
+/entry : checkValidity(newCode : QString)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>120</y>
+      <w>360</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_MODIFICATION_BUTTON_PRESSED</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0;340.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>370</y>
+      <w>470</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_CHECKING</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;370.0;10.0;370.0</additional_attributes>
+  </element>
+</diagram>

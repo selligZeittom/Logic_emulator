@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/gates">
+        <file>images/and_gate_original.png</file>
+        <file>images/not_gate_original.png</file>
+        <file>images/or_gate_original.png</file>
+    </qresource>
+</RCC>

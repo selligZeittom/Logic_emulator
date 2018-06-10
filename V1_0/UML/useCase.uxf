@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>54</x>
+      <y>162</y>
+      <w>54</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>243</x>
+      <y>90</y>
+      <w>360</w>
+      <h>675</h>
+    </coordinates>
+    <panel_attributes>LogicEmulator
+lt=.
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>288</x>
+      <y>153</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>load a .json file based on the
+protocol "JSON_logicProtocol", 
+with logic gates like AND, OR, NOT
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>297</x>
+      <y>252</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>generate the logic output from the system
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>297</x>
+      <y>351</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>watch the graphical representation 
+of the .json file
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>108</x>
+      <y>180</y>
+      <w>198</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>189</y>
+      <w>135</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0;130.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>288</y>
+      <w>135</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0;130.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>288</x>
+      <y>450</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>use gates like NOR, NAND, XOR
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>387</y>
+      <w>126</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0;120.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>288</x>
+      <y>549</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>introducing small modifications in the 
+logical inputs from the interface
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>486</y>
+      <w>126</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0;120.0;120.0</additional_attributes>
+  </element>
+</diagram>
