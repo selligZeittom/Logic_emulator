@@ -31,16 +31,6 @@ void Pin::initRelations(Pin *cPin)
     this->connectedPin = cPin;
 }
 
-void Pin::operator=(const Pin &p1)
-{
-    this->labelPin = p1.labelPin;
-    this->labelConnectedPin = p1.labelConnectedPin;
-    this->connectedPin = p1.connectedPin;
-    this->state = p1.state;
-    this->x = p1.x;
-    this->y = p1.y;
-}
-
 void Pin::setState(bool state)
 {
     this->state = state;

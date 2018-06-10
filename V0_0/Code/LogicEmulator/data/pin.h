@@ -14,7 +14,6 @@ public:
     Pin(QString lab, QString con);
     virtual ~Pin();
     void initRelations(Pin* cPin);
-    void operator=(const Pin &p1);
 
     void setState(bool state);
     bool getState() const;
