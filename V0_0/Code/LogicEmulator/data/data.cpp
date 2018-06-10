@@ -130,7 +130,7 @@ void Data::convertJsonToGates()
         }
 
         //get all the input pins
-        QVector<Pin> vPinsIO;
+        QVector<Pin*> vPinsIO;
         for(int j=0; j< pins.count(); ++j)
         {
             //create an object for each array element
@@ -151,12 +151,12 @@ void Data::convertJsonToGates()
             }
 
             //create a Pin object an add it to the end of the vector
-            Pin p(label, connectedLabel);
+            Pin* p = new Pin(label, connectedLabel);
             vPinsIO.push_back(p);//add to the gate's vector
         }
 
         //create a logic gate
-        Gate newGate(id, level, vPinsIO);
+        Gate* newGate = new Gate(id, level, vPinsIO);
         vGates.push_back(newGate); //add to the global vector
     }
 
@@ -169,11 +169,11 @@ void Data::outputResultsToString()
 {
     for (int i = 0; i < vGates.count(); ++i)
     {
-        if(vGates[i].getLevel() == levelMax)
+        if(vGates[i]->getLevel() == levelMax)
         {
             this->result += "\r\n";
         }
-        this->result += vGates[i].outputToString();
+        this->result += vGates[i]->outputToString();
         this->result += "\r\n";
     }
 
@@ -191,25 +191,25 @@ void Data::drawResults()
 }
 
 //return the pin with the label
-Pin &Data::getPinFromLabel(QString labelPinToFind)
+Pin *Data::getPinFromLabel(QString labelPinToFind)
 {
-    Pin retVal = NULL;
+    Pin* retVal = NULL;
     for (int i = 0; i < vGates.count(); ++i)
     {
         //search for an output pin
-        QString labelPin = vGates[i].getOutputPin()->getLabelPin();
+        QString labelPin = vGates[i]->getOutputPin()->getLabelPin();
         if(labelPin == labelPinToFind)
         {
-            return *(vGates[i].getOutputPin());
+            return vGates[i]->getOutputPin();
         }
 
         //search for an input pin
-        for(int j = 0; j < vGates[i].getInputPins().count(); j++)
+        for(int j = 0; j < vGates[i]->getInputPins().count(); j++)
         {
-            labelPin = vGates[i].getInputPins()[j].getLabelPin();
+            labelPin = vGates[i]->getInputPins()[j]->getLabelPin();
             if(labelPin == labelPinToFind)
             {
-                return (vGates[i].getInputPins()[j]);
+                return vGates[i]->getInputPins()[j];
             }
         }
     }
@@ -223,7 +223,7 @@ void Data::setGatesAndPins()
     levelMax = 0;
     for(int i = 0; i < vGates.count(); i++)
     {
-        int levelGate = vGates[i].getLevel();
+        int levelGate = vGates[i]->getLevel();
         if(levelGate > levelMax)
         {
             this->levelMax = levelGate;
@@ -237,48 +237,48 @@ void Data::setGatesAndPins()
         //look for all the gates in the vector if the level correspond to the currentLEvel
         for(int currentGate = 0; currentGate < vGates.count(); currentGate++)
         {
-            int levelGate = vGates[currentGate].getLevel();
+            int levelGate = vGates[currentGate]->getLevel();
             if(levelGate == currentLevel)
             {
-                Gate& gate = vGates[currentGate];
+                Gate* gate = vGates[currentGate];
 
                 //for the first level there isn't a real connected pin
                 if(levelGate == 0)
                 {
-                    for(int i = 0; i < gate.getInputPins().count(); i++)
+                    for(int i = 0; i < gate->getInputPins().count(); i++)
                     {
-                        if(gate.getInputPins()[i].getLabelConnectedPin().contains("HIGH"))
+                        if(gate->getInputPins()[i]->getLabelConnectedPin().contains("HIGH"))
                         {
-                            gate.getInputPins()[i].setState(true);
+                            gate->getInputPins()[i]->setState(true);
                         }
-                        else if(gate.getInputPins()[i].getLabelConnectedPin().contains("LOW"))
+                        else if(gate->getInputPins()[i]->getLabelConnectedPin().contains("LOW"))
                         {
-                            gate.getInputPins()[i].setState(false);
+                            gate->getInputPins()[i]->setState(false);
                         }
                     }
-                    Pin& outputPin = *gate.getOutputPin();
-                    outputPin.initRelations(&getPinFromLabel(outputPin.getLabelConnectedPin()));
-                    gate.computeLogicAndSetPixmap();
+                    Pin* outputPin = gate->getOutputPin();
+                    outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
+                    gate->computeLogicAndSetPixmap();
                 }
 
                 //for the others level
                 else
                 {
                     //set the input pins
-                    for(int i = 0; i < gate.getInputPins().count(); i++)
+                    for(int i = 0; i < gate->getInputPins().count(); i++)
                     {
-                        Pin& inputPin = gate.getInputPins()[i];
-                        Pin* pinToConnect = &getPinFromLabel(inputPin.getLabelConnectedPin());
-                        inputPin.initRelations(pinToConnect);
-                        inputPin.setState(pinToConnect->getState());
+                        Pin* inputPin = gate->getInputPins()[i];
+                        Pin* pinToConnect = getPinFromLabel(inputPin->getLabelConnectedPin());
+                        inputPin->initRelations(pinToConnect);
+                        inputPin->setState(pinToConnect->getState());
                     }
                     //for the not final level
                     if(levelGate < levelMax)
                     {
-                        Pin& outputPin = *gate.getOutputPin();
-                        outputPin.initRelations(&getPinFromLabel(outputPin.getLabelConnectedPin()));
+                        Pin* outputPin = gate->getOutputPin();
+                        outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
                     }
-                    gate.computeLogicAndSetPixmap();
+                    gate->computeLogicAndSetPixmap();
                 }
             }
         }

@@ -27,7 +27,7 @@ public:
     void loadFile(QString path);
     void convertJsonToGates();
     void drawResults();
-    Pin &getPinFromLabel(QString labelPinToFind);
+    Pin* getPinFromLabel(QString labelPinToFind);
     void setGatesAndPins();
     void processError(QString labelError);
 
@@ -38,7 +38,7 @@ private:
     QString fileName;
     QString result;
     QString code;
-    QVector<Gate> vGates;
+    QVector<Gate*> vGates;
     QString path;
     int levelMax;
 

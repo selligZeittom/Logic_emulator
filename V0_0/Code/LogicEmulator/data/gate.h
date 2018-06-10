@@ -13,25 +13,25 @@ class Gate
 {
 public:
     Gate();
-    Gate(QString id, int level, QVector<Pin> ioPins);
+    Gate(QString id, int level, QVector<Pin *> ioPins);
     virtual ~Gate();
 
     int getLevel() const;
     void computeLogicAndSetPixmap();
-    QVector<Pin> &getInputPins();
+    QVector<Pin*> getInputPins();
     Pin *getOutputPin();
     QPixmap getQPixMap() const;
     QString outputToString();
     QString getID() const;
     void setOutputPin(Pin* oPin);
-    void setInputPins(QVector<Pin> iPins);
+    void setInputPins(QVector<Pin*> iPins);
     void setXY(int x, int y);
 
 private:
     //int type; //0 : AND, 1 : OR, 2 : NOT
     QString id;
     int level;
-    QVector<Pin> inputPins;
+    QVector<Pin*> inputPins;
     Pin* outputPin;
     QPixmap* qpixMap;
     int x, y; //represent the point of drawing pixmap

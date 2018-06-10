@@ -6,7 +6,7 @@ Gate::Gate()
 
 }
 
-Gate::Gate(QString id, int level, QVector<Pin> ioPins)
+Gate::Gate(QString id, int level, QVector<Pin*> ioPins)
 {
     this->id = id;
     this->level = level;
@@ -19,7 +19,7 @@ Gate::Gate(QString id, int level, QVector<Pin> ioPins)
     //remove the last pin from the array, because it's the output pin
     if(!inputPins.isEmpty())
     {
-        *(this->outputPin) = inputPins.takeLast();
+        this->outputPin = inputPins.takeLast();
     }
     else
     {
@@ -55,7 +55,7 @@ void Gate::computeLogicAndSetPixmap()
         qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
         result = true;
         for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i].getState() == false)
+            if(inputPins[i]->getState() == false)
             {
                 result = false;
             }
@@ -65,7 +65,7 @@ void Gate::computeLogicAndSetPixmap()
     case 1:
         qpixMap = new QPixmap(":/gates/images/or_gate_original.png");
         for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i].getState() == true)
+            if(inputPins[i]->getState() == true)
             {
                 result = true;
             }
@@ -74,7 +74,7 @@ void Gate::computeLogicAndSetPixmap()
         //means it's a NOT gate
     case 2:
         qpixMap = new QPixmap(":/gates/images/not_gate_original.png");
-        result = !(inputPins[0].getState());
+        result = !(inputPins[0]->getState());
         break;
     default:
         break;
@@ -84,7 +84,7 @@ void Gate::computeLogicAndSetPixmap()
     this->outputPin->setState(result);
 }
 
-QVector<Pin> &Gate::getInputPins()
+QVector<Pin*> Gate::getInputPins()
 {
     return this->inputPins;
 }
@@ -133,7 +133,7 @@ void Gate::setOutputPin(Pin *oPin)
     this->outputPin = oPin;
 }
 
-void Gate::setInputPins(QVector<Pin> iPins)
+void Gate::setInputPins(QVector<Pin*> iPins)
 {
     this->inputPins = iPins;
 }
@@ -150,13 +150,13 @@ void Gate::setXYpins()
 {
     if(this->id.contains("N"))
     {
-        inputPins[0].setXY(this->x, this->y + 40);
+        inputPins[0]->setXY(this->x, this->y + 40);
     }
     else
     {
         for (int i = 0; i < inputPins.count(); ++i)
         {
-            inputPins[i].setXY(this->x, this->y + i * 39 + 20);
+            inputPins[i]->setXY(this->x, this->y + i * 39 + 20);
         }
     }
 

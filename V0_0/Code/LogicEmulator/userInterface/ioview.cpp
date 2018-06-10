@@ -101,11 +101,11 @@ QString IOView::getPath()
     return filePath;
 
 #else
-    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST4_4level.json";
+    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST3_4l.json";
 #endif
 }
 
-void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
+void IOView::drawGates(QVector<Gate *> &gates, int maxLevel)
 {
     //clear the scene
     scnGates->clear();
@@ -120,7 +120,7 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
     //get the number of thoses items per level
     for(int i = 0; i < gates.count(); i++)
     {
-        itemPerLevel[gates[i].getLevel()]++; //incr the index corresponding to the level
+        itemPerLevel[gates[i]->getLevel()]++; //incr the index corresponding to the level
     }
     int xOffset = 250;
     int yOffset = 150;
@@ -133,7 +133,7 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
         for (int i = 0; i < gates.count(); ++i)
         {
             //do sth only when the level is corresponding
-            if(gates[i].getLevel() == _level)
+            if(gates[i]->getLevel() == _level)
             {
                 //used to adapt the vertical gap between gates
                 double ratio = 1;
@@ -155,14 +155,14 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
                 //create an item to draw the qpixmap of the gate
                 QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
                 item->setPos(x, y);
-                gates[i].setXY(x, y); //used to store the coordinates for the next pins
-                item->setPixmap(gates[i].getQPixMap().scaled(80, 80));
+                gates[i]->setXY(x, y); //used to store the coordinates for the next pins
+                item->setPixmap(gates[i]->getQPixMap().scaled(80, 80));
                 scnGates->addItem(item);
 
                 //write the id of the gate
                 QGraphicsTextItem* item2 = new QGraphicsTextItem();
                 item2->setPos(x + 20, y + 30);
-                item2->setPlainText(gates[i].getID());
+                item2->setPlainText(gates[i]->getID());
                 this->scnGates->addItem(item2);
 
                 //incr it because one gate has been used
@@ -176,7 +176,7 @@ void IOView::drawGates(QVector<Gate> &gates, int maxLevel)
 }
 
 //draw lines between gates
-void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
+void IOView::drawWires(QVector<Gate*> &gates, int maxLevel)
 {
     for (int i = 0; i < gates.count(); ++i)
     {
@@ -189,18 +189,18 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
         QPen* pen;
 
         //logical inputs like 0 or 1
-        if(gates[i].getLevel() == 0)
+        if(gates[i]->getLevel() == 0)
         {
-            for(int j = 0; j < gates[i].getInputPins().count(); j++)
+            for(int j = 0; j < gates[i]->getInputPins().count(); j++)
             {
-                x1 = gates[i].getInputPins()[j].getX();
-                y1 = gates[i].getInputPins()[j].getY();
+                x1 = gates[i]->getInputPins()[j]->getX();
+                y1 = gates[i]->getInputPins()[j]->getY();
 
                 x2 = x1 - 50;
                 y2 = y1;
 
                 //if it's a 1 : green
-                if(gates[i].getInputPins()[j].getState())
+                if(gates[i]->getInputPins()[j]->getState())
                 {
                     pen = new QPen(QColor(Qt::green))  ;
                 }
@@ -215,16 +215,16 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
         }
 
         //between the gates
-        if(gates[i].getLevel() != maxLevel)
+        if(gates[i]->getLevel() != maxLevel)
         {
-            x1 = gates[i].getOutputPin()->getX();
-            y1 = gates[i].getOutputPin()->getY();
+            x1 = gates[i]->getOutputPin()->getX();
+            y1 = gates[i]->getOutputPin()->getY();
 
-            x2 = ((gates[i].getOutputPin())->getConnectedPin())->getX();
-            y2 = ((gates[i].getOutputPin())->getConnectedPin())->getY();
+            x2 = ((gates[i]->getOutputPin())->getConnectedPin())->getX();
+            y2 = ((gates[i]->getOutputPin())->getConnectedPin())->getY();
 
 
-            if(gates[i].getOutputPin()->getState())
+            if(gates[i]->getOutputPin()->getState())
             {
                 pen = new QPen(QColor(Qt::green))  ;
             }
@@ -240,13 +240,13 @@ void IOView::drawWires(QVector<Gate> &gates, int maxLevel)
         }
         else //at the end of the design
         {
-            x1 = gates[i].getOutputPin()->getX();
-            y1 = gates[i].getOutputPin()->getY();
+            x1 = gates[i]->getOutputPin()->getX();
+            y1 = gates[i]->getOutputPin()->getY();
 
             x2 = x1 + 50;
             y2 = y1;
 
-            if(gates[i].getOutputPin()->getState())
+            if(gates[i]->getOutputPin()->getState())
             {
                 pen = new QPen(QColor(Qt::green))  ;
             }
