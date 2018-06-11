@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE
+#define RELEASEs
 
 IOView::IOView(QWidget *parent)
 {
@@ -267,6 +267,10 @@ void IOView::onNewCode(QString labelCode)
     this->scnCode->clear();
     QGraphicsTextItem* item = new QGraphicsTextItem();
     item->setPlainText(labelCode);
+
+    //set the text editable and selectable
+    item->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
+    item ->setTextInteractionFlags(Qt::TextEditorInteraction);
     this->scnCode->addItem(item);
 }
 
@@ -293,9 +297,14 @@ void IOView::onDeleteOldGatesAndCode()
 void IOView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
-    load->setGeometry(170, height - 150, 340, 80);
-    load->setStyleSheet("QPushButton { background-color : rgb(50, 150, 150); border: 1px solid gray; border-radius: 10px; color : black; }");
-    load->setText("Browse a Json file");
+    load->setGeometry(40, height - 150, 250, 80);
+    load->setStyleSheet("QPushButton { background-color : rgb(110, 187, 177); border: 1px solid gray; border-radius: 10px; color : black; }");
+    load->setText("Browse a file");
+
+    this->check = new QPushButton(this);
+    check->setGeometry(390, height - 150, 250, 80);
+    check->setStyleSheet("QPushButton { background-color : rgb(253, 223, 171); border: 1px solid gray; border-radius: 10px; color : black; }");
+    check->setText("Check modifications");
 
     this->drawWindow = new QGraphicsView(this);
     drawWindow->setGeometry(680, 40, GATES_QLABEL_W, GATES_QLABEL_H);
@@ -320,13 +329,17 @@ void IOView::initGraphicalObject()
     codeWindow->setScene(scnCode);
 
     load->show();
+    check->show();
     drawWindow->show();
     labelResult->show();
     labelFileName->show();
     codeWindow->show();
 
-    //connect the button to the slot
-    connect(this->load, SIGNAL(clicked(bool)), this, SLOT(buttonClicked()));
+    //connect the buttons to the slot
+    connect(this->load, SIGNAL(clicked(bool)), this, SLOT(loadButtonClicked()));
+    connect(this->check, SIGNAL(clicked(bool)), this, SLOT(checkButtonClicked()));
+
+
 }
 
 //used to get some nice lines between gates
@@ -339,11 +352,21 @@ void IOView::drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene&
 }
 
 //called when the button is clicked, forwards the path to the controller
-void IOView::buttonClicked()
+void IOView::loadButtonClicked()
 {
     QString path = getPath();
     qDebug() << "file browsed : " << path ;
     onButtonLoadPressed(path);
+
+}
+
+void IOView::checkButtonClicked()
+{
+    QString code;
+    QGraphicsTextItem* item = (QGraphicsTextItem*)codeWindow->itemAt(40, 140);
+    QTextDocument* doc = item->document();
+    code = doc->toPlainText();
+    qDebug() << code;
 }
 
 void IOView::onButtonLoadPressed(QString path)

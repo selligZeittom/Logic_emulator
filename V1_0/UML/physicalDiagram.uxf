@@ -44,12 +44,12 @@ layer=1</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>196</x>
-      <y>840</y>
+      <x>294</x>
+      <y>826</y>
       <w>168</w>
       <h>42</h>
     </coordinates>
-    <panel_attributes>loadButton : QPushButton
+    <panel_attributes>checkButton : QPushButton
 halign=center
 valign=center
 bg=blue
@@ -62,7 +62,7 @@ layer=1</panel_attributes>
       <x>98</x>
       <y>133</y>
       <w>385</w>
-      <h>686</h>
+      <h>665</h>
     </coordinates>
     <panel_attributes>codeWindow : QGraphicsView
 halign=left
@@ -290,6 +290,21 @@ A2_U : LOW
 halign=left
 
 bg=orange
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>112</x>
+      <y>826</y>
+      <w>168</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>loadButton : QPushButton
+halign=center
+valign=center
+bg=blue
 layer=1</panel_attributes>
     <additional_attributes/>
   </element>

@@ -293,5 +293,5 @@ void Data::processError(QString labelError)
     thePortData->onDeleteOldGatesAndCode();
     thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
     thePortData->onNewResults(labelError);
-    thePortData->onProcessErrorDone();
+    thePortData->onErrorProcessed();
 }

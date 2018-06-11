@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>710</x>
-      <y>0</y>
-      <w>20</w>
-      <h>20</h>
+      <x>581</x>
+      <y>98</y>
+      <w>14</w>
+      <h>14</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>0</y>
-      <w>30</w>
-      <h>80</h>
+      <x>581</x>
+      <y>98</y>
+      <w>21</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 </panel_attributes>
@@ -27,10 +27,10 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>620</x>
-      <y>60</y>
-      <w>190</w>
-      <h>120</h>
+      <x>518</x>
+      <y>140</y>
+      <w>133</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>ST_WAIT
 --
@@ -40,10 +40,10 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>620</x>
-      <y>310</y>
-      <w>220</w>
-      <h>70</h>
+      <x>518</x>
+      <y>315</y>
+      <w>154</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>ST_LOAD
 --
@@ -55,10 +55,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>170</y>
-      <w>230</w>
-      <h>160</h>
+      <x>581</x>
+      <y>217</y>
+      <w>161</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_LOAD_BUTTON_PRESSED</panel_attributes>
@@ -67,10 +67,10 @@ EV_LOAD_BUTTON_PRESSED</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>510</y>
-      <w>230</w>
-      <h>70</h>
+      <x>504</x>
+      <y>455</y>
+      <w>161</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>ST_CONVERT
 --
@@ -82,10 +82,10 @@ EV_LOAD_BUTTON_PRESSED</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>370</y>
-      <w>150</w>
-      <h>160</h>
+      <x>581</x>
+      <y>357</y>
+      <w>105</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_LOADING</panel_attributes>
@@ -94,10 +94,10 @@ EV_END_LOADING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>570</y>
-      <w>180</w>
-      <h>160</h>
+      <x>581</x>
+      <y>497</y>
+      <w>126</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_CONVERTING</panel_attributes>
@@ -106,10 +106,10 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>710</y>
-      <w>230</w>
-      <h>70</h>
+      <x>504</x>
+      <y>595</y>
+      <w>161</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>ST_COMPUTE
 --
@@ -121,10 +121,10 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>610</x>
-      <y>910</y>
-      <w>230</w>
-      <h>70</h>
+      <x>511</x>
+      <y>735</y>
+      <w>161</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>ST_DRAW
 --
@@ -136,10 +136,10 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>770</y>
-      <w>180</w>
-      <h>160</h>
+      <x>581</x>
+      <y>637</y>
+      <w>126</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_COMPUTING</panel_attributes>
@@ -148,58 +148,59 @@ EV_END_COMPUTING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>0</x>
-      <y>80</y>
-      <w>640</w>
-      <h>890</h>
+      <x>336</x>
+      <y>154</y>
+      <w>196</w>
+      <h>623</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_DRAWING</panel_attributes>
-    <additional_attributes>610.0;870.0;10.0;870.0;10.0;10.0;620.0;10.0</additional_attributes>
+    <additional_attributes>250.0;870.0;10.0;870.0;10.0;10.0;260.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>330</y>
-      <w>150</w>
-      <h>40</h>
+      <x>665</x>
+      <y>329</y>
+      <w>175</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_ERROR</panel_attributes>
-    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;90.0;230.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>400</y>
-      <w>200</w>
-      <h>170</h>
+      <x>658</x>
+      <y>413</y>
+      <w>217</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_ERROR</panel_attributes>
-    <additional_attributes>180.0;150.0;10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;290.0;100.0;290.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>400</y>
-      <w>290</w>
-      <h>370</h>
+      <x>658</x>
+      <y>413</y>
+      <w>301</w>
+      <h>217</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-EV_ERROR</panel_attributes>
-    <additional_attributes>270.0;350.0;10.0;350.0;10.0;10.0</additional_attributes>
+EV_ERROR
+fg=light_gray</panel_attributes>
+    <additional_attributes>10.0;290.0;410.0;290.0;410.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>170</x>
-      <y>310</y>
-      <w>330</w>
-      <h>100</h>
+      <x>826</x>
+      <y>350</y>
+      <w>231</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>ST_ERROR
 --
@@ -211,22 +212,22 @@ EV_ERROR</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>130</y>
-      <w>310</w>
-      <h>200</h>
+      <x>637</x>
+      <y>203</y>
+      <w>469</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_ERROR_PROCESSING</panel_attributes>
-    <additional_attributes>10.0;180.0;10.0;10.0;290.0;10.0</additional_attributes>
+    <additional_attributes>440.0;210.0;440.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1020</x>
-      <y>310</y>
-      <w>290</w>
-      <h>70</h>
+      <x>1176</x>
+      <y>350</y>
+      <w>203</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>ST_CHECK_MODIF
 --
@@ -238,25 +239,61 @@ EV_END_ERROR_PROCESSING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>120</y>
-      <w>360</w>
-      <h>210</h>
+      <x>644</x>
+      <y>161</y>
+      <w>644</w>
+      <h>203</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_MODIFICATION_BUTTON_PRESSED</panel_attributes>
-    <additional_attributes>10.0;20.0;340.0;20.0;340.0;190.0</additional_attributes>
+    <additional_attributes>10.0;20.0;900.0;20.0;900.0;270.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>820</x>
-      <y>370</y>
-      <w>470</w>
-      <h>390</h>
+      <x>1267</x>
+      <y>406</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 EV_END_CHECKING</panel_attributes>
-    <additional_attributes>320.0;10.0;320.0;370.0;10.0;370.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1239</x>
+      <y>448</y>
+      <w>70</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>type=decision
+isValid?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>497</y>
+      <w>651</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+valid</panel_attributes>
+    <additional_attributes>880.0;10.0;880.0;190.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>378</y>
+      <w>203</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=not valid</panel_attributes>
+    <additional_attributes>270.0;140.0;120.0;140.0;120.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

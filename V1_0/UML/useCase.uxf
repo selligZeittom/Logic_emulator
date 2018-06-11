@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>9</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>54</x>
-      <y>162</y>
-      <w>54</w>
-      <h>99</h>
+      <x>210</x>
+      <y>200</y>
+      <w>60</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>243</x>
-      <y>90</y>
-      <w>360</w>
-      <h>675</h>
+      <x>420</x>
+      <y>120</y>
+      <w>400</w>
+      <h>640</h>
     </coordinates>
     <panel_attributes>LogicEmulator
 lt=.
@@ -28,10 +28,10 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>288</x>
-      <y>153</y>
-      <w>243</w>
-      <h>90</h>
+      <x>470</x>
+      <y>190</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>load a .json file based on the
 protocol "JSON_logicProtocol", 
@@ -42,10 +42,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>297</x>
-      <y>252</y>
-      <w>243</w>
-      <h>90</h>
+      <x>480</x>
+      <y>300</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>generate the logic output from the system
 bg=magenta</panel_attributes>
@@ -54,10 +54,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>297</x>
-      <y>351</y>
-      <w>243</w>
-      <h>90</h>
+      <x>480</x>
+      <y>410</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>watch the graphical representation 
 of the .json file
@@ -67,10 +67,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>108</x>
-      <y>180</y>
-      <w>198</w>
-      <h>36</h>
+      <x>270</x>
+      <y>220</y>
+      <w>220</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
@@ -78,10 +78,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>189</y>
-      <w>135</w>
-      <h>126</h>
+      <x>350</x>
+      <y>230</y>
+      <w>150</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;120.0;130.0;120.0</additional_attributes>
@@ -89,10 +89,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>288</y>
-      <w>135</w>
-      <h>126</h>
+      <x>350</x>
+      <y>340</y>
+      <w>150</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;120.0;130.0;120.0</additional_attributes>
@@ -100,10 +100,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>288</x>
-      <y>450</y>
-      <w>243</w>
-      <h>90</h>
+      <x>470</x>
+      <y>520</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>use gates like NOR, NAND, XOR
 bg=magenta</panel_attributes>
@@ -112,10 +112,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>387</y>
-      <w>126</w>
-      <h>126</h>
+      <x>350</x>
+      <y>450</y>
+      <w>140</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;120.0;120.0;120.0</additional_attributes>
@@ -123,10 +123,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>288</x>
-      <y>549</y>
-      <w>243</w>
-      <h>90</h>
+      <x>470</x>
+      <y>630</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>introducing small modifications in the 
 logical inputs from the interface
@@ -136,10 +136,10 @@ bg=magenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>486</y>
-      <w>126</w>
-      <h>126</h>
+      <x>350</x>
+      <y>560</y>
+      <w>140</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;120.0;120.0;120.0</additional_attributes>

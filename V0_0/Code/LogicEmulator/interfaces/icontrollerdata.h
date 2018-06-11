@@ -21,7 +21,7 @@ public:
     virtual void onComputingDone() = 0;
     virtual void onError(int error) = 0;
     virtual void onDrawingDone() = 0;
-    virtual void onProcessErrorDone() = 0;
+    virtual void onErrorProcessed() = 0;
 
 };
 

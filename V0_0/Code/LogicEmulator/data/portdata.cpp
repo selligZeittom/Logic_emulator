@@ -71,9 +71,9 @@ void PortData::onDrawingDone()
     thePortController->onDrawingDone();
 }
 
-void PortData::onProcessErrorDone()
+void PortData::onErrorProcessed()
 {
-    thePortController->onProcessErrorDone();
+    thePortController->onErrorProcessed();
 }
 
 void PortData::onNewCode(QString code)

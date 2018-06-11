@@ -22,9 +22,13 @@
 #include <QListWidget>
 #include <QPen>
 #include <QColor>
+#include <QTextDocument>
 
 #include "interfaces/iviewupdate.h"
 #include "data/gate.h"
+
+#define LOAD_BUTTON_ID 1
+#define CHECK_MODIF_BUTTON_ID 999
 
 #define RESULT_QLABEL_W 1200
 #define RESULT_QLABEL_H 300
@@ -69,6 +73,7 @@ private:
 
     //inputView privates variables and functions
     QPushButton* load;
+    QPushButton* check;
     void initGraphicalObject();
 
     //outputView privates variables and functions
@@ -83,7 +88,9 @@ private:
     void drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene &scn, QPen &pen);
 
 public slots:
-    void buttonClicked();
+    void loadButtonClicked();
+    void checkButtonClicked();
+
 
     // IViewUpdate interface, required
 public:

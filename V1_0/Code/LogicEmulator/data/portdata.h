@@ -36,7 +36,7 @@ public:
     virtual void onComputingDone();
     virtual void onError(int error);
     virtual void onDrawingDone();
-    virtual void onProcessErrorDone();
+    virtual void onErrorProcessed();
 
     // IDataUpdate interface, required
 public:

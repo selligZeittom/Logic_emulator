@@ -75,7 +75,7 @@ void PortController::onDrawingDone()
     controller->evDrawingDone();
 }
 
-void PortController::onProcessErrorDone()
+void PortController::onErrorProcessed()
 {
     controller->evErrorProcessed();
 }
