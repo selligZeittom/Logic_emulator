@@ -1,5 +1,6 @@
 #include <QCoreApplication>
 #include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QStringList>
 #include <QString>
 #include <QFile>
@@ -17,10 +18,66 @@ int main(int argc, char *argv[])
     QTextStream* reader = new QTextStream(file);
     codeChecked = reader->readAll();
 
-    QRegularExpression rx("\\s");
-    QStringList words = codeChecked.split(rx, QString::SkipEmptyParts);
+    /*
+     *  "ID": "O1",
+     *  "level": 0,
+     *  "label": "O1_I1",
+     *  "connectedLabel": "LOG_LOW"
+     *
+     */
+
+    //first get the string into a list line by line
+    QRegularExpression lBl("\r\n");
+    QStringList words = codeChecked.split(lBl);
+
+    //this is the filter used to get the lines corresponding to an ID
+    QRegularExpression idFilterGlobal("\\W\\w\\w\\W\\W \\W\\w\\d\\W");
+
+    //then get only the 2 letters from the ID
+    QRegularExpression idFilterID("\\w\\d");
+
+    //this is the filter used to get the lines corresponding to a level
+    QRegularExpression levelFilterGlobal("\\W\\w+\\W\\W \\d\\W");
+
+    //then get only the number of the level
+    QRegularExpression levelFilter("\\d");
+
+    //this is the filter used to get the lines corresponding to a label
+    QRegularExpression labelFilterGlobal("\\W\\w\\d\\W\\w\\d\\W");
+
+    //then get only the the label itself
+    QRegularExpression labelFilter("\\d");
+
+
+
+
     for (int i = 0; i < words.count(); ++i) {
-        qDebug() << words[i];
+        QString str = words[i];
+        QRegularExpressionMatch globalMatchID = idFilterGlobal.match(str);
+        QRegularExpressionMatch globalMatchLevel = levelFilterGlobal.match(str);
+        QRegularExpressionMatch globalMatchLabel = labelFilterGlobal.match(str);
+        if(globalMatchID.hasMatch())
+        {
+            QString matched = globalMatchID.captured();
+            qDebug() << "global id match : " << matched;
+            QRegularExpressionMatch idMatch = idFilterID.match(matched);
+            qDebug() << "id : " << idMatch.captured();
+
+        }
+        if(globalMatchLevel.hasMatch())
+        {
+            QString matched = globalMatchLevel.captured();
+            qDebug() << "global level match : " << matched;
+            QRegularExpressionMatch levelMatch = levelFilter.match(matched);
+            qDebug() << "level : " << levelMatch.captured();
+        }
+        if(globalMatchLabel.hasMatch())
+        {
+            QString matched = globalMatchLabel.captured();
+            qDebug() << "global label match : " << matched;
+            QRegularExpressionMatch labelMatch = labelFilterGlobal.match(matched);
+            qDebug() << "level : " << labelMatch.captured();
+        }
 
     }
     return a.exec();
