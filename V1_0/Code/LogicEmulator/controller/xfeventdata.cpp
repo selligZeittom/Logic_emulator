@@ -15,12 +15,22 @@ void XFEventData::setErrorCode(int code)
     this->errorCode = code;
 }
 
-void XFEventData::setPath(QString path)
+void XFEventData::setData(QString path)
 {
-    this->path = path;
+    this->data = path;
 }
 
-QString XFEventData::getPath() const
+QString XFEventData::getData() const
 {
-    return this->path;
+    return this->data;
+}
+
+void XFEventData::setIsValid(bool isValid)
+{
+    this->isValid = isValid;
+}
+
+bool XFEventData::getIsValid() const
+{
+    return this->isValid;
 }

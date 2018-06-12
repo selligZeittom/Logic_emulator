@@ -39,7 +39,7 @@ void Data::loadFile(QString path)
     //check that the file is valid : if not, send error
     if(!file->isOpen())
     {
-        code="no code...";//no valid code to display
+        codeChecked="no code...";//no valid code to display
         thePortData->onError(ERROR_LOADING_FILE);
     }
 
@@ -54,14 +54,14 @@ void Data::convertJsonToGates()
     levelMax = 0;
     fileName = "";
     result = "";
-    code = "";
+    codeChecked = "";
 
     //get the string corresponding to the .json file
     QTextStream reader(file);
-    code = reader.readAll();
+    codeChecked = reader.readAll();
 
     //check that the read operation was well done
-    if(code.isEmpty())
+    if(codeChecked.isEmpty())
     {
         //if not, send an error
         thePortData->onError(ERROR_READING_FILE);
@@ -71,7 +71,7 @@ void Data::convertJsonToGates()
     file->close();
 
     //translate the string into a byte array
-    QByteArray byteData = code.toLocal8Bit();
+    QByteArray byteData = codeChecked.toLocal8Bit();
 
     //the main document from the json file
     QJsonDocument doc = QJsonDocument::fromJson(byteData);
@@ -184,7 +184,7 @@ void Data::outputResultsToString()
 void Data::drawResults()
 {
     thePortData->onNewFileNAme(fileName);
-    thePortData->onNewCode(code);
+    thePortData->onNewCode(codeChecked);
     thePortData->onNewResults(result);
     thePortData->onNewGates(vGates, levelMax);
     thePortData->onDrawingDone();
@@ -291,7 +291,32 @@ void Data::processError(QString labelError)
 {
     thePortData->onNewFileNAme(fileName);
     thePortData->onDeleteOldGatesAndCode();
-    thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
+    thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+codeChecked);
     thePortData->onNewResults(labelError);
     thePortData->onErrorProcessed();
+}
+
+void Data::checkValidity(QString newCode)
+{
+    codeModified = newCode;
+    //if nothing changed in the code : it's ok
+    if(codeChecked.localeAwareCompare(codeModified) == 0)
+    {
+        thePortData->onCheckingModificationsDone(true);
+        codeChecked = codeModified;
+    }
+
+
+    //check the validity of the changes if there is a modification
+    else
+    {
+        QRegularExpression rx("\\s+");
+        QStringList words = codeChecked.split(rx, Qt::SkipEmptyParts);
+
+    }
+}
+
+void Data::updateInputAndOutput()
+{
+
 }

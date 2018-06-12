@@ -29,6 +29,8 @@ public:
     virtual void computeLogic();
     virtual void drawGates();
     virtual void manageError(QString labelError);
+    virtual void checkValidity(QString newCode);
+    virtual void updateGatesAndPins();
 
     //implemented as required
     virtual void onLoadingDone();
@@ -37,6 +39,7 @@ public:
     virtual void onError(int error);
     virtual void onDrawingDone();
     virtual void onErrorProcessed();
+    virtual void onCheckingModificationsDone(bool isValid);
 
     // IDataUpdate interface, required
 public:

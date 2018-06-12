@@ -45,9 +45,24 @@ void PortController::manageError(QString labelError)
     thePortData->manageError(labelError);
 }
 
+void PortController::checkValidity(QString newCode)
+{
+    thePortData->checkValidity(newCode);
+}
+
+void PortController::updateGatesAndPins()
+{
+    thePortData->updateGatesAndPins();
+}
+
 void PortController::onButtonLoadPressed(QString path)
 {
     controller->evLoadButtonPressed(path);
+}
+
+void PortController::onButtonCheckPressed(QString newCode)
+{
+    controller->evCheckButtonPressed(newCode);
 }
 
 void PortController::onLoadingDone()
@@ -78,4 +93,9 @@ void PortController::onDrawingDone()
 void PortController::onErrorProcessed()
 {
     controller->evErrorProcessed();
+}
+
+void PortController::onCheckingModificationsDone(bool isValid)
+{
+    controller->evCheckModificationsDone(isValid);
 }

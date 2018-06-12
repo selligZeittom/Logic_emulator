@@ -22,6 +22,11 @@ void PortUI::onButtonLoadPressed(QString path)
     thePortController->onButtonLoadPressed(path);
 }
 
+void PortUI::onButtonCheckPressed(QString newCode)
+{
+    thePortController->onButtonCheckPressed(newCode);
+}
+
 void PortUI::onNewCode(QString code)
 {
     ioView->onNewCode(code);

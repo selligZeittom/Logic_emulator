@@ -19,6 +19,7 @@ public:
     // IViewUpdate interface, required
 public:
     virtual void onButtonLoadPressed(QString path);
+    virtual void onButtonCheckPressed(QString newCode);
 
     // IDataUpdate interface, provided
 public:
@@ -31,7 +32,6 @@ public:
 private:
     IOView* ioView;
     PortController* thePortController;
-
 
 };
 

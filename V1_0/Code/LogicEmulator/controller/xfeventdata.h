@@ -11,11 +11,14 @@ public:
     XFEventData();
     int getErrorCode() const;
     void setErrorCode(int code);
-    void setPath(QString path);
-    QString getPath() const;
+    void setData(QString data);
+    QString getData() const;
+    void setIsValid(bool isValid);
+    bool getIsValid() const;
 private:
     int errorCode;
-    QString path;
+    QString data;
+    bool isValid;
 };
 
 #endif // XFEVENTERROR_H

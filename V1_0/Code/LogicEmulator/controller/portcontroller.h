@@ -26,6 +26,8 @@ public:
     virtual void computeLogic();
     virtual void drawGates();
     virtual void manageError(QString labelError);
+    virtual void checkValidity(QString newCode);
+    virtual void updateGatesAndPins();
 
     //implemented as provided
     virtual void onLoadingDone();
@@ -34,10 +36,12 @@ public:
     virtual void onError(int error);
     virtual void onDrawingDone();
     virtual void onErrorProcessed();
+    virtual void onCheckingModificationsDone(bool isValid);
 
     // IViewUpdate interface, provided
 public:
     virtual void onButtonLoadPressed(QString path);
+    virtual void onButtonCheckPressed(QString newCode);
 
 private:
     Controller* controller;

@@ -11,6 +11,8 @@
 #include <QDebug>
 #include <QTextStream>
 #include <QByteArray>
+#include <QRegularExpression>
+#include <QStringList>
 
 #include "gate.h"
 
@@ -30,6 +32,8 @@ public:
     Pin* getPinFromLabel(QString labelPinToFind);
     void setGatesAndPins();
     void processError(QString labelError);
+    void checkValidity(QString newCode);
+    void updateInputAndOutput();
 
 private:
     void outputResultsToString();
@@ -37,7 +41,8 @@ private:
     QFile* file ;
     QString fileName;
     QString result;
-    QString code;
+    QString codeChecked;
+    QString codeModified;
     QVector<Gate*> vGates;
     QString path;
     int levelMax;

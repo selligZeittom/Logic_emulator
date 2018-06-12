@@ -19,11 +19,21 @@ void Controller::initRelations(PortController *p1)
 //is called when the user clicked on the browse button
 void Controller::evLoadButtonPressed(QString path)
 {
-    //special XFEvent : need to store and give data forward
+    //special XFEvent : need to store and forward data
     XFEventData* ev = new XFEventData();
     ev->setID((int) EV_LOAD_CLICKED);
     ev->setTarget(this);
-    ev->setPath(path); //store the path
+    ev->setData(path); //store the path
+    XF::getInstance().pushEvent(ev);
+}
+
+void Controller::evCheckButtonPressed(QString newCode)
+{
+    //special XFEvent : need to store and forward data
+    XFEventData* ev = new XFEventData();
+    ev->setID((int) EV_MODIFICATION_BUTTON_PRESSED);
+    ev->setTarget(this);
+    ev->setData(newCode); //store the newCode into the event
     XF::getInstance().pushEvent(ev);
 }
 
@@ -82,6 +92,15 @@ void Controller::evErrorProcessed()
     XF::getInstance().pushEvent(ev);
 }
 
+void Controller::evCheckModificationsDone(bool isValid)
+{
+    XFEventData* ev = new XFEventData();
+    ev->setID((int) EV_END_CHECKING);
+    ev->setTarget(this);
+    ev->setIsValid(isValid);
+    XF::getInstance().pushEvent(ev);
+}
+
 //state machine : double switch pattern
 bool Controller::processEvent(XFEvent *p1)
 {
@@ -99,9 +118,16 @@ bool Controller::processEvent(XFEvent *p1)
     switch (state) {
 
     case ST_WAIT :
+        //standard loading procedure
         if(p2->getID() == EV_LOAD_CLICKED)
         {
             state = ST_LOAD;
+        }
+
+        //if the user did modifications on the code displayer on the screen
+        else if(p2->getID() == EV_MODIFICATION_BUTTON_PRESSED)
+        {
+            state = ST_CHECK_MODIF;
         }
         break;
     case ST_LOAD :
@@ -152,6 +178,16 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_WAIT;
         }
         break;
+    case ST_CHECK_MODIF :
+        if(p2->getID() == EV_END_CHECKING && p2->getIsValid())
+        {
+            state = ST_UPDATE_GATES_PINS;
+        }
+        else if(p2->getID() == EV_END_CHECKING && !(p2->getIsValid()))
+        {
+            state  = ST_ERROR;
+        }
+        break;
     default:
         break;
     }
@@ -170,7 +206,7 @@ bool Controller::processEvent(XFEvent *p1)
 
         case ST_LOAD :
             //start the loading of the selected file
-            thePortController->loadFile(p2->getPath());
+            thePortController->loadFile(p2->getData());
             break;
 
         case ST_CONVERT :
@@ -230,6 +266,12 @@ bool Controller::processEvent(XFEvent *p1)
             }
             //forward the error and display it on the screen
             thePortController->manageError(errorLabel);
+            break;
+        case ST_CHECK_MODIF:
+            thePortController->checkValidity(p2->getData());
+            break;
+        case ST_UPDATE_GATES_PINS:
+            thePortController->updateGatesAndPins();
             break;
         default:
             break;

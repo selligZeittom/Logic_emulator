@@ -46,6 +46,16 @@ void PortData::manageError(QString labelError)
     data->processError(labelError);
 }
 
+void PortData::checkValidity(QString newCode)
+{
+    data->checkValidity(newCode);
+}
+
+void PortData::updateGatesAndPins()
+{
+    data->updateInputAndOutput();
+}
+
 void PortData::onLoadingDone()
 {
     thePortController->onLoadingDone();
@@ -74,6 +84,11 @@ void PortData::onDrawingDone()
 void PortData::onErrorProcessed()
 {
     thePortController->onErrorProcessed();
+}
+
+void PortData::onCheckingModificationsDone(bool isValid)
+{
+    thePortController->onCheckingModificationsDone(isValid);
 }
 
 void PortData::onNewCode(QString code)

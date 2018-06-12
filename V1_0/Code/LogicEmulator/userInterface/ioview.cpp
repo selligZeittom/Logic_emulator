@@ -338,8 +338,6 @@ void IOView::initGraphicalObject()
     //connect the buttons to the slot
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(loadButtonClicked()));
     connect(this->check, SIGNAL(clicked(bool)), this, SLOT(checkButtonClicked()));
-
-
 }
 
 //used to get some nice lines between gates
@@ -357,7 +355,6 @@ void IOView::loadButtonClicked()
     QString path = getPath();
     qDebug() << "file browsed : " << path ;
     onButtonLoadPressed(path);
-
 }
 
 void IOView::checkButtonClicked()
@@ -367,6 +364,7 @@ void IOView::checkButtonClicked()
     QTextDocument* doc = item->document();
     code = doc->toPlainText();
     qDebug() << code;
+    thePortUI->onButtonCheckPressed(code);
 }
 
 void IOView::onButtonLoadPressed(QString path)
