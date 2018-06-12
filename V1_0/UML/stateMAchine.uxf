@@ -4,8 +4,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>581</x>
-      <y>98</y>
+      <x>245</x>
+      <y>133</y>
       <w>14</w>
       <h>14</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>98</y>
+      <x>245</x>
+      <y>133</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -27,8 +27,8 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>518</x>
-      <y>140</y>
+      <x>182</x>
+      <y>175</y>
       <w>133</w>
       <h>84</h>
     </coordinates>
@@ -40,8 +40,8 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>518</x>
-      <y>315</y>
+      <x>182</x>
+      <y>350</y>
       <w>154</w>
       <h>49</h>
     </coordinates>
@@ -55,8 +55,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>217</y>
+      <x>245</x>
+      <y>252</y>
       <w>161</w>
       <h>112</h>
     </coordinates>
@@ -67,8 +67,8 @@ EV_LOAD_BUTTON_PRESSED</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>504</x>
-      <y>455</y>
+      <x>168</x>
+      <y>490</y>
       <w>161</w>
       <h>49</h>
     </coordinates>
@@ -82,8 +82,8 @@ EV_LOAD_BUTTON_PRESSED</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>357</y>
+      <x>245</x>
+      <y>392</y>
       <w>105</w>
       <h>112</h>
     </coordinates>
@@ -94,8 +94,8 @@ EV_END_LOADING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>497</y>
+      <x>245</x>
+      <y>532</y>
       <w>126</w>
       <h>112</h>
     </coordinates>
@@ -106,8 +106,8 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>504</x>
-      <y>595</y>
+      <x>168</x>
+      <y>630</y>
       <w>161</w>
       <h>49</h>
     </coordinates>
@@ -121,8 +121,8 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>511</x>
-      <y>735</y>
+      <x>175</x>
+      <y>770</y>
       <w>161</w>
       <h>49</h>
     </coordinates>
@@ -136,8 +136,8 @@ EV_END_CONVERTING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>637</y>
+      <x>245</x>
+      <y>672</y>
       <w>126</w>
       <h>112</h>
     </coordinates>
@@ -148,8 +148,8 @@ EV_END_COMPUTING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>154</y>
+      <x>0</x>
+      <y>189</y>
       <w>196</w>
       <h>623</h>
     </coordinates>
@@ -160,8 +160,8 @@ EV_END_DRAWING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
-      <y>329</y>
+      <x>329</x>
+      <y>364</y>
       <w>175</w>
       <h>77</h>
     </coordinates>
@@ -172,8 +172,8 @@ EV_ERROR</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>413</y>
+      <x>322</x>
+      <y>448</y>
       <w>217</w>
       <h>84</h>
     </coordinates>
@@ -184,8 +184,8 @@ EV_ERROR</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>413</y>
+      <x>322</x>
+      <y>448</y>
       <w>301</w>
       <h>217</h>
     </coordinates>
@@ -197,8 +197,8 @@ fg=light_gray</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>826</x>
-      <y>350</y>
+      <x>490</x>
+      <y>385</y>
       <w>231</w>
       <h>70</h>
     </coordinates>
@@ -212,8 +212,8 @@ fg=light_gray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>637</x>
-      <y>203</y>
+      <x>301</x>
+      <y>238</y>
       <w>469</w>
       <h>161</h>
     </coordinates>
@@ -224,8 +224,8 @@ EV_END_ERROR_PROCESSING</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1176</x>
-      <y>350</y>
+      <x>840</x>
+      <y>385</y>
       <w>203</w>
       <h>63</h>
     </coordinates>
@@ -239,8 +239,8 @@ EV_END_ERROR_PROCESSING</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>644</x>
-      <y>161</y>
+      <x>308</x>
+      <y>196</y>
       <w>644</w>
       <h>203</h>
     </coordinates>
@@ -251,8 +251,8 @@ EV_MODIFICATION_BUTTON_PRESSED</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1267</x>
-      <y>406</y>
+      <x>931</x>
+      <y>441</y>
       <w>112</w>
       <h>56</h>
     </coordinates>
@@ -263,8 +263,8 @@ EV_END_CHECKING</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1239</x>
-      <y>448</y>
+      <x>903</x>
+      <y>483</y>
       <w>70</w>
       <h>56</h>
     </coordinates>
@@ -275,25 +275,52 @@ isValid?</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>497</y>
-      <w>651</w>
-      <h>147</h>
+      <x>931</x>
+      <y>532</y>
+      <w>42</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 valid</panel_attributes>
-    <additional_attributes>880.0;10.0;880.0;190.0;10.0;190.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>378</y>
+      <x>714</x>
+      <y>413</y>
       <w>203</w>
       <h>119</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=not valid</panel_attributes>
     <additional_attributes>270.0;140.0;120.0;140.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>861</x>
+      <y>672</y>
+      <w>161</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ST_UPDATE_GATES_PINS
+--
+/entry : updateGatesAndPins()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>721</y>
+      <w>714</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_UPDATING</panel_attributes>
+    <additional_attributes>870.0;10.0;870.0;100.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>
