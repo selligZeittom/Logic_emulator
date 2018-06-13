@@ -40,6 +40,7 @@ public:
     virtual void onDrawingDone();
     virtual void onErrorProcessed();
     virtual void onCheckingModificationsDone(bool isValid);
+    virtual void onUpdateDone();
 
     // IDataUpdate interface, required
 public:

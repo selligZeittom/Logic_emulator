@@ -92,6 +92,11 @@ void PortData::onCheckingModificationsDone(bool isValid)
     thePortController->onCheckingModificationsDone(isValid);
 }
 
+void PortData::onUpdateDone()
+{
+    thePortController->onUpdateDone();
+}
+
 void PortData::onNewCode(QString code)
 {
     thePortUI->onNewCode(code);

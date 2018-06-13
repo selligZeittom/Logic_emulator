@@ -73,6 +73,7 @@ private:
     //inputView privates variables and functions
     QPushButton* load;
     QPushButton* check;
+    QGraphicsTextItem* itemCode;
     void initGraphicalObject();
 
     //outputView privates variables and functions

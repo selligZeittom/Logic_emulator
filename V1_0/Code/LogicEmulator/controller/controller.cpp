@@ -101,6 +101,14 @@ void Controller::evCheckModificationsDone(bool isValid)
     XF::getInstance().pushEvent(ev);
 }
 
+void Controller::evUpdateDone()
+{
+    XFEvent* ev = new XFEvent();
+    ev->setID((int) EV_END_UPDATING);
+    ev->setTarget(this);
+    XF::getInstance().pushEvent(ev);
+}
+
 //state machine : double switch pattern
 bool Controller::processEvent(XFEvent *p1)
 {
@@ -188,6 +196,12 @@ bool Controller::processEvent(XFEvent *p1)
             state  = ST_ERROR;
         }
         break;
+    case ST_UPDATE_GATES_PINS :
+        if(p2->getID() == EV_END_UPDATING)
+        {
+            state = ST_DRAW;
+        }
+        break;
     default:
         break;
     }
@@ -260,8 +274,11 @@ bool Controller::processEvent(XFEvent *p1)
             case ERROR_READING_FILE:
                 errorLabel = "error : can't read the file...";
                 break;
+            case ERROR_LABEL_PIN_NOT_VALID:
+                errorLabel = "error : there is a mistake in a label or connectedLabel -> pin doesn't exist...";
+                break;
             default:
-                errorLabel="error : error in the error...^^'";
+                errorLabel="error : unvalid error code...";
                 break;
             }
             //forward the error and display it on the screen

@@ -25,6 +25,7 @@ public:
     virtual void onDrawingDone() = 0;
     virtual void onErrorProcessed() = 0;
     virtual void onCheckingModificationsDone(bool isValid) = 0;
+    virtual void onUpdateDone() = 0;
 
 };
 

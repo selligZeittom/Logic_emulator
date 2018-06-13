@@ -37,6 +37,7 @@ public:
     virtual void onDrawingDone();
     virtual void onErrorProcessed();
     virtual void onCheckingModificationsDone(bool isValid);
+    virtual void onUpdateDone();
 
     // IViewUpdate interface, provided
 public:

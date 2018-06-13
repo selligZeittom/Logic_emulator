@@ -216,6 +216,8 @@ Pin *Data::getPinFromLabel(QString labelPinToFind)
             }
         }
     }
+    //if we have to return a non existing pin ->> error !
+    thePortData->onError(ERROR_LABEL_PIN_NOT_VALID);
     return retVal;
 }
 
@@ -305,32 +307,68 @@ void Data::checkModifications(QString newCode)
     sortCodeIntoQStringList(newCode, idTemp, labelsTemp, connectedLabelsTemp, levelsTemp);
 
     //check for the id, label and level : no modifications authorized
-    for (int i = 0; i < id.count(); ++i) {
+    for (int i = 0; i < id.count(); ++i)
+    {
         if(id[i] != idTemp[i])
         {
             thePortData->onCheckingModificationsDone(false);
         }
     }
 
-    for (int i = 0; i < labels.count(); ++i) {
+    for (int i = 0; i < labels.count(); ++i)
+    {
         if(labels[i] != labelsTemp[i])
         {
             thePortData->onCheckingModificationsDone(false);
         }
     }
 
-    for (int i = 0; i < levels.count(); ++i) {
+    for (int i = 0; i < levels.count(); ++i)
+    {
         if(levels[i] != levelsTemp[i])
         {
             thePortData->onCheckingModificationsDone(false);
         }
     }
 
+    //now check and compare the connectedLabel
+    for (int i = 0; i < connectedLabels.count(); ++i)
+    {
+        QString conLabel = connectedLabels[i];
+        QString conLabelTemp = connectedLabelsTemp[i];
+
+        //find the difference
+        if(conLabel != conLabelTemp)
+        {
+            //if there is a difference and the original label is : LOG_LOW -> the new is obligatory LOG_HIGH
+            if(conLabel == "LOG_LOW" && conLabelTemp != "LOG_HIGH")
+            {
+                thePortData->onCheckingModificationsDone(false);
+            }
+            //if there is a difference and the original label is : LOG_HIGH -> the new is obligatory LOG_LOW
+            else if(conLabel == "LOG_HIGH" && conLabelTemp != "LOG_LOW")
+            {
+                thePortData->onCheckingModificationsDone(false);
+            }
+            //means that the modifications is valid...
+            else
+            {
+                connectedLabels[i] = connectedLabelsTemp[i];
+            }
+        }
+    }
+    thePortData->onCheckingModificationsDone(true);
 }
 
 
 void Data::sortCodeIntoQStringList(QString newCode, QStringList &idList, QStringList &labelsList, QStringList &connectedLabelsList, QStringList &levelList)
 {
+    //first clear the list
+    idList.clear();
+    labelsList.clear();
+    connectedLabelsList.clear();
+    levelList.clear();
+
     //first get the string into a list line by line
     QRegularExpression lineByline("\r\n");
     QStringList words = newCode.split(lineByline);
@@ -441,5 +479,26 @@ void Data::sortCodeIntoQStringList(QString newCode, QStringList &idList, QString
 
 void Data::updateInputAndOutput()
 {
+    //go over each pins and check the LOGICAL input signals
+    for(int i = 0; i< connectedLabels.count(); i++)
+    {
+        if(connectedLabels[i] == "LOG_LOW")
+        {
+            Pin* pinToSet = getPinFromLabel(labels[i]);
+            pinToSet->setState(false);
+        }
+        else if(connectedLabels[i] == "LOG_HIGH")
+        {
+            Pin* pinToSet = getPinFromLabel(labels[i]);
+            pinToSet->setState(true);
+        }
+    }
 
+    //then do the update of the gates logic
+    for(int i = 0; i < vGates.count(); i++)
+    {
+        vGates[i]->computeLogicAndSetPixmap();
+    }
+
+    thePortData->onUpdateDone();
 }

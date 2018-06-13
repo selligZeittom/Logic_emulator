@@ -99,3 +99,8 @@ void PortController::onCheckingModificationsDone(bool isValid)
 {
     controller->evCheckModificationsDone(isValid);
 }
+
+void PortController::onUpdateDone()
+{
+    controller->evUpdateDone();
+}

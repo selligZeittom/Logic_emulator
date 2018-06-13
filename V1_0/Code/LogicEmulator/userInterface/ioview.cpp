@@ -265,13 +265,19 @@ void IOView::drawWires(QVector<Gate*> &gates, int maxLevel)
 void IOView::onNewCode(QString labelCode)
 {
     this->scnCode->clear();
-    QGraphicsTextItem* item = new QGraphicsTextItem();
-    item->setPlainText(labelCode);
+
+    /*
+    if(itemCode)
+    {
+        delete itemCode;
+    }*/
+    itemCode = new QGraphicsTextItem();
+    itemCode->setPlainText(labelCode);
 
     //set the text editable and selectable
-    item->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
-    item ->setTextInteractionFlags(Qt::TextEditorInteraction);
-    this->scnCode->addItem(item);
+    itemCode->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
+    itemCode ->setTextInteractionFlags(Qt::TextEditorInteraction);
+    this->scnCode->addItem(itemCode);
 }
 
 //used to display the .json file's name
@@ -360,8 +366,7 @@ void IOView::loadButtonClicked()
 void IOView::checkButtonClicked()
 {
     QString code;
-    QGraphicsTextItem* item = (QGraphicsTextItem*)codeWindow->itemAt(40, 140);
-    QTextDocument* doc = item->document();
+    QTextDocument* doc = itemCode->document();
     code = doc->toPlainText();
     qDebug() << code;
     thePortUI->onButtonCheckPressed(code);
