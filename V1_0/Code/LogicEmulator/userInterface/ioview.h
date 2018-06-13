@@ -44,8 +44,7 @@
 class PortUI;
 
 
-class IOView : public QWidget, public IViewUpdate
-{
+class IOView : public QWidget
     Q_OBJECT
 
 public:
@@ -91,10 +90,6 @@ public slots:
     void loadButtonClicked();
     void checkButtonClicked();
 
-
-    // IViewUpdate interface, required
-public:
-    virtual void onButtonLoadPressed(QString path);
 };
 
 #endif // IOVIEW_H

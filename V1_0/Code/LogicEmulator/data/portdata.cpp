@@ -2,6 +2,7 @@
 #include "controller/portcontroller.h"
 #include "data.h"
 
+
 PortData::PortData()
 {
     this->data = NULL;
@@ -48,7 +49,7 @@ void PortData::manageError(QString labelError)
 
 void PortData::checkValidity(QString newCode)
 {
-    data->checkValidity(newCode);
+    data->checkModifications(newCode);
 }
 
 void PortData::updateGatesAndPins()

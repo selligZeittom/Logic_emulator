@@ -507,6 +507,8 @@ release/moc_ioview.cpp: C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushBu
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPen \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QTextDocument \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextdocument.h \
 		../../../V1_0/Code/LogicEmulator/interfaces/iviewupdate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		../../../V1_0/Code/LogicEmulator/data/gate.h \
@@ -776,6 +778,9 @@ release/data.o: ../../../V1_0/Code/LogicEmulator/data/data.cpp ../../../V1_0/Cod
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTextStream \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QByteArray \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QRegularExpression \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QStringList \
 		../../../V1_0/Code/LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
@@ -1111,7 +1116,10 @@ release/portdata.o: ../../../V1_0/Code/LogicEmulator/data/portdata.cpp ../../../
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QJsonObject \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTextStream \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QByteArray
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QByteArray \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QRegularExpression \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QStringList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\portdata.o ..\..\..\V1_0\Code\LogicEmulator\data\portdata.cpp
 
 release/portui.o: ../../../V1_0/Code/LogicEmulator/userInterface/portui.cpp ../../../V1_0/Code/LogicEmulator/userInterface/portui.h \
@@ -1295,7 +1303,9 @@ release/portui.o: ../../../V1_0/Code/LogicEmulator/userInterface/portui.cpp ../.
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPen \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QTextDocument \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\portui.o ..\..\..\V1_0\Code\LogicEmulator\userInterface\portui.cpp
 
 release/controller.o: ../../../V1_0/Code/LogicEmulator/controller/controller.cpp ../../../V1_0/Code/LogicEmulator/controller/controller.h \
@@ -1856,7 +1866,26 @@ release/portcontroller.o: ../../../V1_0/Code/LogicEmulator/controller/portcontro
 		../../../V1_0/Code/LogicEmulator/data/gate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QVector \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPixmap \
-		../../../V1_0/Code/LogicEmulator/data/pin.h
+		../../../V1_0/Code/LogicEmulator/data/pin.h \
+		../../../V1_0/Code/LogicEmulator/data/data.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QFile \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QFileDialog \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qfiledialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qdir.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qfileinfo.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QJsonArray \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsonarray.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QJsonDocument \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsondocument.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QJsonObject \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsonobject.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTextStream \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QByteArray \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QRegularExpression \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QStringList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\portcontroller.o ..\..\..\V1_0\Code\LogicEmulator\controller\portcontroller.cpp
 
 release/iviewupdate.o: ../../../V1_0/Code/LogicEmulator/interfaces/iviewupdate.cpp ../../../V1_0/Code/LogicEmulator/interfaces/iviewupdate.h \
@@ -2144,6 +2173,9 @@ release/factory.o: ../../../V1_0/Code/LogicEmulator/factory.cpp ../../../V1_0/Co
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QTextStream \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QByteArray \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QRegularExpression \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QStringList \
 		../../../V1_0/Code/LogicEmulator/data/portdata.h \
 		../../../V1_0/Code/LogicEmulator/userInterface/ioview.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/QPushButton \
@@ -2185,7 +2217,6 @@ release/factory.o: ../../../V1_0/Code/LogicEmulator/factory.cpp ../../../V1_0/Co
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qstyleoption.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qabstractspinbox.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qslider.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qabstractslider.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qstyle.h \
@@ -2193,7 +2224,9 @@ release/factory.o: ../../../V1_0/Code/LogicEmulator/factory.cpp ../../../V1_0/Co
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPen \
-		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QTextDocument \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\factory.o ..\..\..\V1_0\Code\LogicEmulator\factory.cpp
 
 release/icontrollerdata.o: ../../../V1_0/Code/LogicEmulator/interfaces/icontrollerdata.cpp ../../../V1_0/Code/LogicEmulator/interfaces/icontrollerdata.h \
@@ -2400,6 +2433,8 @@ release/ioview.o: ../../../V1_0/Code/LogicEmulator/userInterface/ioview.cpp ../.
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QPen \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QColor \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/QTextDocument \
+		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtGui/qtextdocument.h \
 		../../../V1_0/Code/LogicEmulator/interfaces/iviewupdate.h \
 		C:/Qt/Qt5.6.3/5.6.3/mingw49_32/include/QtCore/QString \
 		../../../V1_0/Code/LogicEmulator/data/gate.h \

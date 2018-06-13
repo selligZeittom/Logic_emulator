@@ -39,7 +39,7 @@ void Data::loadFile(QString path)
     //check that the file is valid : if not, send error
     if(!file->isOpen())
     {
-        codeChecked="no code...";//no valid code to display
+        code="no code...";//no valid code to display
         thePortData->onError(ERROR_LOADING_FILE);
     }
 
@@ -54,24 +54,27 @@ void Data::convertJsonToGates()
     levelMax = 0;
     fileName = "";
     result = "";
-    codeChecked = "";
+    code = "";
 
     //get the string corresponding to the .json file
     QTextStream reader(file);
-    codeChecked = reader.readAll();
+    code = reader.readAll();
 
     //check that the read operation was well done
-    if(codeChecked.isEmpty())
+    if(code.isEmpty())
     {
         //if not, send an error
         thePortData->onError(ERROR_READING_FILE);
     }
 
+    //get the original lists of the code
+    sortCodeIntoQStringList(code, id, labels, connectedLabels, levels);
+
     //close file, don't need it anymore
     file->close();
 
     //translate the string into a byte array
-    QByteArray byteData = codeChecked.toLocal8Bit();
+    QByteArray byteData = code.toLocal8Bit();
 
     //the main document from the json file
     QJsonDocument doc = QJsonDocument::fromJson(byteData);
@@ -184,7 +187,7 @@ void Data::outputResultsToString()
 void Data::drawResults()
 {
     thePortData->onNewFileNAme(fileName);
-    thePortData->onNewCode(codeChecked);
+    thePortData->onNewCode(code);
     thePortData->onNewResults(result);
     thePortData->onNewGates(vGates, levelMax);
     thePortData->onDrawingDone();
@@ -291,28 +294,148 @@ void Data::processError(QString labelError)
 {
     thePortData->onNewFileNAme(fileName);
     thePortData->onDeleteOldGatesAndCode();
-    thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+codeChecked);
+    thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
     thePortData->onNewResults(labelError);
     thePortData->onErrorProcessed();
 }
 
-void Data::checkValidity(QString newCode)
+void Data::checkModifications(QString newCode)
 {
-    codeModified = newCode;
-    //if nothing changed in the code : it's ok
-    if(codeChecked.localeAwareCompare(codeModified) == 0)
-    {
-        thePortData->onCheckingModificationsDone(true);
-        codeChecked = codeModified;
+    //updates the list with some new string
+    sortCodeIntoQStringList(newCode, idTemp, labelsTemp, connectedLabelsTemp, levelsTemp);
+
+    //check for the id, label and level : no modifications authorized
+    for (int i = 0; i < id.count(); ++i) {
+        if(id[i] != idTemp[i])
+        {
+            thePortData->onCheckingModificationsDone(false);
+        }
     }
 
+    for (int i = 0; i < labels.count(); ++i) {
+        if(labels[i] != labelsTemp[i])
+        {
+            thePortData->onCheckingModificationsDone(false);
+        }
+    }
 
-    //check the validity of the changes if there is a modification
-    else
+    for (int i = 0; i < levels.count(); ++i) {
+        if(levels[i] != levelsTemp[i])
+        {
+            thePortData->onCheckingModificationsDone(false);
+        }
+    }
+
+}
+
+
+void Data::sortCodeIntoQStringList(QString newCode, QStringList &idList, QStringList &labelsList, QStringList &connectedLabelsList, QStringList &levelList)
+{
+    //first get the string into a list line by line
+    QRegularExpression lineByline("\r\n");
+    QStringList words = newCode.split(lineByline);
+
+    //this is the filter used to get the lines corresponding to an ID
+    QRegularExpression idFilterGlobal("\\W\\w\\w\\W\\W \\W\\w\\d\\W");
+
+    //then get only the 2 letters from the ID
+    QRegularExpression idFilterID("\\w\\d");
+
+    //this is the filter used to get the lines corresponding to a level
+    QRegularExpression levelFilterGlobal("\\W\\w+\\W\\W \\d\\W");
+
+    //then get only the number of the level
+    QRegularExpression levelFilter("\\d");
+
+    //this is the filter used to get the lines corresponding to a label
+    QRegularExpression labelFilterGlobal("\\W\\w{5}\\W\\W \\W\\w\\d_\\w.*");
+
+    //then get only the the label itself
+    QRegularExpression labelFilter1("\\w\\d_\\w\\d");
+
+    //then get only the the label itself
+    QRegularExpression labelFilter2("\\w\\d_\\w");
+
+    //this is the filter used to get the lines corresponding to a connectedLabel
+    QRegularExpression connectedLabelFilterGlobal("\\W\\w{14}\\W\\W \\W\\w.{3,}");
+
+    //then get only the the connectedLabel itself like O1_I1
+    QRegularExpression connectedLabelFilter1("\\w\\d_\\w\\d");
+
+    //then get only the the connectedLabel itself like LOG_LOW
+    QRegularExpression connectedLabelFilter2("\\w{3}_\\w{3}");
+
+    //then get only the the connectedLabel itself like O1_I1
+    QRegularExpression connectedLabelFilter3("\\w\\d_\\w");
+
+
+
+    //look on every word of the list
+    for (int i = 0; i < words.count(); ++i)
     {
-        QRegularExpression rx("\\s+");
-        QStringList words = codeChecked.split(rx, Qt::SkipEmptyParts);
+        QString str = words[i];
+        QRegularExpressionMatch globalMatchID = idFilterGlobal.match(str);
+        QRegularExpressionMatch globalMatchLevel = levelFilterGlobal.match(str);
+        QRegularExpressionMatch globalMatchLabel = labelFilterGlobal.match(str);
+        QRegularExpressionMatch globalMatchConnectedLabel = connectedLabelFilterGlobal.match(str);
 
+        if(globalMatchID.hasMatch())
+        {
+            QString matched = globalMatchID.captured();
+            QRegularExpressionMatch idMatch = idFilterID.match(matched);
+            qDebug() << "id : " << idMatch.captured();
+            idList.append(idMatch.captured());
+
+        }
+        if(globalMatchLevel.hasMatch())
+        {
+            QString matched = globalMatchLevel.captured();
+            QRegularExpressionMatch levelMatch = levelFilter.match(matched);
+            qDebug() << "level : " << levelMatch.captured();
+            levelList.append(levelMatch.captured());
+        }
+        if(globalMatchLabel.hasMatch())
+        {
+            QString matched = globalMatchLabel.captured();
+            QRegularExpressionMatch labelMatch1 = labelFilter1.match(matched);
+            if(labelMatch1.hasMatch())
+            {
+                qDebug() << "label : " << labelMatch1.captured();
+                labelsList.append(labelMatch1.captured());
+            }
+            else
+            {
+                QRegularExpressionMatch labelMatch2 = labelFilter2.match(matched);
+                qDebug() << "label : " << labelMatch2.captured();
+                labelsList.append(labelMatch2.captured());
+            }
+        }
+
+        if(globalMatchConnectedLabel.hasMatch())
+        {
+            QString matched = globalMatchConnectedLabel.captured();
+            QRegularExpressionMatch connectedLabelMatch1 = connectedLabelFilter1.match(matched);
+            if(connectedLabelMatch1.hasMatch())
+            {
+                qDebug() << "the connected label : " << connectedLabelMatch1.captured();
+                connectedLabelsList.append(connectedLabelMatch1.captured());
+            }
+            else
+            {
+                QRegularExpressionMatch connectedLabelMatch2 = connectedLabelFilter2.match(matched);
+                if(connectedLabelMatch2.hasMatch())
+                {
+                    qDebug() << "the connected label : " << connectedLabelMatch2.captured();
+                    connectedLabelsList.append(connectedLabelMatch2.captured());
+                }
+                else
+                {
+                    QRegularExpressionMatch connectedLabelMatch3 = connectedLabelFilter3.match(matched);
+                    qDebug() << "the connected label : " << connectedLabelMatch3.captured();
+                    connectedLabelsList.append(connectedLabelMatch3.captured());
+                }
+            }
+        }
     }
 }
 

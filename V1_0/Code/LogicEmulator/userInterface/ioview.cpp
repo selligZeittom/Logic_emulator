@@ -354,7 +354,7 @@ void IOView::loadButtonClicked()
 {
     QString path = getPath();
     qDebug() << "file browsed : " << path ;
-    onButtonLoadPressed(path);
+    thePortUI->onButtonLoadPressed(path);
 }
 
 void IOView::checkButtonClicked()
@@ -367,7 +367,3 @@ void IOView::checkButtonClicked()
     thePortUI->onButtonCheckPressed(code);
 }
 
-void IOView::onButtonLoadPressed(QString path)
-{
-    thePortUI->onButtonLoadPressed(path);
-}

@@ -6,8 +6,8 @@
 #include "interfaces/icontrollerdata.h"
 #include "interfaces/idataupdate.h"
 
-class Data;
 class PortController;
+class Data;
 
 class PortData : public IControllerData, public IDataUpdate
 {
