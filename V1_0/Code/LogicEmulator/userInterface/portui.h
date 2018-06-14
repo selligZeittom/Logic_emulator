@@ -28,6 +28,7 @@ public:
     virtual void onNewGates(QVector<Gate*> &gates, int maxLevel);
     virtual void onNewResults(QString results);
     virtual void onNewListConnectedLabels(QStringList listConnectedLabel);
+    virtual void onNewStatusModifications(QString status);
     virtual void onDeleteOldGatesAndCode();
 
 private:

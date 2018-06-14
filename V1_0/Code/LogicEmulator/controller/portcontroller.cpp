@@ -35,9 +35,9 @@ void PortController::computeLogic()
 thePortData->computeLogic();
 }
 
-void PortController::drawGates()
+void PortController::drawGates(bool isValid)
 {
-thePortData->drawGates();
+thePortData->drawGates(isValid);
 }
 
 void PortController::manageError(QString labelError)
@@ -50,9 +50,9 @@ void PortController::checkValidity(QString newCode)
     thePortData->checkValidity(newCode);
 }
 
-void PortController::updateGatesAndPins()
+void PortController::updateGatesAndPins(bool isValid)
 {
-    thePortData->updateGatesAndPins();
+    thePortData->updateGatesAndPins(isValid);
 }
 
 void PortController::onButtonLoadPressed(QString path)
@@ -100,7 +100,7 @@ void PortController::onCheckingModificationsDone(bool isValid)
     controller->evCheckModificationsDone(isValid);
 }
 
-void PortController::onUpdateDone()
+void PortController::onUpdateDone(bool isValid)
 {
-    controller->evUpdateDone();
+    controller->evUpdateDone(isValid);
 }

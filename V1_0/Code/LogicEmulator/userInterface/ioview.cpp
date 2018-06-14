@@ -1,7 +1,7 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASEs
+#define RELEASE
 
 IOView::IOView(QWidget *parent)
 {
@@ -13,12 +13,11 @@ IOView::IOView(QWidget *parent)
     this->height = screenGeometry.height()-35;
     this->width = screenGeometry.width();
 
-    this->setWindowTitle("Logic Emulator V0.0");
+    this->setWindowTitle("Logic Emulator V1.0");
     this->setVisible(true);
     this->showMaximized(); //full screen
 
     //used to set the appearance of qlabel
-    this->styleSheetQLabel = "QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }";
 }
 
 //destroy the pointer at the end
@@ -74,6 +73,11 @@ IOView::~IOView()
         delete listState;
         listState = NULL;
     }
+    if(labelModifStatus)
+    {
+        delete labelModifStatus;
+        labelModifStatus = NULL;
+    }
 }
 
 //make the global connections
@@ -111,7 +115,7 @@ QString IOView::getPath()
     return filePath;
 
 #else
-    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST3_4l.json";
+    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST4_5l.json";
 #endif
 }
 
@@ -149,7 +153,7 @@ void IOView::drawGates(QVector<Gate *> &gates, int maxLevel)
                 double ratio = 1;
                 if(_level != 0)
                 {
-                    ratio = itemPerLevel[_level-1] / itemPerLevel[_level];
+                    ratio = itemPerLevel[_level-1] / itemPerLevel[_level] * pow(2, _level-1);
                 }
                 int x = xOffset * _level; //horizontal gap
                 int y = 0;
@@ -221,6 +225,11 @@ void IOView::drawWires(QVector<Gate*> &gates, int maxLevel)
 
                 pen->setWidth(3);
                 scnGates->addLine(x1, y1, x2, y2, *pen);
+                QString labelPin = gates[i]->getInputPins()[j]->getLabelPin();
+                QGraphicsTextItem* labelInput = new QGraphicsTextItem();
+                labelInput->setPlainText(labelPin);
+                labelInput->setPos(x2, y2-25);
+                scnGates->addItem(labelInput);
             }
         }
 
@@ -303,6 +312,12 @@ void IOView::onNewListConnectedLabels(QStringList listConnectedLabel)
     }
 }
 
+void IOView::onNewStatusModifications(QString status)
+{
+    this->labelModifStatus->clear();
+    labelModifStatus->setText(status);
+}
+
 //clear the scenes
 void IOView::onDeleteOldGatesAndCode()
 {
@@ -314,47 +329,51 @@ void IOView::onDeleteOldGatesAndCode()
 void IOView::initGraphicalObject()
 {
     this->load = new QPushButton(this);
-    load->setGeometry(40, height - 150, 250, 80);
-    load->setStyleSheet("QPushButton { background-color : rgb(110, 187, 177); border: 1px solid gray; border-radius: 10px; color : black; }");
+    load->setGeometry(50, height - 110, 150, 40);
+    load->setStyleSheet("QPushButton { background-color : grey; border: 1px solid gray; border-radius: 10px; color : black; }");
     load->setText("Browse a file");
 
     this->check = new QPushButton(this);
-    check->setGeometry(390, height - 150, 250, 80);
-    check->setStyleSheet("QPushButton { background-color : rgb(253, 223, 171); border: 1px solid gray; border-radius: 10px; color : black; }");
-    check->setText("Check modifications");
+    check->setGeometry(300, height - 110, 150, 40);
+    check->setStyleSheet("QPushButton { background-color : grey; border: 1px solid gray; border-radius: 10px; color : black; }");
+    check->setText("Update Input's state");
 
     this->drawWindow = new QGraphicsView(this);
-    drawWindow->setGeometry(680, 40, GATES_QLABEL_W, GATES_QLABEL_H);
+    drawWindow->setGeometry(420, 50, 1450, 650);
     drawWindow->setStyleSheet("QGraphicsView { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }");
     scnGates = new QGraphicsScene(drawWindow);
     drawWindow->setScene(scnGates);
 
     this->labelResult = new QLabel(this);
-    labelResult->setGeometry(680, 680, RESULT_QLABEL_W, RESULT_QLABEL_H);
-    labelResult->setStyleSheet(styleSheetQLabel);
-    labelResult->setText("no results ...");
+    labelResult->setGeometry(900, 730, 600, 250);
+    labelResult->setStyleSheet("QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }");
 
     this->labelFileName = new QLabel(this);
-    labelFileName->setGeometry(40, 40, FILENAME_QLABEL_W, FILENAME_QLABEL_H);
-    labelFileName->setStyleSheet(styleSheetQLabel);
+    labelFileName->setGeometry(50, 50, 300, 50);
+    labelFileName->setStyleSheet("QLabel { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }");
     labelFileName->setText("no file loaded ...");
 
     this->codeWindow = new QGraphicsView(this);
-    codeWindow->setGeometry(40, 140,CODE_QLABEL_W, CODE_QLABEL_H);
+    codeWindow->setGeometry(50, 120, 350, 650);
     codeWindow->setStyleSheet("QGraphicsView { background-color : white; border: 1px solid gray; border-radius: 10px; color : black; }");
     scnCode = new QGraphicsScene(codeWindow);
     codeWindow->setScene(scnCode);
 
     this->listLabel = new QListWidget(this);
-    listLabel->setGeometry(40, height - 190, 250, 30);
+    listLabel->setGeometry(50, height - 240, 150, 80);
     listLabel->setAutoScroll(true);
     listLabel->addItem("no pin's label...");
 
     this->listState = new QListWidget(this);
-    listState->setGeometry(390, height - 190, 250, 30);
+    listState->setGeometry(300, height - 210, 150, 50);
     listState->setAutoScroll(true);
     listState->addItem("LOW");
     listState->addItem("HIGH");
+
+    this->labelModifStatus = new QLabel(this);
+    labelModifStatus->setGeometry(50, height - 150, 400, 30);
+    labelModifStatus->setStyleSheet("QLabel { background-color : white; border: 1px solid gray; border-radius: 5px; color : black; }");
+    labelModifStatus->setText("[update status] : nothing updated");
 
     load->show();
     check->show();
@@ -364,6 +383,7 @@ void IOView::initGraphicalObject()
     codeWindow->show();
     listLabel->show();
     listState->show();
+    labelModifStatus->show();
 
     //connect the buttons to the slot
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(loadButtonClicked()));

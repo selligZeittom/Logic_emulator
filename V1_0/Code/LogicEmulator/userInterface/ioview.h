@@ -28,20 +28,6 @@
 #include "interfaces/iviewupdate.h"
 #include "data/gate.h"
 
-#define LOAD_BUTTON_ID 1
-#define CHECK_MODIF_BUTTON_ID 999
-
-#define RESULT_QLABEL_W 1200
-#define RESULT_QLABEL_H 300
-
-#define FILENAME_QLABEL_W 600
-#define FILENAME_QLABEL_H 50
-
-#define CODE_QLABEL_W 600
-#define CODE_QLABEL_H 700
-
-#define GATES_QLABEL_W 1200
-#define GATES_QLABEL_H 600
 class PortUI;
 
 
@@ -65,6 +51,7 @@ public:
     void onNewFileName(QString filename);
     void onNewResults(QString results);
     void onNewListConnectedLabels(QStringList listConnectedLabel);
+    void onNewStatusModifications(QString status);
     void onDeleteOldGatesAndCode();
 
 private:
@@ -75,8 +62,6 @@ private:
     //inputView privates variables and functions
     QPushButton* load;
     QPushButton* check;
-//    QLineEdit* labelToChangeEdit;
-//    QLineEdit* newStateEdit;
 
     QListWidget* listLabel;
     QListWidget* listState;
@@ -87,9 +72,9 @@ private:
     QGraphicsScene *scnGates;
     QLabel* labelResult;
     QLabel* labelFileName;
+    QLabel* labelModifStatus;
     QGraphicsView* codeWindow;
     QGraphicsScene* scnCode;
-    QString styleSheetQLabel;
 
     void drawLineBetweenP1P2(int x1, int y1, int x2, int y2, QGraphicsScene &scn, QPen &pen);
 

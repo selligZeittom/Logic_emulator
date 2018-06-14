@@ -29,13 +29,12 @@ public:
 
     void loadFile(QString path);
     void convertJsonToGates();
-    void drawResults();
+    void drawResults(bool isValid);
     Pin* getPinFromLabel(QString labelPinToFind);
     void setGatesAndPins();
     void processError(QString labelError);
     void checkModifications(QString data);
-//    void sortCodeIntoQStringList(QString newCode, QStringList &idConnectedLabelsList);
-    void updateInputAndOutput();
+    void updateInputAndOutput(bool isValid);
 
 private:
     void outputResultsToString();

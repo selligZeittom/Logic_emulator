@@ -28,10 +28,10 @@ public:
     virtual void loadFile(QString path);
     virtual void convertJsonToGates();
     virtual void computeLogic();
-    virtual void drawGates();
+    virtual void drawGates(bool isValid);
     virtual void manageError(QString labelError);
     virtual void checkValidity(QString newCode);
-    virtual void updateGatesAndPins();
+    virtual void updateGatesAndPins(bool isValid);
 
     //implemented as required
     virtual void onLoadingDone();
@@ -41,7 +41,8 @@ public:
     virtual void onDrawingDone();
     virtual void onErrorProcessed();
     virtual void onCheckingModificationsDone(bool isValid);
-    virtual void onUpdateDone();
+    virtual void onNewStatusModifications(QString status);
+    virtual void onUpdateDone(bool isValid);
 
     // IDataUpdate interface, required
 public:

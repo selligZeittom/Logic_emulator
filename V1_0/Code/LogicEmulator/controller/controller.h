@@ -28,7 +28,7 @@ public:
     void evDrawingDone();
     void evErrorProcessed();
     void evCheckModificationsDone(bool isValid);
-    void evUpdateDone();
+    void evUpdateDone(bool isValid);
 
     // ISM interface, provided
 public:

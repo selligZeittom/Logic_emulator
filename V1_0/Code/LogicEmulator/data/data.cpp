@@ -190,13 +190,16 @@ void Data::outputResultsToString()
 }
 
 //send the informations to the ioview to display on the screen
-void Data::drawResults()
+void Data::drawResults(bool isValid)
 {
-    thePortData->onNewFileNAme(fileName);
-    thePortData->onNewCode(code);
-    thePortData->onNewResults(result);
-    thePortData->onNewGates(vGates, levelMax);
-    thePortData->onNewListConnectedLabels(labelsList);
+    if(isValid)
+    {
+        thePortData->onNewFileNAme(fileName);
+        thePortData->onNewCode(code);
+        thePortData->onNewResults(result);
+        thePortData->onNewGates(vGates, levelMax);
+        thePortData->onNewListConnectedLabels(labelsList);
+    }
     thePortData->onDrawingDone();
 }
 
@@ -340,18 +343,20 @@ void Data::checkModifications(QString data)
     }
 }
 
-void Data::updateInputAndOutput()
-{
-
-
-    //then do the update of the gates logic
-    for(int i = 0; i < vGates.count(); i++)
+void Data::updateInputAndOutput(bool isValid)
+{    
+    if(isValid)
     {
-        if(vGates[i]->getLevel() != levelMax)
+        //then do the update of the gates logic
+        for(int i = 0; i < vGates.count(); i++)
         {
-            vGates[i]->updateLogic();
+            vGates[i]->updateLogic(levelMax);
         }
+        thePortData->onNewStatusModifications("[modifications status] : update is valid !");
     }
-
-    thePortData->onUpdateDone();
+    else
+    {
+        thePortData->onNewStatusModifications("[modifications status] : update is not valid, select a label !");
+    }
+    thePortData->onUpdateDone(isValid);
 }

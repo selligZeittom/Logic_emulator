@@ -37,9 +37,9 @@ void PortData::computeLogic()
     data->setGatesAndPins();
 }
 
-void PortData::drawGates()
+void PortData::drawGates(bool isValid)
 {
-    data->drawResults();
+    data->drawResults(isValid);
 }
 
 void PortData::manageError(QString labelError)
@@ -52,9 +52,9 @@ void PortData::checkValidity(QString newCode)
     data->checkModifications(newCode);
 }
 
-void PortData::updateGatesAndPins()
+void PortData::updateGatesAndPins(bool isValid)
 {
-    data->updateInputAndOutput();
+    data->updateInputAndOutput(isValid);
 }
 
 void PortData::onLoadingDone()
@@ -92,9 +92,14 @@ void PortData::onCheckingModificationsDone(bool isValid)
     thePortController->onCheckingModificationsDone(isValid);
 }
 
-void PortData::onUpdateDone()
+void PortData::onNewStatusModifications(QString status)
 {
-    thePortController->onUpdateDone();
+    thePortUI->onNewStatusModifications(status);
+}
+
+void PortData::onUpdateDone(bool isValid)
+{
+    thePortController->onUpdateDone(isValid);
 }
 
 void PortData::onNewCode(QString code)

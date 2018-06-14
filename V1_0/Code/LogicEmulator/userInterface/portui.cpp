@@ -52,6 +52,11 @@ void PortUI::onNewListConnectedLabels(QStringList listConnectedLabel)
     ioView->onNewListConnectedLabels(listConnectedLabel);
 }
 
+void PortUI::onNewStatusModifications(QString status)
+{
+    ioView->onNewStatusModifications(status);
+}
+
 void PortUI::onDeleteOldGatesAndCode()
 {
     ioView->onDeleteOldGatesAndCode();

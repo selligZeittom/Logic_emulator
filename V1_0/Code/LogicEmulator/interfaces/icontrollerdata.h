@@ -12,10 +12,10 @@ public:
     virtual void loadFile(QString path) = 0;
     virtual void convertJsonToGates() = 0;
     virtual void computeLogic() = 0;
-    virtual void drawGates() = 0;
+    virtual void drawGates(bool isValid) = 0;
     virtual void manageError(QString labelError) = 0;
     virtual void checkValidity(QString newCode) = 0;
-    virtual void updateGatesAndPins() = 0;
+    virtual void updateGatesAndPins(bool isValid) = 0;
 
     //implemented as required by thePortData, and provided by thePortController
     virtual void onLoadingDone() = 0;
@@ -25,7 +25,7 @@ public:
     virtual void onDrawingDone() = 0;
     virtual void onErrorProcessed() = 0;
     virtual void onCheckingModificationsDone(bool isValid) = 0;
-    virtual void onUpdateDone() = 0;
+    virtual void onUpdateDone(bool isValid) = 0;
 
 };
 

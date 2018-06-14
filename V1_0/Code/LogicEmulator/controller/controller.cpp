@@ -58,9 +58,10 @@ void Controller::evConvertingDone()
 //is called when all the gates and pins are connected, and the results computed
 void Controller::evComputingDone()
 {
-    XFEvent* ev = new XFEvent();
+    XFEventData* ev = new XFEventData();
     ev->setID((int) EV_END_COMPUTING);
     ev->setTarget(this);
+    ev->setIsValid(true);
     XF::getInstance().pushEvent(ev);
 }
 
@@ -97,19 +98,16 @@ void Controller::evCheckModificationsDone(bool isValid)
     XFEventData* ev = new XFEventData();
     ev->setID((int) EV_END_CHECKING);
     ev->setTarget(this);
-    if(!isValid)
-    {
-        ev->setErrorCode(ERROR_LABEL_PIN_NOT_VALID);
-    }
     ev->setIsValid(isValid);
     XF::getInstance().pushEvent(ev);
 }
 
-void Controller::evUpdateDone()
+void Controller::evUpdateDone(bool isValid)
 {
-    XFEvent* ev = new XFEvent();
+    XFEventData* ev = new XFEventData();
     ev->setID((int) EV_END_UPDATING);
     ev->setTarget(this);
+    ev->setIsValid(isValid);
     XF::getInstance().pushEvent(ev);
 }
 
@@ -191,13 +189,9 @@ bool Controller::processEvent(XFEvent *p1)
         }
         break;
     case ST_CHECK_MODIF :
-        if(p2->getID() == EV_END_CHECKING && p2->getIsValid())
+        if(p2->getID() == EV_END_CHECKING)
         {
             state = ST_UPDATE_GATES_PINS;
-        }
-        else if(p2->getID() == EV_END_CHECKING && !(p2->getIsValid()))
-        {
-            state  = ST_ERROR;
         }
         break;
     case ST_UPDATE_GATES_PINS :
@@ -239,7 +233,7 @@ bool Controller::processEvent(XFEvent *p1)
 
         case ST_DRAW :
             //Draw the result on the screen
-            thePortController->drawGates();
+            thePortController->drawGates(p2->getIsValid());
             break;
 
         case ST_ERROR :
@@ -292,7 +286,7 @@ bool Controller::processEvent(XFEvent *p1)
             thePortController->checkValidity(p2->getData());
             break;
         case ST_UPDATE_GATES_PINS:
-            thePortController->updateGatesAndPins();
+            thePortController->updateGatesAndPins(p2->getIsValid());
             break;
         default:
             break;

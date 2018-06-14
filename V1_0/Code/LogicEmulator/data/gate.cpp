@@ -84,7 +84,7 @@ void Gate::computeLogicAndSetPixmap()
     this->outputPin->setState(result);
 }
 
-void Gate::updateLogic()
+void Gate::updateLogic(int maxLevel)
 {
     bool result = false;
 
@@ -132,8 +132,11 @@ void Gate::updateLogic()
     //set the state of the output pin
 
     this->outputPin->setState(result);
-    Pin* conPin = outputPin->getConnectedPin();
-    conPin->setState(result);
+    if(this->level != maxLevel)
+    {
+        Pin* conPin = outputPin->getConnectedPin();
+        conPin->setState(result);
+    }
 }
 
 QVector<Pin*> Gate::getInputPins()
