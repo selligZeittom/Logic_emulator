@@ -67,9 +67,6 @@ void Data::convertJsonToGates()
         thePortData->onError(ERROR_READING_FILE);
     }
 
-    //get the original lists of the code
-    sortCodeIntoQStringList(code, id, labels, connectedLabels, levels);
-
     //close file, don't need it anymore
     file->close();
 
@@ -142,12 +139,21 @@ void Data::convertJsonToGates()
             {
                 thePortData->onError(ERROR_JSON_CONVERSION_PIN);
             }
+
             QString label = pin["label"].toString();
+            //add the label to the list of label if the level is 0 and it's an input pin
+            if(level == 0 && !label.contains("U"))
+            {
+                labelsList.append(label);
+            }
+
             if(label.isEmpty())
             {
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
             }
             QString connectedLabel = pin["connectedLabel"].toString();
+
+
             if(connectedLabel.isEmpty())
             {
                 thePortData->onError(ERROR_JSON_CONVERSION_LABEL);
@@ -190,6 +196,7 @@ void Data::drawResults()
     thePortData->onNewCode(code);
     thePortData->onNewResults(result);
     thePortData->onNewGates(vGates, levelMax);
+    thePortData->onNewListConnectedLabels(labelsList);
     thePortData->onDrawingDone();
 }
 
@@ -301,203 +308,49 @@ void Data::processError(QString labelError)
     thePortData->onErrorProcessed();
 }
 
-void Data::checkModifications(QString newCode)
+void Data::checkModifications(QString data)
 {
-    //updates the list with some new string
-    sortCodeIntoQStringList(newCode, idTemp, labelsTemp, connectedLabelsTemp, levelsTemp);
+    QStringList listTemp = data.split(";");
+    qDebug()<<listTemp[0];
+    qDebug()<<listTemp[1];
 
-    //check for the id, label and level : no modifications authorized
-    for (int i = 0; i < id.count(); ++i)
+    //check that the label is corresponding to a gate's pin input
+    if(labelsList.contains(listTemp[0]))
     {
-        if(id[i] != idTemp[i])
+        //check that the newState is correct
+        if(listTemp[1] == "HIGH" || listTemp[1] == "LOW")
+        {
+            Pin* toUpdatePin = getPinFromLabel(listTemp[0]);
+            if(listTemp[1] == "HIGH")
+            {
+                toUpdatePin->setState(true);
+            } else
+            {
+                toUpdatePin->setState(false);
+            }
+            thePortData->onCheckingModificationsDone(true);
+        } else
         {
             thePortData->onCheckingModificationsDone(false);
         }
     }
-
-    for (int i = 0; i < labels.count(); ++i)
+    else
     {
-        if(labels[i] != labelsTemp[i])
-        {
-            thePortData->onCheckingModificationsDone(false);
-        }
-    }
-
-    for (int i = 0; i < levels.count(); ++i)
-    {
-        if(levels[i] != levelsTemp[i])
-        {
-            thePortData->onCheckingModificationsDone(false);
-        }
-    }
-
-    //now check and compare the connectedLabel
-    for (int i = 0; i < connectedLabels.count(); ++i)
-    {
-        QString conLabel = connectedLabels[i];
-        QString conLabelTemp = connectedLabelsTemp[i];
-
-        //find the difference
-        if(conLabel != conLabelTemp)
-        {
-            //if there is a difference and the original label is : LOG_LOW -> the new is obligatory LOG_HIGH
-            if(conLabel == "LOG_LOW" && conLabelTemp != "LOG_HIGH")
-            {
-                thePortData->onCheckingModificationsDone(false);
-            }
-            //if there is a difference and the original label is : LOG_HIGH -> the new is obligatory LOG_LOW
-            else if(conLabel == "LOG_HIGH" && conLabelTemp != "LOG_LOW")
-            {
-                thePortData->onCheckingModificationsDone(false);
-            }
-            //means that the modifications is valid...
-            else
-            {
-                connectedLabels[i] = connectedLabelsTemp[i];
-            }
-        }
-    }
-    thePortData->onCheckingModificationsDone(true);
-}
-
-
-void Data::sortCodeIntoQStringList(QString newCode, QStringList &idList, QStringList &labelsList, QStringList &connectedLabelsList, QStringList &levelList)
-{
-    //first clear the list
-    idList.clear();
-    labelsList.clear();
-    connectedLabelsList.clear();
-    levelList.clear();
-
-    //first get the string into a list line by line
-    QRegularExpression lineByline("\r\n");
-    QStringList words = newCode.split(lineByline);
-
-    //this is the filter used to get the lines corresponding to an ID
-    QRegularExpression idFilterGlobal("\\W\\w\\w\\W\\W \\W\\w\\d\\W");
-
-    //then get only the 2 letters from the ID
-    QRegularExpression idFilterID("\\w\\d");
-
-    //this is the filter used to get the lines corresponding to a level
-    QRegularExpression levelFilterGlobal("\\W\\w+\\W\\W \\d\\W");
-
-    //then get only the number of the level
-    QRegularExpression levelFilter("\\d");
-
-    //this is the filter used to get the lines corresponding to a label
-    QRegularExpression labelFilterGlobal("\\W\\w{5}\\W\\W \\W\\w\\d_\\w.*");
-
-    //then get only the the label itself
-    QRegularExpression labelFilter1("\\w\\d_\\w\\d");
-
-    //then get only the the label itself
-    QRegularExpression labelFilter2("\\w\\d_\\w");
-
-    //this is the filter used to get the lines corresponding to a connectedLabel
-    QRegularExpression connectedLabelFilterGlobal("\\W\\w{14}\\W\\W \\W\\w.{3,}");
-
-    //then get only the the connectedLabel itself like O1_I1
-    QRegularExpression connectedLabelFilter1("\\w\\d_\\w\\d");
-
-    //then get only the the connectedLabel itself like LOG_LOW
-    QRegularExpression connectedLabelFilter2("\\w{3}_\\w{3}");
-
-    //then get only the the connectedLabel itself like O1_I1
-    QRegularExpression connectedLabelFilter3("\\w\\d_\\w");
-
-
-
-    //look on every word of the list
-    for (int i = 0; i < words.count(); ++i)
-    {
-        QString str = words[i];
-        QRegularExpressionMatch globalMatchID = idFilterGlobal.match(str);
-        QRegularExpressionMatch globalMatchLevel = levelFilterGlobal.match(str);
-        QRegularExpressionMatch globalMatchLabel = labelFilterGlobal.match(str);
-        QRegularExpressionMatch globalMatchConnectedLabel = connectedLabelFilterGlobal.match(str);
-
-        if(globalMatchID.hasMatch())
-        {
-            QString matched = globalMatchID.captured();
-            QRegularExpressionMatch idMatch = idFilterID.match(matched);
-            qDebug() << "id : " << idMatch.captured();
-            idList.append(idMatch.captured());
-
-        }
-        if(globalMatchLevel.hasMatch())
-        {
-            QString matched = globalMatchLevel.captured();
-            QRegularExpressionMatch levelMatch = levelFilter.match(matched);
-            qDebug() << "level : " << levelMatch.captured();
-            levelList.append(levelMatch.captured());
-        }
-        if(globalMatchLabel.hasMatch())
-        {
-            QString matched = globalMatchLabel.captured();
-            QRegularExpressionMatch labelMatch1 = labelFilter1.match(matched);
-            if(labelMatch1.hasMatch())
-            {
-                qDebug() << "label : " << labelMatch1.captured();
-                labelsList.append(labelMatch1.captured());
-            }
-            else
-            {
-                QRegularExpressionMatch labelMatch2 = labelFilter2.match(matched);
-                qDebug() << "label : " << labelMatch2.captured();
-                labelsList.append(labelMatch2.captured());
-            }
-        }
-
-        if(globalMatchConnectedLabel.hasMatch())
-        {
-            QString matched = globalMatchConnectedLabel.captured();
-            QRegularExpressionMatch connectedLabelMatch1 = connectedLabelFilter1.match(matched);
-            if(connectedLabelMatch1.hasMatch())
-            {
-                qDebug() << "the connected label : " << connectedLabelMatch1.captured();
-                connectedLabelsList.append(connectedLabelMatch1.captured());
-            }
-            else
-            {
-                QRegularExpressionMatch connectedLabelMatch2 = connectedLabelFilter2.match(matched);
-                if(connectedLabelMatch2.hasMatch())
-                {
-                    qDebug() << "the connected label : " << connectedLabelMatch2.captured();
-                    connectedLabelsList.append(connectedLabelMatch2.captured());
-                }
-                else
-                {
-                    QRegularExpressionMatch connectedLabelMatch3 = connectedLabelFilter3.match(matched);
-                    qDebug() << "the connected label : " << connectedLabelMatch3.captured();
-                    connectedLabelsList.append(connectedLabelMatch3.captured());
-                }
-            }
-        }
+        thePortData->onCheckingModificationsDone(false);
     }
 }
 
 void Data::updateInputAndOutput()
 {
-    //go over each pins and check the LOGICAL input signals
-    for(int i = 0; i< connectedLabels.count(); i++)
-    {
-        if(connectedLabels[i] == "LOG_LOW")
-        {
-            Pin* pinToSet = getPinFromLabel(labels[i]);
-            pinToSet->setState(false);
-        }
-        else if(connectedLabels[i] == "LOG_HIGH")
-        {
-            Pin* pinToSet = getPinFromLabel(labels[i]);
-            pinToSet->setState(true);
-        }
-    }
+
 
     //then do the update of the gates logic
     for(int i = 0; i < vGates.count(); i++)
     {
-        vGates[i]->computeLogicAndSetPixmap();
+        if(vGates[i]->getLevel() != levelMax)
+        {
+            vGates[i]->updateLogic();
+        }
     }
 
     thePortData->onUpdateDone();

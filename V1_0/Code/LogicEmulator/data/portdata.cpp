@@ -117,6 +117,11 @@ void PortData::onNewResults(QString results)
     thePortUI->onNewResults(results);
 }
 
+void PortData::onNewListConnectedLabels(QStringList listConnectedLabel)
+{
+    thePortUI->onNewListConnectedLabels(listConnectedLabel);
+}
+
 void PortData::onDeleteOldGatesAndCode()
 {
     thePortUI->onDeleteOldGatesAndCode();

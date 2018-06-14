@@ -23,6 +23,7 @@
 #include <QPen>
 #include <QColor>
 #include <QTextDocument>
+#include <QLineEdit>
 
 #include "interfaces/iviewupdate.h"
 #include "data/gate.h"
@@ -45,8 +46,8 @@ class PortUI;
 
 
 class IOView : public QWidget
+{
     Q_OBJECT
-
 public:
     explicit IOView(QWidget* parent = 0);
     virtual ~IOView();
@@ -63,6 +64,7 @@ public:
     void onNewCode(QString listCode);
     void onNewFileName(QString filename);
     void onNewResults(QString results);
+    void onNewListConnectedLabels(QStringList listConnectedLabel);
     void onDeleteOldGatesAndCode();
 
 private:
@@ -73,7 +75,11 @@ private:
     //inputView privates variables and functions
     QPushButton* load;
     QPushButton* check;
-    QGraphicsTextItem* itemCode;
+//    QLineEdit* labelToChangeEdit;
+//    QLineEdit* newStateEdit;
+
+    QListWidget* listLabel;
+    QListWidget* listState;
     void initGraphicalObject();
 
     //outputView privates variables and functions
@@ -89,7 +95,7 @@ private:
 
 public slots:
     void loadButtonClicked();
-    void checkButtonClicked();
+    void updateButtonClicked();
 
 };
 

@@ -22,9 +22,9 @@ void PortUI::onButtonLoadPressed(QString path)
     thePortController->onButtonLoadPressed(path);
 }
 
-void PortUI::onButtonCheckPressed(QString newCode)
+void PortUI::onButtonUpdatePressed(QString labelToChange, QString newState)
 {
-    thePortController->onButtonCheckPressed(newCode);
+    thePortController->onButtonUpdatePressed(labelToChange, newState);
 }
 
 void PortUI::onNewCode(QString code)
@@ -45,6 +45,11 @@ void PortUI::onNewGates(QVector<Gate *> &gates, int maxLevel)
 void PortUI::onNewResults(QString results)
 {
     ioView->onNewResults(results);
+}
+
+void PortUI::onNewListConnectedLabels(QStringList listConnectedLabel)
+{
+    ioView->onNewListConnectedLabels(listConnectedLabel);
 }
 
 void PortUI::onDeleteOldGatesAndCode()

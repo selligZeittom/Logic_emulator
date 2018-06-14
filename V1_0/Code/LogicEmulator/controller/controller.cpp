@@ -27,13 +27,13 @@ void Controller::evLoadButtonPressed(QString path)
     XF::getInstance().pushEvent(ev);
 }
 
-void Controller::evCheckButtonPressed(QString newCode)
+void Controller::evCheckButtonPressed(QString labelToChange, QString newState)
 {
     //special XFEvent : need to store and forward data
     XFEventData* ev = new XFEventData();
-    ev->setID((int) EV_MODIFICATION_BUTTON_PRESSED);
+    ev->setID((int) EV_UPDATE_BUTTON_PRESSED);
     ev->setTarget(this);
-    ev->setData(newCode); //store the newCode into the event
+    ev->setData(labelToChange+";"+newState); //store the newCode into the event
     XF::getInstance().pushEvent(ev);
 }
 
@@ -97,6 +97,10 @@ void Controller::evCheckModificationsDone(bool isValid)
     XFEventData* ev = new XFEventData();
     ev->setID((int) EV_END_CHECKING);
     ev->setTarget(this);
+    if(!isValid)
+    {
+        ev->setErrorCode(ERROR_LABEL_PIN_NOT_VALID);
+    }
     ev->setIsValid(isValid);
     XF::getInstance().pushEvent(ev);
 }
@@ -133,7 +137,7 @@ bool Controller::processEvent(XFEvent *p1)
         }
 
         //if the user did modifications on the code displayer on the screen
-        else if(p2->getID() == EV_MODIFICATION_BUTTON_PRESSED)
+        else if(p2->getID() == EV_UPDATE_BUTTON_PRESSED)
         {
             state = ST_CHECK_MODIF;
         }

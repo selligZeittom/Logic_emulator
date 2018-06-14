@@ -84,6 +84,58 @@ void Gate::computeLogicAndSetPixmap()
     this->outputPin->setState(result);
 }
 
+void Gate::updateLogic()
+{
+    bool result = false;
+
+    int type = 0;
+    if(id.contains("A"))
+    {
+        type = 0;
+    }
+    else if(id.contains("O"))
+    {
+        type = 1;
+    }
+    else if(id.contains("N"))
+    {
+        type = 2;
+    }
+    switch (type) {
+    case 0:
+        //means it's and AND gate
+        result = true;
+        for (int i = 0; i < inputPins.count(); ++i) {
+            if(inputPins[i]->getState() == false)
+            {
+                result = false;
+            }
+        }
+        break;
+        //means it's an OR gate
+    case 1:
+        for (int i = 0; i < inputPins.count(); ++i) {
+            if(inputPins[i]->getState() == true)
+            {
+                result = true;
+            }
+        }
+        break;
+        //means it's a NOT gate
+    case 2:
+        result = !(inputPins[0]->getState());
+        break;
+    default:
+        break;
+    }
+
+    //set the state of the output pin
+
+    this->outputPin->setState(result);
+    Pin* conPin = outputPin->getConnectedPin();
+    conPin->setState(result);
+}
+
 QVector<Pin*> Gate::getInputPins()
 {
     return this->inputPins;
@@ -161,7 +213,6 @@ void Gate::setXYpins()
     }
 
     this->outputPin->setXY(this->x+80, this->y+40);
-
 }
 
 

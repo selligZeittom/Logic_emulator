@@ -11,7 +11,7 @@
 class Controller;
 class PortData;
 
-class PortController : public IControllerData, public IViewUpdate
+class PortController :  public IViewUpdate , public IControllerData
 {
 public:
     PortController();
@@ -42,7 +42,7 @@ public:
     // IViewUpdate interface, provided
 public:
     virtual void onButtonLoadPressed(QString path);
-    virtual void onButtonCheckPressed(QString newCode);
+    virtual void onButtonUpdatePressed(QString labelToChange, QString newState);
 
 private:
     Controller* controller;

@@ -18,6 +18,7 @@ public:
 
     int getLevel() const;
     void computeLogicAndSetPixmap();
+    void updateLogic();
     QVector<Pin*> getInputPins();
     Pin *getOutputPin();
     QPixmap getQPixMap() const;

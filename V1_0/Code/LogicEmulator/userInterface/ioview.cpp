@@ -63,6 +63,16 @@ IOView::~IOView()
     {
         delete scnCode;
         scnCode = NULL;
+    } 
+    if(listLabel)
+    {
+        delete listLabel;
+        listLabel = NULL;
+    }
+    if(listState)
+    {
+        delete listState;
+        listState = NULL;
     }
 }
 
@@ -266,17 +276,9 @@ void IOView::onNewCode(QString labelCode)
 {
     this->scnCode->clear();
 
-    /*
-    if(itemCode)
-    {
-        delete itemCode;
-    }*/
-    itemCode = new QGraphicsTextItem();
+    QGraphicsTextItem* itemCode = new QGraphicsTextItem();
     itemCode->setPlainText(labelCode);
 
-    //set the text editable and selectable
-    itemCode->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
-    itemCode ->setTextInteractionFlags(Qt::TextEditorInteraction);
     this->scnCode->addItem(itemCode);
 }
 
@@ -290,6 +292,15 @@ void IOView::onNewFileName(QString filename)
 void IOView::onNewResults(QString results)
 {
     this->labelResult->setText(results);
+}
+
+//update the list
+void IOView::onNewListConnectedLabels(QStringList listConnectedLabel)
+{
+    this->listLabel->clear();
+    for (int i = 0; i < listConnectedLabel.count(); ++i) {
+        listLabel->addItem(listConnectedLabel[i]);
+    }
 }
 
 //clear the scenes
@@ -334,16 +345,29 @@ void IOView::initGraphicalObject()
     scnCode = new QGraphicsScene(codeWindow);
     codeWindow->setScene(scnCode);
 
+    this->listLabel = new QListWidget(this);
+    listLabel->setGeometry(40, height - 190, 250, 30);
+    listLabel->setAutoScroll(true);
+    listLabel->addItem("no pin's label...");
+
+    this->listState = new QListWidget(this);
+    listState->setGeometry(390, height - 190, 250, 30);
+    listState->setAutoScroll(true);
+    listState->addItem("LOW");
+    listState->addItem("HIGH");
+
     load->show();
     check->show();
     drawWindow->show();
     labelResult->show();
     labelFileName->show();
     codeWindow->show();
+    listLabel->show();
+    listState->show();
 
     //connect the buttons to the slot
     connect(this->load, SIGNAL(clicked(bool)), this, SLOT(loadButtonClicked()));
-    connect(this->check, SIGNAL(clicked(bool)), this, SLOT(checkButtonClicked()));
+    connect(this->check, SIGNAL(clicked(bool)), this, SLOT(updateButtonClicked()));
 }
 
 //used to get some nice lines between gates
@@ -363,12 +387,20 @@ void IOView::loadButtonClicked()
     thePortUI->onButtonLoadPressed(path);
 }
 
-void IOView::checkButtonClicked()
+void IOView::updateButtonClicked()
 {
-    QString code;
-    QTextDocument* doc = itemCode->document();
-    code = doc->toPlainText();
-    qDebug() << code;
-    thePortUI->onButtonCheckPressed(code);
+    QString labelSelected = "no label selected";
+    QString newState = "no state selected";
+    if(listLabel->currentItem() != NULL)
+    {
+        labelSelected = listLabel->currentItem()->text();
+    }
+
+    if(listState->currentItem() != NULL)
+    {
+        newState = listState->currentItem()->text();
+    }
+
+    thePortUI->onButtonUpdatePressed(labelSelected, newState);
 }
 

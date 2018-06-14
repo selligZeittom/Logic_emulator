@@ -20,7 +20,7 @@ public:
     void initRelations(PortController* thePortController);
 
     void evLoadButtonPressed(QString path);
-    void evCheckButtonPressed(QString newCode);
+    void evCheckButtonPressed(QString labelToChange, QString newState);
     void evLoadingDone();
     void evConvertingDone();
     void evComputingDone();
@@ -44,7 +44,7 @@ private:
     //possibles events
     enum LE_EVENT{
         EV_LOAD_CLICKED, EV_END_LOADING, EV_END_CONVERTING, EV_END_COMPUTING,
-        EV_END_DRAWING, EV_ERROR, EV_END_ERROR_PROCESSING, EV_MODIFICATION_BUTTON_PRESSED,
+        EV_END_DRAWING, EV_ERROR, EV_END_ERROR_PROCESSING, EV_UPDATE_BUTTON_PRESSED,
         EV_END_CHECKING, EV_END_UPDATING
     };
 

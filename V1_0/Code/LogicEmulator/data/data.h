@@ -33,8 +33,8 @@ public:
     Pin* getPinFromLabel(QString labelPinToFind);
     void setGatesAndPins();
     void processError(QString labelError);
-    void checkModifications(QString newCode);
-    void sortCodeIntoQStringList(QString newCode, QStringList &idList, QStringList &idLabelsList, QStringList &idConnectedLabelsList, QStringList &levelList);
+    void checkModifications(QString data);
+//    void sortCodeIntoQStringList(QString newCode, QStringList &idConnectedLabelsList);
     void updateInputAndOutput();
 
 private:
@@ -48,17 +48,9 @@ private:
     QString path;
     int levelMax;
 
-    //store the id, label, connectedLabel and level as qstring when they're valid
-    QStringList id;
-    QStringList labels;
-    QStringList connectedLabels;
-    QStringList levels;
+    //store the connectedLabel to update them
+    QStringList labelsList;
 
-    //temp list to check the validity of a new code
-    QStringList idTemp;
-    QStringList labelsTemp;
-    QStringList connectedLabelsTemp;
-    QStringList levelsTemp;
 };
 
 #endif // DATA_H

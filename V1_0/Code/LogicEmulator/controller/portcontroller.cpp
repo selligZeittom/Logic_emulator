@@ -60,9 +60,9 @@ void PortController::onButtonLoadPressed(QString path)
     controller->evLoadButtonPressed(path);
 }
 
-void PortController::onButtonCheckPressed(QString newCode)
+void PortController::onButtonUpdatePressed(QString labelToChange, QString newState)
 {
-    controller->evCheckButtonPressed(newCode);
+    controller->evCheckButtonPressed(labelToChange, newState);
 }
 
 void PortController::onLoadingDone()
