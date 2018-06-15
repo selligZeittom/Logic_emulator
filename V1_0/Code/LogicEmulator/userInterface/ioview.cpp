@@ -331,7 +331,7 @@ void IOView::initGraphicalObject()
     this->load = new QPushButton(this);
     load->setGeometry(50, height - 110, 150, 40);
     load->setStyleSheet("QPushButton { background-color : grey; border: 1px solid gray; border-radius: 10px; color : black; }");
-    load->setText("Browse a file");
+    load->setText("Load a file");
 
     this->check = new QPushButton(this);
     check->setGeometry(300, height - 110, 150, 40);

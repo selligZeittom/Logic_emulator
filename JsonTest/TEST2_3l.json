@@ -1,0 +1,131 @@
+{
+   "name": "test2, 3 level",
+   "gates": [
+      {
+         "ID": "O1",
+         "level": 0,
+         "pins": [
+            {
+               "label": "O1_I1",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "O1_I2",
+               "connectedLabel": "LOG_LOW"
+            },
+            {
+               "label": "O1_U",
+               "connectedLabel": "O3_I1"
+            }
+         ]
+      },
+      {
+         "ID": "A1",
+         "level": 0,
+         "pins": [
+            {
+               "label": "A1_I1",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "A1_I2",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "A1_U",
+               "connectedLabel": "O3_I2"
+            }
+         ]
+      },
+      {
+         "ID": "O2",
+         "level": 0,
+         "pins": [
+            {
+               "label": "O2_I1",
+               "connectedLabel": "LOG_LOW"
+            },
+            {
+               "label": "O2_I2",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "O2_U",
+               "connectedLabel": "A3_I1"
+            }
+         ]
+      },
+      {
+         "ID": "A2",
+         "level": 0,
+         "pins": [
+            {
+               "label": "A2_I1",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "A2_I2",
+               "connectedLabel": "LOG_HIGH"
+            },
+            {
+               "label": "A2_U",
+               "connectedLabel": "A3_I2"
+            }
+         ]
+      },
+      {
+         "ID": "O3",
+         "level": 1,
+         "pins": [
+            {
+               "label": "O3_I1",
+               "connectedLabel": "O1_U"
+            },
+            {
+               "label": "O3_I2",
+               "connectedLabel": "A1_U"
+            },
+            {
+               "label": "O3_U",
+               "connectedLabel": "A4_I1"
+            }
+         ]
+      },
+      {
+         "ID": "A3",
+         "level": 1,
+         "pins": [
+            {
+               "label": "A3_I1",
+               "connectedLabel": "O2_U"
+            },
+            {
+               "label": "A3_I2",
+               "connectedLabel": "A2_U"
+            },
+            {
+               "label": "A3_U",
+               "connectedLabel": "A4_I2"
+            }
+         ]
+      },
+      {
+         "ID": "A4",
+         "level": 2,
+         "pins": [
+            {
+               "label": "A4_I1",
+               "connectedLabel": "O3_U"
+            },
+            {
+               "label": "A4_I2",
+               "connectedLabel": "A3_U"
+            },
+            {
+               "label": "A4_U",
+               "connectedLabel": "SCOPE1"
+            }
+         ]
+      }
+   ]
+}
