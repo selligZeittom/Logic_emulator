@@ -16,6 +16,9 @@
 #include <QStringList>
 
 #include "gate.h"
+#include "andgate.h"
+#include "notgate.h"
+#include "orgate.h"
 
 class PortData;
 

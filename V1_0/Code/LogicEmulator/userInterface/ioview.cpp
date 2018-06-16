@@ -161,7 +161,7 @@ void IOView::drawGates(QVector<Gate *> &gates, int maxLevel)
                 {
                     y = yOffset * _usedGates * ratio + (_level) * yOffset/2;
                 }
-                else //for one gate per level
+                else
                 {
                     y =  yOffset * (itemPerLevel[0]/2) - yOffset/2;
                 }

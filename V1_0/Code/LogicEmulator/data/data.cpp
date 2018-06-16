@@ -164,9 +164,25 @@ void Data::convertJsonToGates()
             vPinsIO.push_back(p);//add to the gate's vector
         }
 
+
+
+
         //create a logic gate
-        Gate* newGate = new Gate(id, level, vPinsIO);
-        vGates.push_back(newGate); //add to the global vector
+        if(id.contains("AND"))
+        {
+            AndGate* andGate = new AndGate(id, level, vPinsIO);
+            vGates.push_back(andGate); //add to the global vector
+        }
+        else if(id.contains("OR"))
+        {
+            OrGate* orGate = new OrGate(id, level, vPinsIO);
+            vGates.push_back(orGate); //add to the global vector
+        }
+        else if(id.contains("NOT"))
+        {
+            NotGate* notGate = new NotGate(id, level, vPinsIO);
+            vGates.push_back(notGate); //add to the global vector
+        }
     }
 
     //if the conversion has been well done
@@ -273,7 +289,7 @@ void Data::setGatesAndPins()
                     }
                     Pin* outputPin = gate->getOutputPin();
                     outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
-                    gate->computeLogicAndSetPixmap();
+                    gate->updateLogic(levelMax);
                 }
 
                 //for the others level
@@ -293,7 +309,7 @@ void Data::setGatesAndPins()
                         Pin* outputPin = gate->getOutputPin();
                         outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
                     }
-                    gate->computeLogicAndSetPixmap();
+                    gate->updateLogic(levelMax);
                 }
             }
         }

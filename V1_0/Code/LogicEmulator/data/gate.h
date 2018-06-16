@@ -17,8 +17,6 @@ public:
     virtual ~Gate();
 
     int getLevel() const;
-    void computeLogicAndSetPixmap();
-    void updateLogic(int maxLevel);
     QVector<Pin*> getInputPins();
     Pin *getOutputPin();
     QPixmap getQPixMap() const;
@@ -28,16 +26,17 @@ public:
     void setInputPins(QVector<Pin*> iPins);
     void setXY(int x, int y);
 
-private:
-    //int type; //0 : AND, 1 : OR, 2 : NOT
+    virtual void updateLogic(int maxLevel) = 0;
+
+protected:
     QString id;
     int level;
     QVector<Pin*> inputPins;
     Pin* outputPin;
     QPixmap* qpixMap;
     int x, y; //represent the point of drawing pixmap
-    void setXYpins();
 
+    virtual void setXYpins() = 0; //implemented in the child
 
 };
 

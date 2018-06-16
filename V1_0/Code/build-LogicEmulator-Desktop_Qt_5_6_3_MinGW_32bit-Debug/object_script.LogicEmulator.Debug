@@ -16,6 +16,9 @@ INPUT(
 ./debug\icontrollerdata.o
 ./debug\ioview.o
 ./debug\xfeventdata.o
+./debug\andgate.o
+./debug\orgate.o
+./debug\notgate.o
 ./debug\qrc_images.o
 ./debug\moc_xf.o
 ./debug\moc_xftimer.o

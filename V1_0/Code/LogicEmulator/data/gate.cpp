@@ -33,112 +33,6 @@ Gate::~Gate()
 {
 }
 
-//get the output depending on the inputs pins and the type of the gate
-void Gate::computeLogicAndSetPixmap()
-{
-    bool result = false;
-
-    int type = 0;
-    if(id.contains("A"))
-    {
-        type = 0;
-    }else if(id.contains("O"))
-    {
-        type = 1;
-    }else if(id.contains("N"))
-    {
-        type = 2;
-    }
-    switch (type) {
-    case 0:
-        //means it's and AND gate
-        qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
-        result = true;
-        for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i]->getState() == false)
-            {
-                result = false;
-            }
-        }
-        break;
-        //means it's an OR gate
-    case 1:
-        qpixMap = new QPixmap(":/gates/images/or_gate_original.png");
-        for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i]->getState() == true)
-            {
-                result = true;
-            }
-        }
-        break;
-        //means it's a NOT gate
-    case 2:
-        qpixMap = new QPixmap(":/gates/images/not_gate_original.png");
-        result = !(inputPins[0]->getState());
-        break;
-    default:
-        break;
-    }
-
-    //set the state of the output pin
-    this->outputPin->setState(result);
-}
-
-void Gate::updateLogic(int maxLevel)
-{
-    bool result = false;
-
-    int type = 0;
-    if(id.contains("A"))
-    {
-        type = 0;
-    }
-    else if(id.contains("O"))
-    {
-        type = 1;
-    }
-    else if(id.contains("N"))
-    {
-        type = 2;
-    }
-    switch (type) {
-    case 0:
-        //means it's and AND gate
-        result = true;
-        for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i]->getState() == false)
-            {
-                result = false;
-            }
-        }
-        break;
-        //means it's an OR gate
-    case 1:
-        for (int i = 0; i < inputPins.count(); ++i) {
-            if(inputPins[i]->getState() == true)
-            {
-                result = true;
-            }
-        }
-        break;
-        //means it's a NOT gate
-    case 2:
-        result = !(inputPins[0]->getState());
-        break;
-    default:
-        break;
-    }
-
-    //set the state of the output pin
-
-    this->outputPin->setState(result);
-    if(this->level != maxLevel)
-    {
-        Pin* conPin = outputPin->getConnectedPin();
-        conPin->setState(result);
-    }
-}
-
 QVector<Pin*> Gate::getInputPins()
 {
     return this->inputPins;
@@ -200,23 +94,6 @@ void Gate::setXY(int x, int y)
     setXYpins();
 }
 
-//best way to get a nice look on the screen
-void Gate::setXYpins()
-{
-    if(this->id.contains("N"))
-    {
-        inputPins[0]->setXY(this->x, this->y + 40);
-    }
-    else
-    {
-        for (int i = 0; i < inputPins.count(); ++i)
-        {
-            inputPins[i]->setXY(this->x, this->y + i * 39 + 20);
-        }
-    }
-
-    this->outputPin->setXY(this->x+80, this->y+40);
-}
 
 
 int Gate::getLevel() const

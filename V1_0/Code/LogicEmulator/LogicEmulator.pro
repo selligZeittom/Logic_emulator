@@ -27,7 +27,10 @@ SOURCES += main.cpp\
     factory.cpp \
     interfaces/icontrollerdata.cpp \
     userInterface/ioview.cpp \
-    controller/xfeventdata.cpp
+    controller/xfeventdata.cpp \
+    data/andgate.cpp \
+    data/orgate.cpp \
+    data/notgate.cpp
 
 HEADERS  += \
     data/data.h \
@@ -47,7 +50,10 @@ HEADERS  += \
     interfaces/icontrollerdata.h \
     globalvariables.h \
     userInterface/ioview.h \
-    controller/xfeventdata.h
+    controller/xfeventdata.h \
+    data/andgate.h \
+    data/orgate.h \
+    data/notgate.h
 
 RESOURCES += \
     images.qrc
