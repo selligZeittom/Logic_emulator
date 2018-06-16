@@ -48,7 +48,6 @@ HEADERS  += \
     interfaces/idataupdate.h \
     factory.h \
     interfaces/icontrollerdata.h \
-    globalvariables.h \
     userInterface/ioview.h \
     controller/xfeventdata.h \
     data/andgate.h \

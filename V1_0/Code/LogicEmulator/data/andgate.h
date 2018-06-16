@@ -13,7 +13,9 @@ public:
 
     // Gate extended functions
 public:
+    //Set the coordinates to draw the pic and lines
     virtual void setXYpins();
+    //compute the output depending on the entry
     virtual void updateLogic(int maxLevel);
 };
 

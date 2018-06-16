@@ -24,6 +24,7 @@ void OrGate::setXYpins()
 
 void OrGate::updateLogic(int maxLevel)
 {
+    //true if there is at least one HIGH input
     bool result = false;
     for (int i = 0; i < inputPins.count(); ++i) {
         if(inputPins[i]->getState() == true)

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>70</y>
-      <w>90</w>
-      <h>45</h>
+      <x>396</x>
+      <y>84</y>
+      <w>108</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>_ioView:IOView_
 transparency=0
@@ -18,10 +18,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>45</y>
-      <w>70</w>
-      <h>95</h>
+      <x>528</x>
+      <y>54</y>
+      <w>84</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>_thePortUI:PortUI_
 valign=center
@@ -33,10 +33,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>685</x>
-      <y>45</y>
-      <w>110</w>
-      <h>95</h>
+      <x>666</x>
+      <y>54</y>
+      <w>132</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>_thePortController:PortController_
 transparency=0
@@ -48,10 +48,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>45</y>
-      <w>75</w>
-      <h>95</h>
+      <x>840</x>
+      <y>54</y>
+      <w>90</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>_thePortData:PortData_
 transparency=0
@@ -63,10 +63,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>170</y>
-      <w>110</w>
-      <h>20</h>
+      <x>672</x>
+      <y>204</y>
+      <w>132</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_controller:Controller_
 transparency=0
@@ -77,10 +77,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>90</y>
-      <w>50</w>
-      <h>20</h>
+      <x>960</x>
+      <y>108</y>
+      <w>60</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>_data:Data_
 transparency=0
@@ -91,10 +91,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>545</x>
-      <y>70</y>
-      <w>35</w>
-      <h>15</h>
+      <x>498</x>
+      <y>84</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -106,10 +106,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>635</x>
-      <y>65</y>
-      <w>60</w>
-      <h>15</h>
+      <x>606</x>
+      <y>78</y>
+      <w>72</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -121,10 +121,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
-      <y>60</y>
-      <w>50</w>
-      <h>15</h>
+      <x>792</x>
+      <y>72</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -136,10 +136,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>90</y>
-      <w>40</w>
-      <h>15</h>
+      <x>924</x>
+      <y>108</y>
+      <w>48</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -151,10 +151,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>100</y>
-      <w>40</w>
-      <h>15</h>
+      <x>924</x>
+      <y>120</y>
+      <w>48</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -166,10 +166,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>545</x>
-      <y>105</y>
-      <w>35</w>
-      <h>15</h>
+      <x>498</x>
+      <y>126</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -181,10 +181,10 @@ lw=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
+      <x>384</x>
       <y>0</y>
-      <w>535</w>
-      <h>200</h>
+      <w>642</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>LogicEmulatorFactory
 --
@@ -195,10 +195,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
-      <y>115</y>
-      <w>50</w>
-      <h>15</h>
+      <x>792</x>
+      <y>138</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -210,10 +210,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>635</x>
-      <y>115</y>
-      <w>60</w>
-      <h>15</h>
+      <x>606</x>
+      <y>138</y>
+      <w>72</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -225,10 +225,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
-      <y>135</y>
-      <w>15</w>
-      <h>45</h>
+      <x>744</x>
+      <y>162</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -240,10 +240,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>135</y>
-      <w>15</w>
-      <h>45</h>
+      <x>720</x>
+      <y>162</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=green
@@ -255,10 +255,10 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
-      <y>305</y>
-      <w>15</w>
-      <h>740</h>
+      <x>1032</x>
+      <y>366</y>
+      <w>18</w>
+      <h>888</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1460.0</additional_attributes>
@@ -266,10 +266,10 @@ lw=3</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>955</x>
-      <y>295</y>
-      <w>85</w>
-      <h>15</h>
+      <x>990</x>
+      <y>354</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_f:LogicEmulatorFactory_
 bg=cyan
@@ -279,10 +279,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1085</x>
-      <y>260</y>
-      <w>50</w>
-      <h>15</h>
+      <x>1146</x>
+      <y>312</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_main_
 bg=cyan
@@ -293,10 +293,10 @@ transparency=0
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1105</x>
-      <y>270</y>
-      <w>15</w>
-      <h>880</h>
+      <x>1170</x>
+      <y>324</y>
+      <w>18</w>
+      <h>1056</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1740.0</additional_attributes>
@@ -304,10 +304,10 @@ transparency=0
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1035</x>
-      <y>290</y>
-      <w>85</w>
-      <h>20</h>
+      <x>1086</x>
+      <y>348</y>
+      <w>102</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -316,10 +316,10 @@ transparency=0
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>760</x>
-      <y>360</y>
-      <w>85</w>
-      <h>15</h>
+      <x>756</x>
+      <y>432</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_thePortUI:PortUI_
 bg=cyan
@@ -329,10 +329,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>355</y>
-      <w>165</w>
-      <h>20</h>
+      <x>852</x>
+      <y>426</y>
+      <w>198</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -341,10 +341,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>640</x>
-      <y>385</y>
-      <w>110</w>
-      <h>15</h>
+      <x>612</x>
+      <y>462</y>
+      <w>132</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_thePortController:PortController_
 bg=cyan
@@ -354,10 +354,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>575</x>
-      <y>410</y>
-      <w>85</w>
-      <h>15</h>
+      <x>534</x>
+      <y>492</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_thePortData:PortData_
 bg=cyan
@@ -367,10 +367,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>480</x>
-      <y>435</y>
-      <w>85</w>
-      <h>15</h>
+      <x>420</x>
+      <y>522</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_data:Data_
 bg=cyan
@@ -380,10 +380,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>385</x>
-      <y>460</y>
-      <w>85</w>
-      <h>15</h>
+      <x>306</x>
+      <y>552</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_controller:Controller_
 bg=cyan
@@ -393,10 +393,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>745</x>
-      <y>380</y>
-      <w>260</w>
-      <h>20</h>
+      <x>738</x>
+      <y>456</y>
+      <w>312</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -405,10 +405,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>655</x>
-      <y>405</y>
-      <w>350</w>
-      <h>20</h>
+      <x>630</x>
+      <y>486</y>
+      <w>420</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -417,10 +417,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>430</y>
-      <w>445</w>
-      <h>20</h>
+      <x>516</x>
+      <y>516</y>
+      <w>534</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -429,10 +429,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>465</x>
-      <y>460</y>
-      <w>540</w>
-      <h>20</h>
+      <x>402</x>
+      <y>552</y>
+      <w>648</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -441,10 +441,10 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>990</x>
-      <y>330</y>
-      <w>10</w>
-      <h>180</h>
+      <x>1032</x>
+      <y>396</y>
+      <w>12</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -452,10 +452,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>320</y>
-      <w>125</w>
-      <h>20</h>
+      <x>1038</x>
+      <y>384</y>
+      <w>150</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 create()</panel_attributes>
@@ -464,10 +464,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>490</y>
-      <w>125</w>
-      <h>20</h>
+      <x>1038</x>
+      <y>588</y>
+      <w>150</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -476,10 +476,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>370</y>
-      <w>15</w>
-      <h>680</h>
+      <x>804</x>
+      <y>444</y>
+      <w>18</w>
+      <h>816</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1340.0</additional_attributes>
@@ -487,10 +487,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>705</x>
-      <y>395</y>
-      <w>15</w>
-      <h>675</h>
+      <x>690</x>
+      <y>474</y>
+      <w>18</w>
+      <h>810</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1330.0</additional_attributes>
@@ -498,10 +498,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>420</y>
-      <w>15</w>
-      <h>660</h>
+      <x>576</x>
+      <y>504</y>
+      <w>18</w>
+      <h>792</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1300.0</additional_attributes>
@@ -509,10 +509,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>445</y>
-      <w>15</w>
-      <h>655</h>
+      <x>462</x>
+      <y>534</y>
+      <w>18</w>
+      <h>786</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1290.0</additional_attributes>
@@ -520,10 +520,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>425</x>
-      <y>470</y>
-      <w>15</w>
-      <h>650</h>
+      <x>354</x>
+      <y>564</y>
+      <w>18</w>
+      <h>780</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1280.0</additional_attributes>
@@ -531,10 +531,10 @@ create()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>990</x>
-      <y>635</y>
-      <w>10</w>
-      <h>130</h>
+      <x>1032</x>
+      <y>762</y>
+      <w>12</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -542,10 +542,10 @@ create()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>625</y>
-      <w>125</w>
-      <h>20</h>
+      <x>1038</x>
+      <y>750</y>
+      <w>150</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 build()</panel_attributes>
@@ -554,10 +554,10 @@ build()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>750</y>
-      <w>125</w>
-      <h>20</h>
+      <x>1038</x>
+      <y>900</y>
+      <w>150</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -566,10 +566,10 @@ build()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>650</y>
-      <w>200</w>
-      <h>20</h>
+      <x>804</x>
+      <y>780</y>
+      <w>240</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(thePortUI : PortUI*)</panel_attributes>
@@ -578,10 +578,10 @@ initRelations(thePortUI : PortUI*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>705</x>
-      <y>670</y>
-      <w>295</w>
-      <h>20</h>
+      <x>690</x>
+      <y>804</y>
+      <w>354</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(controller : Controller*, thePortData : PortData*)</panel_attributes>
@@ -590,10 +590,10 @@ initRelations(controller : Controller*, thePortData : PortData*)</panel_attribut
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>690</y>
-      <w>390</w>
-      <h>20</h>
+      <x>576</x>
+      <y>828</y>
+      <w>468</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(data : Data*, thePortUI : PortUI*, thePortController*)</panel_attributes>
@@ -602,10 +602,10 @@ initRelations(data : Data*, thePortUI : PortUI*, thePortController*)</panel_attr
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>710</y>
-      <w>485</w>
-      <h>20</h>
+      <x>462</x>
+      <y>852</y>
+      <w>582</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(thePortData : PortData*)</panel_attributes>
@@ -614,10 +614,10 @@ initRelations(thePortData : PortData*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>425</x>
-      <y>730</y>
-      <w>575</w>
-      <h>20</h>
+      <x>354</x>
+      <y>876</y>
+      <w>690</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(thePortController : PortController*)</panel_attributes>
@@ -626,10 +626,10 @@ initRelations(thePortController : PortController*)</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>270</x>
-      <y>620</y>
-      <w>880</w>
-      <h>170</h>
+      <x>168</x>
+      <y>744</y>
+      <w>1056</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes>connect the objects
 bg=yellow
@@ -639,10 +639,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>255</x>
-      <y>315</y>
-      <w>895</w>
-      <h>215</h>
+      <x>150</x>
+      <y>378</y>
+      <w>1074</w>
+      <h>258</h>
     </coordinates>
     <panel_attributes>create all objects
 bg=green
@@ -652,10 +652,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>270</x>
-      <y>825</y>
-      <w>880</w>
-      <h>160</h>
+      <x>168</x>
+      <y>990</y>
+      <w>1056</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>use the logic emulator
 layer=-1
@@ -665,10 +665,10 @@ bg=light_gray</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>990</x>
-      <y>1015</y>
-      <w>10</w>
-      <h>125</h>
+      <x>1032</x>
+      <y>1218</y>
+      <w>12</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -676,10 +676,10 @@ bg=light_gray</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>1005</y>
-      <w>125</w>
-      <h>20</h>
+      <x>1038</x>
+      <y>1206</y>
+      <w>150</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 destroy()</panel_attributes>
@@ -688,10 +688,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>1125</y>
-      <w>125</w>
-      <h>15</h>
+      <x>1038</x>
+      <y>1350</y>
+      <w>150</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
@@ -699,10 +699,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>1015</y>
-      <w>105</w>
-      <h>20</h>
+      <x>918</x>
+      <y>1218</y>
+      <w>126</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -711,10 +711,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>1030</y>
-      <w>200</w>
-      <h>20</h>
+      <x>804</x>
+      <y>1236</y>
+      <w>240</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -723,10 +723,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>705</x>
-      <y>1045</y>
-      <w>295</w>
-      <h>20</h>
+      <x>690</x>
+      <y>1254</y>
+      <w>354</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -735,10 +735,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>1060</y>
-      <w>390</w>
-      <h>20</h>
+      <x>576</x>
+      <y>1272</y>
+      <w>468</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -747,10 +747,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>1075</y>
-      <w>485</w>
-      <h>20</h>
+      <x>462</x>
+      <y>1290</y>
+      <w>582</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -759,10 +759,10 @@ destroy()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>425</x>
-      <y>1095</y>
-      <w>575</w>
-      <h>20</h>
+      <x>354</x>
+      <y>1314</y>
+      <w>690</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>
@@ -771,10 +771,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>895</x>
-      <y>1020</y>
-      <w>10</w>
-      <h>10</h>
+      <x>918</x>
+      <y>1224</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -782,10 +782,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>800</x>
-      <y>1035</y>
-      <w>10</w>
-      <h>10</h>
+      <x>804</x>
+      <y>1242</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -793,10 +793,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>705</x>
-      <y>1050</y>
-      <w>10</w>
-      <h>10</h>
+      <x>690</x>
+      <y>1260</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -804,10 +804,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>610</x>
-      <y>1065</y>
-      <w>10</w>
-      <h>10</h>
+      <x>576</x>
+      <y>1278</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -815,10 +815,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>515</x>
-      <y>1080</y>
-      <w>10</w>
-      <h>10</h>
+      <x>462</x>
+      <y>1296</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -826,10 +826,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>425</x>
-      <y>1100</y>
-      <w>10</w>
-      <h>10</h>
+      <x>354</x>
+      <y>1320</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -837,10 +837,10 @@ destroy()</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>270</x>
-      <y>1000</y>
-      <w>895</w>
-      <h>165</h>
+      <x>168</x>
+      <y>1200</y>
+      <w>1074</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>eliminate the objects
 layer=-1
@@ -850,10 +850,10 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>355</x>
-      <y>485</y>
-      <w>650</w>
-      <h>20</h>
+      <x>270</x>
+      <y>582</y>
+      <w>780</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;create&gt;</panel_attributes>
@@ -862,10 +862,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>275</x>
-      <y>485</y>
-      <w>85</w>
-      <h>15</h>
+      <x>174</x>
+      <y>582</y>
+      <w>102</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>_ioView:IOView_
 bg=cyan
@@ -875,10 +875,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
-      <y>495</y>
-      <w>15</w>
-      <h>660</h>
+      <x>210</x>
+      <y>594</y>
+      <w>18</w>
+      <h>792</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1300.0</additional_attributes>
@@ -886,10 +886,10 @@ transparency=0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
-      <y>750</y>
-      <w>695</w>
-      <h>20</h>
+      <x>210</x>
+      <y>900</y>
+      <w>834</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 initRelations(thePortUI : PortUI*)</panel_attributes>
@@ -898,10 +898,10 @@ initRelations(thePortUI : PortUI*)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
-      <y>1115</y>
-      <w>695</w>
-      <h>20</h>
+      <x>210</x>
+      <y>1338</y>
+      <w>834</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;destroy&gt;</panel_attributes>

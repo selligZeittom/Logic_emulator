@@ -22,10 +22,13 @@ void NotGate::setXYpins()
 
 void NotGate::updateLogic(int maxLevel)
 {
+    //toggle the input to get the output
     bool result = false;
     result = !(inputPins[0]->getState());
 
     this->outputPin->setState(result);
+
+    //update the coneected pin if there is one
     if(this->level != maxLevel)
     {
         Pin* conPin = outputPin->getConnectedPin();

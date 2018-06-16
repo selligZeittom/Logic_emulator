@@ -10,4 +10,6 @@ int main(int argc, char *argv[])
     f.create();
     f.build();
     return XF::getInstance().exec();
+    f.destroy();
+
 }

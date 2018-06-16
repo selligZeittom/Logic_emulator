@@ -19,8 +19,7 @@ public:
     void initRelations(Controller* p1, PortData* p2);
 
 public:
-    // IController interface
-    //implemented as required
+    // IController interface, required to PortData
     virtual void loadFile(QString path);
     virtual void convertJsonToGates();
     virtual void computeLogic();
@@ -29,7 +28,7 @@ public:
     virtual void checkValidity(QString newCode);
     virtual void updateGatesAndPins(bool isValid);
 
-    //implemented as provided
+    // IController interface, provided from PortData
     virtual void onLoadingDone();
     virtual void onConvertingDone();
     virtual void onComputingDone();
@@ -39,7 +38,7 @@ public:
     virtual void onCheckingModificationsDone(bool isValid);
     virtual void onUpdateDone(bool isValid);
 
-    // IViewUpdate interface, provided
+    // IViewUpdate interface, provided from PortUI
 public:
     virtual void onButtonLoadPressed(QString path);
     virtual void onButtonUpdatePressed(QString labelToChange, QString newState);

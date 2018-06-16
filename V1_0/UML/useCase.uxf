@@ -33,8 +33,8 @@ halign=left</panel_attributes>
       <w>270</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>load a .json file based on the
-protocol "JSON_logicProtocol", 
+    <panel_attributes>load a Json file based on the
+file "JSON_logicProtocol.doc", 
 with logic gates like AND, OR, NOT
 bg=magenta</panel_attributes>
     <additional_attributes/>
@@ -106,7 +106,8 @@ bg=magenta</panel_attributes>
       <h>100</h>
     </coordinates>
     <panel_attributes>use gates like NOR, NAND, XOR
-bg=magenta</panel_attributes>
+(not implemented...)
+bg=red</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

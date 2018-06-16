@@ -31,6 +31,21 @@ Gate::Gate(QString id, int level, QVector<Pin*> ioPins)
 
 Gate::~Gate()
 {
+    if(outputPin)
+    {
+        delete outputPin;
+        outputPin = NULL;
+    }
+    for (int i = 0; i < inputPins.count(); ++i)
+    {
+        Pin* toDestroy = inputPins[i];
+        if(toDestroy)
+        {
+            delete toDestroy;
+            toDestroy = NULL;
+        }
+    }
+    qDebug()<<"gate destroyed";
 }
 
 QVector<Pin*> Gate::getInputPins()
@@ -93,8 +108,6 @@ void Gate::setXY(int x, int y)
     this->y = y;
     setXYpins();
 }
-
-
 
 int Gate::getLevel() const
 {

@@ -1,6 +1,6 @@
 #include "data.h"
 #include "portdata.h"
-#include "globalvariables.h"
+#include "controller/controller.h"
 
 
 Data::Data()
@@ -18,8 +18,19 @@ Data::~Data()
         delete file;
         file = NULL;
     }
+    for (int i = 0; i < vGates.count(); ++i)
+    {
+        Gate* gateToDestroy = vGates[i];
+        if(gateToDestroy)
+        {
+            delete gateToDestroy;
+            gateToDestroy = NULL;
+        }
+    }
+    qDebug()<<"data destroyed";
 }
 
+//make the global connections
 void Data::initRelations(PortData *p1)
 {
     this->thePortData = p1;
@@ -29,6 +40,13 @@ void Data::loadFile(QString path)
 {
     //set the path
     this->path = path;
+
+    //if it's not the first file to load
+    if(file)
+    {
+        delete file;
+        file = NULL;
+    }
 
     //create the file
     file = new QFile(path);
@@ -56,7 +74,7 @@ void Data::convertJsonToGates()
     result = "";
     code = "";
 
-    //get the string corresponding to the .json file
+    //get the string corresponding to the Json file
     QTextStream reader(file);
     code = reader.readAll();
 
@@ -183,6 +201,12 @@ void Data::convertJsonToGates()
             NotGate* notGate = new NotGate(id, level, vPinsIO);
             vGates.push_back(notGate); //add to the global vector
         }
+
+        //send an error if the id is not corresponding to the protocol
+        else
+        {
+            thePortData->onError(ERROR_JSON_CONVERSION_ID);
+        }
     }
 
     //if the conversion has been well done
@@ -242,8 +266,6 @@ Pin *Data::getPinFromLabel(QString labelPinToFind)
             }
         }
     }
-    //if we have to return a non existing pin ->> error !
-    thePortData->onError(ERROR_LABEL_PIN_NOT_VALID);
     return retVal;
 }
 
@@ -288,8 +310,17 @@ void Data::setGatesAndPins()
                         }
                     }
                     Pin* outputPin = gate->getOutputPin();
-                    outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
-                    gate->updateLogic(levelMax);
+                    Pin* connectedToOutputPin = getPinFromLabel(outputPin->getLabelConnectedPin());
+                    if(connectedToOutputPin == NULL)
+                    {
+                        //means an error occured : label not valid
+                        thePortData->onError(ERROR_LABEL_PIN_NOT_VALID);
+                    }
+                    else
+                    {
+                        outputPin->initRelations(connectedToOutputPin);
+                        gate->updateLogic(levelMax);
+                    }
                 }
 
                 //for the others level
@@ -300,14 +331,32 @@ void Data::setGatesAndPins()
                     {
                         Pin* inputPin = gate->getInputPins()[i];
                         Pin* pinToConnect = getPinFromLabel(inputPin->getLabelConnectedPin());
-                        inputPin->initRelations(pinToConnect);
-                        inputPin->setState(pinToConnect->getState());
+                        if(pinToConnect == NULL)
+                        {
+                            //means an error occured : label not valid
+                            thePortData->onError(ERROR_LABEL_PIN_NOT_VALID);
+                        }
+                        else
+                        {
+                            inputPin->initRelations(pinToConnect);
+                            inputPin->setState(pinToConnect->getState());
+                        }
                     }
                     //for the not final level
                     if(levelGate < levelMax)
                     {
                         Pin* outputPin = gate->getOutputPin();
-                        outputPin->initRelations(getPinFromLabel(outputPin->getLabelConnectedPin()));
+                        Pin* connectedToOutputPin = getPinFromLabel(outputPin->getLabelConnectedPin());
+                        if(connectedToOutputPin == NULL)
+                        {
+                            //means an error occured : label not valid
+                            thePortData->onError(ERROR_LABEL_PIN_NOT_VALID);
+                        }
+                        else
+                        {
+
+                            outputPin->initRelations(connectedToOutputPin);
+                        }
                     }
                     gate->updateLogic(levelMax);
                 }
@@ -320,15 +369,22 @@ void Data::setGatesAndPins()
 //send the error data to the ioview to display on the screen
 void Data::processError(QString labelError)
 {
+    //clear the data
+    labelsList.clear();
+    vGates.clear();
+
     thePortData->onNewFileNAme(fileName);
     thePortData->onDeleteOldGatesAndCode();
     thePortData->onNewCode("!!! ERROR in the code !!!\r\n"+code);
     thePortData->onNewResults(labelError);
     thePortData->onErrorProcessed();
+    thePortData->onNewListConnectedLabels(labelsList);
 }
 
+//check that the user selected a label
 void Data::checkModifications(QString data)
 {
+    //Get the label and the new state
     QStringList listTemp = data.split(";");
     qDebug()<<listTemp[0];
     qDebug()<<listTemp[1];

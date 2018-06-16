@@ -175,7 +175,7 @@ void IOView::drawGates(QVector<Gate *> &gates, int maxLevel)
 
                 //write the id of the gate
                 QGraphicsTextItem* item2 = new QGraphicsTextItem();
-                item2->setPos(x + 20, y + 30);
+                item2->setPos(x + 20, y -30);
                 item2->setPlainText(gates[i]->getID());
                 this->scnGates->addItem(item2);
 
@@ -312,6 +312,7 @@ void IOView::onNewListConnectedLabels(QStringList listConnectedLabel)
     }
 }
 
+//set a text to inform the user about the update he did
 void IOView::onNewStatusModifications(QString status)
 {
     this->labelModifStatus->clear();
@@ -407,6 +408,7 @@ void IOView::loadButtonClicked()
     thePortUI->onButtonLoadPressed(path);
 }
 
+//get the qstring involved into the update and send them to the controller
 void IOView::updateButtonClicked()
 {
     QString labelSelected = "no label selected";

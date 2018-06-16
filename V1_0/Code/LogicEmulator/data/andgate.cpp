@@ -6,6 +6,7 @@ AndGate::AndGate()
 
 AndGate::AndGate(QString id, int level, QVector<Pin *> ioPins) : Gate(id, level, ioPins)
 {
+    //load the picture
     this->qpixMap = new QPixmap(":/gates/images/and_gate_original.png");
 }
 
@@ -25,6 +26,7 @@ void AndGate::setXYpins()
 
 void AndGate::updateLogic(int maxLevel)
 {
+    //if one input is LOW -> output is LOW
     bool result = true;
     for (int i = 0; i < inputPins.count(); ++i) {
         if(inputPins[i]->getState() == false)
@@ -33,6 +35,8 @@ void AndGate::updateLogic(int maxLevel)
         }
     }
     this->outputPin->setState(result);
+
+    //only set the connected pin if there is one
     if(this->level != maxLevel)
     {
         Pin* conPin = outputPin->getConnectedPin();

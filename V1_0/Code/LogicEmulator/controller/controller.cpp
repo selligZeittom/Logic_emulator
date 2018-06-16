@@ -11,12 +11,13 @@ Controller::~Controller()
 {
 }
 
+//do the global connections
 void Controller::initRelations(PortController *p1)
 {
     this->thePortController = p1;
 }
 
-//is called when the user clicked on the browse button
+//it is called when the user clicked on the load button
 void Controller::evLoadButtonPressed(QString path)
 {
     //special XFEvent : need to store and forward data
@@ -27,13 +28,14 @@ void Controller::evLoadButtonPressed(QString path)
     XF::getInstance().pushEvent(ev);
 }
 
+//it is called when the user clicked on the update button
 void Controller::evCheckButtonPressed(QString labelToChange, QString newState)
 {
     //special XFEvent : need to store and forward data
     XFEventData* ev = new XFEventData();
     ev->setID((int) EV_UPDATE_BUTTON_PRESSED);
     ev->setTarget(this);
-    ev->setData(labelToChange+";"+newState); //store the newCode into the event
+    ev->setData(labelToChange+";"+newState); //store the data to update
     XF::getInstance().pushEvent(ev);
 }
 
@@ -75,7 +77,7 @@ void Controller::evError(int error)
     XF::getInstance().pushEvent(ev);
 }
 
-//is called when the drawing on the ioview is done
+//is called when the drawing on the screen is done
 void Controller::evDrawingDone()
 {
     XFEvent* ev = new XFEvent();
@@ -84,7 +86,7 @@ void Controller::evDrawingDone()
     XF::getInstance().pushEvent(ev);
 }
 
-//is calle after an error has been treated and displayed on the ioview
+//is called after an error has been treated and displayed on the ioview
 void Controller::evErrorProcessed()
 {
     XFEvent* ev = new XFEvent();
@@ -93,6 +95,7 @@ void Controller::evErrorProcessed()
     XF::getInstance().pushEvent(ev);
 }
 
+//it is called when the update data have been checked
 void Controller::evCheckModificationsDone(bool isValid)
 {
     XFEventData* ev = new XFEventData();
@@ -102,6 +105,7 @@ void Controller::evCheckModificationsDone(bool isValid)
     XF::getInstance().pushEvent(ev);
 }
 
+//it is called after an update has been done in the logic
 void Controller::evUpdateDone(bool isValid)
 {
     XFEventData* ev = new XFEventData();
@@ -140,11 +144,14 @@ bool Controller::processEvent(XFEvent *p1)
             state = ST_CHECK_MODIF;
         }
         break;
+
     case ST_LOAD :
+        //loading was done finely
         if(p2->getID() == EV_END_LOADING)
         {
             state = ST_CONVERT;
         }
+        //an error occured
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
@@ -152,49 +159,63 @@ bool Controller::processEvent(XFEvent *p1)
         break;
 
     case ST_CONVERT :
+        //conversion was done properly
         if(p2->getID() == EV_END_CONVERTING)
         {
             state = ST_COMPUTE;
         }
+        //an error occured
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
         }
         break;
+
     case ST_COMPUTE :
+        //computation was done properly
         if(p2->getID() == EV_END_COMPUTING)
         {
             state = ST_DRAW;
         }
+        //an error occured
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
         }
         break;
+
     case ST_DRAW :
+        //drawing was done succesfully
         if(p2->getID() == EV_END_DRAWING)
         {
             state = ST_WAIT;
             qDebug() << "-> ST_WAIT";
         }
+        //an error occured
         else if(p2->getID() == EV_ERROR)
         {
             state = ST_ERROR;
         }
         break;
+
     case ST_ERROR :
+        //error has been managed
         if(p2->getID() == EV_END_ERROR_PROCESSING)
         {
             state = ST_WAIT;
         }
         break;
+
     case ST_CHECK_MODIF :
+        //modifications were checked
         if(p2->getID() == EV_END_CHECKING)
         {
             state = ST_UPDATE_GATES_PINS;
         }
         break;
+
     case ST_UPDATE_GATES_PINS :
+        //logic updated -> drawing time again
         if(p2->getID() == EV_END_UPDATING)
         {
             state = ST_DRAW;
@@ -260,9 +281,6 @@ bool Controller::processEvent(XFEvent *p1)
             case ERROR_JSON_CONVERSION_ID:
                 errorLabel = "error : a gate's ID is missing or wrong declared";
                 break;
-            case ERROR_JSON_CONVERSION_LEVEL:
-                errorLabel = "error : a gate's level is missing...";
-                break;
             case ERROR_JSON_CONVERSION_LABEL:
                 errorLabel = "error : a pin's label is missing or wrong declared...";
                 break;
@@ -283,9 +301,11 @@ bool Controller::processEvent(XFEvent *p1)
             thePortController->manageError(errorLabel);
             break;
         case ST_CHECK_MODIF:
+            //check the validity of the modifications
             thePortController->checkValidity(p2->getData());
             break;
         case ST_UPDATE_GATES_PINS:
+            //updates logic
             thePortController->updateGatesAndPins(p2->getIsValid());
             break;
         default:

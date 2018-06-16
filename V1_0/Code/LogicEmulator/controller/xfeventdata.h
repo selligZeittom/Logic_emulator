@@ -16,8 +16,11 @@ public:
     void setIsValid(bool isValid);
     bool getIsValid() const;
 private:
+    //store the error code in the event
     int errorCode;
+    //Store the data to update
     QString data;
+    //store if the update is valid or not
     bool isValid;
 };
 

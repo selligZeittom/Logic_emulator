@@ -20,7 +20,6 @@ Factory::Factory()
 
 Factory::~Factory()
 {
-   std::cout <<"destroyed" << std::endl;
 }
 
 void Factory::create()
@@ -80,5 +79,6 @@ void Factory::destroy()
         delete controller;
         controller = NULL;
     }
+    qDebug() <<"destroyed()";
 }
 
