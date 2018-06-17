@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>440</y>
+      <w>904</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortUI : PortUI*
+lw=3</panel_attributes>
+    <additional_attributes>1110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>352</y>
+      <w>304</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PortUI
+--
+PortUI()
+~PortUI()
++ initRelations(p1 : PortController*, p2 : IOView*) : void
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>256</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PortController
+--
++ PortController()
++ ~PortController()
++ initRelations(p1 : Controller*, p2 : PortData*) 
+
+
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1208</x>
+      <y>360</y>
+      <w>304</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>PortData
+--
++ PortData()
++ ~PortData()
++ initRelations(p1 : Data*, p2 : PortUI*, p3 : PortController*)
+
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>320</y>
+      <w>280</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortController : PortController*
+lw=3</panel_attributes>
+    <additional_attributes>10.0;120.0;70.0;120.0;70.0;10.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>344</y>
+      <w>400</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortData : PortData*
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;90.0;480.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>312</y>
+      <w>400</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortController : PortController*
+lw=3</panel_attributes>
+    <additional_attributes>480.0;100.0;250.0;100.0;160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>560</x>
+      <y>224</y>
+      <w>304</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Controller
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>304</y>
+      <w>360</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>UserInterface
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1176</x>
+      <y>296</y>
+      <w>360</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Data
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

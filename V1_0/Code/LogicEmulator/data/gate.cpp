@@ -45,7 +45,11 @@ Gate::~Gate()
             toDestroy = NULL;
         }
     }
-    qDebug()<<"gate destroyed";
+    if(qpixMap)
+    {
+        delete qpixMap;
+        qpixMap = NULL;
+    }
 }
 
 QVector<Pin*> Gate::getInputPins()

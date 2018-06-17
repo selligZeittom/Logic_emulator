@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>290</y>
+      <w>380</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>AndGate
+--
++ AndGate()
++ AndGate(id : QString, level : int, ioPins : QVector&lt;Pin*&gt;)
++ ~AndGate()
++ updateLogic(maxLevel : int) : virtual void
++ setXYpins() : virtual void
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>440</y>
+      <w>380</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>OrGate
+--
++ OrGate()
++ OrGate(id : QString, level : int, ioPins : QVector&lt;Pin*&gt;)
++ ~OrGate()
++ updateLogic(maxLevel : int) : virtual void
++ setXYpins() : virtual void
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>590</y>
+      <w>380</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>NotGate
+--
++ NotGate()
++ NotGate(id : QString, level : int, ioPins : QVector&lt;Pin*&gt;)
++ ~NotGate()
++ updateLogic(maxLevel : int) : virtual void
++ setXYpins() : virtual void
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>490</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>340</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>640</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>290</y>
+      <w>380</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>Gates
+--
++ Gate()
++ Gate(id : QString, level : int, ioPins : QVector&lt;Pin*&gt;)
++ ~Gate()
+
++ getLevel() : int
++ getInputPins() : QVector&lt;Pin*&gt;
++ getOutputPin() : Pin*
++ getQPixMap() : QPixMap const
++ outputToString() : QString
++ getID() : QString const
++ setOutputPin(oPin : Pin*) : void
++ setInputPins(iPins : QVector&lt;Pin*&gt;) : void
++ setXY(x : int, y : int) : void
+
++ updateLogic(maxLevel : int) : virtual void
+--
+# id : QString
+# level : int
+# pins : QVector&lt;Pin*&gt;
+# outputPin : Pin*
+# qpixMap : QPixMap*
+# x : int
+# y : int
+
+# setXYpins() : virtual void
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

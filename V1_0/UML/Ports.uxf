@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>427</y>
+      <w>756</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortUI : PortUI*
+lw=3</panel_attributes>
+    <additional_attributes>1060.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>196</x>
+      <y>546</y>
+      <w>1043</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>Interface
+layer=-1
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>350</y>
+      <w>266</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>PortUI
+--
+PortUI()
+~PortUI()
++ initRelations(p1 : PortController*, p2 : IOView*) : void
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>126</y>
+      <w>217</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>PortController
+--
++ PortController()
++ ~PortController()
++ initRelations(p1 : Controller*, p2 : PortData*) 
+
+
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1064</x>
+      <y>357</y>
+      <w>266</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>PortData
+--
++ PortData()
++ ~PortData()
++ initRelations(p1 : Data*, p2 : PortUI*, p3 : PortController*)
+
+
+
+bg=yellow
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>182</y>
+      <w>294</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortController : PortController*
+lw=3</panel_attributes>
+    <additional_attributes>10.0;320.0;100.0;320.0;100.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>203</y>
+      <w>266</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortData : PortData*
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;290.0;360.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>210</x>
+      <y>714</y>
+      <w>252</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>IViewUpdate
+--
++ onButtonLoadPressed(path : QString) : void = 0
++ onButtonCheckPressed(newCode : QString) : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>462</y>
+      <w>63</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;
+
+</panel_attributes>
+    <additional_attributes>20.0;370.0;20.0;220.0;70.0;220.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>238</y>
+      <w>280</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;700.0;110.0;630.0;110.0;390.0;320.0;390.0;320.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>504</x>
+      <y>595</y>
+      <w>343</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>IDataUpdate
+--
++ onNewGates(gates : QVector&lt;Gates) : void = 0
++ onNewResult(result : QString) : void = 0
++ onNewFileName(filename : QString) : void = 0
++ onNewCode(code : QString) : void = 0
++ onNewListConnectedLabels(listConnectedLabels : QStringList) : void = 0
++ onDeleteOldGatesAndCode() : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>448</y>
+      <w>406</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;220.0;100.0;180.0;100.0;10.0;560.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>448</y>
+      <w>413</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>500.0;220.0;500.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>924</x>
+      <y>616</y>
+      <w>252</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>IControllerData
+--
++ loadFile(path : QString) : void = 0
++ convertJSONtoGates() : void = 0
++ computeLogic() : void = 0
++ drawGates() : void = 0
++ manageError(labelError : QString) =0
++ checkValidity(newCode : QString) = 0
++ updateGatesAndPins() : void = 0
++ onLoadingDone() : void  = 0
++ onConvertingDone() : void = 0
++ onComputingDone() : void = 0
++ onError(error : int) : void = 0
++ onDrawingDone() : void = 0
++ onErrorProcessed() : void = 0
++ onCheckingModificationsDone(bool : isValid) : void = 0
++ onUpdateDone() : void = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>238</y>
+      <w>245</w>
+      <h>406</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>330.0;560.0;280.0;560.0;50.0;410.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>455</y>
+      <w>70</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;required&gt;&gt;
+&lt;&lt;provided&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;240.0;10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>175</y>
+      <w>364</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+- thePortController : PortController*
+lw=3</panel_attributes>
+    <additional_attributes>360.0;300.0;280.0;300.0;280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>574</x>
+      <y>98</y>
+      <w>266</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>Controller
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>42</x>
+      <y>308</y>
+      <w>315</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>UserInterface
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1036</x>
+      <y>301</y>
+      <w>315</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>Data
+bg=green
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

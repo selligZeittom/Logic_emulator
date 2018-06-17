@@ -27,7 +27,6 @@ Data::~Data()
             gateToDestroy = NULL;
         }
     }
-    qDebug()<<"data destroyed";
 }
 
 //make the global connections
@@ -181,9 +180,6 @@ void Data::convertJsonToGates()
             Pin* p = new Pin(label, connectedLabel);
             vPinsIO.push_back(p);//add to the gate's vector
         }
-
-
-
 
         //create a logic gate
         if(id.contains("AND"))
@@ -354,7 +350,6 @@ void Data::setGatesAndPins()
                         }
                         else
                         {
-
                             outputPin->initRelations(connectedToOutputPin);
                         }
                     }

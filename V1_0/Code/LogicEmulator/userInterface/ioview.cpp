@@ -1,8 +1,6 @@
 #include "ioview.h"
 #include "portui.h"
 
-#define RELEASE
-
 IOView::IOView(QWidget *parent)
 {
     this->thePortUI = NULL;
@@ -102,9 +100,7 @@ int IOView::getHeight() const
 
 QString IOView::getPath()
 {
-#ifdef RELEASE
-
-    //set the filter for only getting .json files
+    //set the filter to get only .json files
     QString filter = "File Description (*.json)";
 
     //get the opened file's path
@@ -113,10 +109,6 @@ QString IOView::getPath()
                 "Open Json file",
                 QDir::homePath(), filter);
     return filePath;
-
-#else
-    return "C:/Users/Gilles Mottiez/Documents/HES/Informatique/Projet_inf2/Logic_emulator/JSON/TEST4_5l.json";
-#endif
 }
 
 void IOView::drawGates(QVector<Gate *> &gates, int maxLevel)
