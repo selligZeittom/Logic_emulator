@@ -115,7 +115,7 @@ transparency=0</panel_attributes>
 + setInputPins(iPins : QVector&lt;Pin*&gt;) : void
 + setXY(x : int, y : int) : void
 
-+ updateLogic(maxLevel : int) : virtual void
++ updateLogic(maxLevel : int) : virtual void = 0
 --
 # id : QString
 # level : int
@@ -125,7 +125,7 @@ transparency=0</panel_attributes>
 # x : int
 # y : int
 
-# setXYpins() : virtual void
+# setXYpins() : virtual void = 0
 bg=yellow
 transparency=0</panel_attributes>
     <additional_attributes/>

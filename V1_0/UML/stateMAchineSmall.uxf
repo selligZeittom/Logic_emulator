@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>343</x>
+      <y>217</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>217</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>280</x>
+      <y>259</y>
+      <w>133</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ST_WAIT
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>280</x>
+      <y>378</y>
+      <w>154</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ST_LOAD
+--
+/entry : loadFile(path : QString)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>336</y>
+      <w>161</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_LOAD_BUTTON_PRESSED</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>266</x>
+      <y>476</y>
+      <w>161</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ST_CONVERT
+--
+/entry : convertJsonToGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>420</y>
+      <w>105</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_LOADING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>518</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_CONVERTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>266</x>
+      <y>574</y>
+      <w>161</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ST_COMPUTE
+--
+/entry : computeLogic()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>273</x>
+      <y>672</y>
+      <w>161</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ST_DRAW
+--
+/entry : drawGates()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>616</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_COMPUTING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>273</y>
+      <w>133</w>
+      <h>441</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_DRAWING</panel_attributes>
+    <additional_attributes>160.0;610.0;10.0;610.0;10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>385</y>
+      <w>133</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>420</y>
+      <w>175</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR</panel_attributes>
+    <additional_attributes>10.0;120.0;230.0;120.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>420</y>
+      <w>259</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_ERROR
+</panel_attributes>
+    <additional_attributes>10.0;250.0;350.0;250.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>546</x>
+      <y>357</y>
+      <w>231</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ST_ERROR
+--
+/entry : manageError(errorLabel : QString) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>406</x>
+      <y>315</y>
+      <w>420</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_ERROR_PROCESSING</panel_attributes>
+    <additional_attributes>370.0;60.0;370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>826</x>
+      <y>357</y>
+      <w>322</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ST_CHECK_MODIF
+--
+/entry : checkValidity(newState : QString, labelPinToChange : QString)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>406</x>
+      <y>287</y>
+      <w>560</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_UPDATE_BUTTON_PRESSED</panel_attributes>
+    <additional_attributes>10.0;20.0;780.0;20.0;780.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>413</y>
+      <w>112</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_CHECKING</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>833</x>
+      <y>476</y>
+      <w>245</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ST_UPDATE_GATES_PINS
+--
+/entry : updateGatesAndPins()
+/entry : onNewStatusModifications(comment : QString)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>532</y>
+      <w>623</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+EV_END_UPDATING</panel_attributes>
+    <additional_attributes>740.0;10.0;740.0;230.0;10.0;230.0</additional_attributes>
+  </element>
+</diagram>
